@@ -9,7 +9,7 @@ export const duties = [
         id: "error-handling",
         title: "Error Handling",
         desc: "Deterministic failure recovery.",
-        detail: "Defines standardized error semantics and recovery patterns, ensuring predictable behavior across all protocol-compliant executions."
+        detail: "Defines standardized error semantics and recovery patterns, ensuring predictable behavior across all protocol-conformant executions."
     },
     {
         id: "event-bus",
@@ -27,7 +27,7 @@ export const duties = [
         id: "observability",
         title: "Observability",
         desc: "Mandatory traceability.",
-        detail: "Defines mandatory traceability and observability requirements for all protocol-compliant executions."
+        detail: "Defines mandatory traceability and observability requirements for all protocol-conformant executions."
     },
     {
         id: "orchestration",

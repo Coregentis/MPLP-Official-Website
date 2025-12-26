@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Shell } from "@/components/layout/shell";
 import { PageHeader } from "@/components/layout/page-header";
@@ -13,7 +13,7 @@ import { siteConfig } from "@/lib/site-config";
 
 
 export const metadata: Metadata = {
-    title: "Protocol Architecture | MPLP Standard",
+    title: "Architecture | MPLP — Multi-Agent Lifecycle Protocol",
     description: "Defines the layered protocol architecture of MPLP, including core semantics, coordination, execution, and integration boundaries.",
     alternates: {
         canonical: `${siteConfig.url}/architecture`,

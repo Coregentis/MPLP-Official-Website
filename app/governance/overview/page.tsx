@@ -13,7 +13,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "Governance Overview | MPLP Protocol",
-    description: "MPLP governance stance: what we govern, what we don't govern, and how the protocol evolves through the RFC process.",
+    description: "MPLP governance stance: what we govern, what we don&apos;t govern, and how the protocol evolves through the RFC process.",
     alternates: {
         canonical: `${siteConfig.url}/governance/overview`,
     },

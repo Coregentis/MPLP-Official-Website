@@ -1,4 +1,4 @@
-name: Semantic Lint Gate
+﻿name: Semantic Lint Gate
 
 on:
     push:
@@ -25,4 +25,4 @@ jobs:
               run: npm install
 
             - name: Run Semantic Lint Gate
-              run: node scripts/semantic/semantic-lint.mjs --ci
+              run: npm run semantic:lint

@@ -23,7 +23,7 @@ const governancePages = [
     {
         title: "Overview",
         href: "/governance/overview",
-        description: "What MPLP governs, what it doesn't, and how the protocol evolves.",
+        description: "What MPLP governs, what it doesn&apos;t, and how the protocol evolves.",
         color: "bg-mplp-blue-soft/10 text-mplp-blue-soft border-mplp-blue-soft/30",
     },
     {
@@ -91,7 +91,7 @@ export default function GovernancePage() {
                 <SectionHeader
                     eyebrow="Governance Framework"
                     title="Explore MPLP Governance"
-                    description="Understand MPLP's governance stance, how it positions within the agent ecosystem, and how it aligns with international standards."
+                    description="Understand MPLP&apos;s governance stance, how it positions within the agent ecosystem, and how it aligns with international standards."
                     align="center"
                 />
                 <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

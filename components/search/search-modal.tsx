@@ -64,8 +64,8 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                     const pf = await import(/* webpackIgnore: true */ "/pagefind/pagefind.js");
                     await pf.init();
                     setPagefind(pf);
-                } catch (e) {
-                    console.error("Failed to load Pagefind:", e);
+                } catch (err) {
+                    console.error("Failed to load Pagefind:", err);
                 }
             }
         }

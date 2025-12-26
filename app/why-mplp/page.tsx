@@ -34,7 +34,7 @@ export default function WhyMplpPage() {
             <JsonLd data={pageSchema} />
             <PageHeader
                 title="Why MPLP?"
-                subtitle="AI agents don't just need prompts. They need a lifecycle protocol to ensure consistency, observability, and governance."
+                subtitle="AI agents don&apos;t just need prompts. They need a lifecycle protocol to ensure consistency, observability, and governance."
                 kicker="The Problem"
             />
 

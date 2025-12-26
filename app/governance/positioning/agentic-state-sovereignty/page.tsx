@@ -231,7 +231,7 @@ export default function AgenticStateSovereigntyPage() {
                     </div>
                     <div className="mplp-card p-6">
                         <h3 className="text-lg font-semibold text-mplp-text mb-2">Auditable Memory</h3>
-                        <p className="text-sm text-mplp-text-muted">Memory that is not locked to a vendor's proprietary format.</p>
+                        <p className="text-sm text-mplp-text-muted">Memory that is not locked to a vendor&apos;s proprietary format.</p>
                     </div>
                     <div className="mplp-card p-6">
                         <h3 className="text-lg font-semibold text-mplp-text mb-2">Fair Competition</h3>

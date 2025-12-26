@@ -184,7 +184,7 @@ export default function AdoptionPage() {
                 <SectionHeader
                     eyebrow="Signal 4"
                     title="Standards Alignment"
-                    description="Reference mappings to external governance frameworks are documented. All standard references follow MPLP's Mapping / Compatibility / Enablement model."
+                    description="Reference mappings to external governance frameworks are documented. All standard references follow MPLP&apos;s Mapping / Compatibility / Enablement model."
                 />
                 <div className="mt-4 mb-8">
                     <Link href="/standards/positioning" className="text-sm text-mplp-blue-soft hover:text-mplp-blue-light transition-colors">

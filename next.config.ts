@@ -55,6 +55,8 @@ const nextConfig: NextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
   poweredByHeader: false,
+  // Prevent trailing slash redirect chains (P0 SEO fix)
+  trailingSlash: false,
 };
 
 export default withBundleAnalyzer(nextConfig);

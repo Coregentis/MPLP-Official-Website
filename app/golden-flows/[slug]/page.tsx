@@ -1,4 +1,4 @@
-import { Shell } from "@/components/layout/shell";
+﻿import { Shell } from "@/components/layout/shell";
 import { PageHeader } from "@/components/layout/page-header";
 import { ContentSection } from "@/components/ui/content-section";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -141,7 +141,7 @@ export default async function FlowDetailPage({ params }: { params: Promise<{ slu
                             <SectionHeader
                                 eyebrow="Validation"
                                 title="Failure Conditions"
-                                description="Execution of this flow MUST be considered non-compliant if any of the following conditions occur."
+                                description="Execution of this flow MUST be considered non-conformant if any of the following conditions occur."
                             />
                             <div className="mt-8 space-y-3">
                                 {flow.failureConditions.map((condition, index) => (

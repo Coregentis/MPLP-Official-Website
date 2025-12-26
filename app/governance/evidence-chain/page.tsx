@@ -53,7 +53,7 @@ export default function EvidenceChainPage() {
                 <SectionHeader
                     eyebrow="Definition"
                     title="What is the Evidence Chain?"
-                    description="The Evidence Chain is MPLP's answer to the fundamental governance question: How do we demonstrate what an agent intended, what was authorized, and what actually happened?"
+                    description="The Evidence Chain is MPLP&apos;s answer to the fundamental governance question: How do we demonstrate what an agent intended, what was authorized, and what actually happened?"
                 />
                 <div className="mt-8 max-w-4xl">
                     <div className="rounded-3xl border border-mplp-blue-soft/30 bg-gradient-to-r from-mplp-blue-soft/5 via-mplp-dark to-mplp-indigo/5 p-8">

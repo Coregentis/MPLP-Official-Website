@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Shell } from "@/components/layout/shell";
 import { PageHeader } from "@/components/layout/page-header";
 import { ContentSection } from "@/components/ui/content-section";
@@ -276,7 +276,7 @@ export default function StandardsPositioningPage() {
                         </div>
                         <div className="mt-6 rounded-xl border border-mplp-warning/30 bg-mplp-warning/5 p-4">
                             <p className="text-sm text-mplp-text-muted">
-                                <strong className="text-mplp-warning">Note:</strong> Enablement does not imply that any system built on MPLP is compliant. Compliance remains a responsibility of the implementing organization.
+                                <strong className="text-mplp-warning">Note:</strong> Enablement does not imply that any system built on MPLP is conformant. Conformance remains a responsibility of the implementing organization.
                             </p>
                         </div>
                     </div>

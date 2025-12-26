@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Shell } from "@/components/layout/shell";
 import { ContentSection } from "@/components/ui/content-section";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -10,9 +10,10 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
 import { JsonLd, generateProtocolSchema } from "@/components/seo/json-ld";
 
+
 export const metadata: Metadata = {
-    title: "The Agent OS Protocol | MPLP",
-    description: "MPLP is the lifecycle protocol for AI agent systems — the Agent OS Protocol. It defines how agents are created, operated, audited, and decommissioned. Not a framework. Not a runtime. Not a platform.",
+    title: "MPLP — Multi-Agent Lifecycle Protocol | The Agent OS Protocol",
+    description: "MPLP defines the canonical lifecycle semantics for AI agent systems — the Agent OS Protocol. Explore Architecture, Modules, Kernel Duties, Golden Flows, Governance, FAQ, and References. Not a framework, not a runtime, not a platform. — the Agent OS Protocol. It defines how agents are created, operated, audited, and decommissioned. Not a framework. Not a runtime. Not a platform.",
     alternates: {
         canonical: `${siteConfig.url}`,
     },
@@ -85,11 +86,12 @@ function HeroSection() {
                                     The Agent OS Protocol
                                 </span>
                             </h1>
-                            <p className="text-base sm:text-lg font-medium text-mplp-blue-soft/80 tracking-wide">The Lifecycle Protocol of AI Agents</p>
+                            <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.3em] text-mplp-blue-soft/80">The Lifecycle Protocol of AI Agents</p>
                         </div>
 
                         <p className="max-w-xl text-base sm:text-lg leading-relaxed text-mplp-text-muted/90 mb-4">
-                            The lifecycle protocol for AI agent systems. MPLP defines how agents are created, operated, audited, and decommissioned across their full lifecycle.
+                            The lifecycle protocol for AI agent systems.<br />
+                            MPLP defines how agents are created, operated, audited, and decommissioned across their full lifecycle.
                         </p>
 
                         <p className="text-sm font-semibold text-mplp-blue-soft/70 tracking-wide mb-5">
@@ -250,7 +252,7 @@ function ArchitectureSection() {
             <SectionHeader
                 eyebrow="Protocol Topology"
                 title="A Protocol Stack, Not a Framework Stack"
-                description="MPLP sits above agent frameworks and below applications, defining the normative lifecycle semantics that every compliant system must respect."
+                description="MPLP sits above agent frameworks and below applications, defining the normative lifecycle semantics that every conformant system must respect."
                 align="center"
                 className="mx-auto mb-12"
             />
@@ -643,9 +645,9 @@ function FinalCtaSection() {
                     </Button>
                 </div>
                 <div className="mt-12 pt-8 border-t border-mplp-border/30 flex flex-wrap justify-center gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-mplp-text-muted/60">
-                    <span>Apache 2.0 License</span>
-                    <span>Spec v1.0.0 Frozen</span>
-                    <span>Governed by MPGC</span>
+                    <span>→</span>
+                    <span>→</span>
+                    <span>→</span>
                 </div>
             </div>
         </div>

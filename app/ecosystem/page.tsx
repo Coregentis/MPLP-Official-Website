@@ -1,4 +1,4 @@
-import { Shell } from "@/components/layout/shell";
+﻿import { Shell } from "@/components/layout/shell";
 import { PageHeader } from "@/components/layout/page-header";
 import { ContentSection } from "@/components/ui/content-section";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -134,7 +134,7 @@ export default function EcosystemPage() {
                 <SectionHeader
                     eyebrow="Reference SDKs"
                     title="Official Libraries"
-                    description="Reference implementations for building protocol-compliant agents."
+                    description="Reference implementations for building protocol-conformant agents."
                     className="mb-12"
                 />
                 <div className="grid gap-8 md:grid-cols-2">

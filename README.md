@@ -1,4 +1,4 @@
-# MPLP Protocol — Official Reference Website
+# MPLP Protocol �?Official Reference Website
 
 This repository contains the source code for **mplp.io**, the official reference website of the **Multi-Agent Lifecycle Protocol (MPLP)**.
 
@@ -116,7 +116,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 The site auto-deploys to Vercel on push to `main`.
 
 > ⚠️ Deployment does not imply feature iteration.
-> All content changes must comply with `/website-governance/` policies.
+> All content changes must follow `/website-governance/` policies.
 
 ---
 
@@ -130,4 +130,4 @@ This is a **Protocol Reference Website**, not a product or marketing site. All c
 
 ## License
 
-Apache 2.0 — See the [MPLP Protocol](https://github.com/Coregentis/MPLP-Protocol) for details.
+Apache 2.0 �?See the [MPLP Protocol](https://github.com/Coregentis/MPLP-Protocol) for details.

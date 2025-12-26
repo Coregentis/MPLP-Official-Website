@@ -1,4 +1,4 @@
-import { MetadataRoute } from "next";
+﻿import { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site-config";
 import { getAllPostSlugs } from "@/lib/blog";
 import { modules } from "@/lib/content/modules";
@@ -13,7 +13,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/why-mplp",
         "/architecture",
         "/modules",
+        "/kernel-duties",  // PR-04: Added for sitelinks
         "/golden-flows",
+        "/faq",            // PR-04: Added for sitelinks
+        "/references",     // PR-04: Added for sitelinks
         "/ecosystem",
         "/governance",
         "/governance/overview",

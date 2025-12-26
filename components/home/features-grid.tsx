@@ -14,7 +14,7 @@ const features = [
     {
         layer: "L2",
         name: "Core Modules",
-        description: "Essential capabilities every compliant agent must support.",
+        description: "Essential capabilities every conformant agent must support.",
         modules: ["Task Execution", "State Management", "Communication"],
         href: "https://docs.mplp.io/docs/modules/module-interactions",
     },

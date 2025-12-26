@@ -1,7 +1,7 @@
-// Site-wide configuration
+﻿// Site-wide configuration
 export const siteConfig = {
     name: "MPLP",
-    title: "MPLP — The Agent OS Protocol",
+    title: "MPLP 鈥?The Agent OS Protocol",
     description:
         "Multi-Agent Lifecycle Protocol: The vendor-neutral, observable, governed lifecycle protocol for AI agents.",
     url: "https://www.mplp.io",
@@ -32,9 +32,9 @@ export const DOCS_URLS = {
     overview: "https://docs.mplp.io/docs/index/mplp-v1.0-protocol-overview",
     architecture: "https://docs.mplp.io/docs/architecture/architecture-overview",
     l1ToL4: "https://docs.mplp.io/docs/architecture/l1-l4-architecture-deep-dive",
-    goldenFlows: "https://docs.mplp.io/docs/tests/golden-test-suite-overview",
+    goldenFlows: "https://docs.mplp.io/docs/golden-flows",
     saProfile: "https://docs.mplp.io/docs/profiles/sa-profile",
-    compliance: "https://docs.mplp.io/docs/guides/mplp-v1.0-compliance-checklist",
+    compliance: "https://docs.mplp.io/docs/compliance",
     sdkDocs: "https://docs.mplp.io/sdk",
     tsSdkGuide: "https://docs.mplp.io/sdk",
     pySdkGuide: "https://docs.mplp.io/sdk",
@@ -55,7 +55,7 @@ export function getModuleDocUrl(moduleId: string) {
 // Header IA principle:
 // - Logo covers "Home"
 // - Header right-side "Docs" CTA covers getting started
-// - Governance is the primary conversion spine (Docs → Governance → Compliance)
+// - Governance is the primary conversion spine (Docs 鈫?Governance 鈫?Compliance)
 export const navItems = [
     { label: "Why", href: "/why-mplp" },
     { label: "Architecture", href: "/architecture" },

@@ -72,7 +72,7 @@ const excludedFileNames = ["package-lock.json", "pnpm-lock.yaml"];
 function readFile(filePath) {
     try {
         return fs.readFileSync(path.join(ROOT, filePath), "utf8");
-    } catch (e) {
+    } catch {
         return null;
     }
 }

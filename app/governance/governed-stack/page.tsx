@@ -119,7 +119,7 @@ export default function GovernedStackPage() {
                         <div className="mplp-card p-6 border-mplp-emerald/20 bg-mplp-emerald/5">
                             <h3 className="text-lg font-semibold text-mplp-text mb-3">Kernel-Level Enforcement</h3>
                             <p className="text-sm text-mplp-text-muted mb-4">
-                                Compliance checks are baked into the agent's lifecycle loop. An agent cannot transition from <strong>Plan</strong> to <strong>Act</strong> without passing kernel-level authorization gates.
+                                Compliance checks are baked into the agent&apos;s lifecycle loop. An agent cannot transition from <strong>Plan</strong> to <strong>Act</strong> without passing kernel-level authorization gates.
                             </p>
                             <ul className="space-y-2 text-sm text-mplp-text-muted">
                                 <li className="flex items-start gap-2">
@@ -139,7 +139,7 @@ export default function GovernedStackPage() {
                         <div className="mplp-card p-6 border-mplp-border/50 bg-slate-950/30">
                             <h3 className="text-lg font-semibold text-mplp-text-muted mb-3">Plugin-Level (Traditional)</h3>
                             <p className="text-sm text-mplp-text-muted mb-4">
-                                In traditional architectures, compliance is often an "afterthought" wrapper or a sidecar proxy that can be bypassed or disabled.
+                                In traditional architectures, compliance is often an &ldquo;afterthought&rdquo; wrapper or a sidecar proxy that can be bypassed or disabled.
                             </p>
                             <ul className="space-y-2 text-sm text-mplp-text-muted opacity-75">
                                 <li className="flex items-start gap-2">

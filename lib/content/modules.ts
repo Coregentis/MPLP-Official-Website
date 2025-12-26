@@ -59,14 +59,14 @@ The Context module is the **entry point** for all normative execution patterns:
 5. Context constraints **MUST** be inherited by all dependent artifacts unless explicitly overridden.
 6. Context status transitions **MUST** be traceable and auditable.
 
-Failure to meet these constraints results in a non-compliant execution.`,
+Failure to meet these constraints results in a non-conformant execution.`,
         invariants: `The following invariants define the **stability guarantees** of a Context:
 
 * A Context defines a **single semantic domain**.
 * A Context MAY evolve, but its **domain identity MUST remain stable**.
 * Archived Contexts **MUST NOT be mutated**.
 * All dependent artifacts **inherit Context constraints implicitly**.`,
-        failureSemantics: `Any execution referencing an **invalid, missing, or incompatible Context** is considered non-compliant and **MUST be rejected**.`
+        failureSemantics: `Any execution referencing an **invalid, missing, or incompatible Context** is considered non-conformant and **MUST be rejected**.`
     },
     {
         id: "plan",
@@ -124,7 +124,7 @@ The Plan module is central to:
 5. A Plan **MUST NOT** transition to \`in_progress\` without explicit approval when governance requires it.
 6. All step completions **MUST** be traceable and auditable.
 
-Failure to meet these constraints results in a non-compliant execution.`
+Failure to meet these constraints results in a non-conformant execution.`
     },
     {
         id: "confirm",
@@ -220,7 +220,7 @@ The Trace module provides the audit trail for:
 5. Segment timestamps **MUST** be monotonically increasing within a trace.
 6. All Trace mutations **MUST** be traceable and auditable themselves.
 
-Failure to meet these constraints results in a non-compliant execution.`
+Failure to meet these constraints results in a non-conformant execution.`
     },
     {
         id: "role",
@@ -276,7 +276,7 @@ The Role module enables authorization in:
 5. Role assignments **MUST** be traceable and auditable.
 6. Capability inheritance or delegation **MUST** be explicitly declared.
 
-Failure to meet these constraints results in a non-compliant execution.`
+Failure to meet these constraints results in a non-conformant execution.`
     },
     {
         id: "dialog",
@@ -371,7 +371,7 @@ The Collab module is referenced in the following normative execution patterns:
 5. In \`pair\` mode, turn ordering **MUST** be deterministic and reproducible.
 6. Changes to participant sets or coordination mode **MUST** be traceable.
 
-Failure to meet these constraints results in a non-compliant execution.`
+Failure to meet these constraints results in a non-conformant execution.`
     },
     {
         id: "extension",
@@ -401,10 +401,10 @@ Extension is a **boundary declaration**, not a plugin system.`,
 
 ### Observability
 * Extension events SHOULD be traceable.
-* Non-compliant extensions invalidate compliance claims.`,
+* Non-conformant extensions invalidate conformance claims.`,
         keyConstraints: `1. Extensions **MUST NOT** override normative constraints.
 2. Core protocol behavior **MUST** remain deterministic.
-3. Non-compliant extensions **invalidate** compliance claims.`
+3. Non-conformant extensions **invalidate** conformance claims.`
     },
     {
         id: "core",
