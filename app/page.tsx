@@ -645,9 +645,11 @@ function FinalCtaSection() {
                     </Button>
                 </div>
                 <div className="mt-12 pt-8 border-t border-mplp-border/30 flex flex-wrap justify-center gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-mplp-text-muted/60">
+                    <span>Protocol v1.0.0</span>
                     <span>→</span>
+                    <span>Apache 2.0</span>
                     <span>→</span>
-                    <span>→</span>
+                    <span>MPGC Governed</span>
                 </div>
             </div>
         </div>
