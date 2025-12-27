@@ -553,7 +553,7 @@ function EcosystemSection() {
             <div className="mx-auto max-w-6xl">
                 <div className="grid gap-6 md:grid-cols-3 text-left">
                     <Link
-                        href="/governance"
+                        href="/governance/overview"
                         className="mplp-card group block p-8 hover:border-mplp-blue-soft/30 transition-all bg-slate-950/40"
                     >
                         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-mplp-text-muted mb-4">
@@ -589,7 +589,7 @@ function EcosystemSection() {
                     </Link>
 
                     <Link
-                        href="/roadmap"
+                        href="/governance/overview"
                         className="mplp-card group block p-8 hover:border-mplp-blue-soft/30 transition-all bg-slate-950/40"
                     >
                         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-mplp-text-muted mb-4">
@@ -602,7 +602,7 @@ function EcosystemSection() {
                             Transparent evolution policy for the frozen v1.0.0 specification and forward-compatible extensions.
                         </p>
                         <div className="text-[10px] font-bold text-mplp-blue-soft uppercase tracking-widest flex items-center gap-2">
-                            View Roadmap <IconArrowRight className="h-3 w-3" />
+                            View Governance <IconArrowRight className="h-3 w-3" />
                         </div>
                     </Link>
                 </div>
@@ -612,7 +612,7 @@ function EcosystemSection() {
                 <Button href="/ecosystem" variant="secondary" className="border-mplp-border/50">
                     Ecosystem Registry
                 </Button>
-                <Button href="/governance" variant="secondary" className="border-mplp-border/50">
+                <Button href="/governance/overview" variant="secondary" className="border-mplp-border/50">
                     Governance Framework
                 </Button>
             </div>

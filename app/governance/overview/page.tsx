@@ -222,6 +222,15 @@ export default function GovernanceOverviewPage() {
                             <Link href="/compliance" className="hover:text-mplp-blue-soft transition-colors">Compliance →</Link>
                             <Link href="/golden-flows" className="hover:text-mplp-blue-soft transition-colors">Golden Flows →</Link>
                         </div>
+
+                        {/* Positioning & Drift Control */}
+                        <div className="pt-4 mt-4 border-t border-mplp-border">
+                            <h4 className="text-sm font-semibold text-mplp-text-muted uppercase tracking-wider mb-3">Positioning & Drift Control</h4>
+                            <div className="flex flex-wrap gap-4 text-sm text-mplp-text-muted">
+                                <Link href="/governance/positioning/agentic-state-sovereignty" className="hover:text-mplp-blue-soft transition-colors">Agentic State Sovereignty →</Link>
+                                <Link href="/governance/positioning/semantic-drift-control" className="hover:text-mplp-blue-soft transition-colors">Semantic Drift Control →</Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </ContentSection>

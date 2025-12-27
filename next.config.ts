@@ -6,6 +6,51 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 const nextConfig: NextConfig = {
+  // 301 Permanent Redirects for Standards cluster and deprecated pages
+  // Per DGP Website Alignment Pass - all paths must map to 7 semantic anchors
+  async redirects() {
+    return [
+      // Standards section → merge into References/FAQ
+      {
+        source: '/standards/positioning',
+        destination: '/references',
+        permanent: true,
+      },
+      {
+        source: '/standards/protocol-evaluation',
+        destination: '/references',
+        permanent: true,
+      },
+      {
+        source: '/standards/regulatory-positioning',
+        destination: '/references',
+        permanent: true,
+      },
+      {
+        source: '/standards/what-mplp-is-not',
+        destination: '/faq',
+        permanent: true,
+      },
+      // Enterprise page → redirect to References (protocol site, not marketing)
+      {
+        source: '/enterprise',
+        destination: '/references',
+        permanent: true,
+      },
+      // Adoption page → merge into References
+      {
+        source: '/adoption',
+        destination: '/references',
+        permanent: true,
+      },
+      // Governance root → redirect to overview
+      {
+        source: '/governance',
+        destination: '/governance/overview',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

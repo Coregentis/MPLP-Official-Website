@@ -3,7 +3,7 @@ import { Container } from "@/components/layout/container";
 import { SectionTitle } from "@/components/common/section-title";
 import { BlogList } from "@/components/blog/blog-list";
 import { getAllPosts } from "@/lib/blog";
-
+import { BackToAnchor } from "@/components/ui/back-to-anchor";
 import { siteConfig } from "@/lib/site-config";
 import { JsonLd } from "@/components/seo/json-ld";
 
@@ -46,6 +46,7 @@ export default function BlogPage() {
             <JsonLd data={blogSchema} />
             <div className="py-20">
                 <Container size="narrow">
+                    <BackToAnchor href="/faq" label="FAQ" />
                     <SectionTitle
                         badge="Blog"
                         title="Protocol Updates & Insights"

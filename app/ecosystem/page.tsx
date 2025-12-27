@@ -6,6 +6,7 @@ import { InfoCard } from "@/components/ui/info-card";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
+import { BackToAnchor } from "@/components/ui/back-to-anchor";
 import { JsonLd } from "@/components/seo/json-ld";
 import { IconSearch, IconPackage, IconShield, IconDoorOpen, IconRocket, IconGlobe } from "@/components/ui/icons";
 import { siteConfig } from "@/lib/site-config";
@@ -121,6 +122,7 @@ export default function EcosystemPage() {
         <Shell>
             <JsonLd data={collectionSchema} />
             <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                <BackToAnchor href="/references" label="References" />
                 <Breadcrumb items={[{ label: "Ecosystem", href: "/ecosystem" }]} />
             </div>
             <PageHeader

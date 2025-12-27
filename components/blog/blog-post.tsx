@@ -3,6 +3,7 @@ import Link from "next/link";
 import { BlogPost } from "@/lib/blog";
 import { Badge } from "@/components/common/badge";
 import { Container } from "@/components/layout/container";
+import { BackToAnchor } from "@/components/ui/back-to-anchor";
 
 interface BlogPostPageProps {
     post: BlogPost;
@@ -13,6 +14,9 @@ export function BlogPostPage({ post, content }: BlogPostPageProps) {
     return (
         <article className="py-12">
             <Container size="narrow">
+                {/* Back to Anchor (FAQ) - Per governance alignment pass */}
+                <BackToAnchor href="/faq" label="FAQ" />
+
                 {/* Back Link */}
                 <Link
                     href="/blog"

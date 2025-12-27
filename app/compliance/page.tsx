@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/layout/page-header";
 import { ContentSection } from "@/components/ui/content-section";
 import { Button } from "@/components/ui/button";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
+import { BackToAnchor } from "@/components/ui/back-to-anchor";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
 import Link from "next/link";
@@ -38,6 +39,7 @@ export default function CompliancePage() {
         <Shell>
             <JsonLd data={techArticleSchema} />
             <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                <BackToAnchor href="/governance/overview" label="Governance" />
                 <Breadcrumb items={[
                     { label: "Compliance", href: "/compliance" }
                 ]} />

@@ -4,6 +4,8 @@ import { PageHeader } from "@/components/layout/page-header";
 import { ContentSection } from "@/components/ui/content-section";
 import { SectionHeader } from "@/components/ui/section-header";
 import { InfoCard } from "@/components/ui/info-card";
+import { BackToAnchor } from "@/components/ui/back-to-anchor";
+import { Breadcrumb } from "@/components/ui/breadcrumb";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
 import { siteConfig } from "@/lib/site-config";
@@ -32,11 +34,24 @@ export default function WhyMplpPage() {
     return (
         <Shell>
             <JsonLd data={pageSchema} />
+
+            {/* Breadcrumb */}
+            <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                <Breadcrumb items={[
+                    { label: "FAQ", href: "/faq" },
+                    { label: "Why MPLP?", href: "/why-mplp" }
+                ]} />
+            </div>
+
             <PageHeader
                 title="Why MPLP?"
                 subtitle="AI agents don&apos;t just need prompts. They need a lifecycle protocol to ensure consistency, observability, and governance."
                 kicker="The Problem"
             />
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <BackToAnchor href="/faq" label="FAQ" />
+            </div>
 
             <ContentSection>
                 <SectionHeader

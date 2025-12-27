@@ -3,6 +3,7 @@ import { Shell } from "@/components/layout/shell";
 import { PageHeader } from "@/components/layout/page-header";
 import { ContentSection } from "@/components/ui/content-section";
 import { SectionHeader } from "@/components/ui/section-header";
+import { BackToAnchor } from "@/components/ui/back-to-anchor";
 import type { Metadata } from "next";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -37,9 +38,10 @@ export default function SemanticDriftControlPage() {
         <Shell>
             <JsonLd data={techArticleSchema} />
             <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                <BackToAnchor href="/governance/overview" label="Governance" />
                 <Breadcrumb items={[
-                    { label: "Governance", href: "/governance" },
-                    { label: "Positioning", href: "/governance" },
+                    { label: "Governance", href: "/governance/overview" },
+                    { label: "Positioning", href: "/governance/overview" },
                     { label: "Drift Control", href: "/governance/positioning/semantic-drift-control" }
                 ]} />
             </div>

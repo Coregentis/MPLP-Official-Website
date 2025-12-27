@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Container } from "@/components/layout/container";
 import { Shell } from "@/components/layout/shell";
+import { PageHeader } from "@/components/layout/page-header";
+import { ContentSection } from "@/components/ui/content-section";
+import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { JsonLd } from "@/components/seo/json-ld";
 import { faqData, getFAQByCategory, getFAQJsonLdItems } from "@/lib/content/faq-data";
 import { jsonLdFAQPage } from "@/lib/seo/jsonld-structure";
@@ -30,84 +32,84 @@ export default function FAQPage() {
             {/* FAQPage JSON-LD for search engines */}
             <JsonLd data={faqJsonLd} id="jsonld-faq" />
 
-            <section className="py-16 md:py-24">
-                <Container>
-                    {/* H1 - Page Topic */}
-                    <h1 className="text-4xl md:text-5xl font-bold text-mplp-text mb-6">
-                        FAQ — MPLP & Agent OS Protocol
-                    </h1>
+            {/* Breadcrumb */}
+            <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                <Breadcrumb items={[{ label: "FAQ", href: "/faq" }]} />
+            </div>
 
-                    {/* Lead - Descriptive, T0-aligned */}
-                    <p className="text-lg md:text-xl text-mplp-text-muted max-w-3xl mb-8 leading-relaxed">
-                        Definitions, boundaries, and guidance for understanding and citing MPLP —
-                        the lifecycle protocol for AI agent systems. This FAQ covers what MPLP is,
-                        what it is not, and how AI systems should reference it.
-                    </p>
+            {/* PageHeader - Consistent with other anchor pages */}
+            <PageHeader
+                title="FAQ — MPLP & Agent OS Protocol"
+                subtitle="Definitions, boundaries, and guidance for understanding and citing MPLP — the lifecycle protocol for AI agent systems. This FAQ covers what MPLP is, what it is not, and how AI systems should reference it."
+                kicker="Frequently Asked"
+            />
 
-                    <p className="text-base text-mplp-text-muted max-w-3xl mb-10 p-4 bg-mplp-bg border border-mplp-border rounded-lg">
+            <ContentSection>
+                <div className="p-4 bg-mplp-bg border border-mplp-border rounded-lg mb-10 max-w-3xl mx-auto">
+                    <p className="text-sm text-mplp-text-muted">
                         <strong>Canonical definition:</strong> MPLP defines the canonical lifecycle
                         semantics for AI agent systems — the Agent OS Protocol.
                     </p>
+                </div>
 
-                    {/* Navigation Links */}
-                    <div className="flex flex-wrap gap-4 mb-12">
-                        <Link
-                            href="/references"
-                            className="inline-flex items-center px-6 py-3 bg-mplp-blue text-white font-semibold rounded-lg hover:bg-mplp-blue/90 transition-colors"
-                        >
-                            References
-                        </Link>
-                        <Link
-                            href="https://docs.mplp.io/docs/intro"
-                            className="inline-flex items-center px-6 py-3 border border-mplp-border text-mplp-text font-semibold rounded-lg hover:bg-mplp-bg transition-colors"
-                            target="_blank"
-                        >
-                            Read Documentation →
-                        </Link>
-                        <Link
-                            href="/governance"
-                            className="inline-flex items-center px-6 py-3 border border-mplp-border text-mplp-text font-semibold rounded-lg hover:bg-mplp-bg transition-colors"
-                        >
-                            Governance
-                        </Link>
-                    </div>
+                {/* Navigation Links */}
+                <div className="flex flex-wrap justify-center gap-4 mb-12">
+                    <Link
+                        href="/references"
+                        className="inline-flex items-center px-6 py-3 border border-mplp-border text-mplp-text font-semibold rounded-lg hover:bg-mplp-bg transition-colors"
+                    >
+                        References
+                    </Link>
+                    <Link
+                        href="https://docs.mplp.io/docs/intro"
+                        className="inline-flex items-center px-6 py-3 border border-mplp-border text-mplp-text font-semibold rounded-lg hover:bg-mplp-bg transition-colors"
+                        target="_blank"
+                    >
+                        Read Documentation →
+                    </Link>
+                    <Link
+                        href="/governance/overview"
+                        className="inline-flex items-center px-6 py-3 border border-mplp-border text-mplp-text font-semibold rounded-lg hover:bg-mplp-bg transition-colors"
+                    >
+                        Governance
+                    </Link>
+                </div>
 
-                    {/* FAQ Content by Category */}
-                    <div className="space-y-12">
-                        {categories.map(({ key, title, description }) => {
-                            const items = getFAQByCategory(key);
-                            if (items.length === 0) return null;
+                {/* FAQ Content by Category */}
+                <div className="space-y-12 max-w-4xl mx-auto">
+                    {categories.map(({ key, title, description }) => {
+                        const items = getFAQByCategory(key);
+                        if (items.length === 0) return null;
 
-                            return (
-                                <div key={key} className="border-t border-mplp-border pt-10">
-                                    <h2 className="text-2xl font-bold text-mplp-text mb-2">{title}</h2>
-                                    <p className="text-sm text-mplp-text-muted mb-6">{description}</p>
+                        return (
+                            <div key={key} className="border-t border-mplp-border pt-10">
+                                <h2 className="text-2xl font-bold text-mplp-text mb-2">{title}</h2>
+                                <p className="text-sm text-mplp-text-muted mb-6">{description}</p>
 
-                                    <div className="space-y-6">
-                                        {items.map((item) => (
-                                            <div key={item.id} className="group">
-                                                <h3 className="text-lg font-semibold text-mplp-text mb-2 group-hover:text-mplp-blue transition-colors">
-                                                    {item.question}
-                                                </h3>
-                                                <p className="text-mplp-text-muted leading-relaxed pl-4 border-l-2 border-mplp-border">
-                                                    {item.answer}
-                                                </p>
-                                            </div>
-                                        ))}
-                                    </div>
+                                <div className="space-y-6">
+                                    {items.map((item) => (
+                                        <div key={item.id} className="group">
+                                            <h3 className="text-lg font-semibold text-mplp-text mb-2 group-hover:text-mplp-blue transition-colors">
+                                                {item.question}
+                                            </h3>
+                                            <p className="text-mplp-text-muted leading-relaxed pl-4 border-l-2 border-mplp-border">
+                                                {item.answer}
+                                            </p>
+                                        </div>
+                                    ))}
                                 </div>
-                            );
-                        })}
-                    </div>
+                            </div>
+                        );
+                    })}
+                </div>
 
-                    {/* Total Count */}
-                    <div className="mt-12 pt-8 border-t border-mplp-border text-center">
-                        <p className="text-sm text-mplp-text-muted">
-                            {faqData.length} questions covering definitions, boundaries, and AI citation guidance.
-                        </p>
-                    </div>
-                </Container>
-            </section>
+                {/* Total Count */}
+                <div className="mt-12 pt-8 border-t border-mplp-border text-center max-w-4xl mx-auto">
+                    <p className="text-sm text-mplp-text-muted">
+                        {faqData.length} questions covering definitions, boundaries, and AI citation guidance.
+                    </p>
+                </div>
+            </ContentSection>
         </Shell>
     );
 }

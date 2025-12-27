@@ -21,11 +21,11 @@ export function Footer() {
 
                     {/* Links Columns - 3 Column Layout */}
                     <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-8" role="navigation" aria-label="Footer Navigation">
-                        {/* Protocol (T0 + Governance Root) */}
+                        {/* Specification (Anchors #1-4) */}
                         <div>
-                            <h3 className="text-xs font-bold uppercase tracking-widest text-mplp-text mb-6">Protocol</h3>
+                            <h3 className="text-xs font-bold uppercase tracking-widest text-mplp-text mb-6">Specification</h3>
                             <ul className="space-y-4">
-                                {footerLinks.protocol.map((link) => (
+                                {footerLinks.specification.map((link) => (
                                     <li key={link.label}>
                                         <Link
                                             href={link.href}
@@ -38,11 +38,11 @@ export function Footer() {
                             </ul>
                         </div>
 
-                        {/* Specification (T1/T2) */}
+                        {/* Governance & Boundaries (Anchors #5-7) */}
                         <div>
-                            <h3 className="text-xs font-bold uppercase tracking-widest text-mplp-text mb-6">Specification</h3>
+                            <h3 className="text-xs font-bold uppercase tracking-widest text-mplp-text mb-6">Governance</h3>
                             <ul className="space-y-4">
-                                {footerLinks.specification.map((link) => (
+                                {footerLinks.governance.map((link) => (
                                     <li key={link.label}>
                                         <Link
                                             href={link.href}
@@ -57,19 +57,19 @@ export function Footer() {
                             </ul>
                         </div>
 
-                        {/* Community (T3/T4) */}
+                        {/* External Resources */}
                         <div>
-                            <h3 className="text-xs font-bold uppercase tracking-widest text-mplp-text mb-6">Community</h3>
+                            <h3 className="text-xs font-bold uppercase tracking-widest text-mplp-text mb-6">External</h3>
                             <ul className="space-y-4">
-                                {footerLinks.community.map((link) => (
+                                {footerLinks.external.map((link) => (
                                     <li key={link.label}>
                                         <Link
                                             href={link.href}
                                             className="text-mplp-text-muted hover:text-mplp-text text-sm transition-colors"
-                                            target={link.href.startsWith("http") ? "_blank" : undefined}
-                                            rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                         >
-                                            {link.label}{link.href.startsWith("http") && " ↗"}
+                                            {link.label} ↗
                                         </Link>
                                     </li>
                                 ))}

@@ -52,44 +52,36 @@ export function getModuleDocUrl(moduleId: string) {
     return `${DOCS_URLS.home}/docs/modules/${moduleId}-module`;
 }
 
-// Header IA principle:
-// - Logo covers "Home"
-// - Header right-side "Docs" CTA covers getting started
-// - Governance is the primary conversion spine (Docs 鈫?Governance 鈫?Compliance)
+// Navbar: Strict 7 Semantic Anchors ONLY (FROZEN)
+// All other pages are reachable via these anchors
 export const navItems = [
-    { label: "Why", href: "/why-mplp" },
-    { label: "Architecture", href: "/architecture" },
-    { label: "Modules", href: "/modules" },
-    { label: "Golden Flows", href: "/golden-flows" },
-    { label: "Governance", href: "/governance/overview" },
-    { label: "Compliance", href: "/compliance" },
-    { label: "Ecosystem", href: "/ecosystem" },
-    { label: "Blog", href: "/blog" },
+    { label: "Architecture", href: "/architecture" },       // Anchor #1
+    { label: "Modules", href: "/modules" },                 // Anchor #2
+    { label: "Kernel Duties", href: "/kernel-duties" },     // Anchor #3
+    { label: "Golden Flows", href: "/golden-flows" },       // Anchor #4
+    { label: "Governance", href: "/governance/overview" },  // Anchor #5
+    { label: "References", href: "/references" },           // Anchor #6
+    { label: "FAQ", href: "/faq" },                         // Anchor #7
 ];
 
 export const footerLinks = {
-    // Column 1: PROTOCOL (T0 + Governance Root)
-    // Only "semantic constitution" entry points
-    protocol: [
-        { label: "Home", href: "/" },
-        { label: "Governance Overview", href: "/governance/overview" },
-        { label: "Standards Positioning", href: "/standards/positioning" },
-        { label: "What MPLP Is Not", href: "/standards/what-mplp-is-not" },
-    ],
-    // Column 2: SPECIFICATION (T1/T2)
-    // Normative + evaluation entry points
+    // Column 1: SPECIFICATION (Anchors #1-4)
     specification: [
         { label: "Architecture", href: "/architecture" },
         { label: "Modules", href: "/modules" },
+        { label: "Kernel Duties", href: "/kernel-duties" },
         { label: "Golden Flows", href: "/golden-flows" },
+    ],
+    // Column 2: GOVERNANCE & BOUNDARIES (Anchors #5-7)
+    governance: [
+        { label: "Governance", href: "/governance/overview" },
+        { label: "References", href: "/references" },
+        { label: "FAQ", href: "/faq" },
         { label: "Documentation", href: DOCS_URLS.home },
     ],
-    // Column 3: COMMUNITY (T3/T4)
-    // Ecosystem and community entry points
-    community: [
-        { label: "Ecosystem", href: "/ecosystem" },
-        { label: "Blog", href: "/blog" },
-        { label: "GitHub", href: DOCS_URLS.github },
+    // Column 3: EXTERNAL RESOURCES
+    external: [
+        { label: "GitHub Repository", href: DOCS_URLS.github },
         { label: "X (Twitter)", href: siteConfig.links.twitter },
     ],
 };
