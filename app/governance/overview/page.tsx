@@ -208,12 +208,37 @@ export default function GovernanceOverviewPage() {
                             </ul>
                         </div>
 
-                        {/* Future Work */}
+                        {/* Exploration Areas */}
                         <div className="mb-6">
-                            <h4 className="text-sm font-semibold text-mplp-text-muted uppercase tracking-wider mb-3">Future Work (Informative)</h4>
-                            <p className="text-sm text-mplp-text-muted">
-                                Collaboration and learning capabilities may evolve in future versions. No timeline commitments are made. Reference implementations are published via official registries.
-                            </p>
+                            <h4 className="text-sm font-semibold text-mplp-text-muted uppercase tracking-wider mb-3">Exploration Areas (Non-Binding)</h4>
+                            <div className="bg-mplp-blue-soft/5 border border-mplp-blue-soft/20 rounded-lg p-4 mb-4">
+                                <p className="text-xs text-mplp-text-muted italic">
+                                    The following areas are subjects of potential future exploration, subject to community interest and governance approval. No commitments are made.
+                                </p>
+                            </div>
+                            <ul className="space-y-3 text-sm text-mplp-text-muted">
+                                <li className="flex items-start gap-2">
+                                    <span className="text-mplp-blue-soft mt-0.5">→</span>
+                                    <div>
+                                        <span className="font-semibold text-mplp-text block">Multi-Agent Collaboration</span>
+                                        <span className="text-xs opacity-80">Refining negotiation patterns and handoff protocols.</span>
+                                    </div>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-mplp-blue-soft mt-0.5">→</span>
+                                    <div>
+                                        <span className="font-semibold text-mplp-text block">Learning & Optimization</span>
+                                        <span className="text-xs opacity-80">Defining feedback loops and interaction surfaces.</span>
+                                    </div>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-mplp-blue-soft mt-0.5">→</span>
+                                    <div>
+                                        <span className="font-semibold text-mplp-text block">Enterprise Extensions</span>
+                                        <span className="text-xs opacity-80">Formalizing authority chains and auditability standards.</span>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
 
                         {/* Related Pages */}

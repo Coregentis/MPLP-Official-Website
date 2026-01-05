@@ -42,14 +42,15 @@ export default async function FlowDetailPage({ params }: { params: Promise<{ slu
         notFound();
     }
 
-    // DefinedTerm JSON-LD for normative flow
-    const definedTermSchema = {
+    // TechArticle JSON-LD for flow detail (per DGP-27 §6.1: TechArticle allowed with isBasedOn)
+    const flowArticleSchema = {
         "@context": "https://schema.org",
-        "@type": "DefinedTerm",
+        "@type": "TechArticle",
         "name": `${flow.id.toUpperCase()}: ${flow.title}`,
-        "inDefinedTermSet": "MPLP Golden Flows",
-        "description": `Normative execution flow defining ${flow.title.toLowerCase()} in MPLP-conformant runtimes.`,
+        "headline": `MPLP Golden Flow: ${flow.title}`,
+        "description": `Overview of the ${flow.title.toLowerCase()} golden flow in MPLP protocol.`,
         "url": `${siteConfig.url}/golden-flows/${flow.id}`,
+        "isBasedOn": "https://docs.mplp.io/docs/tests/golden-flow-registry",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": `${siteConfig.url}/golden-flows/${flow.id}`
@@ -62,7 +63,7 @@ export default async function FlowDetailPage({ params }: { params: Promise<{ slu
 
     return (
         <Shell>
-            <JsonLd data={definedTermSchema} />
+            <JsonLd data={flowArticleSchema} />
             <ScrollReveal animation="fade-in">
                 <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                     <Breadcrumb items={[

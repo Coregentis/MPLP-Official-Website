@@ -46,7 +46,7 @@ export default function CompliancePage() {
             </div>
             <PageHeader
                 title="Protocol Compliance"
-                subtitle="MPLP compliance defines what it means to be a conformant runtime: schema-valid artifacts, governed execution semantics, and verifiable lifecycle behavior validated by Golden Flows."
+                subtitle="As defined in the MPLP Conformance Model (Governance Artifact), compliance requires verifiable interoperability at the Schema (L1), Governance (L2), and Behavioral (L3) levels."
                 kicker="Standards"
             />
 
@@ -64,15 +64,15 @@ export default function CompliancePage() {
                         <ul className="space-y-4 text-xs text-mplp-text-muted/90 leading-relaxed">
                             <li className="flex items-start gap-3">
                                 <span className="text-mplp-emerald mt-0.5">✓</span>
-                                MUST validate canonical JSON Schemas for MPLP artifacts.
+                                Validates against canonical JSON Schemas.
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-mplp-emerald mt-0.5">✓</span>
-                                MUST support the 10 normative modules as schema-defined.
+                                Supports the 10 normative modules as schema-defined.
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-mplp-emerald mt-0.5">✓</span>
-                                MUST enforce canonical identifiers and protocol invariants.
+                                Enforces canonical identifiers and protocol invariants.
                             </li>
                         </ul>
                     </div>
@@ -89,15 +89,15 @@ export default function CompliancePage() {
                         <ul className="space-y-4 text-xs text-mplp-text-muted/90 leading-relaxed">
                             <li className="flex items-start gap-3">
                                 <span className="text-mplp-emerald mt-0.5">✓</span>
-                                MUST implement Confirm semantics for gated actions.
+                                Implements Confirm semantics for gated actions.
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-mplp-emerald mt-0.5">✓</span>
-                                MUST enforce Role & permission boundaries (RBAC).
+                                Enforces Role & permission boundaries (RBAC).
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-mplp-emerald mt-0.5">✓</span>
-                                MUST emit normative governance signals as events.
+                                Emits normative governance signals as events.
                             </li>
                         </ul>
                     </div>
@@ -114,15 +114,15 @@ export default function CompliancePage() {
                         <ul className="space-y-4 text-xs text-mplp-text-muted/90 leading-relaxed">
                             <li className="flex items-start gap-3">
                                 <span className="text-mplp-emerald mt-0.5">✓</span>
-                                MUST pass Golden Flows 01–05 as normative scenarios.
+                                Passes Golden Flows 01–05 as normative scenarios.
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-mplp-emerald mt-0.5">✓</span>
-                                MUST produce structured, replayable execution traces.
+                                Produces structured, replayable execution traces.
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-mplp-emerald mt-0.5">✓</span>
-                                MUST support <Link href="/governance/positioning/semantic-drift-control" className="text-mplp-text hover:text-mplp-blue-soft underline decoration-mplp-border hover:decoration-mplp-blue-soft underline-offset-2 transition-all">drift detection</Link> and recovery behavior.
+                                Supports <Link href="/governance/positioning/semantic-drift-control" className="text-mplp-text hover:text-mplp-blue-soft underline decoration-mplp-border hover:decoration-mplp-blue-soft underline-offset-2 transition-all">drift detection</Link> and recovery behavior.
                             </li>
                         </ul>
                     </div>

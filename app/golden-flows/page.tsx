@@ -17,7 +17,7 @@ function flowSlug(id: string) {
 
 export const metadata: Metadata = {
     title: "Golden Flows | MPLP Protocol",
-    description: "The five normative integration flows that define protocol compliance for MPLP runtimes.",
+    description: "The five normative integration flows that define protocol compliance for MPLP implementations.",
     alternates: {
         canonical: `${siteConfig.url}/golden-flows`,
     },
@@ -29,7 +29,7 @@ export default function GoldenFlowsPage() {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "name": "MPLP Golden Flows",
-        "description": "The five normative integration flows that define protocol compliance for MPLP runtimes.",
+        "description": "The five normative integration flows that define protocol compliance for MPLP implementations.",
         "about": "Normative integration flows defining MPLP protocol compliance",
         "url": `${siteConfig.url}/golden-flows`,
         "mainEntityOfPage": {
@@ -42,31 +42,31 @@ export default function GoldenFlowsPage() {
         "author": { "@id": `${siteConfig.url}#mpgc` },
         "hasPart": [
             {
-                "@type": "DefinedTerm",
+                "@type": "ListItem",
                 "name": "Flow-01: Intent to Plan Transition",
                 "url": `${siteConfig.url}/golden-flows/flow-01`,
                 "@id": `${siteConfig.url}/golden-flows/flow-01`
             },
             {
-                "@type": "DefinedTerm",
+                "@type": "ListItem",
                 "name": "Flow-02: Governed Execution",
                 "url": `${siteConfig.url}/golden-flows/flow-02`,
                 "@id": `${siteConfig.url}/golden-flows/flow-02`
             },
             {
-                "@type": "DefinedTerm",
+                "@type": "ListItem",
                 "name": "Flow-03: Multi-Agent Coordination Loop",
                 "url": `${siteConfig.url}/golden-flows/flow-03`,
                 "@id": `${siteConfig.url}/golden-flows/flow-03`
             },
             {
-                "@type": "DefinedTerm",
+                "@type": "ListItem",
                 "name": "Flow-04: Drift Detection & Recovery",
                 "url": `${siteConfig.url}/golden-flows/flow-04`,
                 "@id": `${siteConfig.url}/golden-flows/flow-04`
             },
             {
-                "@type": "DefinedTerm",
+                "@type": "ListItem",
                 "name": "Flow-05: Runtime Integration & External I/O",
                 "url": `${siteConfig.url}/golden-flows/flow-05`,
                 "@id": `${siteConfig.url}/golden-flows/flow-05`
@@ -88,9 +88,14 @@ export default function GoldenFlowsPage() {
 
             {/* Normative Assertion */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-12">
-                <p className="text-center text-mplp-warning font-medium text-sm border border-mplp-warning/20 bg-mplp-warning/5 rounded-xl py-3 px-6">
-                    Any runtime claiming MPLP compliance MUST satisfy all Golden Flows.
-                </p>
+                <div className="text-center text-mplp-text-muted font-medium text-sm border border-mplp-border bg-slate-950/50 rounded-xl py-4 px-6">
+                    <p className="mb-2">
+                        Golden Flows are formally defined in the <strong>MPLP Protocol Specification</strong>.
+                    </p>
+                    <p className="text-xs text-mplp-text-muted/70">
+                        See: <code className="bg-slate-900 px-1 py-0.5 rounded">governance/CONFORMANCE_MODEL.md</code> for normative requirements.
+                    </p>
+                </div>
             </div>
 
             <ContentSection>
@@ -151,7 +156,7 @@ export default function GoldenFlowsPage() {
                         They are not examples, tutorials, or best practices.
                     </p>
                     <p className="text-mplp-text font-medium">
-                        Any runtime, framework, or tool claiming MPLP compatibility MUST successfully execute all Golden Flows without violation.
+                        Runtimes claiming MPLP compatibility are expected to satisfy all Golden Flows as defined in the specification.
                     </p>
                     <div className="pt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
                         <Link
