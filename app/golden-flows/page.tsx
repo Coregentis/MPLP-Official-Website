@@ -1,14 +1,13 @@
 import Link from "next/link";
-import { Shell } from "@/components/layout/shell";
-import { PageHeader } from "@/components/layout/page-header";
+import { StandardPage } from "@/components/layout/standard-page";
 import { ContentSection } from "@/components/ui/content-section";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Button } from "@/components/ui/button";
 import { flows } from "@/lib/content/flows";
 import type { Metadata } from "next";
-import { Breadcrumb } from "@/components/ui/breadcrumb";
-import { JsonLd } from "@/components/seo/json-ld";
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, DOCS_URLS, REPO_URLS } from "@/lib/site-config";
+import { CanonicalReferences } from "@/components/ui/canonical-references";
+import { NextSteps } from "@/components/ui/next-steps";
 
 function flowSlug(id: string) {
     // Keep routing consistent across site (Flow-01 -> flow-01)
@@ -75,17 +74,13 @@ export default function GoldenFlowsPage() {
     };
 
     return (
-        <Shell>
-            <JsonLd data={collectionSchema} />
-            <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-                <Breadcrumb items={[{ label: "Golden Flows", href: "/golden-flows" }]} />
-            </div>
-            <PageHeader
-                title="Golden Flows"
-                subtitle="The 5 normative integration scenarios that every MPLP-conformant runtime is expected to pass. These flows serve as the 'integration tests' for the protocol."
-                kicker="Validation"
-            />
-
+        <StandardPage
+            title="Golden Flows"
+            subtitle="The 5 normative integration scenarios that every MPLP-conformant runtime is expected to pass. These flows serve as the 'integration tests' for the protocol."
+            kicker="Validation"
+            breadcrumbs={[{ label: "Golden Flows", href: "/golden-flows" }]}
+            jsonLd={collectionSchema}
+        >
             {/* Normative Assertion */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-12">
                 <div className="text-center text-mplp-text-muted font-medium text-sm border border-mplp-border bg-slate-950/50 rounded-xl py-4 px-6">
@@ -156,7 +151,7 @@ export default function GoldenFlowsPage() {
                         They are not examples, tutorials, or best practices.
                     </p>
                     <p className="text-mplp-text font-medium">
-                        Runtimes claiming MPLP compatibility are expected to satisfy all Golden Flows as defined in the specification.
+                        Implementations may be evaluated against Golden Flows as described in the specification.
                     </p>
                     <div className="pt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
                         <Link
@@ -174,6 +169,22 @@ export default function GoldenFlowsPage() {
                     </div>
                 </div>
             </ContentSection>
-        </Shell>
+
+            {/* Authority Chain */}
+            <ContentSection>
+                <div className="max-w-4xl mx-auto">
+                    <CanonicalReferences
+                        docsUrl={DOCS_URLS.goldenFlows}
+                        repoUrl={REPO_URLS.tests}
+                        variant="full"
+                    />
+                    <NextSteps
+                        docsKey="goldenFlows"
+                        repoKey="tests"
+                        evidenceKey="conformance"
+                    />
+                </div>
+            </ContentSection>
+        </StandardPage>
     );
 }

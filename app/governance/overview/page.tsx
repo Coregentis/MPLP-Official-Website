@@ -7,9 +7,11 @@ import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { JsonLd } from "@/components/seo/json-ld";
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, DOCS_URLS, REPO_URLS } from "@/lib/site-config";
 import { GovernanceNav } from "@/components/governance/governance-nav";
 import Link from "next/link";
+import { CanonicalReferences } from "@/components/ui/canonical-references";
+import { NextSteps } from "@/components/ui/next-steps";
 
 export const metadata: Metadata = {
     title: "Governance Overview | MPLP Protocol",
@@ -169,7 +171,7 @@ export default function GovernanceOverviewPage() {
                             </div>
                         </div>
                         <div className="mt-10">
-                            <Button href="https://github.com/Coregentis/MPLP-Protocol/issues" external>View RFC Proposals</Button>
+                            <Button href={`${REPO_URLS.root}/issues`} external>View RFC Proposals</Button>
                         </div>
                     </div>
 
@@ -244,7 +246,7 @@ export default function GovernanceOverviewPage() {
                         {/* Related Pages */}
                         <div className="pt-4 border-t border-mplp-border flex flex-wrap gap-4 text-sm text-mplp-text-muted">
                             <Link href="/governance/evidence-chain" className="hover:text-mplp-blue-soft transition-colors">Evidence Chain →</Link>
-                            <Link href="/compliance" className="hover:text-mplp-blue-soft transition-colors">Compliance →</Link>
+                            <Link href="/compliance" className="hover:text-mplp-blue-soft transition-colors">Conformance Model →</Link>
                             <Link href="/golden-flows" className="hover:text-mplp-blue-soft transition-colors">Golden Flows →</Link>
                         </div>
 
@@ -263,6 +265,22 @@ export default function GovernanceOverviewPage() {
             {/* Navigation */}
             <ContentSection>
                 <GovernanceNav current="/governance/overview" />
+            </ContentSection>
+
+            {/* Authority Chain */}
+            <ContentSection>
+                <div className="max-w-4xl mx-auto">
+                    <CanonicalReferences
+                        docsUrl={DOCS_URLS.governance}
+                        repoUrl={REPO_URLS.governance}
+                        variant="full"
+                    />
+                    <NextSteps
+                        docsKey="governance"
+                        repoKey="governance"
+                        evidenceKey="goldenFlows"
+                    />
+                </div>
             </ContentSection>
         </Shell>
     );

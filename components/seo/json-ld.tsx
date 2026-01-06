@@ -1,4 +1,4 @@
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, DOCS_URLS, REPO_URLS } from "@/lib/site-config";
 
 type JsonLdProps = {
     data: Record<string, unknown>;
@@ -24,26 +24,30 @@ export function generateProtocolSchema() {
                 "@id": `${siteConfig.url}#website`,
                 "url": siteConfig.url,
                 "name": "MPLP Protocol",
-                "description": "MPLP is the lifecycle protocol for AI agent systems — the Agent OS Protocol.",
+                "description": "Discovery and positioning for the MPLP protocol. Normative definitions live at docs.mplp.io.",
                 "publisher": { "@id": `${siteConfig.url}#mpgc` }
             },
             {
                 "@type": "Organization",
                 "@id": `${siteConfig.url}#mpgc`,
-                "name": "MPLP Protocol Governance Committee",
-                "url": `${siteConfig.url}/governance`,
+                "name": "MPLP Protocol Governance Committee (MPGC)",
+                "url": `${siteConfig.url}/governance/overview`,
                 "logo": {
                     "@type": "ImageObject",
                     "url": `${siteConfig.url}/brand/mplp-icon-only-transparent.png`
-                }
+                },
+                "sameAs": [
+                    DOCS_URLS.home,
+                    REPO_URLS.root
+                ]
             },
             {
-                "@type": ["Specification", "TechArticle"],
+                "@type": ["TechArticle"],
                 "@id": `${siteConfig.url}#protocol`,
                 "name": "Multi-Agent Lifecycle Protocol",
                 "alternateName": "MPLP",
                 "headline": "MPLP — The Agent OS Protocol",
-                "description": "MPLP is the lifecycle protocol for AI agent systems — the Agent OS Protocol that defines how agents are created, operated, audited, and decommissioned.",
+                "description": "A lifecycle governance protocol for AI agent systems. The specification describes how agents are created, operated, audited, and decommissioned.",
                 "about": [
                     { "@type": "DefinedTerm", "name": "Lifecycle Protocol" },
                     { "@type": "DefinedTerm", "name": "Agent OS Protocol" }

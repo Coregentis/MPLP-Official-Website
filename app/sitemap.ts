@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Static pages
     const staticPages = [
         "",
+        "/definition",  // WG-05: Canonical anchor page for SEO/AI discoverability
         "/why-mplp",
         "/architecture",
         "/modules",
@@ -25,9 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/governance/governed-stack",
         "/governance/iso-iec-42001",
         "/governance/nist-ai-rmf",
-        "/compliance",
-        "/adoption",
-        "/enterprise",
+        "/conformance",
+        // Removed: /adoption, /enterprise (redirect-only, avoid SEO confusion)
         "/standards/positioning",
         "/standards/regulatory-positioning",
         "/standards/protocol-evaluation",
@@ -38,9 +38,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/blog",
     ].map((route) => ({
         url: `${baseUrl}${route}`,
-        lastModified: new Date(),
+        lastModified: new Date("2026-01-06"),  // Freeze date for consistent crawling
         changeFrequency: "weekly" as const,
-        priority: route === "" ? 1 : 0.8,
+        priority: route === "" ? 1 : (route === "/definition" ? 0.95 : 0.8),  // Anchor page high priority
     }));
 
     // Module Detail Pages

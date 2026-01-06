@@ -66,6 +66,7 @@ export default function AdoptionPage() {
                     eyebrow="Signal 1"
                     title="Protocol Specification"
                     description="The normative protocol specification has reached a stable, governed state."
+                    align="center"
                 />
                 <div className="mt-8 grid gap-6 md:grid-cols-3">
                     <div className="mplp-card p-6">
@@ -101,6 +102,7 @@ export default function AdoptionPage() {
                     eyebrow="Signal 2"
                     title="Reference Implementations"
                     description="Official SDKs are published to standard package registries."
+                    align="center"
                 />
                 <div className="mt-8 grid gap-6 md:grid-cols-2">
                     <div className="mplp-card p-6">
@@ -147,6 +149,7 @@ export default function AdoptionPage() {
                     eyebrow="Signal 3"
                     title="Conformance Framework"
                     description="Normative test flows and compliance levels are defined and published."
+                    align="center"
                 />
                 <div className="mt-8 grid gap-6 md:grid-cols-2">
                     <div className="mplp-card p-6">
@@ -185,6 +188,7 @@ export default function AdoptionPage() {
                     eyebrow="Signal 4"
                     title="Standards Alignment"
                     description="Reference mappings to external governance frameworks are documented. All standard references follow MPLP&apos;s Mapping / Compatibility / Enablement model."
+                    align="center"
                 />
                 <div className="mt-4 mb-8">
                     <Link href="/standards/positioning" className="text-sm text-mplp-blue-soft hover:text-mplp-blue-light transition-colors">

@@ -54,6 +54,7 @@ export default function AgentOSProtocolPage() {
                     eyebrow="Core Distinction"
                     title="Protocol-level OS vs Runtime OS"
                     description="MPLP operates at the protocol level, not the runtime level. This distinction is fundamental to understanding its role in the agent ecosystem."
+                    align="center"
                 />
                 <div className="mt-8 grid gap-8 lg:grid-cols-2">
                     <div className="mplp-card p-8">
@@ -119,6 +120,7 @@ export default function AgentOSProtocolPage() {
                     eyebrow="Structural Relationship"
                     title="Protocol–Runtime Layering Relationship"
                     description="MPLP is a protocol-level semantic substrate that operates beneath agent runtimes and operating systems, defining lifecycle governance rather than execution behavior."
+                    align="center"
                 />
                 <div className="mt-8 max-w-3xl mx-auto">
                     {/* Dependency Stack */}

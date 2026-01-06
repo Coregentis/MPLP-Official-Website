@@ -10,21 +10,21 @@ const runtimeComponents = [
         name: "Agent Execution Loop",
         description: "The main execution loop that schedules and coordinates lifecycle phases. Handles task dispatch, phase transitions, and event emission.",
         color: "border-l-mplp-blue",
-        href: "https://docs.mplp.io/docs/runtime/ael",
+        href: DOCS_URLS.ael,
     },
     {
         abbr: "VSL",
         name: "Value & State Layer",
         description: "Manages decisions, rewards, and critical state. Provides persistence, versioning, and conflict resolution for agent state.",
         color: "border-l-mplp-accent",
-        href: "https://docs.mplp.io/docs/runtime/vsl",
+        href: DOCS_URLS.vsl,
     },
     {
         abbr: "PSG",
         name: "Project Semantic Graph",
         description: "The unified graph of Context, Plan, Confirm, Trace, and all module states. The single source of truth for the entire agent system.",
         color: "border-l-orange-500",
-        href: "https://docs.mplp.io/docs/runtime/psg",
+        href: DOCS_URLS.psg,
     },
 ];
 

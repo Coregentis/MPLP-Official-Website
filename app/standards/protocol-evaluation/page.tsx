@@ -64,6 +64,7 @@ export default function ProtocolEvaluationPage() {
                     <SectionHeader
                         eyebrow="Section 1"
                         title="Evaluation Philosophy"
+                        align="center"
                     />
                     <div className="mt-8 prose prose-invert max-w-none">
                         <p className="text-mplp-text-muted leading-relaxed">
@@ -87,6 +88,7 @@ export default function ProtocolEvaluationPage() {
                     <SectionHeader
                         eyebrow="Section 2"
                         title="Core Invariants"
+                        align="center"
                     />
                     <div className="mt-8 space-y-6">
                         {/* INV-04 */}
@@ -113,6 +115,7 @@ export default function ProtocolEvaluationPage() {
                     <SectionHeader
                         eyebrow="Mandatory Notice"
                         title="Important Disclaimer"
+                        align="center"
                     />
                     <div className="mt-8">
                         <div className="rounded-2xl border-2 border-mplp-warning/50 bg-mplp-warning/5 p-6">
@@ -131,6 +134,7 @@ export default function ProtocolEvaluationPage() {
                     <SectionHeader
                         eyebrow="Section 3"
                         title="Golden Flows: The Verification Standard"
+                        align="center"
                     />
                     <div className="mt-8">
                         <p className="text-mplp-text-muted leading-relaxed mb-6">
@@ -168,6 +172,7 @@ export default function ProtocolEvaluationPage() {
                     <SectionHeader
                         eyebrow="Section 4"
                         title="Evaluation Resources"
+                        align="center"
                     />
                     <div className="mt-8 grid gap-4 md:grid-cols-2">
                         <Link href="/golden-flows" className="mplp-card p-6 hover:border-mplp-blue-soft/30 transition-all group">

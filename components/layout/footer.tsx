@@ -11,25 +11,26 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
                     {/* Brand Column */}
                     <div className="md:col-span-4">
-                        <Link href="/" className="mb-6 inline-block" aria-label="MPLP Home">
-                            <Logo className="h-8 w-auto" />
+                        <Link href="/" className="mb-4 inline-block" aria-label="MPLP Home">
+                            <Logo className="h-7 w-auto" />
                         </Link>
-                        <p className="text-mplp-text-muted text-sm leading-relaxed max-w-xs">
-                            The Multi-Agent Lifecycle Protocol (MPLP) is a vendor-neutral standard for governing autonomous agent lifecycles.
+                        <p className="text-mplp-text-muted text-sm leading-relaxed max-w-xs font-normal">
+                            Multi-Agent Lifecycle Protocol (MPLP).<br />
+                            A vendor-neutral standard for governing autonomous agent lifecycles.
                         </p>
                     </div>
 
-                    {/* Links Columns - 3 Column Layout */}
+                    {/* Links Columns - High Density / Technical */}
                     <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-8" role="navigation" aria-label="Footer Navigation">
                         {/* Specification (Anchors #1-4) */}
                         <div>
-                            <h3 className="text-xs font-bold uppercase tracking-widest text-mplp-text mb-6">Specification</h3>
-                            <ul className="space-y-4">
+                            <h3 className="text-xs font-bold uppercase tracking-wider text-mplp-text mb-4 border-b border-mplp-border/50 pb-2">Specification</h3>
+                            <ul className="space-y-2">
                                 {footerLinks.specification.map((link) => (
                                     <li key={link.label}>
                                         <Link
                                             href={link.href}
-                                            className="text-mplp-text-muted hover:text-mplp-text text-sm transition-colors"
+                                            className="text-mplp-text-muted hover:text-mplp-blue-light text-[13px] transition-colors font-medium block py-0.5"
                                         >
                                             {link.label}
                                         </Link>
@@ -38,15 +39,15 @@ export function Footer() {
                             </ul>
                         </div>
 
-                        {/* Governance & Boundaries (Anchors #5-7) */}
+                        {/* Governance (Anchors #5-7) */}
                         <div>
-                            <h3 className="text-xs font-bold uppercase tracking-widest text-mplp-text mb-6">Governance</h3>
-                            <ul className="space-y-4">
+                            <h3 className="text-xs font-bold uppercase tracking-wider text-mplp-text mb-4 border-b border-mplp-border/50 pb-2">Governance</h3>
+                            <ul className="space-y-2">
                                 {footerLinks.governance.map((link) => (
                                     <li key={link.label}>
                                         <Link
                                             href={link.href}
-                                            className="text-mplp-text-muted hover:text-mplp-text text-sm transition-colors"
+                                            className="text-mplp-text-muted hover:text-mplp-blue-light text-[13px] transition-colors font-medium block py-0.5"
                                             target={link.href.startsWith("http") ? "_blank" : undefined}
                                             rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                                         >
@@ -57,15 +58,15 @@ export function Footer() {
                             </ul>
                         </div>
 
-                        {/* External Resources */}
+                        {/* External / Community */}
                         <div>
-                            <h3 className="text-xs font-bold uppercase tracking-widest text-mplp-text mb-6">External</h3>
-                            <ul className="space-y-4">
+                            <h3 className="text-xs font-bold uppercase tracking-wider text-mplp-text mb-4 border-b border-mplp-border/50 pb-2">Community</h3>
+                            <ul className="space-y-2">
                                 {footerLinks.external.map((link) => (
                                     <li key={link.label}>
                                         <Link
                                             href={link.href}
-                                            className="text-mplp-text-muted hover:text-mplp-text text-sm transition-colors"
+                                            className="text-mplp-text-muted hover:text-mplp-blue-light text-[13px] transition-colors font-medium block py-0.5"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >

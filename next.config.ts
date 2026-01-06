@@ -49,6 +49,12 @@ const nextConfig: NextConfig = {
         destination: '/governance/overview',
         permanent: true,
       },
+      // WG-05: Compliance → Conformance (terminology governance rename)
+      {
+        source: '/compliance',
+        destination: '/conformance',
+        permanent: true,
+      },
     ];
   },
   async headers() {

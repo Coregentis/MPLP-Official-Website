@@ -127,8 +127,9 @@ export default function IsoIec42001Page() {
                     eyebrow="Scope"
                     title="Alignment Scope"
                     description="This reference covers selected governance-relevant themes of ISO/IEC 42001 where MPLP protocol mechanisms may provide structural support. This is not an exhaustive mapping."
+                    align="center"
                 />
-                <div className="mt-8 max-w-3xl">
+                <div className="mt-8 max-w-3xl mx-auto">
                     <div className="mplp-card p-6">
                         <h3 className="font-semibold text-mplp-text mb-3">What This Covers</h3>
                         <ul className="space-y-2 text-mplp-text-muted text-sm">

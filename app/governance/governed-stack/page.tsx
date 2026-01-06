@@ -60,8 +60,9 @@ export default function GovernedStackPage() {
                     eyebrow="Core Principle"
                     title="Governed Objects, Not Competitors"
                     description="MPLP is a protocol-layer governance shell: it defines what systems must prove (intent → authorization → evidence), not how they should be implemented."
+                    align="center"
                 />
-                <div className="mt-8 max-w-4xl">
+                <div className="mt-8 max-w-4xl mx-auto">
                     <div className="rounded-3xl border border-mplp-blue-soft/30 bg-gradient-to-r from-mplp-blue-soft/5 via-mplp-dark to-mplp-indigo/5 p-8">
                         <p className="text-lg text-mplp-text-muted leading-relaxed">
                             Modern agent stacks are assembled from multiple layers: orchestration frameworks, tool
@@ -113,6 +114,7 @@ export default function GovernedStackPage() {
                     eyebrow="Architecture"
                     title="Compliance as a Kernel Responsibility"
                     description="In MPLP, compliance is not implemented as an external plugin or optional middleware. It is a kernel-level responsibility enforced through protocol-defined lifecycle duties."
+                    align="center"
                 />
                 <div className="mt-8 max-w-4xl mx-auto">
                     <div className="grid gap-8 md:grid-cols-2">

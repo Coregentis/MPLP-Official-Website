@@ -55,6 +55,7 @@ export default function StandardsPositioningPage() {
                     <SectionHeader
                         eyebrow="Section 1"
                         title="Purpose of This Page"
+                        align="center"
                     />
                     <div className="mt-8 prose prose-invert max-w-none">
                         <p className="text-mplp-text-muted leading-relaxed">
@@ -83,6 +84,7 @@ export default function StandardsPositioningPage() {
                     <SectionHeader
                         eyebrow="Section 2"
                         title="Core Positioning (Normative Statement)"
+                        align="center"
                     />
                     <div className="mt-8">
                         <div className="rounded-2xl border-2 border-mplp-blue-soft/30 bg-mplp-blue-soft/5 p-8">
@@ -105,6 +107,7 @@ export default function StandardsPositioningPage() {
                         eyebrow="Section 3"
                         title="Relationship Types"
                         description="To avoid ambiguity, MPLP explicitly distinguishes three different relationship types. All references to standards throughout the MPLP website and documentation follow this classification."
+                        align="center"
                     />
 
                     {/* 3.1 Mapping */}
@@ -289,6 +292,7 @@ export default function StandardsPositioningPage() {
                     <SectionHeader
                         eyebrow="Section 4"
                         title="Usage Boundaries (Mandatory Reading)"
+                        align="center"
                     />
                     <div className="mt-8">
                         <div className="rounded-2xl border-2 border-mplp-warning/50 bg-mplp-warning/5 p-8">
@@ -326,6 +330,7 @@ export default function StandardsPositioningPage() {
                     <SectionHeader
                         eyebrow="Section 5"
                         title="Why This Positioning Matters"
+                        align="center"
                     />
                     <div className="mt-8">
                         <p className="text-mplp-text-muted leading-relaxed">
@@ -368,6 +373,7 @@ export default function StandardsPositioningPage() {
                     <SectionHeader
                         eyebrow="Section 6"
                         title="Future References"
+                        align="center"
                     />
                     <div className="mt-8">
                         <p className="text-mplp-text-muted leading-relaxed">
@@ -386,6 +392,7 @@ export default function StandardsPositioningPage() {
                     <SectionHeader
                         eyebrow="Related"
                         title="Related Positioning Pages"
+                        align="center"
                     />
                     <div className="mt-8 grid gap-4 md:grid-cols-3">
                         <Link href="/standards/regulatory-positioning" className="mplp-card p-4 hover:border-mplp-blue-soft/30 transition-all">

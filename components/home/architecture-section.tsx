@@ -23,7 +23,7 @@ export function ArchitectureSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 mb-12">
                     {/* L1: Core Protocol (Large Card) */}
                     <Link
-                        href="https://docs.mplp.io/docs/architecture/l1-core-protocol"
+                        href={DOCS_URLS.l1CoreProtocol}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="lg:col-span-8 bg-glass rounded-2xl p-8 border border-blue-500/20 hover:border-blue-500/50 transition-all group relative overflow-hidden block"
@@ -50,7 +50,7 @@ export function ArchitectureSection() {
 
                     {/* L2: Coordination (Tall Card) */}
                     <Link
-                        href="https://docs.mplp.io/docs/modules/module-interactions"
+                        href={DOCS_URLS.moduleInteractions}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="lg:col-span-4 row-span-2 bg-glass rounded-2xl p-8 border border-purple-500/20 hover:border-purple-500/50 transition-all group relative overflow-hidden block"
@@ -77,7 +77,7 @@ export function ArchitectureSection() {
 
                     {/* L3: Runtime Glue (Medium Card) */}
                     <Link
-                        href="https://docs.mplp.io/docs/runtime/runtime-glue-overview"
+                        href={DOCS_URLS.runtimeOverview}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="lg:col-span-4 bg-glass rounded-2xl p-8 border border-cyan-500/20 hover:border-cyan-500/50 transition-all group relative overflow-hidden block"
@@ -96,7 +96,7 @@ export function ArchitectureSection() {
 
                     {/* L4: Integration (Medium Card) */}
                     <Link
-                        href="https://docs.mplp.io/docs/architecture/l4-integration-infra"
+                        href={DOCS_URLS.l4IntegrationInfra}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="lg:col-span-4 bg-glass rounded-2xl p-8 border border-emerald-500/20 hover:border-emerald-500/50 transition-all group relative overflow-hidden block"

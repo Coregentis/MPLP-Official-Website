@@ -16,21 +16,21 @@ const features = [
         name: "Core Modules",
         description: "Essential capabilities every conformant agent must support.",
         modules: ["Task Execution", "State Management", "Communication"],
-        href: "https://docs.mplp.io/docs/modules/module-interactions",
+        href: DOCS_URLS.moduleInteractions,
     },
     {
         layer: "L3",
         name: "Optional Modules",
         description: "Extended capabilities for advanced use cases.",
         modules: ["Memory", "Tool Use", "Coordination", "Planning"],
-        href: "https://docs.mplp.io/docs/modules/module-interactions",
+        href: DOCS_URLS.moduleInteractions,
     },
     {
         layer: "L4",
         name: "Extensions",
         description: "Domain-specific and vendor extensions.",
         modules: ["Custom Profiles", "Runtime Adapters", "Telemetry Exporters"],
-        href: "https://docs.mplp.io/docs/architecture/l4-integration-infra",
+        href: DOCS_URLS.l4IntegrationInfra,
     },
 ];
 

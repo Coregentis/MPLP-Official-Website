@@ -1,34 +1,33 @@
-import { Shell } from "@/components/layout/shell";
-import { PageHeader } from "@/components/layout/page-header";
+import { StandardPage } from "@/components/layout/standard-page";
 import { ContentSection } from "@/components/ui/content-section";
 import { Button } from "@/components/ui/button";
-import { Breadcrumb } from "@/components/ui/breadcrumb";
-import { BackToAnchor } from "@/components/ui/back-to-anchor";
 import type { Metadata } from "next";
-import { JsonLd } from "@/components/seo/json-ld";
 import Link from "next/link";
 import { IconArrowRight } from "@/components/ui/icons";
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, DOCS_URLS, REPO_URLS } from "@/lib/site-config";
+import { NonCertificationNotice } from "@/components/notices";
+import { CanonicalReferences } from "@/components/ui/canonical-references";
+import { NextSteps } from "@/components/ui/next-steps";
 
 export const metadata: Metadata = {
-    title: "Protocol Compliance | MPLP Standard",
-    description: "MPLP compliance defines schema-valid artifacts, governed execution semantics, and verifiable lifecycle behavior validated by Golden Flows.",
+    title: "Conformance Model (Informative) | MPLP Standard",
+    description: "The MPLP specification describes a three-level conformance model for interoperability. See docs for normative definitions.",
     alternates: {
-        canonical: `${siteConfig.url}/compliance`,
+        canonical: `${siteConfig.url}/conformance`,
     },
 };
 
-export default function CompliancePage() {
-    // TechArticle JSON-LD for Compliance page
+export default function ConformancePage() {
+    // TechArticle JSON-LD for Conformance page
     const techArticleSchema = {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "Protocol Compliance | MPLP Standard",
-        "about": "MPLP compliance levels and verification requirements",
-        "url": `${siteConfig.url}/compliance`,
+        "headline": "Conformance Model (Informative) | MPLP Standard",
+        "about": "MPLP conformance model overview (informational)",
+        "url": `${siteConfig.url}/conformance`,
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `${siteConfig.url}/compliance`
+            "@id": `${siteConfig.url}/conformance`
         },
         "isPartOf": { "@id": `${siteConfig.url}#website` },
         "publisher": { "@id": `${siteConfig.url}#mpgc` },
@@ -36,21 +35,21 @@ export default function CompliancePage() {
     };
 
     return (
-        <Shell>
-            <JsonLd data={techArticleSchema} />
-            <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-                <BackToAnchor href="/governance/overview" label="Governance" />
-                <Breadcrumb items={[
-                    { label: "Compliance", href: "/compliance" }
-                ]} />
-            </div>
-            <PageHeader
-                title="Protocol Compliance"
-                subtitle="As defined in the MPLP Conformance Model (Governance Artifact), compliance requires verifiable interoperability at the Schema (L1), Governance (L2), and Behavioral (L3) levels."
-                kicker="Standards"
-            />
-
+        <StandardPage
+            title="Conformance Model (Informative)"
+            subtitle="The MPLP specification describes a three-level conformance model covering Schema (L1), Governance (L2), and Behavioral (L3) interoperability. See docs for normative requirements."
+            kicker="Standards"
+            breadcrumbs={[{ label: "Conformance", href: "/conformance" }]}
+            jsonLd={techArticleSchema}
+            backTo={{ href: "/governance/overview", label: "Governance" }}
+        >
             <ContentSection>
+                <NonCertificationNotice />
+                {/* Informational overview only - see docs for normative requirements */}
+                <p className="text-xs text-mplp-text-muted mb-6 text-center italic">
+                    The following is an informational summary of the conformance model.
+                    For normative requirements, see <a href={DOCS_URLS.home} target="_blank" rel="noopener noreferrer" className="text-mplp-blue-soft hover:underline">docs.mplp.io</a>.
+                </p>
                 <div className="grid gap-6 lg:grid-cols-3">
                     {/* Level 1 */}
                     <div className="mplp-card bg-slate-950/40 p-8">
@@ -63,16 +62,16 @@ export default function CompliancePage() {
                         </div>
                         <ul className="space-y-4 text-xs text-mplp-text-muted/90 leading-relaxed">
                             <li className="flex items-start gap-3">
-                                <span className="text-mplp-emerald mt-0.5">✓</span>
-                                Validates against canonical JSON Schemas.
+                                <span className="text-mplp-text-muted mt-0.5">→</span>
+                                Schema alignment with JSON Schema definitions
                             </li>
                             <li className="flex items-start gap-3">
-                                <span className="text-mplp-emerald mt-0.5">✓</span>
-                                Supports the 10 normative modules as schema-defined.
+                                <span className="text-mplp-text-muted mt-0.5">→</span>
+                                Coverage of the 10 protocol modules
                             </li>
                             <li className="flex items-start gap-3">
-                                <span className="text-mplp-emerald mt-0.5">✓</span>
-                                Enforces canonical identifiers and protocol invariants.
+                                <span className="text-mplp-text-muted mt-0.5">→</span>
+                                Identifier and invariant consistency
                             </li>
                         </ul>
                     </div>
@@ -88,16 +87,16 @@ export default function CompliancePage() {
                         </div>
                         <ul className="space-y-4 text-xs text-mplp-text-muted/90 leading-relaxed">
                             <li className="flex items-start gap-3">
-                                <span className="text-mplp-emerald mt-0.5">✓</span>
-                                Implements Confirm semantics for gated actions.
+                                <span className="text-mplp-text-muted mt-0.5">→</span>
+                                Confirm semantics for gated actions
                             </li>
                             <li className="flex items-start gap-3">
-                                <span className="text-mplp-emerald mt-0.5">✓</span>
-                                Enforces Role & permission boundaries (RBAC).
+                                <span className="text-mplp-text-muted mt-0.5">→</span>
+                                Role and permission boundary patterns
                             </li>
                             <li className="flex items-start gap-3">
-                                <span className="text-mplp-emerald mt-0.5">✓</span>
-                                Emits normative governance signals as events.
+                                <span className="text-mplp-text-muted mt-0.5">→</span>
+                                Governance signal emission patterns
                             </li>
                         </ul>
                     </div>
@@ -113,16 +112,16 @@ export default function CompliancePage() {
                         </div>
                         <ul className="space-y-4 text-xs text-mplp-text-muted/90 leading-relaxed">
                             <li className="flex items-start gap-3">
-                                <span className="text-mplp-emerald mt-0.5">✓</span>
-                                Passes Golden Flows 01–05 as normative scenarios.
+                                <span className="text-mplp-text-muted mt-0.5">→</span>
+                                Golden Flows 01–05 as verification scenarios
                             </li>
                             <li className="flex items-start gap-3">
-                                <span className="text-mplp-emerald mt-0.5">✓</span>
-                                Produces structured, replayable execution traces.
+                                <span className="text-mplp-text-muted mt-0.5">→</span>
+                                Structured, replayable execution traces
                             </li>
                             <li className="flex items-start gap-3">
-                                <span className="text-mplp-emerald mt-0.5">✓</span>
-                                Supports <Link href="/governance/positioning/semantic-drift-control" className="text-mplp-text hover:text-mplp-blue-soft underline decoration-mplp-border hover:decoration-mplp-blue-soft underline-offset-2 transition-all">drift detection</Link> and recovery behavior.
+                                <span className="text-mplp-text-muted mt-0.5">→</span>
+                                <Link href="/governance/positioning/semantic-drift-control" className="text-mplp-text hover:text-mplp-blue-soft underline decoration-mplp-border hover:decoration-mplp-blue-soft underline-offset-2 transition-all">Drift detection</Link> and recovery patterns
                             </li>
                         </ul>
                     </div>
@@ -131,13 +130,14 @@ export default function CompliancePage() {
 
             <ContentSection>
                 <div className="rounded-3xl border border-mplp-border bg-slate-950 p-8 lg:p-12 text-center">
-                    <h2 className="text-3xl font-bold text-mplp-text mb-4">Ready to Verify?</h2>
+                    <h2 className="text-3xl font-bold text-mplp-text mb-4">Explore Verification Evidence</h2>
                     <p className="text-mplp-text-muted text-lg max-w-2xl mx-auto mb-8">
-                        Run the MPLP Golden Test Suite to generate a compliance report that is reproducible, auditable, evidence-grade, and comparable across runtimes.
+                        The documentation describes Golden Flows as protocol-level verification scenarios for assessing conformance.
+                        Evidence generation and evaluation are described in the docs.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Button href="https://docs.mplp.io/docs/tests/golden-test-suite-overview" variant="primary" size="lg" external>
-                            Run Test Suite
+                        <Button href={DOCS_URLS.testsOverview} variant="primary" size="lg" external>
+                            Explore in Documentation
                         </Button>
                         <Button href="/golden-flows" variant="secondary" size="lg">
                             View Golden Flows
@@ -165,9 +165,9 @@ export default function CompliancePage() {
             {/* Quick Links */}
             <ContentSection>
                 <div className="flex flex-wrap justify-center gap-8 text-sm">
-                    <Link href="https://docs.mplp.io/docs/guides/mplp-v1.0-compliance-checklist" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-mplp-text-muted hover:text-mplp-blue-light transition-colors">
+                    <Link href={`${DOCS_URLS.guides}/mplp-v1.0-compliance-checklist`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-mplp-text-muted hover:text-mplp-blue-light transition-colors">
                         <IconArrowRight className="h-4 w-4 text-mplp-blue-soft" />
-                        Compliance Checklist (v1.0)
+                        Conformance Checklist (v1.0)
                     </Link>
                     <Link href="/golden-flows" className="flex items-center gap-2 text-mplp-text-muted hover:text-mplp-blue-light transition-colors">
                         <IconArrowRight className="h-4 w-4 text-mplp-blue-soft" />
@@ -195,6 +195,22 @@ export default function CompliancePage() {
                     </Link>
                 </div>
             </ContentSection>
-        </Shell >
+
+            {/* Authority Chain */}
+            <ContentSection>
+                <div className="max-w-4xl mx-auto">
+                    <CanonicalReferences
+                        docsUrl={DOCS_URLS.conformance}
+                        repoUrl={REPO_URLS.tests}
+                        variant="full"
+                    />
+                    <NextSteps
+                        docsKey="conformance"
+                        repoKey="tests"
+                        evidenceKey="goldenFlows"
+                    />
+                </div>
+            </ContentSection>
+        </StandardPage>
     );
 }

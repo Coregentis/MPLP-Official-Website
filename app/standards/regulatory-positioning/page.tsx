@@ -64,6 +64,7 @@ export default function RegulatoryPositioningPage() {
                     <SectionHeader
                         eyebrow="Section 1"
                         title="Purpose of This Page"
+                        align="center"
                     />
                     <div className="mt-8 prose prose-invert max-w-none">
                         <p className="text-mplp-text-muted leading-relaxed">
@@ -82,6 +83,7 @@ export default function RegulatoryPositioningPage() {
                     <SectionHeader
                         eyebrow="Mandatory Notice"
                         title="Important Disclaimers"
+                        align="center"
                     />
                     <div className="mt-8 space-y-6">
                         {/* DISC-01 */}
@@ -109,6 +111,7 @@ export default function RegulatoryPositioningPage() {
                         eyebrow="Section 2"
                         title="Regulatory Framework Mappings"
                         description="MPLP protocol capabilities that may relate to regulatory objectives. All mappings are illustrative and non-exhaustive."
+                        align="center"
                     />
 
                     <div className="mt-8 grid gap-6 md:grid-cols-2">
@@ -140,6 +143,7 @@ export default function RegulatoryPositioningPage() {
                     <SectionHeader
                         eyebrow="Section 3"
                         title="Related Resources"
+                        align="center"
                     />
                     <div className="mt-8 grid gap-4 md:grid-cols-2">
                         <Link href="/standards/positioning" className="mplp-card p-4 hover:border-mplp-blue-soft/30 transition-all">

@@ -13,7 +13,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "Why MPLP? | The Multi-Agent Lifecycle Protocol",
-    description: "Discover why ad-hoc agent orchestration fails and how MPLP provides a standardized lifecycle for robust multi-agent systems.",
+    description: "The MPLP specification describes a lifecycle model for multi-agent systems. Learn about the coordination challenges MPLP addresses.",
     alternates: {
         canonical: `${siteConfig.url}/why-mplp`,
     },
@@ -58,6 +58,7 @@ export default function WhyMplpPage() {
                     eyebrow="The Crisis"
                     title="The Multi-Agent Coordination Crisis"
                     description="As organizations move from single-agent chat to complex multi-agent systems, they hit the same structural failures. Without a protocol, every team builds their own ad-hoc orchestration layer."
+                    align="center"
                 />
 
                 <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -86,14 +87,15 @@ export default function WhyMplpPage() {
                 <SectionHeader
                     eyebrow="The Solution"
                     title="A Protocol-First Approach"
-                    description="MPLP (Multi-Agent Lifecycle Protocol) solves these problems by defining a vendor-neutral standard for how agents plan, coordinate, execute, and govern their work."
+                    description="The MPLP specification proposes a vendor-neutral approach for how agents plan, coordinate, execute, and govern their work. See docs for protocol details."
+                    align="center"
                 />
 
                 <div className="mt-12 grid gap-8 md:grid-cols-2">
                     <div className="space-y-6">
                         <h3 className="text-xl font-semibold text-mplp-text">Standardized Lifecycle</h3>
                         <p className="text-mplp-text-muted">
-                            MPLP defines a clear lifecycle for every agent task: <strong>Intent → Plan → Execute → Verify</strong>. This ensures that every action is deliberate, traceable, and governed by policy.
+                            The MPLP protocol describes a lifecycle approach: <strong>Intent → Plan → Execute → Verify</strong>. This model ensures that every action is deliberate, traceable, and governed by policy.
                         </p>
                         <ul className="list-disc pl-5 space-y-2 text-mplp-text-muted">
                             <li>Shared semantic context across all agents</li>
@@ -226,10 +228,10 @@ export default function WhyMplpPage() {
                         Governed Stack →
                     </Link>
                     <Link
-                        href="/compliance"
+                        href="/conformance"
                         className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold bg-mplp-emerald/15 text-mplp-emerald border border-mplp-emerald/30 hover:bg-mplp-emerald/20 transition-colors"
                     >
-                        Verify via Compliance →
+                        View Conformance Model →
                     </Link>
                 </div>
             </ContentSection>

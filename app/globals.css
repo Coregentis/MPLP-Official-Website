@@ -1,23 +1,32 @@
+/* 
+ * This file uses Tailwind CSS v4 syntax (@theme, @utility). 
+ * Lint errors regarding unknown at-rules are expected if the linter supports only < v4.
+ */
 @import "tailwindcss";
 
-/* MPLP Brand Colors as CSS Custom Properties - DARK THEME (Protocol Grade) */
+/* MPLP Brand Colors as CSS Custom Properties - STANDARDS BODY THEME (Matches Docs) */
 :root {
-  /* Brand Palette - Stable & Authoritative */
-  --mplp-blue: #1A73E8;
+  /* Brand Palette - Technical & Standard */
+  --mplp-blue: #2563EB;
+  /* Tailwind Blue 600 - Matches Docs */
   --mplp-blue-soft: #3B82F6;
+  /* Tailwind Blue 500 */
   --mplp-blue-light: #60A5FA;
-  --mplp-cyan: #5ADEFF;
-  --mplp-indigo: #6366F1;
-  --mplp-emerald: #10B981;
+  /* Tailwind Blue 400 */
+  --mplp-blue-dark: #1D4ED8;
+  /* Tailwind Blue 700 */
 
-  /* Neutrals (Dark Theme - Slate/Zinc mix for stability) */
-  --mplp-dark: #020617;
-  --mplp-dark-soft: #0F172A;
-  --mplp-border: #1E293B;
-  --mplp-text: #F8FAFC;
-  /* slate-50 */
-  --mplp-text-muted: #94A3B8;
-  /* slate-400 */
+  /* Neutrals (Strict Slate Scale - Matches Docs) */
+  --mplp-dark: #030712;
+  /* Slate 950 - Docs Background */
+  --mplp-dark-soft: #111827;
+  /* Slate 900 - Card Background */
+  --mplp-border: #1F2937;
+  /* Slate 800 - Border Color */
+  --mplp-text: #F9FAFB;
+  /* Slate 50  - Body Text */
+  --mplp-text-muted: #9CA3AF;
+  /* Slate 400 - Muted Text */
 
   /* Semantic */
   --mplp-success: #10B981;
@@ -25,35 +34,30 @@
   --mplp-error: #EF4444;
   --mplp-info: #0EA5E9;
 
-  /* Glassmorphism & Structural Elements */
-  --glass-bg: rgba(2, 6, 23, 0.95);
-  --glass-border: rgba(30, 41, 59, 0.5);
-  --glow-primary: rgba(37, 99, 235, 0.1);
+  /* Structural Elements - Flat & Crisp */
+  --background: #030712;
+  --foreground: #F9FAFB;
 
-  --background: #020617;
-  --foreground: #F8FAFC;
-
-  /* Structural Patterns */
-  --grid-pattern: radial-gradient(circle, var(--mplp-border) 1px, transparent 1px);
+  /* Removed: Glassmorphism vars */
+  /* Removed: Glow vars */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains-mono);
 
+  /* Font Stack update in tailwind config */
   --color-mplp-blue: var(--mplp-blue);
   --color-mplp-blue-soft: var(--mplp-blue-soft);
   --color-mplp-blue-light: var(--mplp-blue-light);
-  --color-mplp-cyan: var(--mplp-cyan);
-  --color-mplp-indigo: var(--mplp-indigo);
-  --color-mplp-emerald: var(--mplp-emerald);
+  --color-mplp-blue-dark: var(--mplp-blue-dark);
+
   --color-mplp-dark: var(--mplp-dark);
   --color-mplp-dark-soft: var(--mplp-dark-soft);
   --color-mplp-border: var(--mplp-border);
   --color-mplp-text: var(--mplp-text);
   --color-mplp-text-muted: var(--mplp-text-muted);
+
   --color-mplp-success: var(--mplp-success);
   --color-mplp-warning: var(--mplp-warning);
   --color-mplp-error: var(--mplp-error);
@@ -68,90 +72,67 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  /* System Font Stack - Native Feel */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* Selection color */
 ::selection {
-  background: var(--mplp-blue-soft);
+  background: rgba(37, 99, 235, 0.3);
+  /* Blue 600 with opacity */
   color: white;
 }
 
-/* Focus styles */
+/* Focus styles - Sharp */
 :focus-visible {
-  outline: 2px solid var(--mplp-blue-soft);
+  outline: 2px solid var(--mplp-blue);
   outline-offset: 2px;
 }
 
-/* Prose styles for MDX content - Optimized for Readability */
+/* Prose styles for MDX content - Highly Legible */
 .prose {
   --tw-prose-body: var(--mplp-text-muted);
   --tw-prose-headings: var(--mplp-text);
-  --tw-prose-links: var(--mplp-blue-soft);
+  --tw-prose-links: var(--mplp-blue);
   --tw-prose-bold: var(--mplp-text);
-  --tw-prose-code: var(--mplp-blue-light);
+  --tw-prose-code: var(--mplp-text);
   --tw-prose-pre-bg: var(--mplp-dark-soft);
   --tw-prose-pre-code: var(--mplp-text);
-  max-width: 70ch;
+  max-width: 80ch;
+  /* Wide measure for technical content */
 }
 
 .prose a {
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-  transition: all 0.2s ease;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+  font-weight: 500;
 }
 
 .prose a:hover {
   color: var(--mplp-blue-light);
-  text-decoration-color: var(--mplp-blue-light);
+  border-bottom-color: var(--mplp-blue-light);
 }
 
-/* Tailwind v4 Utilities - Restrained & Professional */
-@utility shadow-stable {
-  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.05);
-}
+/* Utility Overrides for "Standards Body" Look */
 
-@utility shadow-glow-subtle {
-  box-shadow: 0 0 40px -10px var(--glow-primary);
-}
-
+/* Glass replaced with solid Colors */
 @utility bg-glass {
-  background: var(--glass-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--glass-border);
-}
-
-@utility bg-grid {
-  background-image: var(--grid-pattern);
-  background-size: 40px 40px;
-}
-
-@utility text-gradient {
-  background: linear-gradient(135deg, var(--mplp-text) 0%, var(--mplp-text-muted) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-@utility text-gradient-blue {
-  background: linear-gradient(135deg, var(--mplp-blue-light) 0%, var(--mplp-blue-soft) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background: var(--mplp-dark);
+  /* Solid */
+  border-bottom: 1px solid var(--mplp-border);
 }
 
 @utility mplp-card {
-  border-radius: 1rem;
+  border-radius: 0.5rem;
+  /* Tighter radius (8px) */
   border-width: 1px;
   border-color: var(--mplp-border);
-  background-color: rgba(2, 6, 23, 0.4);
+  background-color: var(--mplp-dark-soft);
   padding: 1.5rem;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
+  /* Removed: fancy transitions/glows */
 }
 
 @utility status-dot {
@@ -161,44 +142,22 @@ body {
 }
 
 @utility status-dot-frozen {
-  background-color: var(--mplp-emerald);
-  box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+  background-color: var(--mplp-success);
 }
 
+/* Subtle animation only */
 @utility animate-fade-in-up {
-  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fade-in-up 0.4s ease-out forwards;
 }
 
-@utility animate-scale-in {
-  animation: scale-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@utility blueprint-line {
-  height: 1px;
-  background: linear-gradient(to right, var(--mplp-border), transparent);
-}
-
-/* Animations - Functional & Subtle */
 @keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(4px);
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0.98);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
   }
 }

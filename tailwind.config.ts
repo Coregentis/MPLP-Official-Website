@@ -11,19 +11,22 @@ const config: Config = {
     extend: {
       colors: {
         mplp: {
-          // Brand Palette - Stable & Authoritative
-          blue: "#1A73E8",
-          "blue-soft": "#3B82F6",
-          cyan: "#5ADEFF",
-          indigo: "#6366F1",
+          // Brand Palette - Technical & Standard (Matches Docs)
+          blue: "#2563EB",       // Tailwind Blue 600
+          "blue-soft": "#3B82F6", // Tailwind Blue 500
+          "blue-light": "#60A5FA", // Tailwind Blue 400
+          "blue-dark": "#1D4ED8",  // Tailwind Blue 700
+
+          cyano: "#5ADEFF",        // Legacy accent kept for now
+          indigo: "#6366F1",       // Legacy accent kept for now
           emerald: "#10B981",
 
-          // Neutrals (Dark Theme)
-          dark: "#020617", // slate-950
-          "dark-soft": "#0F172A", // slate-900
-          border: "#1E293B", // slate-800
-          text: "#F8FAFC", // slate-50
-          "text-muted": "#94A3B8", // slate-400
+          // Neutrals (Dark Theme - Slate Scale)
+          dark: "#030712",      // slate-950
+          "dark-soft": "#111827", // slate-900
+          border: "#1F2937",    // slate-800
+          text: "#F9FAFB",      // slate-50
+          "text-muted": "#9CA3AF", // slate-400
 
           // Semantic
           success: "#10B981",
@@ -33,29 +36,44 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "Inter", "system-ui", "sans-serif"],
-        mono: ["var(--font-geist-mono)", "IBM Plex Mono", "JetBrains Mono", "monospace"],
+        // System Stack for Native/Technical feel (Matches Docs)
+        sans: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica",
+          "Arial",
+          "sans-serif",
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol"
+        ],
+        mono: [
+          "ui-monospace",
+          "SFMono-Regular",
+          "SF Mono",
+          "Menlo",
+          "Consolas",
+          "Liberation Mono",
+          "monospace"
+        ],
       },
       borderRadius: {
-        xl: "0.75rem", // 12px
-        "2xl": "1rem", // 16px
-        "3xl": "1.5rem", // 24px
+        lg: "0.5rem",   // 8px - Tighter default
+        xl: "0.75rem",  // 12px
+        "2xl": "1rem",  // 16px
       },
       boxShadow: {
-        stable: "0 4px 24px -2px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(255, 255, 255, 0.05)",
-        glow: "0 0 40px rgba(37, 99, 235, 0.1)",
-        "glow-blue": "0 0 20px rgba(59, 130, 246, 0.2)",
-      },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "mplp-gradient": "linear-gradient(135deg, var(--mplp-blue-soft) 0%, var(--mplp-indigo) 100%)",
+        // Reduced to minimal shadows
+        stable: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
       },
       animation: {
-        "fade-in-up": "fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "fade-in-up": "fade-in-up 0.4s ease-out forwards",
       },
       keyframes: {
         "fade-in-up": {
-          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "0%": { opacity: "0", transform: "translateY(4px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },

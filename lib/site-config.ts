@@ -1,7 +1,7 @@
 ﻿// Site-wide configuration
 export const siteConfig = {
     name: "MPLP",
-    title: "MPLP 鈥?The Agent OS Protocol",
+    title: "MPLP — The Agent OS Protocol",
     description:
         "Multi-Agent Lifecycle Protocol: The vendor-neutral, observable, governed lifecycle protocol for AI agents.",
     url: "https://www.mplp.io",
@@ -27,29 +27,77 @@ export const siteConfig = {
 };
 
 // Centralized documentation URLs - single source of truth
+// MUST match actual docs.mplp.io navigation structure (verified against /docs/docs/*)
 export const DOCS_URLS = {
+    // Entry points
     home: "https://docs.mplp.io",
-    overview: "https://docs.mplp.io/docs/index/mplp-v1.0-protocol-overview",
-    architecture: "https://docs.mplp.io/docs/architecture/architecture-overview",
-    l1ToL4: "https://docs.mplp.io/docs/architecture/l1-l4-architecture-deep-dive",
-    goldenFlows: "https://docs.mplp.io/docs/golden-flows",
-    saProfile: "https://docs.mplp.io/docs/profiles/sa-profile",
-    compliance: "https://docs.mplp.io/docs/compliance",
-    sdkDocs: "https://docs.mplp.io/sdk",
-    tsSdkGuide: "https://docs.mplp.io/sdk",
-    pySdkGuide: "https://docs.mplp.io/sdk",
-    contextModule: "https://docs.mplp.io/docs/modules/context-module",
-    quickstart: "https://docs.mplp.io/guides/quickstart-5min",
-    roadmap: "https://docs.mplp.io/meta/roadmap",
-    releasePolicy: "https://docs.mplp.io/docs/governance/versioning-policy",
-    governance: "https://docs.mplp.io/docs/category/governance",
-    contribution: "https://docs.mplp.io/docs/governance/mip-process",
-    community: "https://github.com/Coregentis/MPLP-Protocol/issues",
-    github: "https://github.com/Coregentis/MPLP-Protocol",
-};
+    overview: "https://docs.mplp.io/docs/introduction/mplp-v1.0-protocol-overview",
 
+    // Architecture - /docs/docs/specification/architecture/*
+    architecture: "https://docs.mplp.io/docs/specification/architecture",
+    l1ToL4: "https://docs.mplp.io/docs/specification/architecture/l1-l4-architecture-deep-dive",
+    l1CoreProtocol: "https://docs.mplp.io/docs/specification/architecture/l1-core-protocol",
+    l4IntegrationInfra: "https://docs.mplp.io/docs/specification/architecture/l4-integration-infra",
+    kernelDuties: "https://docs.mplp.io/docs/specification/architecture/cross-cutting-kernel-duties",
+
+    // Modules - /docs/docs/specification/modules/*
+    modules: "https://docs.mplp.io/docs/specification/modules",
+    moduleInteractions: "https://docs.mplp.io/docs/specification/modules/module-interactions",
+    contextModule: "https://docs.mplp.io/docs/specification/modules/context-module",
+
+    // Runtime - /docs/docs/guides/runtime/*
+    runtimeOverview: "https://docs.mplp.io/docs/guides/runtime/runtime-glue-overview",
+    ael: "https://docs.mplp.io/docs/guides/runtime/ael",
+    vsl: "https://docs.mplp.io/docs/guides/runtime/vsl",
+    psg: "https://docs.mplp.io/docs/guides/runtime/psg",
+
+    // Golden Flows - /docs/docs/evaluation/golden-flows/*
+    goldenFlows: "https://docs.mplp.io/docs/evaluation/golden-flows",
+
+    // Profiles - /docs/docs/specification/profiles/*
+    saProfile: "https://docs.mplp.io/docs/specification/profiles/sa-profile",
+    mapProfile: "https://docs.mplp.io/docs/specification/profiles/map-profile",
+
+    // Conformance & Tests - /docs/docs/evaluation/tests/*
+    conformance: "https://docs.mplp.io/docs/evaluation/conformance",
+    testsOverview: "https://docs.mplp.io/docs/evaluation/tests",
+
+    // Guides - /docs/docs/guides/*
+    guides: "https://docs.mplp.io/docs/guides",
+    quickstart: "https://docs.mplp.io/docs/guides/examples",
+
+    // SDK - /docs/docs/guides/sdk/*
+    sdkDocs: "https://docs.mplp.io/docs/guides/sdk",
+
+    // Governance - /docs/docs/evaluation/governance/*
+    governance: "https://docs.mplp.io/docs/evaluation/governance",
+    releasePolicy: "https://docs.mplp.io/docs/evaluation/governance/versioning-policy",
+    contribution: "https://docs.mplp.io/docs/evaluation/governance/mip-process",
+
+    // External
+    github: "https://github.com/Coregentis/MPLP-Protocol",
+    community: "https://github.com/Coregentis/MPLP-Protocol/issues",
+} as const;
+
+// Repository URLs - source of truth links
+// MUST point to actual repo directories
+export const REPO_URLS = {
+    root: "https://github.com/Coregentis/MPLP-Protocol",
+    schemas: "https://github.com/Coregentis/MPLP-Protocol/tree/main/schemas",
+    governance: "https://github.com/Coregentis/MPLP-Protocol/tree/main/governance",
+    tests: "https://github.com/Coregentis/MPLP-Protocol/tree/main/tests",
+    packages: "https://github.com/Coregentis/MPLP-Protocol/tree/main/packages",
+    docs: "https://github.com/Coregentis/MPLP-Protocol/tree/main/docs",
+} as const;
+
+// Type-safe key references for components
+export type DocsKey = keyof typeof DOCS_URLS;
+export type RepoKey = keyof typeof REPO_URLS;
+
+// Helper for dynamic module URLs - uses DOCS_URLS.modules as base
+// Prefer explicit DOCS_URLS keys when available (e.g., contextModule)
 export function getModuleDocUrl(moduleId: string) {
-    return `${DOCS_URLS.home}/docs/modules/${moduleId}-module`;
+    return `${DOCS_URLS.modules}/${moduleId}-module`;
 }
 
 // Navbar: Strict 7 Semantic Anchors ONLY (FROZEN)
@@ -67,6 +115,7 @@ export const navItems = [
 export const footerLinks = {
     // Column 1: SPECIFICATION (Anchors #1-4)
     specification: [
+        { label: "Definition", href: "/definition" },  // Canonical anchor
         { label: "Architecture", href: "/architecture" },
         { label: "Modules", href: "/modules" },
         { label: "Kernel Duties", href: "/kernel-duties" },

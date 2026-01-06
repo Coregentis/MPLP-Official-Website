@@ -132,6 +132,7 @@ export default function AgenticStateSovereigntyPage() {
                     eyebrow="Architecture"
                     title="Protocol-Level State Definition"
                     description="MPLP introduces protocol-defined structures that describe agent state in a runtime-neutral way."
+                    align="center"
                 />
                 <div className="mt-8 grid gap-8 lg:grid-cols-2">
                     <div className="mplp-card p-8">
@@ -182,6 +183,7 @@ export default function AgenticStateSovereigntyPage() {
                     eyebrow="Roadmap"
                     title="Portability as an Architectural Goal"
                     description="Portability is treated as a design objective, not a v1.0 promise."
+                    align="center"
                 />
                 <div className="mt-8 max-w-3xl mx-auto">
                     <div className="p-6 rounded-2xl border border-mplp-border bg-slate-950/50">
@@ -225,6 +227,7 @@ export default function AgenticStateSovereigntyPage() {
                     eyebrow="Impact"
                     title="Why This Matters"
                     description="By separating state from execution, MPLP enables a healthier ecosystem."
+                    align="center"
                 />
                 <div className="mt-8 grid gap-6 md:grid-cols-3">
                     <div className="mplp-card p-6">

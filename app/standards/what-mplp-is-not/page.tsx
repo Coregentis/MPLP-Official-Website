@@ -69,6 +69,7 @@ export default function WhatMplpIsNotPage() {
                         eyebrow="Section 1"
                         title="What MPLP Is NOT"
                         description="These clarifications prevent common misconceptions and reduce adoption friction."
+                        align="center"
                     />
                     <div className="mt-8 space-y-6">
                         <div className="mplp-card p-6">
@@ -136,6 +137,7 @@ export default function WhatMplpIsNotPage() {
                     <SectionHeader
                         eyebrow="Section 2"
                         title="What MPLP IS"
+                        align="center"
                     />
                     <div className="mt-8">
                         <div className="rounded-2xl border-2 border-mplp-blue-soft/30 bg-mplp-blue-soft/5 p-8">
@@ -181,6 +183,7 @@ export default function WhatMplpIsNotPage() {
                     <SectionHeader
                         eyebrow="Section 3"
                         title="Learn More"
+                        align="center"
                     />
                     <div className="mt-8 grid gap-4 md:grid-cols-2">
                         <Link href="/why-mplp" className="mplp-card p-6 hover:border-mplp-blue-soft/30 transition-all group">

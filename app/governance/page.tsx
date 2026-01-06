@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { JsonLd } from "@/components/seo/json-ld";
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, REPO_URLS } from "@/lib/site-config";
 import Link from "next/link";
 import { GovernanceNav } from "@/components/governance/governance-nav";
 
@@ -149,7 +149,7 @@ export default function GovernancePage() {
                             </div>
                         </div>
                         <div className="mt-10 flex flex-wrap gap-4">
-                            <Button href="https://github.com/Coregentis/MPLP-Protocol/issues" external>View Active RFCs</Button>
+                            <Button href={`${REPO_URLS.root}/issues`} external>View Active RFCs</Button>
                             <Button href="/governance/overview" variant="secondary">Read Full Overview →</Button>
                         </div>
                     </div>

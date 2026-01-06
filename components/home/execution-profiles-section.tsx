@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { SectionTitle } from "@/components/common/section-title";
+import { DOCS_URLS } from "@/lib/site-config";
 
 const profiles = [
     {
@@ -16,7 +17,7 @@ const profiles = [
         color: "bg-blue-600",
         bg: "bg-blue-900/20",
         border: "border-blue-500/30",
-        href: "https://docs.mplp.io/docs/profiles/sa-profile",
+        href: DOCS_URLS.saProfile,
     },
     {
         id: "MAP",
@@ -31,7 +32,7 @@ const profiles = [
         color: "bg-purple-600",
         bg: "bg-purple-900/20",
         border: "border-purple-500/30",
-        href: "https://docs.mplp.io/docs/profiles/map-profile",
+        href: DOCS_URLS.mapProfile,
     }
 ];
 
@@ -91,7 +92,7 @@ export function ExecutionProfilesSection() {
                 </div>
                 <div className="text-center mt-10">
                     <Link
-                        href="https://docs.mplp.io"
+                        href={DOCS_URLS.home}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-colors"

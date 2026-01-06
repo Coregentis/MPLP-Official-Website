@@ -9,7 +9,8 @@ import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { BackToAnchor } from "@/components/ui/back-to-anchor";
 import { JsonLd } from "@/components/seo/json-ld";
 import { IconSearch, IconPackage, IconShield, IconDoorOpen, IconRocket, IconGlobe } from "@/components/ui/icons";
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, DOCS_URLS } from "@/lib/site-config";
+import { EcosystemNotice } from "@/components/notices";
 
 export const metadata: Metadata = {
     title: "Ecosystem | MPLP Protocol",
@@ -25,7 +26,7 @@ const sdks = [
         desc: "Official reference SDK for building MPLP-conformant agents in Python, aligned with the MPLP v1.0 specification. Provides canonical data models and utilities enabling protocol-level validation and structured execution scaffolding.",
         version: "v1.0.3",
         link: "https://pypi.org/project/mplp-sdk/",
-        docsLink: "https://docs.mplp.io/sdk",
+        docsLink: DOCS_URLS.sdkDocs,
         packages: [
             { name: "mplp-sdk", desc: "Canonical Python entry (PyPI)", version: "1.0.3" },
         ],
@@ -35,7 +36,7 @@ const sdks = [
         desc: "Official reference SDK for implementing MPLP protocol semantics in TypeScript. Provides strongly-typed definitions and execution scaffolding aligned with the MPLP specification, suitable for Node.js and Edge environments.",
         version: "v1.0.5",
         link: "https://www.npmjs.com/package/@mplp/sdk-ts",
-        docsLink: "https://docs.mplp.io/sdk",
+        docsLink: DOCS_URLS.sdkDocs,
         packages: [
             { name: "@mplp/sdk-ts", desc: "Main Entry Point (Developer SDK)", version: "1.0.5" },
             { name: "@mplp/core", desc: "L1 Protocol Primitives & Types", version: "1.0.5" },
@@ -68,7 +69,7 @@ const tools = [
     },
     {
         name: "Validator",
-        desc: "Validation tool for verifying protocol compliance of agent executions. Checks behavior against MPLP specifications and Golden Flows to ensure normative correctness.",
+        desc: "Tool for producing verification evidence from agent executions. Evaluates behavior against Golden Flow scenarios as described in the specification.",
         Icon: IconShield,
         gradient: "grad-emerald",
     },
@@ -131,12 +132,18 @@ export default function EcosystemPage() {
                 kicker="Adoption"
             />
 
+            {/* Ecosystem Notice - Non-normative disclaimer */}
+            <ContentSection>
+                <EcosystemNotice />
+            </ContentSection>
+
             {/* Official SDKs Section */}
             <ContentSection>
                 <SectionHeader
                     eyebrow="Reference SDKs"
                     title="Official Libraries"
                     description="Reference implementations for building protocol-conformant agents."
+                    align="center"
                     className="mb-12"
                 />
                 <div className="grid gap-8 md:grid-cols-2">
@@ -180,6 +187,7 @@ export default function EcosystemPage() {
                     eyebrow="Adoption Tooling"
                     title="Developer Tools"
                     description="Utilities for observing, validating, and mediating protocol executions."
+                    align="center"
                     className="mb-12"
                 />
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -199,6 +207,7 @@ export default function EcosystemPage() {
                     eyebrow="Execution"
                     title="Runtimes"
                     description="Reference and community runtimes for complete MPLP execution lifecycles."
+                    align="center"
                     className="mb-12"
                 />
                 <div className="grid gap-6 md:grid-cols-2">
@@ -227,6 +236,7 @@ export default function EcosystemPage() {
                     eyebrow="Governance & Standards"
                     title="Protocol Governance"
                     description="MPLP governance model, standards alignment, and lifecycle contracts."
+                    align="center"
                     className="mb-12"
                 />
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

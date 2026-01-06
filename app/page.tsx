@@ -7,13 +7,14 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import type { Metadata } from "next";
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, DOCS_URLS, REPO_URLS } from "@/lib/site-config";
 import { JsonLd, generateProtocolSchema } from "@/components/seo/json-ld";
+import { PositioningNotice } from "@/components/notices";
 
 
 export const metadata: Metadata = {
     title: "MPLP — Multi-Agent Lifecycle Protocol | The Agent OS Protocol",
-    description: "MPLP defines the canonical lifecycle semantics for AI agent systems — the Agent OS Protocol. Explore Architecture, Modules, Kernel Duties, Golden Flows, Governance, FAQ, and References. Not a framework, not a runtime, not a platform. — the Agent OS Protocol. It defines how agents are created, operated, audited, and decommissioned. Not a framework. Not a runtime. Not a platform.",
+    description: "The MPLP specification describes a lifecycle governance model for AI agent systems — the Agent OS Protocol. Explore Architecture, Modules, Kernel Duties, Golden Flows, Governance, FAQ, and References. Not a framework, not a runtime, not a platform.",
     alternates: {
         canonical: `${siteConfig.url}`,
     },
@@ -55,6 +56,8 @@ export default function Home() {
             <ContentSection>
                 <FinalCtaSection />
             </ContentSection>
+
+            <PositioningNotice />
         </Shell>
     );
 }
@@ -91,7 +94,8 @@ function HeroSection() {
 
                         <p className="max-w-xl text-base sm:text-lg leading-relaxed text-mplp-text-muted/90 mb-4">
                             The lifecycle protocol for AI agent systems.<br />
-                            MPLP defines how agents are created, operated, audited, and decommissioned across their full lifecycle.
+                            The MPLP protocol describes how agent lifecycles may be governed. See{" "}
+                            <a href={DOCS_URLS.home} className="text-mplp-blue-soft hover:underline">docs</a> for specification.
                         </p>
 
                         <p className="text-sm font-semibold text-mplp-blue-soft/70 tracking-wide mb-5">
@@ -99,7 +103,7 @@ function HeroSection() {
                         </p>
 
                         <div className="flex flex-wrap items-center gap-4 mb-6">
-                            <Button href="https://docs.mplp.io" external variant="primary" size="lg" className="px-8 h-12 text-sm">
+                            <Button href={DOCS_URLS.home} external variant="primary" size="lg" className="px-8 h-12 text-sm">
                                 Read Specification
                             </Button>
                             <Button href="/governance/overview" variant="secondary" size="lg" className="px-8 h-12 text-sm border-mplp-border/50">
@@ -181,8 +185,8 @@ function ProtocolStatusSection() {
                         <Link href="/governance/evidence-chain" className="hover:text-mplp-blue-soft transition-colors">
                             Evidence Chain
                         </Link>
-                        <Link href="/compliance" className="hover:text-mplp-blue-soft transition-colors">
-                            Compliance Audit
+                        <Link href="/conformance" className="hover:text-mplp-blue-soft transition-colors">
+                            Conformance Model
                         </Link>
                         <div className="hidden md:block h-3 w-px bg-mplp-border/50" />
                         <span className="text-mplp-text/60">Auditable Specification</span>
@@ -220,9 +224,14 @@ function ProblemSection() {
                         Frameworks scale features.<br />
                         Protocols scale ecosystems.
                     </p>
-                    <Button href="/why-mplp" variant="secondary" className="border-mplp-border/50">
-                        Read the Analysis →
-                    </Button>
+                    <div className="flex items-center gap-4 flex-wrap">
+                        <Button href="/why-mplp" variant="secondary" className="border-mplp-border/50">
+                            Read the Analysis →
+                        </Button>
+                        <Link href="/definition" className="text-sm text-mplp-blue-soft hover:underline">
+                            View definition (positioning anchor) →
+                        </Link>
+                    </div>
                 </div>
             </ScrollReveal>
             <div className="grid gap-4 grid-cols-2">
@@ -422,48 +431,29 @@ function AdoptionStep({ step, title, desc, icon: Icon, gradient }: { step: strin
     );
 }
 
-// 5. Quickstart Section
-// 5. Quickstart Section
+// 5. Quickstart Section (Docs Pointer - NOT implementation)
 function QuickstartSection() {
     return (
         <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
             <ScrollReveal>
                 <SectionHeader
-                    eyebrow="Implementation"
+                    eyebrow="Getting Started"
                     title="Governing an agent takes minutes, not months."
                     description="MPLP is model-agnostic and framework-neutral. You can start by governing a single agent state and expand as your system grows."
                 />
 
                 <div className="mt-10 space-y-8">
-                    <div className="space-y-3">
-                        <div className="flex items-center gap-3">
-                            <span className="text-[10px] font-bold text-mplp-blue-soft/40 font-mono">01</span>
-                            <h3 className="text-xs font-bold text-mplp-text uppercase tracking-wider">Install Protocol SDK</h3>
-                        </div>
-                        <div className="rounded-xl border border-mplp-border/50 bg-slate-950/60 p-4 font-mono text-[11px] text-mplp-text-muted">
-                            npm install @mplp/sdk-ts
-                        </div>
-                    </div>
-
-                    <div className="space-y-3">
-                        <div className="flex items-center gap-3">
-                            <span className="text-[10px] font-bold text-mplp-blue-soft/40 font-mono">02</span>
-                            <h3 className="text-xs font-bold text-mplp-text uppercase tracking-wider">Record Lifecycle Event</h3>
-                        </div>
-                        <div className="rounded-xl border border-mplp-border/50 bg-slate-950/60 p-4 font-mono text-[11px] text-mplp-text-muted overflow-x-auto">
-                            <pre>{`import { Trace } from "@mplp/sdk-ts";
-
-Trace.record({
-  event: "intent.created",
-  detail: { description: "Generate report" }
-});`}</pre>
-                        </div>
+                    <div className="p-4 rounded-xl border border-mplp-border/30 bg-slate-950/30">
+                        <p className="text-sm text-mplp-text-muted">
+                            Implementation guides and code examples live in the documentation.
+                            This website provides discovery and positioning only — see docs for implementation details.
+                        </p>
                     </div>
                 </div>
 
                 <div className="mt-12 flex items-center gap-6">
-                    <Button href="https://docs.mplp.io/docs/guides/quickstart-5min" external variant="primary">
-                        5-Min Quickstart →
+                    <Button href={DOCS_URLS.quickstart} external variant="primary">
+                        Read the 5-Min Quick Start (Docs) →
                     </Button>
                     <Link href="/modules" className="text-xs font-bold text-mplp-text-muted hover:text-mplp-blue-soft transition-colors uppercase tracking-widest">
                         Explore Schemas
@@ -474,12 +464,12 @@ Trace.record({
             <div className="relative">
                 <div className="absolute inset-0 bg-mplp-blue-soft/5 blur-3xl -z-10" />
                 <div className="mplp-card bg-slate-950/60 border-mplp-border/50 p-8">
-                    <h3 className="text-sm font-bold text-mplp-text uppercase tracking-widest mb-8 border-b border-mplp-border/30 pb-4">Next Steps</h3>
+                    <h3 className="text-sm font-bold text-mplp-text uppercase tracking-widest mb-8 border-b border-mplp-border/30 pb-4">Next Steps (Docs)</h3>
                     <ul className="space-y-6">
                         <li className="flex items-start gap-4 group">
                             <div className="mt-1 h-1.5 w-1.5 rounded-full bg-mplp-blue-soft/40 group-hover:bg-mplp-blue-soft transition-colors" />
-                            <Link href="https://docs.mplp.io/docs/guides/quickstart-5min" target="_blank" rel="noopener noreferrer" className="text-xs text-mplp-text-muted hover:text-mplp-text transition-colors leading-relaxed">
-                                Read the <strong>Normative Quickstart Guide</strong> for implementation details.
+                            <Link href={DOCS_URLS.quickstart} target="_blank" rel="noopener noreferrer" className="text-xs text-mplp-text-muted hover:text-mplp-text transition-colors leading-relaxed">
+                                Read the <strong>Quick Start Guide</strong> for implementation details.
                             </Link>
                         </li>
                         <li className="flex items-start gap-4 group">
@@ -491,7 +481,7 @@ Trace.record({
                         <li className="flex items-start gap-4 group">
                             <div className="mt-1 h-1.5 w-1.5 rounded-full bg-mplp-blue-soft/40 group-hover:bg-mplp-blue-soft transition-colors" />
                             <Link href="/golden-flows" className="text-xs text-mplp-text-muted hover:text-mplp-text transition-colors leading-relaxed">
-                                Run <strong>Golden Flows</strong> to verify protocol conformance.
+                                View <strong>Golden Flows</strong> for conformance evaluation.
                             </Link>
                         </li>
                     </ul>
@@ -516,7 +506,7 @@ function GoldenFlowsSection() {
                 <SectionHeader
                     eyebrow="Protocol Conformance"
                     title="Golden Flows: The Interoperability Standard"
-                    description="Golden Flows are not examples — they are the normative conformance tests of the MPLP protocol. They ensure cross-vendor interoperability and semantic consistency."
+                    description="Golden Flows represent protocol-level verification scenarios. They ensure cross-vendor interoperability and semantic consistency. See docs for normative definitions."
                 />
                 <div className="mt-10">
                     <Button href="/golden-flows" variant="secondary" className="border-mplp-border/50">
@@ -545,7 +535,7 @@ function EcosystemSection() {
             <SectionHeader
                 eyebrow="Ecosystem Topology"
                 title="Built for Architects, Developers, and Auditors"
-                description="MPLP provides the structural foundation for building observable and auditable agent systems. Canonical SDKs and schemas ensure rapid, safe integration."
+                description="The specification describes a structural approach for building observable and auditable agent systems. Canonical SDKs and schemas ensure rapid, safe integration."
                 align="center"
                 className="mx-auto mb-16"
             />
@@ -637,10 +627,10 @@ function FinalCtaSection() {
                     Build agent systems that remain reliable, observable, and governable — even as models, frameworks, and vendors change.
                 </p>
                 <div className="flex flex-wrap justify-center gap-6">
-                    <Button href="https://docs.mplp.io" external variant="primary" size="lg" className="px-10">
+                    <Button href={DOCS_URLS.home} external variant="primary" size="lg" className="px-10">
                         Read Specification
                     </Button>
-                    <Button href="https://github.com/Coregentis/MPLP-Protocol" external variant="secondary" size="lg" className="px-10 border-mplp-border/50">
+                    <Button href={REPO_URLS.root} external variant="secondary" size="lg" className="px-10 border-mplp-border/50">
                         GitHub Repository
                     </Button>
                 </div>

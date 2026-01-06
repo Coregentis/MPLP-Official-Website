@@ -6,6 +6,9 @@ import { ContentSection } from "@/components/ui/content-section";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { JsonLd } from "@/components/seo/json-ld";
 import { jsonLdReferencesPage } from "@/lib/seo/jsonld-structure";
+import { DOCS_URLS, REPO_URLS } from "@/lib/site-config";
+import { CanonicalReferences } from "@/components/ui/canonical-references";
+import { NextSteps } from "@/components/ui/next-steps";
 
 export const metadata: Metadata = {
     title: "References | MPLP — Multi-Agent Lifecycle Protocol",
@@ -49,7 +52,7 @@ export default function ReferencesPage() {
                 {/* Navigation Links */}
                 <div className="flex flex-wrap gap-4 mb-8">
                     <Link
-                        href="https://docs.mplp.io/docs/standards/positioning"
+                        href={`${DOCS_URLS.home}/docs/standards/positioning`}
                         className="inline-flex items-center px-6 py-3 border border-mplp-border text-mplp-text font-semibold rounded-lg hover:bg-mplp-bg transition-colors"
                         target="_blank"
                     >
@@ -84,7 +87,7 @@ export default function ReferencesPage() {
                         </p>
                         <div className="grid md:grid-cols-2 gap-4">
                             <Link
-                                href="https://docs.mplp.io/docs/standards/iso-mapping"
+                                href={`${DOCS_URLS.home}/docs/standards/iso-mapping`}
                                 className="p-4 border border-mplp-border rounded-lg hover:border-mplp-blue transition-colors"
                                 target="_blank"
                             >
@@ -92,7 +95,7 @@ export default function ReferencesPage() {
                                 <p className="text-sm text-mplp-text-muted">AI Management System mapping</p>
                             </Link>
                             <Link
-                                href="https://docs.mplp.io/docs/standards/nist-mapping"
+                                href={`${DOCS_URLS.home}/docs/standards/nist-mapping`}
                                 className="p-4 border border-mplp-border rounded-lg hover:border-mplp-blue transition-colors"
                                 target="_blank"
                             >
@@ -194,6 +197,45 @@ export default function ReferencesPage() {
                             </p>
                         </div>
                     </div>
+
+                    {/* E. Consolidated Pages (WG-04 Transparency) */}
+                    <div className="border-t border-mplp-border pt-10">
+                        <h2 className="text-2xl font-bold text-mplp-text mb-4">Consolidated Pages</h2>
+                        <p className="text-mplp-text-muted mb-6">
+                            The following pages have been consolidated or redirected to maintain governance clarity.
+                            This list is provided for transparency per WG-04 requirements.
+                        </p>
+                        <div className="grid md:grid-cols-2 gap-4">
+                            <div className="p-4 border border-mplp-border rounded-lg">
+                                <h3 className="font-semibold text-mplp-text mb-1">/adoption</h3>
+                                <p className="text-sm text-mplp-text-muted">
+                                    Adoption guidance → <a href={DOCS_URLS.quickstart} target="_blank" rel="noopener noreferrer" className="text-mplp-blue-soft hover:underline">docs: Quickstart Guide</a>
+                                </p>
+                            </div>
+                            <div className="p-4 border border-mplp-border rounded-lg">
+                                <h3 className="font-semibold text-mplp-text mb-1">/compliance (route)</h3>
+                                <p className="text-sm text-mplp-text-muted">
+                                    Renamed to <Link href="/conformance" className="text-mplp-blue-soft hover:underline">/conformance</Link> for terminology standardization
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ContentSection>
+
+            {/* Authority Chain */}
+            <ContentSection>
+                <div className="max-w-4xl mx-auto">
+                    <CanonicalReferences
+                        docsUrl={DOCS_URLS.home}
+                        repoUrl={REPO_URLS.root}
+                        variant="full"
+                    />
+                    <NextSteps
+                        docsKey="home"
+                        repoKey="root"
+                        evidenceKey="goldenFlows"
+                    />
                 </div>
             </ContentSection>
         </Shell>

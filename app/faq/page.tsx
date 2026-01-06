@@ -7,6 +7,9 @@ import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { JsonLd } from "@/components/seo/json-ld";
 import { faqData, getFAQByCategory, getFAQJsonLdItems } from "@/lib/content/faq-data";
 import { jsonLdFAQPage } from "@/lib/seo/jsonld-structure";
+import { DOCS_URLS, REPO_URLS } from "@/lib/site-config";
+import { CanonicalReferences } from "@/components/ui/canonical-references";
+import { NextSteps } from "@/components/ui/next-steps";
 
 export const metadata: Metadata = {
     title: "FAQ | MPLP — Multi-Agent Lifecycle Protocol",
@@ -47,7 +50,7 @@ export default function FAQPage() {
             <ContentSection>
                 <div className="p-4 bg-mplp-bg border border-mplp-border rounded-lg mb-10 max-w-3xl mx-auto">
                     <p className="text-sm text-mplp-text-muted">
-                        <strong>Canonical definition:</strong> MPLP defines the canonical lifecycle
+                        <strong>Canonical definition:</strong> The MPLP specification describes the canonical lifecycle
                         semantics for AI agent systems — the Agent OS Protocol.
                     </p>
                 </div>
@@ -61,7 +64,7 @@ export default function FAQPage() {
                         References
                     </Link>
                     <Link
-                        href="https://docs.mplp.io/docs/intro"
+                        href={DOCS_URLS.home}
                         className="inline-flex items-center px-6 py-3 border border-mplp-border text-mplp-text font-semibold rounded-lg hover:bg-mplp-bg transition-colors"
                         target="_blank"
                     >
@@ -108,6 +111,22 @@ export default function FAQPage() {
                     <p className="text-sm text-mplp-text-muted">
                         {faqData.length} questions covering definitions, boundaries, and AI citation guidance.
                     </p>
+                </div>
+            </ContentSection>
+
+            {/* Authority Chain */}
+            <ContentSection>
+                <div className="max-w-4xl mx-auto">
+                    <CanonicalReferences
+                        docsUrl={DOCS_URLS.overview}
+                        repoUrl={REPO_URLS.root}
+                        variant="full"
+                    />
+                    <NextSteps
+                        docsKey="overview"
+                        repoKey="root"
+                        evidenceKey="goldenFlows"
+                    />
                 </div>
             </ContentSection>
         </Shell>

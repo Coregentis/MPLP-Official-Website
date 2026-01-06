@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Shell } from "@/components/layout/shell";
-import { PageHeader } from "@/components/layout/page-header";
+import { StandardPage } from "@/components/layout/standard-page";
 import { ContentSection } from "@/components/ui/content-section";
-import { Breadcrumb } from "@/components/ui/breadcrumb";
-import { JsonLd } from "@/components/seo/json-ld";
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, DOCS_URLS, REPO_URLS } from "@/lib/site-config";
+import { CanonicalReferences } from "@/components/ui/canonical-references";
+import { NextSteps } from "@/components/ui/next-steps";
 
 export const metadata: Metadata = {
     title: "Kernel Duties | MPLP — Multi-Agent Lifecycle Protocol",
@@ -26,22 +25,13 @@ export default function KernelDutiesPage() {
     };
 
     return (
-        <Shell>
-            {/* TechArticle JSON-LD */}
-            <JsonLd data={techArticleSchema} />
-
-            {/* Breadcrumb */}
-            <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-                <Breadcrumb items={[{ label: "Kernel Duties", href: "/kernel-duties" }]} />
-            </div>
-
-            {/* PageHeader - Consistent with other anchor pages */}
-            <PageHeader
-                title="Kernel Duties"
-                subtitle="The 11 kernel duties describe the cross-cutting lifecycle governance semantics defined by MPLP. These duties represent responsibilities that span across all protocol modules, ensuring consistent behavior throughout the agent lifecycle."
-                kicker="Cross-Cutting Semantics"
-            />
-
+        <StandardPage
+            title="Kernel Duties"
+            subtitle="The 11 kernel duties describe the cross-cutting lifecycle governance semantics defined by MPLP. These duties represent responsibilities that span across all protocol modules, ensuring consistent behavior throughout the agent lifecycle."
+            kicker="Cross-Cutting Semantics"
+            breadcrumbs={[{ label: "Kernel Duties", href: "/kernel-duties" }]}
+            jsonLd={techArticleSchema}
+        >
             <ContentSection>
                 <div className="p-4 bg-mplp-bg border border-mplp-border rounded-lg mb-10 max-w-3xl mx-auto">
                     <p className="text-sm text-mplp-text-muted">
@@ -53,7 +43,7 @@ export default function KernelDutiesPage() {
                 {/* Navigation Links */}
                 <div className="flex flex-wrap justify-center gap-4 mb-12">
                     <Link
-                        href="https://docs.mplp.io/docs/architecture/cross-cutting-kernel-duties"
+                        href={DOCS_URLS.kernelDuties}
                         className="inline-flex items-center px-6 py-3 border border-mplp-border text-mplp-text font-semibold rounded-lg hover:bg-mplp-bg transition-colors"
                         target="_blank"
                     >
@@ -124,7 +114,23 @@ export default function KernelDutiesPage() {
                     </ul>
                 </div>
             </ContentSection>
-        </Shell>
+
+            {/* Authority Chain */}
+            <ContentSection>
+                <div className="max-w-4xl mx-auto">
+                    <CanonicalReferences
+                        docsUrl={DOCS_URLS.l1ToL4}
+                        repoUrl={REPO_URLS.schemas}
+                        variant="full"
+                    />
+                    <NextSteps
+                        docsKey="l1ToL4"
+                        repoKey="schemas"
+                        evidenceKey="goldenFlows"
+                    />
+                </div>
+            </ContentSection>
+        </StandardPage>
     );
 }
 

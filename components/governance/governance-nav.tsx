@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { IconArrowRight } from "@/components/ui/icons";
+import { DOCS_URLS } from "@/lib/site-config";
 
 interface GovernanceNavProps {
     current?: string;
@@ -17,7 +18,7 @@ const siblings = [
 const downstream = [
     { href: "/compliance", label: "Compliance Levels" },
     { href: "/golden-flows", label: "Golden Flows" },
-    { href: "https://docs.mplp.io", label: "Documentation", external: true },
+    { href: DOCS_URLS.home, label: "Documentation", external: true },
 ];
 
 export function GovernanceNav({ current }: GovernanceNavProps) {

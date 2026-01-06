@@ -17,7 +17,7 @@ const kernelDuties = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
             </svg>
         ),
-        href: "https://docs.mplp.io/docs/architecture/cross-cutting-kernel-duties/coordination",
+        href: `${DOCS_URLS.kernelDuties}/coordination`,
     },
     {
         canonical: "error-handling",
@@ -28,7 +28,7 @@ const kernelDuties = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
         ),
-        href: "https://docs.mplp.io/docs/architecture/cross-cutting-kernel-duties/error-handling",
+        href: `${DOCS_URLS.kernelDuties}/error-handling`,
     },
     {
         canonical: "event-bus",
@@ -39,7 +39,7 @@ const kernelDuties = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
         ),
-        href: "https://docs.mplp.io/docs/architecture/cross-cutting-kernel-duties/event-bus",
+        href: `${DOCS_URLS.kernelDuties}/event-bus`,
     },
     {
         canonical: "orchestration",
@@ -50,7 +50,7 @@ const kernelDuties = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
             </svg>
         ),
-        href: "https://docs.mplp.io/docs/architecture/cross-cutting-kernel-duties/orchestration",
+        href: `${DOCS_URLS.kernelDuties}/orchestration`,
     },
     {
         canonical: "performance",
@@ -61,7 +61,7 @@ const kernelDuties = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
             </svg>
         ),
-        href: "https://docs.mplp.io/docs/architecture/cross-cutting-kernel-duties/performance",
+        href: `${DOCS_URLS.kernelDuties}/performance`,
     },
     {
         canonical: "protocol-version",
@@ -72,7 +72,7 @@ const kernelDuties = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
             </svg>
         ),
-        href: "https://docs.mplp.io/docs/architecture/cross-cutting-kernel-duties/protocol-versioning",
+        href: `${DOCS_URLS.kernelDuties}/protocol-versioning`,
     },
     {
         canonical: "security",
@@ -83,7 +83,7 @@ const kernelDuties = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
         ),
-        href: "https://docs.mplp.io/docs/architecture/cross-cutting-kernel-duties/security",
+        href: `${DOCS_URLS.kernelDuties}/security`,
     },
     {
         canonical: "state-sync",
@@ -94,7 +94,7 @@ const kernelDuties = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
             </svg>
         ),
-        href: "https://docs.mplp.io/docs/architecture/cross-cutting-kernel-duties/state-sync",
+        href: `${DOCS_URLS.kernelDuties}/state-sync`,
     },
     {
         canonical: "transaction",
@@ -105,7 +105,7 @@ const kernelDuties = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
         ),
-        href: "https://docs.mplp.io/docs/architecture/cross-cutting-kernel-duties/transaction",
+        href: `${DOCS_URLS.kernelDuties}/transaction`,
     },
     {
         canonical: "AEL-duty",
@@ -116,7 +116,7 @@ const kernelDuties = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
             </svg>
         ),
-        href: "https://docs.mplp.io/docs/runtime/ael",
+        href: DOCS_URLS.ael,
     },
     {
         canonical: "VSL-duty",
@@ -127,7 +127,7 @@ const kernelDuties = [
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
         ),
-        href: "https://docs.mplp.io/docs/runtime/vsl",
+        href: DOCS_URLS.vsl,
     },
 ];
 
@@ -183,7 +183,7 @@ export function KernelDutiesSection() {
                 {/* CTA */}
                 <div className="text-center">
                     <Link
-                        href={DOCS_URLS.compliance}
+                        href={DOCS_URLS.conformance}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-colors"

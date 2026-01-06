@@ -1,20 +1,21 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
-import { Shell } from "@/components/layout/shell";
-import { PageHeader } from "@/components/layout/page-header";
+import { StandardPage } from "@/components/layout/standard-page";
 import { ContentSection } from "@/components/ui/content-section";
 import { SectionHeader } from "@/components/ui/section-header";
 import { InfoCard } from "@/components/ui/info-card";
 import { duties } from "@/lib/content/duties";
-import { JsonLd } from "@/components/seo/json-ld";
-import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { IconArrowRight } from "@/components/ui/icons";
 import { siteConfig } from "@/lib/site-config";
+import { PositioningDisclaimer } from "@/components/notices";
+import { CanonicalReferences } from "@/components/ui/canonical-references";
+import { NextSteps } from "@/components/ui/next-steps";
+import { DOCS_URLS, REPO_URLS } from "@/lib/site-config";
 
 
 export const metadata: Metadata = {
     title: "Architecture | MPLP — Multi-Agent Lifecycle Protocol",
-    description: "Defines the layered protocol architecture of MPLP, including core semantics, coordination, execution, and integration boundaries.",
+    description: "Describes the layered architecture model of MPLP, including core semantics, coordination, execution, and integration boundaries. See docs for normative definitions.",
     alternates: {
         canonical: `${siteConfig.url}/architecture`,
     },
@@ -26,7 +27,7 @@ export default function ArchitecturePage() {
         "@context": "https://schema.org",
         "@type": "TechArticle",
         "headline": "Protocol Architecture | MPLP Standard",
-        "about": "Layered architecture defining the MPLP protocol standard",
+        "about": "Layered architecture describing the MPLP protocol standard",
         "url": `${siteConfig.url}/architecture`,
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -38,20 +39,15 @@ export default function ArchitecturePage() {
     };
 
     return (
-        <Shell>
-            <JsonLd data={techArticleSchema} />
-            <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-                <Breadcrumb items={[
-                    { label: "Architecture", href: "/architecture" }
-                ]} />
-            </div>
-            <PageHeader
-                title="Protocol Architecture"
-                subtitle="MPLP defines a strict four-layer architecture (L1–L4) that separates protocol semantics, coordination, execution, and integration concerns, ensuring long-term stability and vendor neutrality."
-                kicker="Specification"
-            />
-
+        <StandardPage
+            title="Protocol Architecture"
+            subtitle="The MPLP specification describes a four-layer architecture model (L1–L4) that separates protocol semantics, coordination, execution, and integration concerns. See docs for normative layer definitions."
+            kicker="Specification"
+            breadcrumbs={[{ label: "Architecture", href: "/architecture" }]}
+            jsonLd={techArticleSchema}
+        >
             <ContentSection>
+                <PositioningDisclaimer />
                 <SectionHeader
                     eyebrow="Protocol Topology"
                     title="The 4-Layer Model"
@@ -186,6 +182,22 @@ export default function ArchitecturePage() {
                     </div>
                 </div>
             </div>
-        </Shell>
+
+            {/* Authority Chain */}
+            <ContentSection>
+                <div className="max-w-4xl mx-auto">
+                    <CanonicalReferences
+                        docsUrl={DOCS_URLS.architecture}
+                        repoUrl={REPO_URLS.schemas}
+                        variant="full"
+                    />
+                    <NextSteps
+                        docsKey="architecture"
+                        repoKey="schemas"
+                        evidenceKey="goldenFlows"
+                    />
+                </div>
+            </ContentSection>
+        </StandardPage>
     );
 }

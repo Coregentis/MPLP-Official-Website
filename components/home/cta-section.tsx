@@ -26,7 +26,7 @@ export function CtaSection() {
 
                     <div className="flex flex-wrap justify-center gap-8 text-sm font-medium">
                         <a
-                            href={DOCS_URLS.tsSdkGuide}
+                            href={DOCS_URLS.sdkDocs}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-1"
@@ -34,7 +34,7 @@ export function CtaSection() {
                             TypeScript SDK →
                         </a>
                         <a
-                            href={DOCS_URLS.pySdkGuide}
+                            href={DOCS_URLS.sdkDocs}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-1"
@@ -42,7 +42,7 @@ export function CtaSection() {
                             Python SDK →
                         </a>
                         <a
-                            href={DOCS_URLS.compliance}
+                            href={DOCS_URLS.conformance}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-1"

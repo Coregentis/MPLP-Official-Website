@@ -1,14 +1,13 @@
 import React from "react";
-import { Shell } from "@/components/layout/shell";
-import { PageHeader } from "@/components/layout/page-header";
+import { StandardPage } from "@/components/layout/standard-page";
 import { ContentSection } from "@/components/ui/content-section";
 import { modules } from "@/lib/content/modules";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ModuleIcons, ModuleGradients, IconArrowRight } from "@/components/ui/icons";
-import { Breadcrumb } from "@/components/ui/breadcrumb";
-import { JsonLd } from "@/components/seo/json-ld";
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, DOCS_URLS, REPO_URLS } from "@/lib/site-config";
+import { CanonicalReferences } from "@/components/ui/canonical-references";
+import { NextSteps } from "@/components/ui/next-steps";
 
 export const metadata: Metadata = {
     title: "Protocol Modules | MPLP Standard",
@@ -44,17 +43,13 @@ export default function ModulesPage() {
     };
 
     return (
-        <Shell>
-            <JsonLd data={collectionSchema} />
-            <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-                <Breadcrumb items={[{ label: "Modules", href: "/modules" }]} />
-            </div>
-            <PageHeader
-                title="Protocol Modules"
-                subtitle="The 10 normative modules that define the MPLP standard. While all modules are normative, some define core execution semantics, others provide governance, extension, or protocol boundaries."
-                kicker="Components"
-            />
-
+        <StandardPage
+            title="Protocol Modules"
+            subtitle="The 10 normative modules that define the MPLP standard. While all modules are normative, some define core execution semantics, others provide governance, extension, or protocol boundaries."
+            kicker="Components"
+            breadcrumbs={[{ label: "Modules", href: "/modules" }]}
+            jsonLd={collectionSchema}
+        >
             {/* Usage Boundary (Informative) */}
             <ContentSection>
                 <div className="max-w-4xl mx-auto">
@@ -144,6 +139,22 @@ export default function ModulesPage() {
                     </div>
                 </div>
             </ContentSection>
-        </Shell>
+
+            {/* Authority Chain */}
+            <ContentSection>
+                <div className="max-w-4xl mx-auto">
+                    <CanonicalReferences
+                        docsUrl={DOCS_URLS.home}
+                        repoUrl={REPO_URLS.schemas}
+                        variant="full"
+                    />
+                    <NextSteps
+                        docsKey="home"
+                        repoKey="schemas"
+                        evidenceKey="goldenFlows"
+                    />
+                </div>
+            </ContentSection>
+        </StandardPage>
     );
 }

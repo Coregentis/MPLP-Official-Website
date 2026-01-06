@@ -66,6 +66,7 @@ export default function SemanticDriftControlPage() {
                     eyebrow="The Problem"
                     title="The Misdiagnosis of “Hallucination”"
                     description="Most agent systems treat incorrect or unstable behavior as a model problem."
+                    align="center"
                 />
                 <div className="mt-8 max-w-3xl mx-auto">
                     <p className="text-lg text-mplp-text-muted mb-6">
@@ -110,6 +111,7 @@ export default function SemanticDriftControlPage() {
                     eyebrow="Mechanism"
                     title="Semantic Contracts and Invariants"
                     description="MPLP introduces the concept of semantic contracts enforced through protocol-defined invariants."
+                    align="center"
                 />
                 <div className="mt-8 grid gap-8 lg:grid-cols-2">
                     <div className="mplp-card p-8">
@@ -156,6 +158,7 @@ export default function SemanticDriftControlPage() {
                     eyebrow="Architecture"
                     title="Drift Detection Is a Protocol Concern"
                     description="MPLP treats drift detection as a first-class protocol responsibility, independent of prompt wording and orthogonal to model quality."
+                    align="center"
                 />
                 <div className="mt-8 max-w-3xl mx-auto">
                     <div className="p-6 rounded-2xl border border-mplp-border bg-slate-950/50">
@@ -184,6 +187,7 @@ export default function SemanticDriftControlPage() {
                     eyebrow="Boundary"
                     title="What MPLP Does NOT Claim"
                     description="It is important to state explicitly what is out of scope."
+                    align="center"
                 />
                 <div className="mt-8 max-w-3xl mx-auto">
                     <div className="grid gap-4 md:grid-cols-3 text-center">
