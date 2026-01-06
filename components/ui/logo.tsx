@@ -10,10 +10,10 @@ export function Logo({ className, showText = true }: LogoProps) {
     return (
         <div className={cn("flex items-center gap-2", className)}>
             {/* Icon */}
-            <div className="relative w-8 h-8 flex items-center justify-center flex-shrink-0">
+            <div className="relative w-8 h-8 flex items-center justify-center flex-shrink-0" role="img" aria-label="MPLP Protocol Logo">
                 <Image
                     src="/brand/mplp-icon-only-transparent.png"
-                    alt="Multi-Agent Lifecycle Protocol (MPLP) Icon"
+                    alt=""
                     width={32}
                     height={32}
                     className="object-contain"

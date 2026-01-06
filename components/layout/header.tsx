@@ -46,6 +46,8 @@ export function Header() {
                         <SearchButton />
                         <Link
                             href={DOCS_URLS.home}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="text-[13px] font-medium text-mplp-text-muted hover:text-mplp-text transition-colors"
                         >
                             Docs

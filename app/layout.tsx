@@ -45,9 +45,15 @@ export const metadata: Metadata = {
     canonical: "./",
   },
   icons: {
-    icon: "/brand/mplp-icon-only-transparent.png",
-    shortcut: "/brand/mplp-icon-only-transparent.png",
-    apple: "/brand/mplp-icon-only-transparent.png",
+    icon: [
+      { url: "/brand/mplp-favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/brand/mplp-favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/brand/mplp-favicon-48.png", sizes: "48x48", type: "image/png" },
+    ],
+    shortcut: "/brand/mplp-favicon-32.png",
+    apple: [
+      { url: "/brand/mplp-apple-touch-180.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 

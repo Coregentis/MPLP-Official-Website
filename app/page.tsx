@@ -95,7 +95,7 @@ function HeroSection() {
                         <p className="max-w-xl text-base sm:text-lg leading-relaxed text-mplp-text-muted/90 mb-4">
                             The lifecycle protocol for AI agent systems.<br />
                             The MPLP protocol describes how agent lifecycles may be governed. See{" "}
-                            <a href={DOCS_URLS.home} className="text-mplp-blue-soft hover:underline">docs</a> for specification.
+                            <a href={DOCS_URLS.home} target="_blank" rel="noopener noreferrer" className="text-mplp-blue-soft hover:underline">docs</a> for specification.
                         </p>
 
                         <p className="text-sm font-semibold text-mplp-blue-soft/70 tracking-wide mb-5">
