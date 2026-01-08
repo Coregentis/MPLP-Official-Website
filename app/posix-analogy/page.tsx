@@ -30,6 +30,14 @@ export default function PosixAnalogyPage() {
                                 <Badge variant="outline" className="text-[10px] tracking-widest border-mplp-indigo/30 text-mplp-indigo uppercase bg-mplp-dark/50">Non-Normative</Badge>
                             </div>
 
+                            {/* Block 4: POSIX Lens Clarification */}
+                            <div className="mb-8 p-4 bg-yellow-900/20 border border-yellow-600/30 rounded">
+                                <p className="text-sm text-yellow-200/90">
+                                    <strong>Conceptual Lens Only:</strong> This is a conceptual lens for understanding, not a compatibility claim.
+                                    MPLP is not POSIX and does not implement POSIX APIs. This analogy is for positioning purposes only.
+                                </p>
+                            </div>
+
                             <div className="prose prose-invert max-w-none">
                                 <p className="text-lg leading-relaxed text-mplp-text-muted mb-8">
                                     The MPLP specification is analogous to <strong className="text-mplp-text font-bold">POSIX</strong> (Portable Operating System Interface), not TCP/IP.

@@ -23,33 +23,33 @@ export const metadata: Metadata = {
 const sdks = [
     {
         name: "MPLP Python SDK",
-        desc: "Official reference SDK for building MPLP-conformant agents in Python, aligned with the MPLP v1.0 specification. Provides canonical data models and utilities enabling protocol-level validation and structured execution scaffolding.",
-        version: "v1.0.3",
+        desc: "Reference SDK for building MPLP-conformant agents in Python. Provides canonical data models and utilities enabling protocol-level validation and structured execution scaffolding.",
         link: "https://pypi.org/project/mplp-sdk/",
         docsLink: DOCS_URLS.sdkDocs,
         packages: [
-            { name: "mplp-sdk", desc: "Canonical Python entry (PyPI)", version: "1.0.3" },
+            { name: "mplp-sdk", desc: "Canonical Python entry (PyPI)" },
         ],
     },
     {
         name: "MPLP TypeScript SDK",
-        desc: "Official reference SDK for implementing MPLP protocol semantics in TypeScript. Provides strongly-typed definitions and execution scaffolding aligned with the MPLP specification, suitable for Node.js and Edge environments.",
-        version: "v1.0.5",
+        desc: "Reference SDK for implementing MPLP protocol semantics in TypeScript. Provides strongly-typed definitions and execution scaffolding aligned with the MPLP specification.",
         link: "https://www.npmjs.com/package/@mplp/sdk-ts",
         docsLink: DOCS_URLS.sdkDocs,
-        packages: [
-            { name: "@mplp/sdk-ts", desc: "Main Entry Point (Developer SDK)", version: "1.0.5" },
-            { name: "@mplp/core", desc: "L1 Protocol Primitives & Types", version: "1.0.5" },
-            { name: "@mplp/schema", desc: "JSON Schema Validators", version: "1.0.4" },
-            { name: "@mplp/coordination", desc: "L2 Coordination & State Machine", version: "1.0.5" },
-            { name: "@mplp/modules", desc: "L2 Governance Modules", version: "1.0.4" },
-            { name: "@mplp/conformance", desc: "Conformance & Audit Tools", version: "1.0.4" },
-            { name: "@mplp/runtime-minimal", desc: "Reference Runtime Implementation", version: "1.0.4" },
-            { name: "@mplp/devtools", desc: "CLI & Debugging Tools", version: "1.0.4" },
-            { name: "@mplp/integration-llm-http", desc: "HTTP LLM Client Adapter", version: "1.0.4" },
-            { name: "@mplp/integration-storage-fs", desc: "File System Storage Adapter", version: "1.0.4" },
-            { name: "@mplp/integration-storage-kv", desc: "Key-Value Storage Adapter", version: "1.0.4" },
-            { name: "@mplp/integration-tools-generic", desc: "Generic Tool Executor", version: "1.0.4" },
+        primaryPackages: [
+            { name: "@mplp/sdk-ts", desc: "Main developer entry" },
+            { name: "@mplp/core", desc: "Protocol primitives & types" },
+            { name: "@mplp/schema", desc: "Schema validators" },
+            { name: "@mplp/coordination", desc: "Coordination & state-machine helpers" },
+            { name: "@mplp/modules", desc: "L2 governance module helpers" },
+            { name: "@mplp/conformance", desc: "Conformance kit & validation tooling" },
+            { name: "@mplp/runtime-minimal", desc: "Minimal reference runtime" },
+            { name: "@mplp/devtools", desc: "CLI & debugging tools" },
+        ],
+        integrationPackages: [
+            { name: "@mplp/integration-llm-http", desc: "HTTP LLM Client Adapter" },
+            { name: "@mplp/integration-storage-fs", desc: "File System Storage Adapter" },
+            { name: "@mplp/integration-storage-kv", desc: "Key-Value Storage Adapter" },
+            { name: "@mplp/integration-tools-generic", desc: "Generic Tool Executor" },
         ],
     },
 ];
@@ -151,25 +151,40 @@ export default function EcosystemPage() {
                         <div key={sdk.name} className="rounded-2xl border border-mplp-border bg-slate-950/50 p-8 transition-all hover:border-mplp-blue-soft/30">
                             <div className="flex items-center justify-between mb-4">
                                 <h3 className="text-xl font-bold text-mplp-text">{sdk.name}</h3>
-                                <span className="rounded-full bg-mplp-emerald/10 px-3 py-1 text-xs font-medium text-mplp-emerald border border-mplp-emerald/20">
-                                    {sdk.version}
-                                </span>
                             </div>
                             <p className="text-mplp-text-muted mb-6">{sdk.desc}</p>
 
                             <div className="mb-6">
-                                <p className="text-xs font-semibold text-mplp-text-muted uppercase tracking-wider mb-3">Included Packages ({sdk.packages.length})</p>
+                                <p className="text-xs font-semibold text-mplp-text-muted uppercase tracking-wider mb-3">
+                                    Primary Packages ({sdk.primaryPackages?.length || sdk.packages?.length || 0})
+                                </p>
                                 <div className="grid gap-2">
-                                    {sdk.packages.map((pkg) => (
-                                        <div key={pkg.name} className="flex items-center justify-between px-3 py-2 rounded bg-slate-900 border border-mplp-border">
+                                    {(sdk.primaryPackages || sdk.packages || []).map((pkg) => (
+                                        <div key={pkg.name} className="flex items-center px-3 py-2 rounded bg-slate-900 border border-mplp-border">
                                             <div className="flex items-center gap-2">
                                                 <code className="text-xs text-mplp-blue-soft font-mono">{pkg.name}</code>
                                                 <span className="text-xs text-mplp-text-muted hidden sm:inline">— {pkg.desc}</span>
                                             </div>
-                                            <span className="text-xs font-mono text-mplp-emerald">v{pkg.version}</span>
                                         </div>
                                     ))}
                                 </div>
+                                {sdk.integrationPackages && sdk.integrationPackages.length > 0 && (
+                                    <>
+                                        <p className="text-xs font-semibold text-mplp-text-muted uppercase tracking-wider mt-4 mb-3">
+                                            Integration Packages ({sdk.integrationPackages.length})
+                                        </p>
+                                        <div className="grid gap-2">
+                                            {sdk.integrationPackages.map((pkg) => (
+                                                <div key={pkg.name} className="flex items-center px-3 py-2 rounded bg-slate-900/50 border border-mplp-border/50">
+                                                    <div className="flex items-center gap-2">
+                                                        <code className="text-xs text-mplp-cyan font-mono">{pkg.name}</code>
+                                                        <span className="text-xs text-mplp-text-muted hidden sm:inline">— {pkg.desc}</span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </>
+                                )}
                             </div>
 
                             <div className="flex gap-4">

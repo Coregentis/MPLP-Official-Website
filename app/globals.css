@@ -15,6 +15,10 @@
   --mplp-indigo-hsl: 250 85% 65%;
   --mplp-indigo: hsl(var(--mplp-indigo-hsl));
 
+  /* Emerald & Cyan - Brighter for dark backgrounds */
+  --mplp-emerald: hsl(152 76% 55%);
+  --mplp-cyan: hsl(185 85% 55%);
+
   /* Deep Technical Neutrals */
   --mplp-dark: hsl(222 47% 3%);
   --mplp-dark-soft: hsl(222 47% 7%);

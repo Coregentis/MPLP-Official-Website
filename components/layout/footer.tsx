@@ -78,20 +78,17 @@ export function Footer() {
                         </div>
                     </div>
                 </div>
-
-                <div className="border-t border-mplp-border/30 mt-16 pt-8 flex flex-col sm:flex-row justify-between items-center gap-6">
-                    <div className="flex flex-col gap-1">
-                        <p className="text-mplp-text-muted text-[10px] uppercase tracking-widest">
-                            © {currentYear} Bangshi Beijing Network Technology Co., Ltd.
+                {/* Bottom Bar */}
+                <div className="mt-12 pt-8 border-t border-mplp-border/50">
+                    <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <p className="text-mplp-text-muted text-xs">
+                            <strong>MPLP</strong> = Multi-Agent Lifecycle Protocol (not a license).
                         </p>
-                        <p className="text-mplp-text-muted text-[10px] uppercase tracking-widest">
-                            Licensed under Apache License 2.0.
-                        </p>
-                        <p className="text-mplp-text-muted text-[10px] uppercase tracking-widest mt-1">
-                            Managed by the MPLP Protocol Governance Committee (MPGC). Frozen & Auditable.
+                        <p className="text-mplp-text-muted text-xs">
+                            © {currentYear} Bangshi Beijing Network Technology Co., Ltd. Licensed under Apache License 2.0.
                         </p>
                     </div>
-                    <div className="flex items-center gap-6">
+                    <div className="flex justify-center gap-6 mt-6">
                         <Link
                             href={siteConfig.links.github}
                             className="text-mplp-text-muted hover:text-mplp-text transition-colors"

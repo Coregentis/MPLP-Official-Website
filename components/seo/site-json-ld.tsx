@@ -64,6 +64,20 @@ export function SiteJsonLd() {
         mainEntityOfPage: REPO_URLS.root,
     };
 
+    const definedTerm = {
+        "@type": "DefinedTerm",
+        "@id": `${siteConfig.url}#mplp-term`,
+        name: "Multi-Agent Lifecycle Protocol",
+        alternateName: "MPLP",
+        description: "The lifecycle governance interface for AI agents.",
+        disambiguatingDescription: "MPLP is not a software license and does not define licensing terms. It is a protocol specification for agent lifecycle management.",
+        inDefinedTermSet: {
+            "@type": "DefinedTermSet",
+            name: "MPLP Glossary",
+            url: `${siteConfig.url}/assets/geo/mplp-entity.json`,
+        },
+    };
+
     const graphContent = {
         "@context": "https://schema.org",
         "@graph": [
@@ -71,6 +85,7 @@ export function SiteJsonLd() {
             organization,
             specSeries,
             sourceCode,
+            definedTerm,
         ],
     };
 
