@@ -51,7 +51,7 @@ export default async function FlowDetailPage({ params }: { params: Promise<{ slu
         "headline": `MPLP Golden Flow: ${flow.title}`,
         "description": `Overview of the ${flow.title.toLowerCase()} golden flow in MPLP protocol.`,
         "url": `${siteConfig.url}/golden-flows/${flow.id}`,
-        "isBasedOn": `${DOCS_URLS.home}/docs/tests/golden-flow-registry`,
+        "isBasedOn": `${DOCS_URLS.home}/docs/evaluation/tests/golden-flow-registry`,
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": `${siteConfig.url}/golden-flows/${flow.id}`
@@ -167,7 +167,7 @@ export default async function FlowDetailPage({ params }: { params: Promise<{ slu
                                 ))}
                             </div>
                             <div className="space-y-3">
-                                <Button variant="secondary" className="w-full justify-start" href={`${DOCS_URLS.home}/docs/tests/golden-flow-registry`} external>
+                                <Button variant="secondary" className="w-full justify-start" href={`${DOCS_URLS.home}/docs/evaluation/tests/golden-flow-registry`} external>
                                     View in Registry
                                 </Button>
                                 <Button variant="ghost" className="w-full justify-start" href="/golden-flows">
