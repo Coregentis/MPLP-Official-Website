@@ -60,19 +60,19 @@ export const DOCS_URLS = {
 
     // Conformance & Tests - /docs/docs/evaluation/tests/*
     conformance: "https://docs.mplp.io/docs/evaluation/conformance",
-    testsOverview: "https://docs.mplp.io/docs/evaluation/tests",
+    testsOverview: "https://docs.mplp.io/docs/evaluation/tests/",
 
     // Guides - /docs/docs/guides/*
     guides: "https://docs.mplp.io/docs/guides",
-    quickstart: "https://docs.mplp.io/docs/guides/examples",
+    quickstart: "https://docs.mplp.io/docs/guides/examples/",
 
     // SDK - /docs/docs/guides/sdk/*
-    sdkDocs: "https://docs.mplp.io/docs/guides/sdk",
+    sdkDocs: "https://docs.mplp.io/docs/guides/sdk/"
 
     // Governance - /docs/docs/evaluation/governance/*
     governance: "https://docs.mplp.io/docs/evaluation/governance",
     releasePolicy: "https://docs.mplp.io/docs/evaluation/governance/versioning-policy",
-    contribution: "https://docs.mplp.io/docs/evaluation/governance/mip-process",
+    contribution: "https://docs.mplp.io/docs/evaluation/governance/contributing",
 
     // External
     github: "https://github.com/Coregentis/MPLP-Protocol",
