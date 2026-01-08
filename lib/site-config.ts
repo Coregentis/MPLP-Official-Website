@@ -41,7 +41,7 @@ export const DOCS_URLS = {
     kernelDuties: "https://docs.mplp.io/docs/specification/architecture/cross-cutting-kernel-duties",
 
     // Modules - /docs/docs/specification/modules/*
-    modules: "https://docs.mplp.io/docs/specification/modules",
+    modules: "https://docs.mplp.io/docs/specification/modules/module-interactions",
     moduleInteractions: "https://docs.mplp.io/docs/specification/modules/module-interactions",
     contextModule: "https://docs.mplp.io/docs/specification/modules/context-module",
 
@@ -60,14 +60,14 @@ export const DOCS_URLS = {
 
     // Conformance & Tests - /docs/docs/evaluation/tests/*
     conformance: "https://docs.mplp.io/docs/evaluation/conformance",
-    testsOverview: "https://docs.mplp.io/docs/evaluation/tests/",
+    testsOverview: "https://docs.mplp.io/docs/evaluation/tests/test-architecture-overview",
 
     // Guides - /docs/docs/guides/*
     guides: "https://docs.mplp.io/docs/guides",
-    quickstart: "https://docs.mplp.io/docs/guides/examples/",
+    quickstart: "https://docs.mplp.io/docs/guides/examples/single-agent-flow",
 
     // SDK - /docs/docs/guides/sdk/*
-    sdkDocs: "https://docs.mplp.io/docs/guides/sdk/"
+    sdkDocs: "https://docs.mplp.io/docs/guides/sdk/ts-sdk-guide",
 
     // Governance - /docs/docs/evaluation/governance/*
     governance: "https://docs.mplp.io/docs/evaluation/governance",
