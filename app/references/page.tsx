@@ -52,7 +52,7 @@ export default function ReferencesPage() {
                 {/* Navigation Links */}
                 <div className="flex flex-wrap gap-4 mb-8">
                     <Link
-                        href={`${DOCS_URLS.home}/docs/evaluation/standards/positioning`}
+                        href={DOCS_URLS.standardsPositioning}
                         className="inline-flex items-center px-6 py-3 border border-mplp-border text-mplp-text font-semibold rounded-lg hover:bg-mplp-bg transition-colors"
                         target="_blank"
                     >
@@ -87,7 +87,7 @@ export default function ReferencesPage() {
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <Link
-                                href={`${DOCS_URLS.home}/docs/evaluation/standards/iso-mapping`}
+                                href={DOCS_URLS.standardsIsoMapping}
                                 className="p-5 sm:p-6 border border-mplp-border rounded-xl hover:border-mplp-blue-soft/30 hover:bg-white/5 transition-all"
                                 target="_blank"
                             >
@@ -95,7 +95,7 @@ export default function ReferencesPage() {
                                 <p className="text-sm text-mplp-text-muted line-clamp-2">AI Management System mapping</p>
                             </Link>
                             <Link
-                                href={`${DOCS_URLS.home}/docs/evaluation/standards/nist-mapping`}
+                                href={DOCS_URLS.standardsNistMapping}
                                 className="p-5 sm:p-6 border border-mplp-border rounded-xl hover:border-mplp-blue-soft/30 hover:bg-white/5 transition-all"
                                 target="_blank"
                             >

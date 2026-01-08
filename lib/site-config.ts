@@ -41,10 +41,20 @@ export const DOCS_URLS = {
     kernelDuties: "https://docs.mplp.io/docs/specification/architecture/cross-cutting-kernel-duties",
 
     // Modules - /docs/docs/specification/modules/*
+    // Entry point
     modules: "https://docs.mplp.io/docs/specification/modules/module-interactions",
-    modulesBase: "https://docs.mplp.io/docs/specification/modules",  // Base for getModuleDocUrl()
     moduleInteractions: "https://docs.mplp.io/docs/specification/modules/module-interactions",
-    contextModule: "https://docs.mplp.io/docs/specification/modules/context-module",
+    // Individual module pages (explicit - no path concatenation)
+    contextModulePage: "https://docs.mplp.io/docs/specification/modules/context-module",
+    confirmModulePage: "https://docs.mplp.io/docs/specification/modules/confirm-module",
+    collabModulePage: "https://docs.mplp.io/docs/specification/modules/collab-module",
+    planModulePage: "https://docs.mplp.io/docs/specification/modules/plan-module",
+    dialogModulePage: "https://docs.mplp.io/docs/specification/modules/dialog-module",
+    traceModulePage: "https://docs.mplp.io/docs/specification/modules/trace-module",
+    roleModulePage: "https://docs.mplp.io/docs/specification/modules/role-module",
+    networkModulePage: "https://docs.mplp.io/docs/specification/modules/network-module",
+    extensionModulePage: "https://docs.mplp.io/docs/specification/modules/extension-module",
+    coreModulePage: "https://docs.mplp.io/docs/specification/modules/core-module",
 
     // Runtime - /docs/docs/guides/runtime/*
     runtimeOverview: "https://docs.mplp.io/docs/guides/runtime/runtime-glue-overview",
@@ -54,6 +64,7 @@ export const DOCS_URLS = {
 
     // Golden Flows - /docs/docs/evaluation/golden-flows/*
     goldenFlows: "https://docs.mplp.io/docs/evaluation/golden-flows",
+    goldenFlowRegistry: "https://docs.mplp.io/docs/evaluation/tests/golden-flow-registry",
 
     // Profiles - /docs/docs/specification/profiles/*
     saProfile: "https://docs.mplp.io/docs/specification/profiles/sa-profile",
@@ -62,6 +73,11 @@ export const DOCS_URLS = {
     // Conformance & Tests - /docs/docs/evaluation/tests/*
     conformance: "https://docs.mplp.io/docs/evaluation/conformance",
     testsOverview: "https://docs.mplp.io/docs/evaluation/tests/test-architecture-overview",
+
+    // Standards - /docs/docs/evaluation/standards/*
+    standardsPositioning: "https://docs.mplp.io/docs/evaluation/standards/positioning",
+    standardsIsoMapping: "https://docs.mplp.io/docs/evaluation/standards/iso-mapping",
+    standardsNistMapping: "https://docs.mplp.io/docs/evaluation/standards/nist-mapping",
 
     // Guides - /docs/docs/guides/*
     guides: "https://docs.mplp.io/docs/guides",
@@ -95,10 +111,29 @@ export const REPO_URLS = {
 export type DocsKey = keyof typeof DOCS_URLS;
 export type RepoKey = keyof typeof REPO_URLS;
 
-// Helper for dynamic module URLs - uses DOCS_URLS.modulesBase as base
-// Prefer explicit DOCS_URLS keys when available (e.g., contextModule)
-export function getModuleDocUrl(moduleId: string) {
-    return `${DOCS_URLS.modulesBase}/${moduleId}-module`;
+// Module URL lookup map - maps module ID to explicit DOCS_URLS key
+const MODULE_DOC_KEYS: Record<string, keyof typeof DOCS_URLS> = {
+    context: "contextModulePage",
+    confirm: "confirmModulePage",
+    collab: "collabModulePage",
+    plan: "planModulePage",
+    dialog: "dialogModulePage",
+    trace: "traceModulePage",
+    role: "roleModulePage",
+    network: "networkModulePage",
+    extension: "extensionModulePage",
+    core: "coreModulePage",
+};
+
+// Helper for dynamic module URLs - uses explicit lookup (no path concatenation)
+export function getModuleDocUrl(moduleId: string): string {
+    const key = MODULE_DOC_KEYS[moduleId];
+    if (key) {
+        return DOCS_URLS[key];
+    }
+    // Fallback for unknown modules (should not happen in practice)
+    console.warn(`Unknown module ID: ${moduleId}`);
+    return DOCS_URLS.modules;
 }
 
 // Navbar: Strict 7 Semantic Anchors ONLY (FROZEN)

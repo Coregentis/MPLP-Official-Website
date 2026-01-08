@@ -1,61 +1,11 @@
 {
-  "checked": 25,
+  "checked": 26,
   "broken": 0,
-  "redirects": 0,
-  "generated_at": "2026-01-08T21:19:14.030Z",
+  "redirects": 1,
+  "generated_at": "2026-01-08T21:42:46.630Z",
   "results": [
     {
       "url": "https://docs.mplp.io/docs/evaluation/conformance",
-      "status": 200,
-      "refs": [
-        {
-          "file": "lib/site-config.ts",
-          "line": 62
-        }
-      ]
-    },
-    {
-      "url": "https://docs.mplp.io/docs/evaluation/golden-flows",
-      "status": 200,
-      "refs": [
-        {
-          "file": "lib/site-config.ts",
-          "line": 55
-        }
-      ]
-    },
-    {
-      "url": "https://docs.mplp.io/docs/evaluation/governance",
-      "status": 200,
-      "refs": [
-        {
-          "file": "lib/site-config.ts",
-          "line": 73
-        }
-      ]
-    },
-    {
-      "url": "https://docs.mplp.io/docs/evaluation/governance/contributing",
-      "status": 200,
-      "refs": [
-        {
-          "file": "lib/site-config.ts",
-          "line": 75
-        }
-      ]
-    },
-    {
-      "url": "https://docs.mplp.io/docs/evaluation/governance/versioning-policy",
-      "status": 200,
-      "refs": [
-        {
-          "file": "lib/site-config.ts",
-          "line": 74
-        }
-      ]
-    },
-    {
-      "url": "https://docs.mplp.io/docs/evaluation/tests/test-architecture-overview",
       "status": 200,
       "refs": [
         {
@@ -65,17 +15,57 @@
       ]
     },
     {
-      "url": "https://docs.mplp.io/docs/guides",
+      "url": "https://docs.mplp.io/docs/evaluation/golden-flows",
       "status": 200,
       "refs": [
         {
           "file": "lib/site-config.ts",
-          "line": 66
+          "line": 56
         }
       ]
     },
     {
-      "url": "https://docs.mplp.io/docs/guides/examples/single-agent-flow",
+      "url": "https://docs.mplp.io/docs/evaluation/governance",
+      "status": 200,
+      "refs": [
+        {
+          "file": "lib/site-config.ts",
+          "line": 74
+        }
+      ]
+    },
+    {
+      "url": "https://docs.mplp.io/docs/evaluation/governance/contributing",
+      "status": 200,
+      "refs": [
+        {
+          "file": "lib/site-config.ts",
+          "line": 76
+        }
+      ]
+    },
+    {
+      "url": "https://docs.mplp.io/docs/evaluation/governance/versioning-policy",
+      "status": 200,
+      "refs": [
+        {
+          "file": "lib/site-config.ts",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "url": "https://docs.mplp.io/docs/evaluation/tests/test-architecture-overview",
+      "status": 200,
+      "refs": [
+        {
+          "file": "lib/site-config.ts",
+          "line": 64
+        }
+      ]
+    },
+    {
+      "url": "https://docs.mplp.io/docs/guides",
       "status": 200,
       "refs": [
         {
@@ -85,37 +75,17 @@
       ]
     },
     {
+      "url": "https://docs.mplp.io/docs/guides/examples/single-agent-flow",
+      "status": 200,
+      "refs": [
+        {
+          "file": "lib/site-config.ts",
+          "line": 68
+        }
+      ]
+    },
+    {
       "url": "https://docs.mplp.io/docs/guides/runtime/ael",
-      "status": 200,
-      "refs": [
-        {
-          "file": "lib/site-config.ts",
-          "line": 50
-        }
-      ]
-    },
-    {
-      "url": "https://docs.mplp.io/docs/guides/runtime/psg",
-      "status": 200,
-      "refs": [
-        {
-          "file": "lib/site-config.ts",
-          "line": 52
-        }
-      ]
-    },
-    {
-      "url": "https://docs.mplp.io/docs/guides/runtime/runtime-glue-overview",
-      "status": 200,
-      "refs": [
-        {
-          "file": "lib/site-config.ts",
-          "line": 49
-        }
-      ]
-    },
-    {
-      "url": "https://docs.mplp.io/docs/guides/runtime/vsl",
       "status": 200,
       "refs": [
         {
@@ -125,12 +95,42 @@
       ]
     },
     {
+      "url": "https://docs.mplp.io/docs/guides/runtime/psg",
+      "status": 200,
+      "refs": [
+        {
+          "file": "lib/site-config.ts",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "url": "https://docs.mplp.io/docs/guides/runtime/runtime-glue-overview",
+      "status": 200,
+      "refs": [
+        {
+          "file": "lib/site-config.ts",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "url": "https://docs.mplp.io/docs/guides/runtime/vsl",
+      "status": 200,
+      "refs": [
+        {
+          "file": "lib/site-config.ts",
+          "line": 52
+        }
+      ]
+    },
+    {
       "url": "https://docs.mplp.io/docs/guides/sdk/ts-sdk-guide",
       "status": 200,
       "refs": [
         {
           "file": "lib/site-config.ts",
-          "line": 70
+          "line": 71
         }
       ]
     },
@@ -219,12 +219,22 @@
       ]
     },
     {
+      "url": "https://docs.mplp.io/docs/specification/modules",
+      "status": 301,
+      "refs": [
+        {
+          "file": "lib/site-config.ts",
+          "line": 45
+        }
+      ]
+    },
+    {
       "url": "https://docs.mplp.io/docs/specification/modules/context-module",
       "status": 200,
       "refs": [
         {
           "file": "lib/site-config.ts",
-          "line": 46
+          "line": 47
         }
       ]
     },
@@ -238,7 +248,7 @@
         },
         {
           "file": "lib/site-config.ts",
-          "line": 45
+          "line": 46
         }
       ]
     },
@@ -248,7 +258,7 @@
       "refs": [
         {
           "file": "lib/site-config.ts",
-          "line": 59
+          "line": 60
         }
       ]
     },
@@ -258,7 +268,7 @@
       "refs": [
         {
           "file": "lib/site-config.ts",
-          "line": 58
+          "line": 59
         }
       ]
     }
