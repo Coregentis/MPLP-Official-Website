@@ -79,6 +79,56 @@ export default function PosixAnalogyPage() {
                                     </p>
                                 </div>
 
+                                {/* Conceptual Correspondences (Informative) */}
+                                <div className="mt-16">
+                                    <h3 className="text-lg font-bold text-mplp-text mb-6 flex items-center gap-3">
+                                        <span className="h-px flex-1 bg-mplp-border/50" />
+                                        <span>Conceptual Correspondences</span>
+                                        <span className="text-[10px] font-normal text-mplp-text-muted/60 uppercase tracking-wider">(Informative)</span>
+                                        <span className="h-px flex-1 bg-mplp-border/50" />
+                                    </h3>
+                                    <ul className="space-y-3 text-sm text-mplp-text-muted">
+                                        <li className="flex gap-2">
+                                            <span className="text-mplp-indigo shrink-0">→</span>
+                                            <span><strong className="text-mplp-text">POSIX &quot;standard interface&quot;</strong> → MPLP &quot;schema-defined lifecycle interface&quot; (Context / Plan / Confirm / Trace)</span>
+                                        </li>
+                                        <li className="flex gap-2">
+                                            <span className="text-mplp-indigo shrink-0">→</span>
+                                            <span><strong className="text-mplp-text">POSIX syscalls &amp; contracts</strong> → MPLP module contracts &amp; kernel duties (invariants, failure semantics)</span>
+                                        </li>
+                                        <li className="flex gap-2">
+                                            <span className="text-mplp-indigo shrink-0">→</span>
+                                            <span><strong className="text-mplp-text">POSIX conformance tests</strong> → MPLP Golden Flows &amp; evidence-based verdicts (Validation Lab consumes evidence only)</span>
+                                        </li>
+                                        <li className="flex gap-2">
+                                            <span className="text-mplp-indigo shrink-0">→</span>
+                                            <span><strong className="text-mplp-text">POSIX portability</strong> → MPLP portability across substrates (models / frameworks / runtimes / vendors)</span>
+                                        </li>
+                                        <li className="flex gap-2">
+                                            <span className="text-mplp-indigo shrink-0">→</span>
+                                            <span><strong className="text-mplp-text">POSIX logs/debugging</strong> → MPLP Trace &amp; Evidence Pack (replayable, auditable artifacts)</span>
+                                        </li>
+                                    </ul>
+
+                                    <div className="mt-8 p-4 rounded-lg border border-amber-500/20 bg-amber-500/5 text-xs text-mplp-text-muted/80">
+                                        <p>
+                                            <strong className="text-amber-400/90">Boundary:</strong> This is an analogy for conceptual positioning only. MPLP is not POSIX, does not implement an OS or runtime, and this page does not define normative requirements or any POSIX compatibility claim.
+                                        </p>
+                                    </div>
+
+                                    <div className="mt-6 text-center">
+                                        <a
+                                            href="https://docs.mplp.io/docs/introduction/posix-analogy-mapping"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 text-sm text-mplp-blue-soft hover:text-mplp-blue-light transition-colors"
+                                        >
+                                            Read the detailed conceptual mapping in the Documentation
+                                            <span>→</span>
+                                        </a>
+                                    </div>
+                                </div>
+
                                 <div className="mt-12 text-center">
                                     <p className="text-xs text-mplp-text-muted/60">
                                         Note: This analogy is informative and intended to help with conceptual positioning.<br />

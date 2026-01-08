@@ -14,6 +14,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/why-mplp",
         "/architecture",
         "/modules",
+
+        // NEW: canonical pages (must be in sitemap if 200 + indexable)
+        "/posix-analogy",
+        "/specification",
+        "/validation-lab",
+
         "/kernel-duties",  // PR-04: Added for sitelinks
         "/golden-flows",
         "/faq",            // PR-04: Added for sitelinks
@@ -38,15 +44,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/blog",
     ].map((route) => ({
         url: `${baseUrl}${route}`,
-        lastModified: new Date("2026-01-06"),  // Freeze date for consistent crawling
+        lastModified: new Date("2026-01-08"),  // Freeze date for consistent crawling
         changeFrequency: "weekly" as const,
-        priority: route === "" ? 1 : (route === "/definition" ? 0.95 : 0.8),  // Anchor page high priority
+        priority:
+            route === ""
+                ? 1
+                : route === "/definition"
+                    ? 0.95
+                    : route === "/specification"
+                        ? 0.92
+                        : route === "/posix-analogy"
+                            ? 0.88
+                            : route === "/validation-lab"
+                                ? 0.88
+                                : 0.8,
     }));
 
     // Module Detail Pages
     const modulePages = modules.map((module) => ({
         url: `${baseUrl}/modules/${module.id}`,
-        lastModified: new Date(),
+        lastModified: new Date("2026-01-08"),
         changeFrequency: "weekly" as const,
         priority: 0.9, // Higher priority for core specs
     }));
@@ -54,7 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Golden Flow Detail Pages (use lowercase for route consistency)
     const flowPages = flows.map((flow) => ({
         url: `${baseUrl}/golden-flows/${flow.id.toLowerCase()}`,
-        lastModified: new Date(),
+        lastModified: new Date("2026-01-08"),
         changeFrequency: "weekly" as const,
         priority: 0.9, // Higher priority for normative flows
     }));
@@ -62,7 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Blog posts
     const blogPosts = getAllPostSlugs().map((slug) => ({
         url: `${baseUrl}/blog/${slug}`,
-        lastModified: new Date(),
+        lastModified: new Date("2026-01-08"),
         changeFrequency: "monthly" as const,
         priority: 0.6,
     }));
