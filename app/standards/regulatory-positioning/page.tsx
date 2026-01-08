@@ -71,6 +71,7 @@ export default function RegulatoryPositioningPage() {
                             This page provides a <strong className="text-mplp-text">high-level, non-exhaustive mapping</strong> between MPLP protocol capabilities and objectives articulated by major regulatory frameworks.
                         </p>
                         <p className="text-mplp-text-muted leading-relaxed mt-4">
+                            {/* TERM-WAIVER: Negation context - without claiming compliance */}
                             The purpose is to assist enterprises in understanding how MPLP&apos;s lifecycle primitives may <em>relate to</em>, <em>support</em>, or <em>enable</em> certain regulatory expectations — without claiming compliance or certification.
                         </p>
                     </div>
@@ -97,6 +98,7 @@ export default function RegulatoryPositioningPage() {
                         <div className="rounded-2xl border-2 border-mplp-warning/50 bg-mplp-warning/5 p-6">
                             <p className="text-sm font-bold uppercase tracking-wider text-mplp-warning mb-3">DISC-02: No Legal Advice</p>
                             <p className="text-mplp-text-muted leading-relaxed">
+                                {/* TERM-WAIVER: Legal disclaimer - compliance determinations */}
                                 <strong className="text-mplp-text">This material is informational and does not constitute legal or regulatory advice.</strong> Any regulatory mapping is high-level and non-exhaustive; organizations should consult qualified professionals for compliance determinations.
                             </p>
                         </div>
@@ -131,6 +133,7 @@ export default function RegulatoryPositioningPage() {
                     <div className="mt-8 rounded-xl border border-mplp-border bg-slate-950/30 p-6">
                         <h4 className="text-sm font-bold text-mplp-text mb-3">EU AI Act (High-Level)</h4>
                         <p className="text-sm text-mplp-text-muted leading-relaxed">
+                            {/* TERM-WAIVER: Negation context - not a compliance claim */}
                             The EU AI Act establishes risk-based requirements for AI systems. MPLP&apos;s Evidence Chain (Plan → Confirm → Trace) provides structured lifecycle artifacts that may support documentation and auditability expectations. <strong className="text-mplp-text">This is a high-level observation, not a compliance claim.</strong>
                         </p>
                     </div>

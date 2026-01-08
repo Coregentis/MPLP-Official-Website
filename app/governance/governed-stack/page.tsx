@@ -104,16 +104,16 @@ export default function GovernedStackPage() {
                 </div>
             </ContentSection>
 
-            {/* Compliance as a Kernel Responsibility */}
+            {/* Conformance as a Kernel Responsibility */}
             {/* 
                 SEMANTIC: Normative Clarification
-                PURPOSE: Define compliance as a kernel-level duty, not an external plugin.
+                PURPOSE: Define conformance as a kernel-level duty, not an external plugin.
             */}
             <ContentSection background="surface">
                 <SectionHeader
                     eyebrow="Architecture"
-                    title="Compliance as a Kernel Responsibility"
-                    description="In MPLP, compliance is not implemented as an external plugin or optional middleware. It is a kernel-level responsibility enforced through protocol-defined lifecycle duties."
+                    title="Conformance as a Kernel Responsibility"
+                    description="In MPLP, conformance is not implemented as an external plugin or optional middleware. It is a kernel-level responsibility enforced through protocol-defined lifecycle duties."
                     align="center"
                 />
                 <div className="mt-8 max-w-4xl mx-auto">
@@ -121,7 +121,7 @@ export default function GovernedStackPage() {
                         <div className="mplp-card p-6 border-mplp-emerald/20 bg-mplp-emerald/5">
                             <h3 className="text-lg font-semibold text-mplp-text mb-3">Kernel-Level Enforcement</h3>
                             <p className="text-sm text-mplp-text-muted mb-4">
-                                Compliance checks are baked into the agent&apos;s lifecycle loop. An agent cannot transition from <strong>Plan</strong> to <strong>Act</strong> without passing kernel-level authorization gates.
+                                Conformance checks are baked into the agent&apos;s lifecycle loop. An agent cannot transition from <strong>Plan</strong> to <strong>Act</strong> without passing kernel-level authorization gates.
                             </p>
                             <ul className="space-y-2 text-sm text-mplp-text-muted">
                                 <li className="flex items-start gap-2">
@@ -141,11 +141,13 @@ export default function GovernedStackPage() {
                         <div className="mplp-card p-6 border-mplp-border/50 bg-slate-950/30">
                             <h3 className="text-lg font-semibold text-mplp-text-muted mb-3">Plugin-Level (Traditional)</h3>
                             <p className="text-sm text-mplp-text-muted mb-4">
+                                {/* TERM-WAIVER: Architectural comparison - describes traditional patterns */}
                                 In traditional architectures, compliance is often an &ldquo;afterthought&rdquo; wrapper or a sidecar proxy that can be bypassed or disabled.
                             </p>
                             <ul className="space-y-2 text-sm text-mplp-text-muted opacity-75">
                                 <li className="flex items-start gap-2">
                                     <span className="text-mplp-error mt-0.5">✗</span>
+                                    {/* TERM-WAIVER: Architectural comparison - describes traditional patterns */}
                                     <span>Compliance logic external to agent state</span>
                                 </li>
                                 <li className="flex items-start gap-2">
@@ -161,6 +163,7 @@ export default function GovernedStackPage() {
                     </div>
                     <div className="mt-6 p-4 rounded-xl border border-mplp-border bg-slate-950/50 text-center">
                         <p className="text-xs text-mplp-text-muted">
+                            {/* TERM-WAIVER: Usage boundary - refers to regulatory compliance */}
                             <strong>Usage Boundary:</strong> This section clarifies architectural responsibility. It does not assert regulatory compliance for any specific implementation without independent audit.
                         </p>
                     </div>

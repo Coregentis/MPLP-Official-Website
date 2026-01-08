@@ -7,7 +7,7 @@ import { CanonicalReferences } from "@/components/ui/canonical-references";
 import { NextSteps } from "@/components/ui/next-steps";
 
 export const metadata: Metadata = {
-    title: "Kernel Duties | MPLP — Multi-Agent Lifecycle Protocol",
+    title: "Kernel Duties",
     description: "The 11 kernel duties that describe lifecycle governance semantics in the MPLP protocol. Defines cross-cutting responsibilities across the protocol specification.",
 };
 
@@ -119,10 +119,11 @@ export default function KernelDutiesPage() {
             <ContentSection>
                 <div className="max-w-4xl mx-auto">
                     <CanonicalReferences
-                        docsUrl={DOCS_URLS.l1ToL4}
-                        repoUrl={REPO_URLS.schemas}
+                        docsKey="l1ToL4"
+                        repoKey="schemas"
                         variant="full"
                     />
+
                     <NextSteps
                         docsKey="l1ToL4"
                         repoKey="schemas"

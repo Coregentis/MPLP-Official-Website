@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FlowSteps } from "@/components/ui/flow-steps";
 import { StandardPage } from "@/components/layout/standard-page";
 import { ContentSection } from "@/components/ui/content-section";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -16,7 +17,7 @@ function flowSlug(id: string) {
 
 export const metadata: Metadata = {
     title: "Golden Flows | MPLP Protocol",
-    description: "The five normative integration flows that define protocol compliance for MPLP implementations.",
+    description: "The five normative integration flows that define protocol conformance for MPLP implementations.",
     alternates: {
         canonical: `${siteConfig.url}/golden-flows`,
     },
@@ -28,8 +29,8 @@ export default function GoldenFlowsPage() {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "name": "MPLP Golden Flows",
-        "description": "The five normative integration flows that define protocol compliance for MPLP implementations.",
-        "about": "Normative integration flows defining MPLP protocol compliance",
+        "description": "The five normative integration flows that define protocol conformance for MPLP implementations.",
+        "about": "Normative integration flows defining MPLP protocol conformance",
         "url": `${siteConfig.url}/golden-flows`,
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -109,16 +110,7 @@ export default function GoldenFlowsPage() {
                                     <p className="text-mplp-text-muted text-lg mb-6">
                                         {flow.desc}
                                     </p>
-                                    <div className="flex flex-wrap gap-2 mb-4">
-                                        {flow.steps.map((step, i) => (
-                                            <div key={i} className="flex items-center text-sm text-mplp-text-muted">
-                                                <span className="font-medium text-mplp-text">{step.name}</span>
-                                                {i < flow.steps.length - 1 && (
-                                                    <span className="mx-2 text-mplp-border">→</span>
-                                                )}
-                                            </div>
-                                        ))}
-                                    </div>
+                                    <FlowSteps steps={flow.steps} className="mb-6" />
                                     {/* Normative Scope */}
                                     <p className="text-xs text-mplp-text-muted">
                                         <span className="font-semibold text-mplp-text-muted/70">Normative Scope:</span>{" "}
@@ -136,29 +128,25 @@ export default function GoldenFlowsPage() {
                 </div>
             </ContentSection>
 
-            {/* Protocol Compliance Boundary */}
+            {/* Protocol Conformance Boundary */}
             <ContentSection background="surface">
                 <SectionHeader
                     eyebrow="Normative"
-                    title="Protocol Compliance Boundary"
+                    title="Protocol Conformance Boundary"
+                    description="Golden Flows define the minimum executable scenarios required for MPLP conformance. They are not examples, tutorials, or best practices."
+                    align="center"
                     className="mb-8"
                 />
                 <div className="max-w-3xl mx-auto text-center space-y-4">
-                    <p className="text-mplp-text-muted">
-                        Golden Flows define the minimum executable scenarios required for MPLP compliance.
-                    </p>
-                    <p className="text-mplp-text-muted">
-                        They are not examples, tutorials, or best practices.
-                    </p>
                     <p className="text-mplp-text font-medium">
                         Implementations may be evaluated against Golden Flows as described in the specification.
                     </p>
                     <div className="pt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
                         <Link
-                            href="/compliance"
+                            href="/conformance"
                             className="text-mplp-text-muted hover:text-mplp-blue-light transition-colors"
                         >
-                            See Compliance Levels →
+                            See Conformance Levels →
                         </Link>
                         <Link
                             href="/governance/overview"
@@ -174,10 +162,11 @@ export default function GoldenFlowsPage() {
             <ContentSection>
                 <div className="max-w-4xl mx-auto">
                     <CanonicalReferences
-                        docsUrl={DOCS_URLS.goldenFlows}
-                        repoUrl={REPO_URLS.tests}
+                        docsKey="goldenFlows"
+                        repoKey="tests"
                         variant="full"
                     />
+
                     <NextSteps
                         docsKey="goldenFlows"
                         repoKey="tests"

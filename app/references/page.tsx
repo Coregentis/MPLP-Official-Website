@@ -9,6 +9,7 @@ import { jsonLdReferencesPage } from "@/lib/seo/jsonld-structure";
 import { DOCS_URLS, REPO_URLS } from "@/lib/site-config";
 import { CanonicalReferences } from "@/components/ui/canonical-references";
 import { NextSteps } from "@/components/ui/next-steps";
+import { Callout, InvariantHighlight } from "@/components/ui/callout";
 
 export const metadata: Metadata = {
     title: "References | MPLP — Multi-Agent Lifecycle Protocol",
@@ -41,13 +42,12 @@ export default function ReferencesPage() {
                 kicker="Citation Context"
             />
 
-            <ContentSection>                    <div className="p-4 bg-mplp-bg border border-mplp-border rounded-lg mb-10 max-w-3xl">
-                <p className="text-sm text-mplp-text-muted">
-                    <strong>Important:</strong> References are provided for context only.
-                    MPLP does not issue certifications, endorsements, or audit opinions.
-                    Comparisons describe layer differences, not superiority judgments.
-                </p>
-            </div>
+            <ContentSection>
+                <div className="max-w-3xl mx-auto">
+                    <Callout title="Citation Policy">
+                        References are provided for context only. MPLP does not issue certifications, endorsements, or audit opinions. Comparisons describe layer differences, not superiority judgments.
+                    </Callout>
+                </div>
 
                 {/* Navigation Links */}
                 <div className="flex flex-wrap gap-4 mb-8">
@@ -85,22 +85,22 @@ export default function ReferencesPage() {
                             Informative mappings between MPLP lifecycle semantics and external standards.
                             These mappings are descriptive, not assertions of conformity.
                         </p>
-                        <div className="grid md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <Link
                                 href={`${DOCS_URLS.home}/docs/standards/iso-mapping`}
-                                className="p-4 border border-mplp-border rounded-lg hover:border-mplp-blue transition-colors"
+                                className="p-5 sm:p-6 border border-mplp-border rounded-xl hover:border-mplp-blue-soft/30 hover:bg-white/5 transition-all"
                                 target="_blank"
                             >
-                                <h3 className="font-semibold text-mplp-text mb-1">ISO/IEC 42001</h3>
-                                <p className="text-sm text-mplp-text-muted">AI Management System mapping</p>
+                                <h3 className="font-bold text-mplp-text mb-2 line-clamp-1">ISO/IEC 42001</h3>
+                                <p className="text-sm text-mplp-text-muted line-clamp-2">AI Management System mapping</p>
                             </Link>
                             <Link
                                 href={`${DOCS_URLS.home}/docs/standards/nist-mapping`}
-                                className="p-4 border border-mplp-border rounded-lg hover:border-mplp-blue transition-colors"
+                                className="p-5 sm:p-6 border border-mplp-border rounded-xl hover:border-mplp-blue-soft/30 hover:bg-white/5 transition-all"
                                 target="_blank"
                             >
-                                <h3 className="font-semibold text-mplp-text mb-1">NIST AI RMF</h3>
-                                <p className="text-sm text-mplp-text-muted">AI Risk Management Framework mapping</p>
+                                <h3 className="font-bold text-mplp-text mb-2 line-clamp-1">NIST AI RMF</h3>
+                                <p className="text-sm text-mplp-text-muted line-clamp-2">AI Risk Management Framework mapping</p>
                             </Link>
                         </div>
                     </div>
@@ -114,31 +114,20 @@ export default function ReferencesPage() {
                             that is <strong>orthogonal</strong> to framework implementations. MPLP defines
                             lifecycle semantics independently of any specific runtime or framework.
                         </p>
-                        <div className="grid md:grid-cols-3 gap-4">
-                            <div className="p-4 border border-mplp-border rounded-lg">
-                                <h3 className="font-semibold text-mplp-text mb-1">LangChain / LangGraph</h3>
-                                <p className="text-sm text-mplp-text-muted">Agent orchestration framework</p>
-                            </div>
-                            <div className="p-4 border border-mplp-border rounded-lg">
-                                <h3 className="font-semibold text-mplp-text mb-1">AutoGen</h3>
-                                <p className="text-sm text-mplp-text-muted">Multi-agent conversation framework</p>
-                            </div>
-                            <div className="p-4 border border-mplp-border rounded-lg">
-                                <h3 className="font-semibold text-mplp-text mb-1">Semantic Kernel</h3>
-                                <p className="text-sm text-mplp-text-muted">AI orchestration SDK</p>
-                            </div>
-                            <div className="p-4 border border-mplp-border rounded-lg">
-                                <h3 className="font-semibold text-mplp-text mb-1">CrewAI</h3>
-                                <p className="text-sm text-mplp-text-muted">Multi-agent collaboration framework</p>
-                            </div>
-                            <div className="p-4 border border-mplp-border rounded-lg">
-                                <h3 className="font-semibold text-mplp-text mb-1">OpenAI Agents SDK</h3>
-                                <p className="text-sm text-mplp-text-muted">Agent development toolkit</p>
-                            </div>
-                            <div className="p-4 border border-mplp-border rounded-lg">
-                                <h3 className="font-semibold text-mplp-text mb-1">Claude Code / Cursor</h3>
-                                <p className="text-sm text-mplp-text-muted">AI coding assistants</p>
-                            </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {[
+                                { name: "LangChain / LangGraph", desc: "Agent orchestration framework" },
+                                { name: "AutoGen", desc: "Multi-agent conversation framework" },
+                                { name: "Semantic Kernel", desc: "AI orchestration SDK" },
+                                { name: "CrewAI", desc: "Multi-agent collaboration framework" },
+                                { name: "OpenAI Agents SDK", desc: "Agent development toolkit" },
+                                { name: "Claude Code / Cursor", desc: "AI coding assistants" },
+                            ].map((fw) => (
+                                <div key={fw.name} className="p-5 border border-mplp-border rounded-xl hover:bg-white/5 transition-colors">
+                                    <h3 className="font-bold text-mplp-text mb-1 line-clamp-1">{fw.name}</h3>
+                                    <p className="text-xs text-mplp-text-muted line-clamp-2">{fw.desc}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
 
@@ -150,17 +139,17 @@ export default function ReferencesPage() {
                                 or interaction concerns</strong>. When lifecycle semantics are involved, MPLP provides
                             the canonical reference vocabulary.
                         </p>
-                        <div className="grid md:grid-cols-2 gap-4">
-                            <div className="p-4 border border-mplp-border rounded-lg">
-                                <h3 className="font-semibold text-mplp-text mb-1">Model Context Protocol (MCP)</h3>
-                                <p className="text-sm text-mplp-text-muted">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div className="p-5 border border-mplp-border rounded-xl hover:bg-white/5 transition-colors">
+                                <h3 className="font-bold text-mplp-text mb-2 line-clamp-1">Model Context Protocol (MCP)</h3>
+                                <p className="text-xs text-mplp-text-muted line-clamp-3">
                                     Addresses context and tool integration. MPLP defines lifecycle semantics
                                     that may complement MCP&apos;s interaction model.
                                 </p>
                             </div>
-                            <div className="p-4 border border-mplp-border rounded-lg">
-                                <h3 className="font-semibold text-mplp-text mb-1">Agent-to-Agent (A2A)</h3>
-                                <p className="text-sm text-mplp-text-muted">
+                            <div className="p-5 border border-mplp-border rounded-xl hover:bg-white/5 transition-colors">
+                                <h3 className="font-bold text-mplp-text mb-2 line-clamp-1">Agent-to-Agent (A2A)</h3>
+                                <p className="text-xs text-mplp-text-muted line-clamp-3">
                                     Addresses inter-agent communication. MPLP defines lifecycle semantics
                                     for how agents evolve and are governed.
                                 </p>
@@ -176,19 +165,17 @@ export default function ReferencesPage() {
                             MPLP defines the canonical lifecycle semantics associated with this term.
                             This definition is protocol-specific and does not claim exclusivity over the term.
                         </p>
-                        <div className="grid md:grid-cols-3 gap-4">
-                            <div className="p-4 border border-mplp-border rounded-lg">
-                                <h3 className="font-semibold text-mplp-text mb-1">arXiv</h3>
-                                <p className="text-sm text-mplp-text-muted">AI Agents, Multi-Agent Systems</p>
-                            </div>
-                            <div className="p-4 border border-mplp-border rounded-lg">
-                                <h3 className="font-semibold text-mplp-text mb-1">Semantic Scholar</h3>
-                                <p className="text-sm text-mplp-text-muted">Academic paper indexing</p>
-                            </div>
-                            <div className="p-4 border border-mplp-border rounded-lg">
-                                <h3 className="font-semibold text-mplp-text mb-1">OpenAlex</h3>
-                                <p className="text-sm text-mplp-text-muted">Research knowledge graph</p>
-                            </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {[
+                                { name: "arXiv", desc: "AI Agents, Multi-Agent Systems" },
+                                { name: "Semantic Scholar", desc: "Academic paper indexing" },
+                                { name: "OpenAlex", desc: "Research knowledge graph" },
+                            ].map((ref) => (
+                                <div key={ref.name} className="p-5 border border-mplp-border rounded-xl hover:bg-white/5 transition-colors">
+                                    <h3 className="font-bold text-mplp-text mb-2 line-clamp-1">{ref.name}</h3>
+                                    <p className="text-xs text-mplp-text-muted">{ref.desc}</p>
+                                </div>
+                            ))}
                         </div>
                         <div className="mt-6 p-4 bg-mplp-bg rounded-lg">
                             <p className="text-sm text-mplp-text-muted">
@@ -213,6 +200,7 @@ export default function ReferencesPage() {
                                 </p>
                             </div>
                             <div className="p-4 border border-mplp-border rounded-lg">
+                                {/* TERM-WAIVER: Historical reference - documenting deprecated route name */}
                                 <h3 className="font-semibold text-mplp-text mb-1">/compliance (route)</h3>
                                 <p className="text-sm text-mplp-text-muted">
                                     Renamed to <Link href="/conformance" className="text-mplp-blue-soft hover:underline">/conformance</Link> for terminology standardization
@@ -227,10 +215,11 @@ export default function ReferencesPage() {
             <ContentSection>
                 <div className="max-w-4xl mx-auto">
                     <CanonicalReferences
-                        docsUrl={DOCS_URLS.home}
-                        repoUrl={REPO_URLS.root}
+                        docsKey="home"
+                        repoKey="root"
                         variant="full"
                     />
+
                     <NextSteps
                         docsKey="home"
                         repoKey="root"

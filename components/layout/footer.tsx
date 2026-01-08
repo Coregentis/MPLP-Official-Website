@@ -15,8 +15,8 @@ export function Footer() {
                             <Logo className="h-7 w-auto" />
                         </Link>
                         <p className="text-mplp-text-muted text-sm leading-relaxed max-w-xs font-normal">
-                            Multi-Agent Lifecycle Protocol (MPLP).<br />
-                            A vendor-neutral standard for governing autonomous agent lifecycles.
+                            <strong>Multi-Agent Lifecycle Protocol</strong><br />
+                            MPLP is a vendor-neutral lifecycle protocol for AI agents—observable, governed, and evidence-based.
                         </p>
                     </div>
 

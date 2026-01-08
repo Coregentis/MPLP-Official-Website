@@ -18,11 +18,12 @@ interface BackToAnchorProps {
  * 
  * Anchor mapping:
  * - /why-mplp → /faq
- * - /compliance → /governance/overview
+ * - /compliance (legacy) → /governance/overview [TERM-WAIVER: Historical reference]
  * - /ecosystem → /references
  * - /blog/* → /faq
  * - /governance/* (subpages) → /governance/overview
  */
+
 export function BackToAnchor({ href, label, className = "" }: BackToAnchorProps) {
     return (
         <div className={`mb-8 ${className}`}>

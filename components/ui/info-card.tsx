@@ -12,7 +12,7 @@ export function InfoCard({ title, children, className, icon }: InfoCardProps) {
     return (
         <div
             className={cn(
-                "group relative flex flex-col rounded-2xl border border-mplp-border bg-slate-950/80 p-5 transition-all duration-300 hover:border-mplp-blue-soft/50 hover:shadow-glow-blue",
+                "group relative flex flex-col rounded-2xl border border-mplp-border bg-slate-900/40 p-6 transition-all duration-300 hover:border-mplp-blue-soft/40 hover:-translate-y-1 hover:shadow-glow hover:bg-slate-900/60",
                 className
             )}
         >

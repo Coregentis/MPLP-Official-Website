@@ -8,7 +8,7 @@ interface GovernanceNavProps {
 
 const siblings = [
     { href: "/governance/overview", label: "Overview" },
-    { href: "/governance/agentos-protocol", label: "AgentOS Protocol" },
+    { href: "/governance/agentos-protocol", label: "Agent OS Protocol" },
     { href: "/governance/evidence-chain", label: "Evidence Chain" },
     { href: "/governance/governed-stack", label: "Governed Stack" },
     { href: "/governance/iso-iec-42001", label: "ISO/IEC 42001" },
@@ -16,7 +16,7 @@ const siblings = [
 ];
 
 const downstream = [
-    { href: "/compliance", label: "Compliance Levels" },
+    { href: "/conformance", label: "Conformance Levels" },
     { href: "/golden-flows", label: "Golden Flows" },
     { href: DOCS_URLS.home, label: "Documentation", external: true },
 ];

@@ -60,12 +60,24 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
         async function loadPagefind() {
             if (typeof window !== "undefined") {
                 try {
+                    // Check if pagefind exists first to avoid noisy console error in dev
+                    const response = await fetch("/pagefind/pagefind.js", { method: "HEAD" });
+                    if (!response.ok) {
+                        console.warn("Search index not found. Run 'npm run postbuild' to generate.");
+                        return;
+                    }
+
                     // @ts-expect-error - Pagefind is loaded at runtime from the generated index
                     const pf = await import(/* webpackIgnore: true */ "/pagefind/pagefind.js");
                     await pf.init();
                     setPagefind(pf);
                 } catch (err) {
-                    console.error("Failed to load Pagefind:", err);
+                    // Silence errors in dev environment if index is simply missing
+                    if (process.env.NODE_ENV === "development") {
+                        console.log("Pagefind search is inactive (missing index).");
+                    } else {
+                        console.error("Failed to load Pagefind index:", err);
+                    }
                 }
             }
         }

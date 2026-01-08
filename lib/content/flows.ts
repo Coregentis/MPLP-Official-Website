@@ -1,8 +1,37 @@
-export const flows = [
+/**
+ * Golden Flows — Source of Truth: tests/golden/flows/
+ * 
+ * 9 flows in 3 categories:
+ * - Core (FLOW-01~05): v1.0 Compliance Boundary
+ * - SA Profile (SA-FLOW-01~02): Single-Agent Profile
+ * - MAP Profile (MAP-FLOW-01~02): Multi-Agent Protocol
+ */
+
+export type FlowCategory = 'core' | 'sa-profile' | 'map-profile';
+
+export interface GoldenFlow {
+    id: string;
+    title: string;
+    category: FlowCategory;
+    desc: string;
+    goal: string;
+    keyModules: string[];
+    successCriteria: string;
+    normativeScope: { module: string; constraint: string }[];
+    failureConditions: string[];
+    steps: { name: string; desc: string }[];
+    sourceOfTruth: string;
+}
+
+export const flows: GoldenFlow[] = [
+    // ============================================
+    // Category A: Core v1.0 Compliance Boundary
+    // ============================================
     {
         id: "flow-01",
-        title: "Intent to Plan Transition",
-        desc: "The fundamental loop. An agent receives a high-level intent, decomposes it into a structured plan, executes tasks, and verifies the result.",
+        title: "Single Agent – Happy Path",
+        category: "core",
+        desc: "The baseline single-agent workflow. Agent receives context, generates a minimal 2-step plan, executes, and produces trace.",
         goal: "Validate that the runtime can accept a Context with an Intent and produce a valid Plan.",
         keyModules: ["Context", "Plan", "Trace"],
         successCriteria: "Plan is schema-valid and logically addresses the Intent.",
@@ -18,113 +47,250 @@ export const flows = [
             "The execution result cannot be verified against the Intent through Trace records."
         ],
         steps: [
-            { name: "User Intent", desc: "User submits a high-level goal via Context." },
-            { name: "Context Retrieval", desc: "Agent retrieves relevant context and constraints." },
-            { name: "Plan Generation", desc: "Agent decomposes intent into a DAG of steps." },
-            { name: "Task Execution", desc: "Runtime executes steps in dependency order." },
-            { name: "Verification", desc: "Output is validated against the original intent." }
-        ]
+            { name: "Context Creation", desc: "Context established with domain and environment." },
+            { name: "Plan Generation", desc: "2-step plan created with deterministic UUIDs." },
+            { name: "Task Execution", desc: "Steps executed in dependency order." },
+            { name: "Trace Recording", desc: "All state transitions recorded." },
+            { name: "Verification", desc: "Output validated against expected fixtures." }
+        ],
+        sourceOfTruth: "tests/golden/flows/flow-01-single-agent-plan"
     },
     {
         id: "flow-02",
-        title: "Governed Execution",
-        desc: "Ensures every action is checked against policy before execution. The AEL (Action Execution Loop) enforces permissions and constraints.",
-        goal: "Validate that the runtime can execute a Plan while respecting Constraints and emitting Trace events.",
-        keyModules: ["Plan", "Trace", "Core"],
-        successCriteria: "All steps complete, Trace is generated, Constraints are not violated.",
+        title: "Single Agent – Large Plan",
+        category: "core",
+        desc: "Volumetric validation with 20+ steps. Tests protocol handling of large execution plans.",
+        goal: "Validate that the runtime can execute a Plan with 20+ steps while maintaining invariants.",
+        keyModules: ["Context", "Plan", "Trace"],
+        successCriteria: "All 20+ steps complete, Trace is generated, no performance degradation.",
         normativeScope: [
-            { module: "Plan", constraint: "The Plan MUST be executed in dependency order with all constraints respected." },
-            { module: "Trace", constraint: "All execution events MUST be recorded in the Trace with proper causality." },
-            { module: "Core", constraint: "Governance policies MUST be checked before each action execution." }
+            { module: "Context", constraint: "Context MUST remain stable across volumetric execution." },
+            { module: "Plan", constraint: "Large plans (20+ steps) MUST preserve dependency order and step integrity." },
+            { module: "Trace", constraint: "Trace events MUST be ordered correctly despite volume." }
         ],
         failureConditions: [
-            "An action is executed without prior governance policy check.",
-            "Trace events are missing, incomplete, or lack proper causality.",
-            "A constraint violation occurs and is not detected or reported.",
-            "Execution proceeds despite a policy rejection."
+            "Plan cannot handle 20+ steps without schema violations.",
+            "Step ordering is not preserved during execution.",
+            "Performance degrades unacceptably with large plans.",
+            "Trace event ordering becomes incorrect."
         ],
         steps: [
-            { name: "Action Proposal", desc: "Agent proposes an action (tool call)." },
-            { name: "Policy Check", desc: "Governance engine checks permissions." },
-            { name: "Risk Scoring", desc: "Action is scored for risk (High/Medium/Low)." },
-            { name: "Execution", desc: "Approved action is executed by the runtime." },
-            { name: "Result Validation", desc: "Output is checked and recorded in Trace." }
-        ]
+            { name: "Large Context", desc: "Context framing batch processing scenario." },
+            { name: "Multi-Step Plan", desc: "20-30 heterogeneous steps with dependencies." },
+            { name: "Volumetric Execution", desc: "Steps processed with wildcard invariant validation." },
+            { name: "Trace Verification", desc: "Events ordered correctly despite volume." }
+        ],
+        sourceOfTruth: "tests/golden/flows/flow-02-single-agent-large-plan"
     },
     {
         id: "flow-03",
-        title: "Multi-Agent Coordination Loop",
-        desc: "How multiple agents with different roles collaborate on a shared objective using the Collab and Dialog modules.",
-        goal: "Validate that multiple agents can collaborate on a single Project.",
-        keyModules: ["Collab", "Role", "Dialog"],
-        successCriteria: "Atomic handoffs occur, shared state is maintained, no race conditions.",
+        title: "Single Agent – With Tools",
+        category: "core",
+        desc: "Tool integration via agent_role field. Validates protocol semantics for tool-enabled workflows.",
+        goal: "Validate that the runtime can handle tool-based steps with proper agent_role semantics.",
+        keyModules: ["Context", "Plan", "Trace", "Extension"],
+        successCriteria: "Tool steps execute via agent_role, outputs captured in trace.",
         normativeScope: [
-            { module: "Collab", constraint: "Task handoffs between agents MUST be atomic and maintain shared state consistency." },
-            { module: "Role", constraint: "All agents MUST operate within their assigned role boundaries." },
-            { module: "Dialog", constraint: "Inter-agent communication MUST follow the Dialog protocol semantics." }
+            { module: "Plan", constraint: "Steps with tool roles MUST use agent_role field (not fictional tool_name)." },
+            { module: "Extension", constraint: "Tool invocations MUST go through protocol-defined extension points." },
+            { module: "Trace", constraint: "Tool execution results MUST be captured in trace events." }
         ],
         failureConditions: [
-            "A task handoff results in inconsistent or lost state.",
-            "An agent operates outside its assigned role boundaries.",
-            "Race conditions occur during concurrent agent operations.",
-            "Inter-agent communication violates Dialog protocol semantics."
+            "Tool invocations bypass the agent_role mechanism.",
+            "Tool outputs are not captured in trace.",
+            "Security sandbox violations during tool execution.",
+            "Non-deterministic tool behavior in golden tests."
         ],
         steps: [
-            { name: "Shared Context", desc: "Project state is synchronized across agents." },
-            { name: "Role Assignment", desc: "Agents are assigned roles (e.g., Researcher, Writer)." },
-            { name: "Task Handoff", desc: "Task is delegated from one agent to another." },
-            { name: "Consensus", desc: "Agents agree on the final output." },
-            { name: "Result Aggregation", desc: "Partial results are merged into final deliverable." }
-        ]
+            { name: "Tool Context", desc: "Context for API testing workflow." },
+            { name: "Tool Steps", desc: "Steps with agent_role: curl_executor, jq_processor." },
+            { name: "Role-Based Execution", desc: "Each role handles specific tool type." },
+            { name: "Result Capture", desc: "Tool outputs recorded in trace." }
+        ],
+        sourceOfTruth: "tests/golden/flows/flow-03-single-agent-with-tools"
     },
     {
         id: "flow-04",
-        title: "Drift Detection & Recovery",
-        desc: "Detecting when an agent's execution diverges from the original plan and automatically triggering a recovery or replanning sequence.",
-        goal: "Validate that the runtime can detect when the PSG state does not match reality (e.g., file deleted).",
-        keyModules: ["Core", "Trace"],
-        successCriteria: "DriftDetected event emitted, Recovery Plan generated.",
+        title: "Single Agent with LLM Enrichment",
+        category: "core",
+        desc: "AEL (Action Execution Loop) integration. Validates LLM-enriched plan generation.",
+        goal: "Validate that the runtime can integrate LLM reasoning in plan generation.",
+        keyModules: ["Context", "Plan", "Trace", "Core"],
+        successCriteria: "LLM-enriched plan is schema-valid and traceable.",
         normativeScope: [
-            { module: "Core", constraint: "The runtime MUST continuously monitor for state divergence from the expected plan." },
-            { module: "Trace", constraint: "All drift detection and recovery events MUST be recorded in the Trace." }
+            { module: "Core", constraint: "AEL enrichment MUST produce schema-conformant plans." },
+            { module: "Plan", constraint: "LLM-generated plans MUST be fully traceable." },
+            { module: "Trace", constraint: "Enrichment reasoning MUST be captured in trace." }
         ],
         failureConditions: [
-            "State divergence occurs but is not detected by the runtime.",
-            "DriftDetected event is not emitted when drift occurs.",
-            "Recovery plan is not generated or is invalid.",
-            "Drift recovery events are not recorded in the Trace."
+            "LLM-generated plan violates schema.",
+            "Enrichment reasoning is not traceable.",
+            "Non-deterministic output in golden test context.",
+            "Context-plan binding is incorrect after enrichment."
         ],
         steps: [
-            { name: "State Snapshot", desc: "Periodic snapshot of system state." },
-            { name: "Drift Analysis", desc: "Comparison of actual vs. expected state." },
-            { name: "Alert Generation", desc: "Drift event triggers system alert." },
-            { name: "Recovery Plan", desc: "Agent generates plan to fix drift." },
-            { name: "State Rollback", desc: "Optional rollback to last known good state." }
-        ]
+            { name: "Initial Context", desc: "Context with high-level intent." },
+            { name: "LLM Enrichment", desc: "AEL generates enriched plan from intent." },
+            { name: "Plan Validation", desc: "Enriched plan passes schema validation." },
+            { name: "Execution", desc: "Plan executed with full traceability." }
+        ],
+        sourceOfTruth: "tests/golden/flows/flow-04-single-agent-llm-enrichment"
     },
     {
         id: "flow-05",
-        title: "Runtime Integration & External I/O",
-        desc: "Connecting the protocol to external systems (IDEs, CI/CD, Tools) via the L4 Integration Layer, ensuring all side-effects are tracked.",
-        goal: "Validate that the runtime can safely invoke external tools and handle I/O.",
-        keyModules: ["Extension", "Network"],
-        successCriteria: "Tool executes successfully, output is captured in PSG, security sandbox holds.",
+        title: "Single Agent with Confirm Required",
+        category: "core",
+        desc: "Multi-round approval workflow. Validates Confirm module integration.",
+        goal: "Validate that the runtime handles multi-round confirmation correctly.",
+        keyModules: ["Context", "Plan", "Confirm", "Trace"],
+        successCriteria: "Plan transitions through approval states, Confirm records auditable.",
         normativeScope: [
-            { module: "Extension", constraint: "All external tool invocations MUST go through the Extension module interface." },
-            { module: "Network", constraint: "External I/O MUST be captured and tracked within the protocol boundary." }
+            { module: "Confirm", constraint: "Confirmation requests MUST block execution until resolved." },
+            { module: "Plan", constraint: "Plan status transitions MUST respect Confirm decisions." },
+            { module: "Trace", constraint: "All confirmation decisions MUST be recorded in trace." }
         ],
         failureConditions: [
-            "External tool is invoked without going through the Extension interface.",
-            "External I/O side-effects are not captured or tracked.",
-            "Security sandbox is violated during external interaction.",
-            "External system response is not properly converted to protocol format."
+            "Plan executes without required confirmation.",
+            "Confirmation decisions are not recorded.",
+            "Approval timestamps are not captured.",
+            "Rejected plans proceed to execution."
         ],
         steps: [
-            { name: "External Event", desc: "Webhook or API call triggers agent." },
-            { name: "L4 Adapter", desc: "Adapter converts external event to MPLP format." },
-            { name: "Protocol Event Handling", desc: "Agent processes event within protocol loop." },
-            { name: "State Update", desc: "Internal state is updated." },
-            { name: "Response", desc: "Agent sends response back to external system." }
-        ]
+            { name: "Plan Creation", desc: "Plan requiring confirmation before execution." },
+            { name: "Confirm Request", desc: "Confirmation request created with approver_role." },
+            { name: "Approval/Rejection", desc: "Decision captured with timestamp and notes." },
+            { name: "Conditional Execution", desc: "Plan proceeds only if approved." }
+        ],
+        sourceOfTruth: "tests/golden/flows/flow-05-single-agent-confirm-required"
+    },
+
+    // ============================================
+    // Category B: SA Profile-Level
+    // ============================================
+    {
+        id: "sa-flow-01",
+        title: "SA Basic Execution",
+        category: "sa-profile",
+        desc: "Single-Agent (SA) profile baseline. Single-step execution with full lifecycle.",
+        goal: "Validate SA profile initialization through completion.",
+        keyModules: ["Context", "Plan"],
+        successCriteria: "SA lifecycle: initialize → load_context → execute_step → complete.",
+        normativeScope: [
+            { module: "Context", constraint: "SA profile MUST load Context before execution." },
+            { module: "Plan", constraint: "SA MUST execute steps with valid agent_role." }
+        ],
+        failureConditions: [
+            "SA lifecycle does not complete cleanly.",
+            "Context is not loaded before execution.",
+            "Step execution skips agent_role validation."
+        ],
+        steps: [
+            { name: "SA Initialize", desc: "SA profile initialization." },
+            { name: "Load Context", desc: "Context loaded with SA-specific fields." },
+            { name: "Execute Step", desc: "Single step executed with agent_role." },
+            { name: "Complete", desc: "SA lifecycle completed cleanly." }
+        ],
+        sourceOfTruth: "tests/golden/flows/sa-flow-01-basic"
+    },
+    {
+        id: "sa-flow-02",
+        title: "SA Multi-Step Evaluation",
+        category: "sa-profile",
+        desc: "SA profile with multi-step plan. Validates step sequencing in SA mode.",
+        goal: "Validate SA can execute multiple steps in order.",
+        keyModules: ["Context", "Plan"],
+        successCriteria: "All steps execute in order_index sequence.",
+        normativeScope: [
+            { module: "Plan", constraint: "Steps MUST execute in order_index sequence." },
+            { module: "Context", constraint: "Context MUST remain stable across multi-step execution." }
+        ],
+        failureConditions: [
+            "Steps execute out of order.",
+            "Step status not updated correctly.",
+            "Context mutates during execution."
+        ],
+        steps: [
+            { name: "Multi-Step Plan", desc: "Plan with multiple ordered steps." },
+            { name: "Sequential Execution", desc: "Steps processed by order_index." },
+            { name: "State Tracking", desc: "Each step status updated correctly." }
+        ],
+        sourceOfTruth: "tests/golden/flows/sa-flow-02-step-evaluation"
+    },
+
+    // ============================================
+    // Category C: MAP Profile-Level
+    // ============================================
+    {
+        id: "map-flow-01",
+        title: "MAP Turn-Taking Session",
+        category: "map-profile",
+        desc: "Multi-Agent Protocol with turn-taking. Two agents collaborate with role rotation.",
+        goal: "Validate MAP round_robin mode with sequential turn execution.",
+        keyModules: ["Context", "Plan", "Collab", "Role"],
+        successCriteria: "Turns execute sequentially, roles rotate correctly.",
+        normativeScope: [
+            { module: "Collab", constraint: "Collab mode MUST be round_robin for turn-taking." },
+            { module: "Role", constraint: "Roles MUST rotate correctly between participants." },
+            { module: "Plan", constraint: "Steps MUST respect turn order from Collab." }
+        ],
+        failureConditions: [
+            "Turns do not execute sequentially.",
+            "Role rotation is incorrect.",
+            "Concurrent execution in round_robin mode.",
+            "Collab participant binding fails."
+        ],
+        steps: [
+            { name: "Session Init", desc: "MAP session with round_robin mode." },
+            { name: "Role Assignment", desc: "Agent A (planner), Agent B (reviewer)." },
+            { name: "Turn 1: Plan", desc: "Planner creates initial plan." },
+            { name: "Turn 2: Review", desc: "Reviewer evaluates plan." },
+            { name: "Turn 3: Revise", desc: "Planner revises based on feedback." }
+        ],
+        sourceOfTruth: "tests/golden/flows/map-flow-01-turn-taking"
+    },
+    {
+        id: "map-flow-02",
+        title: "MAP Broadcast Fan-out",
+        category: "map-profile",
+        desc: "Multi-Agent Protocol with broadcast. Parallel dispatch to multiple agents.",
+        goal: "Validate MAP broadcast mode with parallel agent execution.",
+        keyModules: ["Context", "Plan", "Collab", "Role"],
+        successCriteria: "All participants receive broadcast, results aggregated.",
+        normativeScope: [
+            { module: "Collab", constraint: "Collab mode MUST be broadcast for parallel dispatch." },
+            { module: "Role", constraint: "All registered participants MUST receive the broadcast." },
+            { module: "Plan", constraint: "Results from all participants MUST be aggregated." }
+        ],
+        failureConditions: [
+            "Broadcast does not reach all participants.",
+            "Parallel execution fails.",
+            "Result aggregation is incomplete.",
+            "Participant responses are lost."
+        ],
+        steps: [
+            { name: "Broadcast Init", desc: "MAP session with broadcast mode." },
+            { name: "Multi-Participant", desc: "3+ agents registered." },
+            { name: "Parallel Dispatch", desc: "Task broadcast to all participants." },
+            { name: "Result Collection", desc: "Responses collected from all agents." },
+            { name: "Aggregation", desc: "Results merged into final output." }
+        ],
+        sourceOfTruth: "tests/golden/flows/map-flow-02-broadcast-fanout"
     }
 ];
+
+// Helper functions
+export function getFlowsByCategory(category: FlowCategory): GoldenFlow[] {
+    return flows.filter(f => f.category === category);
+}
+
+export function getCoreFlows(): GoldenFlow[] {
+    return getFlowsByCategory('core');
+}
+
+export function getSAFlows(): GoldenFlow[] {
+    return getFlowsByCategory('sa-profile');
+}
+
+export function getMAPFlows(): GoldenFlow[] {
+    return getFlowsByCategory('map-profile');
+}

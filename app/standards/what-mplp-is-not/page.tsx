@@ -118,8 +118,10 @@ export default function WhatMplpIsNotPage() {
                             <div className="flex items-start gap-4">
                                 <span className="text-2xl text-mplp-error">✕</span>
                                 <div>
+                                    {/* TERM-WAIVER: Negation context - Not a Certification or Compliance Tool */}
                                     <h3 className="text-lg font-bold text-mplp-text mb-2">Not a Certification or Compliance Tool</h3>
                                     <p className="text-sm text-mplp-text-muted leading-relaxed">
+                                        {/* TERM-WAIVER: Negation context - describing what MPLP does NOT issue */}
                                         MPLP does not issue certifications, compliance badges, or regulatory approvals.
                                         <strong className="text-mplp-text">MPGC governs the specification</strong> — it does not certify, endorse, or audit vendors.
                                         Evaluation is performed by implementers, enterprises, or independent third parties.

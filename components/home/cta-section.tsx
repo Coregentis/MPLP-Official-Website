@@ -47,7 +47,7 @@ export function CtaSection() {
                             rel="noopener noreferrer"
                             className="text-slate-400 hover:text-blue-400 transition-colors flex items-center gap-1"
                         >
-                            Compliance Checklist →
+                            Conformance Checklist →
                         </a>
                         <a
                             href={DOCS_URLS.github}

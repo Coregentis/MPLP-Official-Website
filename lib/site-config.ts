@@ -12,7 +12,7 @@ export const siteConfig = {
         twitter: "https://x.com/mplpprotocol",
     },
     keywords: [
-        "AgentOS Protocol",
+        "Agent OS Protocol",
         "Multi-Agent",
         "MPLP",
         "Observable",
@@ -116,6 +116,7 @@ export const footerLinks = {
     // Column 1: SPECIFICATION (Anchors #1-4)
     specification: [
         { label: "Definition", href: "/definition" },  // Canonical anchor
+        { label: "Specification Entry", href: "/specification" },  // Three-entry navigation
         { label: "Architecture", href: "/architecture" },
         { label: "Modules", href: "/modules" },
         { label: "Kernel Duties", href: "/kernel-duties" },
@@ -124,6 +125,8 @@ export const footerLinks = {
     // Column 2: GOVERNANCE & BOUNDARIES (Anchors #5-7)
     governance: [
         { label: "Governance", href: "/governance/overview" },
+        { label: "POSIX Analogy", href: "/posix-analogy" },  // Non-normative explainer
+        { label: "Validation Lab", href: "/validation-lab" },  // Evaluation entry
         { label: "References", href: "/references" },
         { label: "FAQ", href: "/faq" },
         { label: "Documentation", href: DOCS_URLS.home },

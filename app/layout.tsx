@@ -19,8 +19,8 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.title,
-    template: `%s | ${siteConfig.name}`,
+    default: siteConfig.title.replace(" | ", " — "),
+    template: `%s — ${siteConfig.name}`,
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
@@ -46,13 +46,19 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/brand/mplp-favicon-16.png", sizes: "16x16", type: "image/png" },
       { url: "/brand/mplp-favicon-32.png", sizes: "32x32", type: "image/png" },
       { url: "/brand/mplp-favicon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/brand/mplp-icon-512.png", sizes: "512x512", type: "image/png" },
     ],
     shortcut: "/brand/mplp-favicon-32.png",
     apple: [
       { url: "/brand/mplp-apple-touch-180.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      {
+        rel: "mask-icon",
+        url: "/brand/mplp-icon-only-transparent.png",
+      },
     ],
   },
 };

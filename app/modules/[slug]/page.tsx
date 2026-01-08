@@ -183,7 +183,7 @@ export default async function ModuleDetailPage({ params }: { params: Promise<{ s
                         {moduleData.normativeConstraints && (
                             <ScrollReveal delay={200}>
                                 <SectionHeader
-                                    eyebrow="Compliance"
+                                    eyebrow="Conformance"
                                     title="Normative Constraints"
                                     description="MUST / SHOULD / MUST NOT requirements."
                                 />
@@ -197,7 +197,7 @@ export default async function ModuleDetailPage({ params }: { params: Promise<{ s
                         {moduleData.keyConstraints && (
                             <ScrollReveal delay={210}>
                                 <SectionHeader
-                                    eyebrow="Compliance"
+                                    eyebrow="Conformance"
                                     title="Key Constraints"
                                     description="Essential requirements for this module."
                                 />
@@ -304,7 +304,7 @@ export default async function ModuleDetailPage({ params }: { params: Promise<{ s
                                     Evaluation Path
                                 </p>
                                 <p className="text-sm text-mplp-text-muted">
-                                    Governance → Compliance → Golden Flows → Adoption Signals
+                                    Governance → Conformance → Golden Flows → Adoption Signals
                                 </p>
                             </div>
                             <div className="flex flex-wrap gap-3">
@@ -321,10 +321,10 @@ export default async function ModuleDetailPage({ params }: { params: Promise<{ s
                                     Governance <IconArrowRight className="h-4 w-4" />
                                 </Link>
                                 <Link
-                                    href="/compliance"
+                                    href="/conformance"
                                     className="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold bg-slate-950/40 text-mplp-text border border-mplp-border hover:border-mplp-blue-soft/30 transition-colors"
                                 >
-                                    Compliance <IconArrowRight className="h-4 w-4" />
+                                    Conformance <IconArrowRight className="h-4 w-4" />
                                 </Link>
                                 <Link href="/golden-flows" className="text-sm text-mplp-text-muted hover:text-mplp-blue-soft transition-colors inline-flex items-center gap-2">
                                     Golden Flows <IconArrowRight className="h-4 w-4" />

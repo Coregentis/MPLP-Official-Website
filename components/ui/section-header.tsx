@@ -14,10 +14,10 @@ export function SectionHeader({
     title,
     description,
     className,
-    align = "left",
+    align = "center",
 }: SectionHeaderProps) {
     return (
-        <div className={cn("max-w-3xl", align === "center" && "mx-auto text-center", className)}>
+        <div className={cn("max-w-3xl mx-auto", align === "center" && "text-center", className)}>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-mplp-blue-soft/80 mb-4">
                 {eyebrow}
             </p>

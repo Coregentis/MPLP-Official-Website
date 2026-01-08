@@ -13,11 +13,13 @@ interface StandardPageProps {
     kicker?: string;
     breadcrumbs: BreadcrumbItem[];
     children: React.ReactNode;
-    jsonLd?: Record<string, any>;
+    jsonLd?: Record<string, unknown>;
     backTo?: {
         href: string;
         label: string;
     };
+    /** Content to render ABOVE the page header (e.g., positioning notices) */
+    beforeHeader?: React.ReactNode;
 }
 
 export function StandardPage({
@@ -28,6 +30,7 @@ export function StandardPage({
     children,
     jsonLd,
     backTo,
+    beforeHeader,
 }: StandardPageProps) {
     return (
         <Shell>
@@ -36,6 +39,11 @@ export function StandardPage({
                 {backTo && <BackToAnchor href={backTo.href} label={backTo.label} />}
                 <Breadcrumb items={breadcrumbs} />
             </div>
+            {beforeHeader && (
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+                    {beforeHeader}
+                </div>
+            )}
             <PageHeader
                 title={title}
                 subtitle={subtitle}
@@ -45,3 +53,4 @@ export function StandardPage({
         </Shell>
     );
 }
+

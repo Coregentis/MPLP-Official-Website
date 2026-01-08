@@ -25,7 +25,7 @@ const specItems = [
     },
     {
         title: "11 Kernel Duties",
-        description: "Cross-cutting OS-level guarantees for runtime compliance.",
+        description: "Cross-cutting OS-level guarantees for runtime conformance.",
         href: DOCS_URLS.conformance,
         icon: (
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,7 +45,7 @@ const specItems = [
     },
     {
         title: "SA & MAP Profiles",
-        description: "Normative profiles for single-agent and multi-agent runtime compliance.",
+        description: "Normative profiles for single-agent and multi-agent runtime conformance.",
         href: DOCS_URLS.saProfile,
         icon: (
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -74,8 +74,8 @@ const specItems = [
         ),
     },
     {
-        title: "Compliance Checklist",
-        description: "Step-by-step guide to achieving MPLP compliance.",
+        title: "Conformance Checklist",
+        description: "Step-by-step guide to achieving MPLP conformance.",
         href: DOCS_URLS.conformance,
         icon: (
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">

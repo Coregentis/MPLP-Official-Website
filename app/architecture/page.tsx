@@ -15,7 +15,7 @@ import { DOCS_URLS, REPO_URLS } from "@/lib/site-config";
 
 export const metadata: Metadata = {
     title: "Architecture | MPLP — Multi-Agent Lifecycle Protocol",
-    description: "Describes the layered architecture model of MPLP, including core semantics, coordination, execution, and integration boundaries. See docs for normative definitions.",
+    description: "Describes the layered architecture model of MPLP, including core semantics, coordination, execution, and integration boundaries. See docs for formal definitions.",
     alternates: {
         canonical: `${siteConfig.url}/architecture`,
     },
@@ -41,13 +41,13 @@ export default function ArchitecturePage() {
     return (
         <StandardPage
             title="Protocol Architecture"
-            subtitle="The MPLP specification describes a four-layer architecture model (L1–L4) that separates protocol semantics, coordination, execution, and integration concerns. See docs for normative layer definitions."
+            subtitle="The MPLP specification describes a four-layer architecture model (L1–L4) that separates protocol semantics, coordination, execution, and integration concerns. See docs for formal definitions."
             kicker="Specification"
             breadcrumbs={[{ label: "Architecture", href: "/architecture" }]}
             jsonLd={techArticleSchema}
+            beforeHeader={<PositioningDisclaimer />}
         >
             <ContentSection>
-                <PositioningDisclaimer />
                 <SectionHeader
                     eyebrow="Protocol Topology"
                     title="The 4-Layer Model"
@@ -135,6 +135,7 @@ export default function ArchitecturePage() {
 
             <ContentSection>
                 <SectionHeader
+                    align="center"
                     eyebrow="Cross-Cutting"
                     title="Cross-Cutting Duties"
                     description="Protocol-level responsibilities that apply across L1–L3 (and constrain L4 integrations), ensuring observability, safety, and consistency throughout the execution lifecycle."
@@ -165,7 +166,7 @@ export default function ArchitecturePage() {
                             href="/governance/agentos-protocol"
                             className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold bg-mplp-blue-soft/15 text-mplp-blue-soft border border-mplp-blue-soft/30 hover:bg-mplp-blue-soft/20 transition-colors"
                         >
-                            AgentOS Protocol →
+                            Agent OS Protocol →
                         </Link>
                         <Link
                             href="/governance/governed-stack"
@@ -187,10 +188,11 @@ export default function ArchitecturePage() {
             <ContentSection>
                 <div className="max-w-4xl mx-auto">
                     <CanonicalReferences
-                        docsUrl={DOCS_URLS.architecture}
-                        repoUrl={REPO_URLS.schemas}
+                        docsKey="architecture"
+                        repoKey="schemas"
                         variant="full"
                     />
+
                     <NextSteps
                         docsKey="architecture"
                         repoKey="schemas"

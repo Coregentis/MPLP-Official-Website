@@ -27,7 +27,7 @@ const governancePages = [
         color: "bg-mplp-blue-soft/10 text-mplp-blue-soft border-mplp-blue-soft/30",
     },
     {
-        title: "AgentOS Protocol",
+        title: "Agent OS Protocol",
         href: "/governance/agentos-protocol",
         description: "Protocol-level OS definition: governs, not executes.",
         color: "bg-mplp-indigo/10 text-mplp-indigo border-mplp-indigo/30",

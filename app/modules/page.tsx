@@ -56,7 +56,7 @@ export default function ModulesPage() {
                     <div className="rounded-2xl border border-mplp-border bg-slate-950/50 p-6">
                         <p className="text-sm text-mplp-text-muted">
                             <strong className="text-mplp-text">Usage Boundary:</strong> This page is an informative index for evaluation and navigation.
-                            It is not a replacement for the canonical, versioned specification on docs.mplp.io, and it does not constitute endorsement,
+                            It is not a replacement for the Official documentation entry (v1.0 Frozen) on docs.mplp.io, and it does not constitute endorsement,
                             certification, or implementation guarantees by MPGC.
                         </p>
                     </div>
@@ -106,7 +106,7 @@ export default function ModulesPage() {
                                     Evaluation Path
                                 </p>
                                 <p className="text-sm text-mplp-text-muted">
-                                    Governance → Compliance → Golden Flows → Adoption Signals
+                                    Governance → Conformance → Golden Flows → Adoption Signals
                                 </p>
                             </div>
                             <div className="flex flex-wrap gap-3">
@@ -123,10 +123,10 @@ export default function ModulesPage() {
                                     Governance <IconArrowRight className="h-4 w-4" />
                                 </Link>
                                 <Link
-                                    href="/compliance"
+                                    href="/conformance"
                                     className="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold bg-slate-950/40 text-mplp-text border border-mplp-border hover:border-mplp-blue-soft/30 transition-colors"
                                 >
-                                    Compliance <IconArrowRight className="h-4 w-4" />
+                                    Conformance <IconArrowRight className="h-4 w-4" />
                                 </Link>
                                 <Link href="/golden-flows" className="text-sm text-mplp-text-muted hover:text-mplp-blue-soft transition-colors inline-flex items-center gap-2">
                                     Golden Flows <IconArrowRight className="h-4 w-4" />
@@ -144,10 +144,11 @@ export default function ModulesPage() {
             <ContentSection>
                 <div className="max-w-4xl mx-auto">
                     <CanonicalReferences
-                        docsUrl={DOCS_URLS.home}
-                        repoUrl={REPO_URLS.schemas}
+                        docsKey="home"
+                        repoKey="schemas"
                         variant="full"
                     />
+
                     <NextSteps
                         docsKey="home"
                         repoKey="schemas"

@@ -10,8 +10,8 @@ import { siteConfig } from "@/lib/site-config";
 import { GovernanceNav } from "@/components/governance/governance-nav";
 
 export const metadata: Metadata = {
-    title: "AgentOS Protocol | MPLP Protocol",
-    description: "MPLP as AgentOS Protocol: a protocol-level operating system for agent lifecycle governance, not a runtime OS.",
+    title: "Agent OS Protocol | MPLP Protocol",
+    description: "MPLP as Agent OS Protocol: a protocol-level operating system for agent lifecycle governance, not a runtime OS.",
     alternates: {
         canonical: `${siteConfig.url}/governance/agentos-protocol`,
     },
@@ -21,7 +21,7 @@ export default function AgentOSProtocolPage() {
     const techArticleSchema = {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "AgentOS Protocol Definition",
+        "headline": "Agent OS Protocol Definition",
         "about": "Protocol-level OS definition for agent lifecycle governance",
         "url": `${siteConfig.url}/governance/agentos-protocol`,
         "mainEntityOfPage": {
@@ -39,11 +39,11 @@ export default function AgentOSProtocolPage() {
             <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                 <Breadcrumb items={[
                     { label: "Governance", href: "/governance" },
-                    { label: "AgentOS Protocol", href: "/governance/agentos-protocol" }
+                    { label: "Agent OS Protocol", href: "/governance/agentos-protocol" }
                 ]} />
             </div>
             <PageHeader
-                title="AgentOS Protocol"
+                title="Agent OS Protocol"
                 subtitle="MPLP is a protocol-level operating system for agent lifecycle governance. It defines a vendor-neutral semantic contract that runtimes and agents are designed to respect."
                 kicker="Constitutional Definition"
             />
@@ -217,7 +217,7 @@ export default function AgentOSProtocolPage() {
                     <SectionHeader
                         eyebrow="Core Principle"
                         title="Governs, Not Executes"
-                        description="This is the defining characteristic of MPLP as an AgentOS Protocol."
+                        description="This is the defining characteristic of MPLP as an Agent OS Protocol."
                         align="center"
                     />
                     <div className="mt-8 rounded-3xl border border-mplp-blue-soft/30 bg-gradient-to-r from-mplp-blue-soft/10 via-mplp-dark to-mplp-indigo/10 p-8">

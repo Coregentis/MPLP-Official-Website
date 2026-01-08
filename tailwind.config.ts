@@ -36,45 +36,38 @@ const config: Config = {
         },
       },
       fontFamily: {
-        // System Stack for Native/Technical feel (Matches Docs)
-        sans: [
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Segoe UI",
-          "Roboto",
-          "Helvetica",
-          "Arial",
-          "sans-serif",
-          "Apple Color Emoji",
-          "Segoe UI Emoji",
-          "Segoe UI Symbol"
-        ],
-        mono: [
-          "ui-monospace",
-          "SFMono-Regular",
-          "SF Mono",
-          "Menlo",
-          "Consolas",
-          "Liberation Mono",
-          "monospace"
-        ],
+        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["var(--font-jetbrains-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       borderRadius: {
-        lg: "0.5rem",   // 8px - Tighter default
-        xl: "0.75rem",  // 12px
-        "2xl": "1rem",  // 16px
+        lg: "0.5rem",
+        xl: "0.75rem",
+        "2xl": "1rem",
+        "3xl": "1.5rem",
       },
       boxShadow: {
-        // Reduced to minimal shadows
         stable: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+        glow: "0 0 20px -5px rgba(37, 99, 235, 0.1)",
+        "glow-blue": "0 0 15px -3px rgba(59, 130, 246, 0.2)",
+        "glow-hover": "0 10px 40px -10px rgba(59, 130, 246, 0.25)",
       },
       animation: {
         "fade-in-up": "fade-in-up 0.4s ease-out forwards",
+        "fade-in": "fade-in 0.2s ease-out forwards",
+        "slide-in-right": "slide-in-right 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards",
       },
       keyframes: {
         "fade-in-up": {
           "0%": { opacity: "0", transform: "translateY(4px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        "slide-in-right": {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0)" },
         },
       },
     },

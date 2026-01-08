@@ -1,4 +1,5 @@
 ﻿import { Shell } from "@/components/layout/shell";
+import { FlowSteps } from "@/components/ui/flow-steps";
 import { PageHeader } from "@/components/layout/page-header";
 import { ContentSection } from "@/components/ui/content-section";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -100,23 +101,8 @@ export default async function FlowDetailPage({ params }: { params: Promise<{ slu
                                 title="Execution Steps"
                                 description="The normative sequence of operations for this flow."
                             />
-                            <div className="mt-8 space-y-6">
-                                {flow.steps.map((step, index) => (
-                                    <div key={index} className="flex gap-4">
-                                        <div className="flex-none flex flex-col items-center">
-                                            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-mplp-blue-soft/10 text-mplp-blue-soft border border-mplp-blue-soft/20 font-bold text-sm">
-                                                {index + 1}
-                                            </div>
-                                            {index < flow.steps.length - 1 && (
-                                                <div className="w-px h-full bg-mplp-border my-2" />
-                                            )}
-                                        </div>
-                                        <div className="pb-6">
-                                            <h4 className="font-semibold text-mplp-text">{step.name}</h4>
-                                            <p className="text-sm text-mplp-text-muted mt-1">{step.desc}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                            <div className="mt-8">
+                                <FlowSteps steps={flow.steps} variant="detailed" />
                             </div>
                         </ScrollReveal>
 
@@ -154,10 +140,11 @@ export default async function FlowDetailPage({ params }: { params: Promise<{ slu
                             </div>
                         </ScrollReveal>
 
-                        {/* Protocol Compliance Requirement */}
+                        {/* TERM-WAIVER: Legacy section title retained for spec consistency */}
+                        {/* Protocol Conformance Requirement */}
                         <ScrollReveal delay={500}>
                             <div className="p-6 rounded-xl border border-mplp-warning/30 bg-mplp-warning/5">
-                                <h3 className="font-semibold text-mplp-warning mb-3">Protocol Compliance Requirement</h3>
+                                <h3 className="font-semibold text-mplp-warning mb-3">Protocol Conformance Requirement</h3>
                                 <p className="text-sm text-mplp-text-muted mb-2">
                                     Any MPLP-conformant runtime is expected to pass this flow without violating any of the normative constraints defined above.
                                 </p>

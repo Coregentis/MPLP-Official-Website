@@ -12,12 +12,12 @@ import { siteConfig, DOCS_URLS, REPO_URLS } from "@/lib/site-config";
  */
 export function SiteJsonLd() {
     const website = {
-        "@context": "https://schema.org",
         "@type": "WebSite",
         "@id": `${siteConfig.url}#website`,
         name: siteConfig.name,
         url: siteConfig.url,
-        description: "Discovery and positioning for the MPLP protocol. Normative definitions live at docs.mplp.io.",
+        description: "Official discovery and positioning site for the MPLP protocol. Normative definitions live at docs.mplp.io.",
+        publisher: { "@id": `${siteConfig.url}#mpgc` },
         potentialAction: {
             "@type": "SearchAction",
             target: `${siteConfig.url}/search?q={search_term_string}`,
@@ -26,22 +26,55 @@ export function SiteJsonLd() {
     };
 
     const organization = {
-        "@context": "https://schema.org",
         "@type": "Organization",
         "@id": `${siteConfig.url}#mpgc`,
         name: "MPLP Protocol Governance Committee (MPGC)",
         url: `${siteConfig.url}/governance/overview`,
-        description: "Governance body for the MPLP protocol specification. Does not certify, endorse, or audit implementations.",
+        description: "Governance body for the MPLP protocol specification. Does not certify, endorse, or audit implementations. Not a certification authority.",
         sameAs: [
             DOCS_URLS.home,
             REPO_URLS.root,
         ],
     };
 
+    const specSeries = {
+        "@type": "CreativeWorkSeries",
+        "@id": `${siteConfig.url}#specification`,
+        name: "MPLP Protocol Specification",
+        description: "The Multi-Agent Lifecycle Protocol specification series, defining lifecycle governance for AI agent systems.",
+        version: "1.0.0",
+        publisher: { "@id": `${siteConfig.url}#mpgc` },
+        url: DOCS_URLS.home,
+        mainEntityOfPage: DOCS_URLS.home,
+        sameAs: REPO_URLS.root,
+        citation: [
+            { "@id": `${siteConfig.url}#website` }
+        ]
+    };
+
+    const sourceCode = {
+        "@type": "SoftwareSourceCode",
+        "@id": `${siteConfig.url}#repo`,
+        name: "MPLP Protocol Repository",
+        description: "Source code repository containing MPLP schemas, validator source, and governance constitution.",
+        codeRepository: REPO_URLS.root,
+        programmingLanguage: ["TypeScript", "Python", "JSON Schema"],
+        license: "https://www.apache.org/licenses/LICENSE-2.0",
+        publisher: { "@id": `${siteConfig.url}#mpgc` },
+        mainEntityOfPage: REPO_URLS.root,
+    };
+
+    const graphContent = {
+        "@context": "https://schema.org",
+        "@graph": [
+            website,
+            organization,
+            specSeries,
+            sourceCode,
+        ],
+    };
+
     return (
-        <>
-            <JsonLd data={website} id="jsonld-website" />
-            <JsonLd data={organization} id="jsonld-mpgc" />
-        </>
+        <JsonLd data={graphContent} id="jsonld-site-graph" />
     );
 }

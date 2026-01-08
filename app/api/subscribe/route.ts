@@ -17,7 +17,9 @@ export async function POST(request: Request) {
         // - Send to email marketing service (e.g., Resend, Mailchimp)
         // - Send confirmation email
 
-        console.log(`New subscription: ${email}`);
+        // Log subscription (sanitized to prevent log injection)
+        const sanitizedEmail = email.replace(/[\r\n]/g, '').slice(0, 100);
+        console.log(`New subscription: ${sanitizedEmail}`);
 
         return NextResponse.json(
             { message: "Successfully subscribed!" },

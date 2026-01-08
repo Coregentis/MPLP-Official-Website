@@ -171,7 +171,7 @@ export function KernelDutiesSection() {
                     ))}
                 </div>
 
-                {/* Compliance Note */}
+                {/* Conformance Note */}
                 <div className="bg-gradient-to-r from-blue-900/40 to-purple-900/40 border border-blue-500/30 text-white rounded-xl p-6 text-center mb-8 shadow-lg backdrop-blur-sm">
                     <p className="text-lg">
                         <strong className="text-blue-300">Conformance Requirement:</strong> A runtime is MPLP-conformant only if it provides:
@@ -188,7 +188,7 @@ export function KernelDutiesSection() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-colors"
                     >
-                        View Full Compliance Checklist
+                        View Full Conformance Checklist
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>

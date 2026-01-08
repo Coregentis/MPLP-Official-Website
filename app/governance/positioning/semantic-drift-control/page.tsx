@@ -9,6 +9,7 @@ import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { JsonLd } from "@/components/seo/json-ld";
 import { siteConfig } from "@/lib/site-config";
 import { GovernanceNav } from "@/components/governance/governance-nav";
+import { PositioningNotice } from "@/components/ui/positioning-notice";
 
 export const metadata: Metadata = {
     title: "Semantic Drift Control | MPLP Positioning",
@@ -48,10 +49,10 @@ export default function SemanticDriftControlPage() {
 
             {/* Positioning Notice */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-                <div className="p-4 rounded-xl border border-amber-500/30 bg-amber-500/5 text-sm text-mplp-text-muted">
-                    <strong className="text-amber-500 block mb-1">Positioning Notice</strong>
-                    This page describes MPLP’s architectural interpretation of semantic drift. It is not a guarantee of determinism or error-free execution.
-                </div>
+                <PositioningNotice
+                    variant="callout"
+                    message="This page describes MPLP's architectural interpretation of semantic drift. It is not a guarantee of determinism or error-free execution."
+                />
             </div>
 
             <PageHeader

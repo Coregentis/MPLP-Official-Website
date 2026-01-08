@@ -28,29 +28,30 @@ export function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
     return (
         <>
             <JsonLd data={schema} />
-            <nav aria-label="Breadcrumb" className={`flex items-center text-sm text-mplp-text-muted ${className}`}>
+            <nav aria-label="Breadcrumb" className={`flex items-center text-[11px] font-bold uppercase tracking-wider text-slate-400 ${className}`}>
                 <ol className="flex items-center space-x-2">
                     <li>
                         <Link
                             href="/"
-                            className="flex items-center hover:text-mplp-blue transition-colors"
+                            className="flex items-center hover:text-mplp-blue-soft transition-colors"
                             aria-label="Home"
                         >
-                            <Home className="h-4 w-4" />
+                            <Home className="h-3.5 w-3.5" />
                         </Link>
                     </li>
 
                     {items.map((item, index) => (
                         <li key={`${item.href}-${index}`} className="flex items-center space-x-2">
-                            <ChevronRight className="h-4 w-4 text-mplp-border" />
+                            <ChevronRight className="h-3.5 w-3.5 text-mplp-border" />
                             {index === items.length - 1 ? (
-                                <span className="text-mplp-text font-medium" aria-current="page">
+                                <span className="text-mplp-blue-light flex items-center gap-2" aria-current="page">
+                                    <span className="h-1 w-1 rounded-full bg-mplp-blue-soft shadow-glow-blue" />
                                     {item.label}
                                 </span>
                             ) : (
                                 <Link
                                     href={item.href}
-                                    className="hover:text-mplp-blue transition-colors"
+                                    className="hover:text-mplp-blue-soft transition-all hover:bg-white/5 px-1.5 py-0.5 rounded"
                                 >
                                     {item.label}
                                 </Link>

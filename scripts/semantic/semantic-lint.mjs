@@ -161,10 +161,20 @@ function checkCanonicalURL(files) {
 
         const lines = content.split("\n");
         for (let i = 0; i < lines.length; i++) {
-            if (lines[i].includes("https://mplp.io") && !lines[i].includes("https://www.mplp.io")) {
-                const isDocumentation = CONFIG.allowedContextPatterns.some(p => p.test(lines[i]));
-                if (!isDocumentation) {
-                    violations.push({ file: file.path, line: i + 1 });
+            // Extract URLs and check origin properly (not substring)
+            const urlMatches = lines[i].match(/https?:\/\/[^\s"'<>]+/g) || [];
+            for (const urlStr of urlMatches) {
+                try {
+                    const url = new URL(urlStr);
+                    // Check if URL is non-www mplp.io (should be www.mplp.io)
+                    if (url.hostname === 'mplp.io') {
+                        const isDocumentation = CONFIG.allowedContextPatterns.some(p => p.test(lines[i]));
+                        if (!isDocumentation) {
+                            violations.push({ file: file.path, line: i + 1 });
+                        }
+                    }
+                } catch {
+                    // Invalid URL, skip
                 }
             }
         }

@@ -13,7 +13,7 @@ import { GovernanceNav } from "@/components/governance/governance-nav";
 
 export const metadata: Metadata = {
     title: "NIST AI RMF Alignment | MPLP Protocol",
-    description: "Reference mapping between NIST AI Risk Management Framework functions and MPLP protocol modules. This is not an endorsement.",
+    description: "Reference mapping between NIST AI Risk Management Framework functions and MPLP protocol modules. MPLP is not reviewed or validated by NIST.",
     alternates: {
         canonical: `${siteConfig.url}/governance/nist-ai-rmf`,
     },
@@ -60,6 +60,7 @@ export default function NistAiRmfPage() {
                         <p className="text-sm text-mplp-text-muted leading-relaxed">
                             This page presents an <strong>informative reference mapping</strong> between MPLP protocol
                             modules and the NIST AI Risk Management Framework (AI RMF).
+                            {/* TERM-WAIVER: External standard context - regulatory compliance */}
                             It does <strong>not</strong> assert conformity, certification, or regulatory compliance.
                         </p>
                         <p className="mt-3 text-sm text-mplp-text-muted leading-relaxed">
@@ -236,8 +237,8 @@ export default function NistAiRmfPage() {
                         <Button href="/governance/overview" variant="secondary" size="lg">
                             Governance Overview
                         </Button>
-                        <Button href="/compliance" variant="secondary" size="lg">
-                            Compliance Framework
+                        <Button href="/conformance" variant="secondary" size="lg">
+                            Conformance Framework
                         </Button>
                     </div>
 

@@ -71,7 +71,7 @@ export default function ProtocolEvaluationPage() {
                             MPLP is an <strong className="text-mplp-text">open protocol specification</strong>. It defines lifecycle semantics and provides verification scenarios (Golden Flows) that anyone can use to evaluate protocol conformance.
                         </p>
                         <p className="text-mplp-text-muted leading-relaxed mt-4">
-                            <strong className="text-mplp-text">There is no centralized certification authority.</strong> Evaluation may be performed by:
+                            <strong className="text-mplp-text">There is no centralized evaluation authority.</strong> Evaluation may be performed by:
                         </p>
                         <ul className="text-mplp-text-muted mt-4 space-y-2">
                             <li>• <strong className="text-mplp-text">Implementers</strong> — self-assessment during development</li>
@@ -179,8 +179,8 @@ export default function ProtocolEvaluationPage() {
                             <h3 className="text-lg font-bold text-mplp-text mb-2 group-hover:text-mplp-blue-soft">Golden Flows</h3>
                             <p className="text-sm text-mplp-text-muted">Normative verification scenarios (GF-01 → GF-05)</p>
                         </Link>
-                        <Link href="/compliance" className="mplp-card p-6 hover:border-mplp-blue-soft/30 transition-all group">
-                            <h3 className="text-lg font-bold text-mplp-text mb-2 group-hover:text-mplp-blue-soft">Compliance Checklist</h3>
+                        <Link href="/conformance" className="mplp-card p-6 hover:border-mplp-blue-soft/30 transition-all group">
+                            <h3 className="text-lg font-bold text-mplp-text mb-2 group-hover:text-mplp-blue-soft">Conformance Checklist</h3>
                             <p className="text-sm text-mplp-text-muted">Self-assessment guidance for implementations</p>
                         </Link>
                         <Link href="/enterprise" className="mplp-card p-6 hover:border-mplp-blue-soft/30 transition-all group">

@@ -128,7 +128,7 @@ export default function WhyMplpPage() {
                                     A protocol-level framing: MPLP governs agent frameworks and runtimes by enforcing lifecycle contracts—Plan, Confirm, Trace, and audit-grade semantics.
                                 </p>
                                 <p className="mt-4 text-sm font-semibold text-mplp-blue-soft">
-                                    Read AgentOS Protocol →
+                                    Read Agent OS Protocol →
                                 </p>
                             </Link>
                         </div>
@@ -213,7 +213,7 @@ export default function WhyMplpPage() {
                         href="/governance/agentos-protocol"
                         className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold bg-mplp-blue-soft/15 text-mplp-blue-soft border border-mplp-blue-soft/30 hover:bg-mplp-blue-soft/20 transition-colors"
                     >
-                        AgentOS Protocol →
+                        Agent OS Protocol →
                     </Link>
                     <Link
                         href="/governance/evidence-chain"

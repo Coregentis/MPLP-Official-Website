@@ -148,7 +148,7 @@ export default function AdoptionPage() {
                 <SectionHeader
                     eyebrow="Signal 3"
                     title="Conformance Framework"
-                    description="Normative test flows and compliance levels are defined and published."
+                    description="Normative test flows and conformance levels are defined and published."
                     align="center"
                 />
                 <div className="mt-8 grid gap-6 md:grid-cols-2">
@@ -156,7 +156,7 @@ export default function AdoptionPage() {
                         <h3 className="text-lg font-bold text-mplp-text mb-3">Golden Flows (01–05)</h3>
                         <p className="text-sm text-mplp-text-muted mb-4">
                             Five normative lifecycle flows that define conformance behavior.
-                            These are not examples—they are the canonical test cases for MPLP compliance.
+                            These are not examples—they are the canonical test cases for MPLP conformance.
                         </p>
                         <Link href="/golden-flows" className="inline-flex items-center gap-2 text-sm text-mplp-blue-soft hover:text-mplp-blue-light transition-colors">
                             <IconArrowRight className="h-4 w-4" />
@@ -170,13 +170,13 @@ export default function AdoptionPage() {
                         </div>
                     </div>
                     <div className="mplp-card p-6">
-                        <h3 className="text-lg font-bold text-mplp-text mb-3">Compliance Levels</h3>
+                        <h3 className="text-lg font-bold text-mplp-text mb-3">Conformance Levels</h3>
                         <p className="text-sm text-mplp-text-muted mb-4">
-                            Three-tier compliance framework: Schema Conformance, Governance Conformance, and Behavioral Conformance.
+                            Three-tier conformance framework: Schema Conformance, Governance Conformance, and Behavioral Conformance.
                         </p>
-                        <Link href="/compliance" className="inline-flex items-center gap-2 text-sm text-mplp-blue-soft hover:text-mplp-blue-light transition-colors">
+                        <Link href="/conformance" className="inline-flex items-center gap-2 text-sm text-mplp-blue-soft hover:text-mplp-blue-light transition-colors">
                             <IconArrowRight className="h-4 w-4" />
-                            View Compliance Levels
+                            View Conformance Levels
                         </Link>
                     </div>
                 </div>
@@ -246,14 +246,14 @@ export default function AdoptionPage() {
                 <div className="max-w-3xl mx-auto text-center">
                     <h2 className="text-2xl font-bold text-mplp-text mb-4">Ready to Evaluate?</h2>
                     <p className="text-mplp-text-muted mb-8">
-                        Start with the governance stance, then verify via compliance flows.
+                        Start with the governance stance, then verify via conformance flows.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <Button href="/governance/overview" variant="primary" size="lg">
                             Governance Overview
                         </Button>
-                        <Button href="/compliance" variant="secondary" size="lg">
-                            Compliance Framework
+                        <Button href="/conformance" variant="secondary" size="lg">
+                            Conformance Framework
                         </Button>
                     </div>
                 </div>

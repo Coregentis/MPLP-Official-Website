@@ -57,12 +57,12 @@ export function RuntimeSection() {
                     ))}
                 </div>
 
-                {/* Compliance Note */}
+                {/* Conformance Note */}
                 <div className="bg-blue-900/20 border border-blue-500/20 rounded-xl p-6 mb-4 backdrop-blur-sm">
                     <div className="flex items-start gap-4">
                         <div className="text-2xl">💡</div>
                         <div>
-                            <p className="text-white font-medium mb-2">Implementation Freedom, Outcome Compliance</p>
+                            <p className="text-white font-medium mb-2">Implementation Freedom, Outcome Conformance</p>
                             <p className="text-slate-400">
                                 MPLP does not mandate any specific runtime implementation.
                                 A runtime is <strong className="text-blue-400">MPLP-conformant</strong> when it fulfills AEL + VSL + PSG behaviors

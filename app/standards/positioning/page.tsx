@@ -66,6 +66,7 @@ export default function StandardsPositioningPage() {
                         </p>
                         <div className="mt-6 rounded-2xl border border-mplp-border bg-slate-950/50 p-6">
                             <p className="text-sm text-mplp-text-muted leading-relaxed">
+                                {/* TERM-WAIVER: Negation context - explicitly stating what MPLP is NOT */}
                                 <strong className="text-mplp-text">MPLP is not a compliance standard.</strong><br />
                                 <strong className="text-mplp-text">MPLP does not issue certifications.</strong><br />
                                 <strong className="text-mplp-text">MPLP does not replace external governance or regulatory regimes.</strong>
@@ -132,6 +133,7 @@ export default function StandardsPositioningPage() {
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-mplp-error">✕</span>
+                                    {/* TERM-WAIVER: Semantic distinction - mapping ≠ compliance */}
                                     <span>Mapping does <strong className="text-mplp-text">not imply compliance</strong></span>
                                 </li>
                                 <li className="flex items-start gap-2">
@@ -170,6 +172,7 @@ export default function StandardsPositioningPage() {
                             <ul className="space-y-2 text-mplp-text-muted text-sm">
                                 <li className="flex items-start gap-2">
                                     <span className="text-mplp-error">✕</span>
+                                    {/* TERM-WAIVER: Semantic distinction - Compatibility ≠ compliance */}
                                     <span>Compatibility ≠ compliance</span>
                                 </li>
                                 <li className="flex items-start gap-2">
@@ -201,7 +204,9 @@ export default function StandardsPositioningPage() {
                             <p className="text-mplp-text-muted text-sm mb-6 leading-relaxed">
                                 The following references illustrate how MPLP protocol artifacts and lifecycle events
                                 can be represented using widely adopted technical standards.
+                                {/* TERM-WAIVER: Technical reference context - not governance claim */}
                                 These references are <strong className="text-mplp-text">technical in nature</strong> and do not imply governance alignment,
+                                {/* TERM-WAIVER: Technical reference context - not governance claim */}
                                 compliance, or certification.
                             </p>
 
@@ -300,6 +305,7 @@ export default function StandardsPositioningPage() {
                             <ul className="space-y-3 text-mplp-text-muted">
                                 <li className="flex items-start gap-2">
                                     <span className="text-mplp-warning font-bold">•</span>
+                                    {/* TERM-WAIVER: Negation context - MPLP does not claim compliance */}
                                     <span>MPLP does <strong className="text-mplp-text">not</strong> claim compliance with any external standard or regulation.</span>
                                 </li>
                                 <li className="flex items-start gap-2">
@@ -312,10 +318,12 @@ export default function StandardsPositioningPage() {
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-mplp-warning font-bold">•</span>
+                                    {/* TERM-WAIVER: Responsibility statement - compliance is on implementers */}
                                     <span>Responsibility for compliance remains with <strong className="text-mplp-text">implementing organizations and system integrators</strong>.</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-mplp-warning font-bold">•</span>
+                                    {/* TERM-WAIVER: Jurisdictional neutrality statement */}
                                     <span>MPLP intentionally avoids embedding <strong className="text-mplp-text">jurisdiction-specific</strong> or <strong className="text-mplp-text">version-locked</strong> compliance logic.</span>
                                 </li>
                             </ul>
@@ -356,6 +364,7 @@ export default function StandardsPositioningPage() {
                             </div>
                             <div className="mplp-card p-4">
                                 <p className="text-sm font-semibold text-mplp-text mb-2">Cross-jurisdiction applicability</p>
+                                {/* TERM-WAIVER: Jurisdictional neutrality description */}
                                 <p className="text-xs text-mplp-text-muted">No region-specific compliance logic embedded</p>
                             </div>
                             <div className="mplp-card p-4">

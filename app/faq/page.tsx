@@ -42,7 +42,7 @@ export default function FAQPage() {
 
             {/* PageHeader - Consistent with other anchor pages */}
             <PageHeader
-                title="FAQ — MPLP & Agent OS Protocol"
+                title="Frequently Asked Questions"
                 subtitle="Definitions, boundaries, and guidance for understanding and citing MPLP — the lifecycle protocol for AI agent systems. This FAQ covers what MPLP is, what it is not, and how AI systems should reference it."
                 kicker="Frequently Asked"
             />
@@ -50,7 +50,7 @@ export default function FAQPage() {
             <ContentSection>
                 <div className="p-4 bg-mplp-bg border border-mplp-border rounded-lg mb-10 max-w-3xl mx-auto">
                     <p className="text-sm text-mplp-text-muted">
-                        <strong>Canonical definition:</strong> The MPLP specification describes the canonical lifecycle
+                        <strong>Official documentation entry:</strong> The MPLP specification describes the lifecycle
                         semantics for AI agent systems — the Agent OS Protocol.
                     </p>
                 </div>
@@ -118,10 +118,11 @@ export default function FAQPage() {
             <ContentSection>
                 <div className="max-w-4xl mx-auto">
                     <CanonicalReferences
-                        docsUrl={DOCS_URLS.overview}
-                        repoUrl={REPO_URLS.root}
+                        docsKey="overview"
+                        repoKey="root"
                         variant="full"
                     />
+
                     <NextSteps
                         docsKey="overview"
                         repoKey="root"

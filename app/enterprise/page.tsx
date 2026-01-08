@@ -123,6 +123,7 @@ export default function EnterprisePage() {
                             <h3 className="text-lg font-bold text-mplp-text mb-3">Auditability Gap</h3>
                             <p className="text-sm text-mplp-text-muted">
                                 Multi-agent systems produce decisions without structured evidence trails.
+                                {/* TERM-WAIVER: Enterprise context - refers to compliance departments */}
                                 Risk and compliance teams cannot trace how an agent arrived at a particular action.
                             </p>
                         </div>
@@ -136,6 +137,7 @@ export default function EnterprisePage() {
                         <div className="mplp-card p-6">
                             <h3 className="text-lg font-bold text-mplp-text mb-3">Runtime Opacity</h3>
                             <p className="text-sm text-mplp-text-muted">
+                                {/* TERM-WAIVER: Enterprise context - refers to compliance functions */}
                                 Risk, legal, and compliance functions cannot intervene during agent execution.
                                 Decisions happen inside opaque runtime boundaries.
                             </p>
@@ -199,6 +201,7 @@ export default function EnterprisePage() {
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="text-mplp-text-muted mt-0.5">✗</span>
+                                {/* TERM-WAIVER: Negation context - explicitly stating what MPLP is NOT */}
                                 <span>A compliance guarantee or legal shield</span>
                             </li>
                         </ul>
@@ -259,17 +262,18 @@ export default function EnterprisePage() {
                         </Link>
                         <Link href="/governance/agentos-protocol" className="inline-flex items-center gap-2 text-mplp-text-muted hover:text-mplp-blue-soft transition-colors">
                             <IconArrowRight className="h-4 w-4" />
-                            AgentOS Protocol
+                            Agent OS Protocol
                         </Link>
                     </div>
                 </div>
             </ContentSection>
 
-            {/* Section 5: Verifiability & Compliance */}
+            {/* TERM-WAIVER: Section comment retained for code organization - UI shows Conformance */}
+            {/* Section 5: Verifiability & Conformance */}
             <ContentSection background="surface">
                 <SectionHeader
                     eyebrow="Verification"
-                    title="Verifiability & Compliance"
+                    title="Verifiability & Conformance"
                     description="MPLP defines conformance, not certifications."
                     align="center"
                     className="mx-auto"
@@ -290,12 +294,12 @@ export default function EnterprisePage() {
                         <div className="mplp-card p-6">
                             <h3 className="text-lg font-bold text-mplp-text mb-3">Self-Verifiable</h3>
                             <p className="text-sm text-mplp-text-muted mb-4">
-                                Compliance is self-assessed and reproducible.
+                                Conformance is self-assessed and reproducible.
                                 Organizations run the flows against their own implementations.
                             </p>
-                            <Link href="/compliance" className="inline-flex items-center gap-2 text-sm text-mplp-blue-soft hover:text-mplp-blue-light transition-colors">
+                            <Link href="/conformance" className="inline-flex items-center gap-2 text-sm text-mplp-blue-soft hover:text-mplp-blue-light transition-colors">
                                 <IconArrowRight className="h-4 w-4" />
-                                View Compliance
+                                View Conformance
                             </Link>
                         </div>
                         <div className="mplp-card p-6">
@@ -366,18 +370,18 @@ export default function EnterprisePage() {
                 <div className="max-w-3xl mx-auto text-center">
                     <h2 className="text-2xl font-bold text-mplp-text mb-4">Begin Evaluation</h2>
                     <p className="text-mplp-text-muted mb-8">
-                        Start with the governance stance, validate against compliance flows,
+                        Start with the governance stance, validate against conformance flows,
                         then assess alignment with your organizational requirements.
                     </p>
                     <p className="text-xs text-mplp-text-muted mb-8">
-                        Evaluation Path: Governance → Compliance → Golden Flows → Adoption Signals
+                        Evaluation Path: Governance → Conformance → Golden Flows → Adoption Signals
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <Button href="/governance/overview" variant="primary" size="lg">
                             Governance Overview
                         </Button>
-                        <Button href="/compliance" variant="secondary" size="lg">
-                            Compliance Framework
+                        <Button href="/conformance" variant="secondary" size="lg">
+                            Conformance Framework
                         </Button>
                     </div>
                     <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">

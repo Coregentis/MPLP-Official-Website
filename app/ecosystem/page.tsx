@@ -43,7 +43,7 @@ const sdks = [
             { name: "@mplp/schema", desc: "JSON Schema Validators", version: "1.0.4" },
             { name: "@mplp/coordination", desc: "L2 Coordination & State Machine", version: "1.0.5" },
             { name: "@mplp/modules", desc: "L2 Governance Modules", version: "1.0.4" },
-            { name: "@mplp/compliance", desc: "Compliance & Audit Tools", version: "1.0.4" },
+            { name: "@mplp/conformance", desc: "Conformance & Audit Tools", version: "1.0.4" },
             { name: "@mplp/runtime-minimal", desc: "Reference Runtime Implementation", version: "1.0.4" },
             { name: "@mplp/devtools", desc: "CLI & Debugging Tools", version: "1.0.4" },
             { name: "@mplp/integration-llm-http", desc: "HTTP LLM Client Adapter", version: "1.0.4" },
@@ -245,7 +245,7 @@ export default function EcosystemPage() {
                         <p className="text-sm text-mplp-text-muted">What MPLP governs, what it doesn&apos;t, and how the protocol evolves.</p>
                     </a>
                     <a href="/governance/agentos-protocol" className="mplp-card p-6 hover:border-mplp-blue-soft/50 transition-colors block">
-                        <h3 className="text-lg font-semibold text-mplp-text mb-2">AgentOS Protocol</h3>
+                        <h3 className="text-lg font-semibold text-mplp-text mb-2">Agent OS Protocol</h3>
                         <p className="text-sm text-mplp-text-muted">The constitutional definition: Protocol OS vs Runtime OS.</p>
                     </a>
                     <a href="/governance/evidence-chain" className="mplp-card p-6 hover:border-mplp-emerald/50 transition-colors block">

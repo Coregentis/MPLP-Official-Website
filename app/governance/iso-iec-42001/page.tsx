@@ -13,7 +13,7 @@ import { GovernanceNav } from "@/components/governance/governance-nav";
 
 export const metadata: Metadata = {
     title: "ISO/IEC 42001 Alignment | MPLP Protocol",
-    description: "How MPLP protocol mechanisms align with ISO/IEC 42001 AI management system objectives. This is not a certification statement.",
+    description: "Reference mapping between ISO/IEC 42001 AI management system objectives and MPLP protocol mechanisms. MPLP is not an auditing authority and does not issue attestations.",
     alternates: {
         canonical: `${siteConfig.url}/governance/iso-iec-42001`,
     },
@@ -60,11 +60,13 @@ export default function IsoIec42001Page() {
                         <p className="text-sm text-mplp-text-muted leading-relaxed">
                             This page provides an <strong>informative reference mapping</strong> between selected
                             ISO/IEC 42001 objectives and MPLP protocol mechanisms.
+                            {/* TERM-WAIVER: External standard context - ISO/IEC 42001 compliance */}
                             It does <strong>not</strong> constitute certification, endorsement, or a claim of compliance.
                         </p>
                         <p className="mt-3 text-sm text-mplp-text-muted leading-relaxed">
                             MPLP defines <strong>governance and lifecycle semantics</strong> that organizations
                             <em>may reference</em> when designing or documenting their own AI management systems.
+                            {/* TERM-WAIVER: External standard context - ISO/IEC 42001 is adopter's responsibility */}
                             Responsibility for ISO/IEC 42001 compliance remains solely with the adopting organization
                             and its appointed assessors.
                         </p>
@@ -85,11 +87,13 @@ export default function IsoIec42001Page() {
                         <p className="text-sm text-mplp-text-muted leading-relaxed">
                             This page provides an <strong>informative reference mapping</strong> between selected
                             ISO/IEC 42001 objectives and MPLP protocol mechanisms.
+                            {/* TERM-WAIVER: External standard context - ISO/IEC 42001 compliance */}
                             It does <strong>not</strong> constitute certification, endorsement, or a claim of compliance.
                         </p>
                         <p className="mt-3 text-sm text-mplp-text-muted leading-relaxed">
                             MPLP defines <strong>governance and lifecycle semantics</strong> that organizations
                             <em>may reference</em> when designing or documenting their own AI management systems.
+                            {/* TERM-WAIVER: External standard context - ISO/IEC 42001 is adopter's responsibility */}
                             Responsibility for ISO/IEC 42001 compliance remains solely with the adopting organization
                             and its appointed assessors.
                         </p>
@@ -233,8 +237,8 @@ export default function IsoIec42001Page() {
                         <Button href="/governance/overview" variant="secondary" size="lg">
                             Governance Overview
                         </Button>
-                        <Button href="/compliance" variant="secondary" size="lg">
-                            Compliance Framework
+                        <Button href="/conformance" variant="secondary" size="lg">
+                            Conformance Framework
                         </Button>
                     </div>
 

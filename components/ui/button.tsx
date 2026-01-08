@@ -7,6 +7,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     size?: "sm" | "md" | "lg";
     href?: string;
     external?: boolean;
+    target?: string;
 }
 
 export function Button({
@@ -21,10 +22,10 @@ export function Button({
     const baseStyles = "inline-flex items-center justify-center rounded-full font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-mplp-blue-soft/50 focus:ring-offset-2 focus:ring-offset-mplp-dark";
 
     const variants = {
-        primary: "bg-mplp-blue text-white shadow-stable hover:bg-mplp-blue-soft",
-        secondary: "border border-mplp-border bg-slate-950/50 text-mplp-text hover:border-mplp-blue-soft/30 hover:bg-slate-900/50",
-        tertiary: "text-mplp-text-muted hover:text-mplp-text",
-        ghost: "bg-transparent hover:bg-slate-900/50 text-mplp-text",
+        primary: "bg-mplp-blue text-white shadow-stable hover:bg-mplp-blue-soft hover:shadow-glow-blue hover:-translate-y-0.5 active:translate-y-0",
+        secondary: "border border-mplp-border bg-slate-950/50 text-mplp-text backdrop-blur-sm hover:border-mplp-blue-soft/30 hover:bg-mplp-blue-soft/5 hover:text-mplp-blue-light",
+        tertiary: "text-mplp-text-muted hover:text-mplp-text hover:bg-white/5",
+        ghost: "bg-transparent hover:bg-white/5 text-mplp-text",
     };
 
     const sizes = {

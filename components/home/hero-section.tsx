@@ -33,7 +33,7 @@ export function HeroSection() {
                 {/* Subtitle (H2) */}
                 <div className="animate-fade-in" style={{ animationDelay: "200ms" }}>
                     <h2 className="text-2xl sm:text-3xl font-bold text-blue-200 mb-2 opacity-90">
-                        The AgentOS Protocol
+                        The Agent OS Protocol
                     </h2>
                     <p className="text-lg sm:text-xl font-bold text-gradient whitespace-nowrap mb-6">
                         The Lifecycle Protocol for AI Agents
