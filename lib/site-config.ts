@@ -42,6 +42,7 @@ export const DOCS_URLS = {
 
     // Modules - /docs/docs/specification/modules/*
     modules: "https://docs.mplp.io/docs/specification/modules/module-interactions",
+    modulesBase: "https://docs.mplp.io/docs/specification/modules",  // Base for getModuleDocUrl()
     moduleInteractions: "https://docs.mplp.io/docs/specification/modules/module-interactions",
     contextModule: "https://docs.mplp.io/docs/specification/modules/context-module",
 
@@ -94,10 +95,10 @@ export const REPO_URLS = {
 export type DocsKey = keyof typeof DOCS_URLS;
 export type RepoKey = keyof typeof REPO_URLS;
 
-// Helper for dynamic module URLs - uses DOCS_URLS.modules as base
+// Helper for dynamic module URLs - uses DOCS_URLS.modulesBase as base
 // Prefer explicit DOCS_URLS keys when available (e.g., contextModule)
 export function getModuleDocUrl(moduleId: string) {
-    return `${DOCS_URLS.modules}/${moduleId}-module`;
+    return `${DOCS_URLS.modulesBase}/${moduleId}-module`;
 }
 
 // Navbar: Strict 7 Semantic Anchors ONLY (FROZEN)
