@@ -14,8 +14,10 @@
 |:--------|:-----|:-------------|
 | **mplp.io** | Definitional Authority | Public definitions, interpretive anchors, semantic boundaries |
 | **docs.mplp.io** | Normative Specification | Schemas, obligations, technical references, verification |
+| **lab.mplp.io** | Evidence Verdict Gateway | Lifecycle invariant adjudication, evidence exports, proof generation |
 
 > **Rule**: docs.mplp.io pages MUST NOT present themselves as the definitional source for Agent OS Protocol.
+> **Rule**: lab.mplp.io pages MUST NOT define protocol semantics; Lab only evaluates evidence under versioned rulesets.
 
 ---
 

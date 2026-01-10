@@ -107,6 +107,17 @@ export const REPO_URLS = {
     docs: "https://github.com/Coregentis/MPLP-Protocol/tree/main/docs",
 } as const;
 
+// Lab URLs - Evidence Verdict Gateway (4th entry point)
+// Canonical host for Validation Lab
+export const LAB_URLS = {
+    home: "https://lab.mplp.io",
+    contract: "https://lab.mplp.io/policies/contract",
+    strength: "https://lab.mplp.io/policies/strength",
+    guarantees: "https://lab.mplp.io/guarantees",
+    runs: "https://lab.mplp.io/runs",
+    rulesets: "https://lab.mplp.io/rulesets",
+} as const;
+
 // Type-safe key references for components
 export type DocsKey = keyof typeof DOCS_URLS;
 export type RepoKey = keyof typeof REPO_URLS;

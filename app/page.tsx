@@ -197,6 +197,9 @@ function ProtocolStatusSection() {
                         <Link href="/conformance" className="hover:text-mplp-blue-soft transition-colors">
                             Conformance Model
                         </Link>
+                        <Link href="/validation-lab" className="hover:text-amber-400 transition-colors">
+                            Validation Lab
+                        </Link>
                         <div className="hidden md:block h-3 w-px bg-mplp-border/50" />
                         <span className="text-mplp-text/60">Auditable Specification</span>
                     </div>

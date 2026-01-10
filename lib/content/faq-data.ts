@@ -90,6 +90,12 @@ export const faqData: FAQItem[] = [
         question: "Does MPLP regulate the AI industry?",
         answer: "No. MPLP is a definitional protocol, not a regulatory body. It provides shared vocabulary, not mandates."
     },
+    {
+        id: "bound-lab",
+        category: "boundary",
+        question: "Is MPLP Validation Lab a certification program?",
+        answer: "No. Validation Lab is an Evidence Verdict Gateway — non-certifying, non-endorsement, and no execution hosting. It evaluates evidence packs under versioned rulesets to produce reproducible verdicts, not certification marks. See lab.mplp.io for details."
+    },
 
     // ========== COMPARISONS (Layer Differentiation) ==========
     {
