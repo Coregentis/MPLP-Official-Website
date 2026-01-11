@@ -207,6 +207,28 @@ export default function EvidenceChainPage() {
                 </div>
             </ContentSection>
 
+            {/* External Resources (Link-only) */}
+            <ContentSection>
+                <section className="mt-12 pt-8 border-t border-gray-200">
+                    <h2 className="text-2xl font-semibold mb-4">External Resources</h2>
+
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded">
+                        <a
+                            href="https://lab.mplp.io"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-700 hover:underline font-semibold"
+                        >
+                            Validation Lab →
+                        </a>
+
+                        <p className="mt-2 text-sm text-gray-700">
+                            Evidence-based verdict viewing and export; not a certification program and does not host execution.
+                        </p>
+                    </div>
+                </section>
+            </ContentSection>
+
             {/* Navigation */}
             <ContentSection>
                 <GovernanceNav current="/governance/evidence-chain" />
