@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import type { Metadata } from "next";
-import { siteConfig, DOCS_URLS, REPO_URLS } from "@/lib/site-config";
+import { siteConfig, DOCS_URLS, REPO_URLS, LAB_URLS } from "@/lib/site-config";
 import { JsonLd, generateProtocolSchema } from "@/components/seo/json-ld";
 import { PositioningNotice } from "@/components/notices";
 
@@ -630,7 +630,7 @@ function EcosystemSection() {
             />
 
             <div className="mx-auto max-w-6xl">
-                <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-left">
+                <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-left">
                     <Link
                         href="/governance/overview"
                         className="mplp-card mplp-card-hover group block p-8 sm:p-10 bg-mplp-dark-soft/40 relative overflow-hidden"
@@ -682,6 +682,28 @@ function EcosystemSection() {
                         </p>
                         <div className="text-[11px] font-bold text-mplp-blue-soft uppercase tracking-widest flex items-center gap-2 group/link">
                             View Governance <IconArrowRight className="h-3.5 w-3.5 group-hover/link:translate-x-1 transition-transform" />
+                        </div>
+                    </Link>
+
+                    {/* Validation Lab Card - Discovery-only entry */}
+                    <Link
+                        href="/validation-lab"
+                        className="mplp-card mplp-card-hover group block p-8 sm:p-10 bg-mplp-dark-soft/40 relative overflow-hidden"
+                    >
+                        <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-mplp-text-muted mb-6">
+                            Evidence
+                        </p>
+                        <h3 className="text-sm font-bold text-mplp-text uppercase tracking-widest mb-6 group-hover:text-amber-400 transition-colors">
+                            Validation Lab
+                        </h3>
+                        <p className="text-xs sm:text-sm text-mplp-text-muted/90 leading-relaxed mb-4">
+                            Browse recheckable, evidence-based adjudications. Coverage reflects evidence maturity — not endorsement, ranking, or certification.
+                        </p>
+                        <p className="text-[10px] text-mplp-text-muted/60 italic mb-6">
+                            Live counts and verdict details are shown in the Lab.
+                        </p>
+                        <div className="text-[11px] font-bold text-amber-400 uppercase tracking-widest flex items-center gap-2 group/link">
+                            Open Validation Lab <IconArrowRight className="h-3.5 w-3.5 group-hover/link:translate-x-1 transition-transform" />
                         </div>
                     </Link>
                 </div>

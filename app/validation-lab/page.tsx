@@ -290,7 +290,7 @@ export default function ValidationLabPage() {
                             <div>
                                 <p className="font-semibold text-mplp-text">Website</p>
                                 <p className="text-xs text-mplp-text-muted">Discovery & Positioning — what MPLP is and why</p>
-                                <a href="/" className="text-xs text-mplp-blue-soft hover:underline">mplp.io →</a>
+                                <Link href="/" className="text-xs text-mplp-blue-soft hover:underline">mplp.io →</Link>
                             </div>
                         </div>
                         <div className="mplp-card p-6 flex items-start gap-4">
@@ -366,7 +366,7 @@ export default function ValidationLabPage() {
                         <div className="mplp-card p-4">
                             <p className="font-semibold text-mplp-text mb-2">Protocol Scenarios</p>
                             <p className="text-xs text-mplp-text-muted mb-2">Golden Flows (Flow-01~05)</p>
-                            <a href="/golden-flows" className="text-xs text-mplp-blue-soft hover:underline">Website / Docs →</a>
+                            <Link href="/golden-flows" className="text-xs text-mplp-blue-soft hover:underline">Website / Docs →</Link>
                         </div>
                         <div className="mplp-card p-4 border-amber-400/30">
                             <p className="font-semibold text-amber-400 mb-2">Evidence Adjudication</p>
