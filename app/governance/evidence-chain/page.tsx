@@ -207,26 +207,32 @@ export default function EvidenceChainPage() {
                 </div>
             </ContentSection>
 
-            {/* External Resources (Link-only) */}
+            {/* External Resources */}
             <ContentSection>
-                <section className="mt-12 pt-8 border-t border-gray-200">
-                    <h2 className="text-2xl font-semibold mb-4">External Resources</h2>
+                <div className="max-w-4xl mx-auto">
+                    <h3 className="text-lg font-bold text-mplp-text mb-6">
+                        External Resources
+                    </h3>
 
-                    <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded">
+                    <div className="mplp-card p-6 border-amber-400/30">
                         <a
                             href="https://lab.mplp.io"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-blue-700 hover:underline font-semibold"
+                            className="text-amber-400 hover:underline font-semibold flex items-center gap-2"
                         >
-                            Validation Lab →
+                            Validation Lab
+                            <span className="text-mplp-text-muted">→</span>
                         </a>
 
-                        <p className="mt-2 text-sm text-gray-700">
-                            Evidence-based verdict viewing and export; not a certification program and does not host execution.
+                        <p className="mt-3 text-sm text-mplp-text-muted">
+                            Evidence-based verdict viewing and export. Coverage reflects evidence maturity — not endorsement, ranking, or certification.
+                        </p>
+                        <p className="mt-2 text-[10px] text-mplp-text-muted/60 italic">
+                            Live counts and verdict details are shown in the Lab.
                         </p>
                     </div>
-                </section>
+                </div>
             </ContentSection>
 
             {/* Navigation */}
