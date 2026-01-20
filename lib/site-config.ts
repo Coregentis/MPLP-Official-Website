@@ -109,6 +109,8 @@ export const REPO_URLS = {
 
 // Lab URLs - Evidence Verdict Gateway (4th entry point)
 // Canonical host for Validation Lab
+// SSOT: routes verified against Validation_Lab/components/Nav.tsx
+// Website must only link stable first-level entries (no sub-routes unless frozen)
 export const LAB_URLS = {
     home: "https://lab.mplp.io",
     contract: "https://lab.mplp.io/policies/contract",
@@ -116,6 +118,9 @@ export const LAB_URLS = {
     guarantees: "https://lab.mplp.io/guarantees",
     runs: "https://lab.mplp.io/runs",
     rulesets: "https://lab.mplp.io/rulesets",
+    // Verified stable first-level entry points for Website preview cards
+    coverage: "https://lab.mplp.io/coverage",
+    adjudication: "https://lab.mplp.io/adjudication",
 } as const;
 
 // Type-safe key references for components
