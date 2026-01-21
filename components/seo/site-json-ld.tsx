@@ -34,6 +34,7 @@ export function SiteJsonLd() {
         sameAs: [
             DOCS_URLS.home,
             REPO_URLS.root,
+            "https://lab.mplp.io",
         ],
     };
 

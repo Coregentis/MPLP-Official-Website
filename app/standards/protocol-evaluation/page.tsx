@@ -137,29 +137,32 @@ export default function ProtocolEvaluationPage() {
                         align="center"
                     />
                     <div className="mt-8">
-                        <p className="text-mplp-text-muted leading-relaxed mb-6">
-                            Golden Flows (GF-01 through GF-05) define canonical lifecycle scenarios that exercise the protocol&apos;s core invariants. They serve as <strong className="text-mplp-text">verification scenarios</strong> — not certification checklists.
+                        <p className="text-mplp-text-muted leading-relaxed mb-4">
+                            Golden Flows (FLOW-01 through FLOW-05) define canonical lifecycle scenarios that exercise the protocol&apos;s core invariants. They serve as <strong className="text-mplp-text">verification scenarios</strong> — not certification checklists.
                         </p>
+                        <div className="mb-6 p-3 rounded-lg bg-slate-800/40 border border-slate-700/40 text-xs text-mplp-text-muted">
+                            <strong className="text-mplp-text">Terminology:</strong> FLOW-01–05 are test scenarios defined in the MPLP main repository. Lifecycle Guarantees (LG-01–05) are adjudication targets in the Validation Lab. <strong>FLOW ≠ LG.</strong>
+                        </div>
                         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                             <div className="mplp-card p-4">
-                                <p className="text-sm font-bold text-mplp-text">GF-01</p>
-                                <p className="text-xs text-mplp-text-muted">Intent to Plan Transition</p>
+                                <p className="text-sm font-bold text-mplp-text">FLOW-01</p>
+                                <p className="text-xs text-mplp-text-muted">Single Agent – Happy Path</p>
                             </div>
                             <div className="mplp-card p-4">
-                                <p className="text-sm font-bold text-mplp-text">GF-02</p>
-                                <p className="text-xs text-mplp-text-muted">Governed Execution</p>
+                                <p className="text-sm font-bold text-mplp-text">FLOW-02</p>
+                                <p className="text-xs text-mplp-text-muted">Single Agent – Large Plan</p>
                             </div>
                             <div className="mplp-card p-4">
-                                <p className="text-sm font-bold text-mplp-text">GF-03</p>
-                                <p className="text-xs text-mplp-text-muted">Multi-Agent Coordination</p>
+                                <p className="text-sm font-bold text-mplp-text">FLOW-03</p>
+                                <p className="text-xs text-mplp-text-muted">Single Agent – With Tools</p>
                             </div>
                             <div className="mplp-card p-4">
-                                <p className="text-sm font-bold text-mplp-text">GF-04</p>
-                                <p className="text-xs text-mplp-text-muted">Drift Detection &amp; Recovery</p>
+                                <p className="text-sm font-bold text-mplp-text">FLOW-04</p>
+                                <p className="text-xs text-mplp-text-muted">Single Agent with LLM Enrichment</p>
                             </div>
                             <div className="mplp-card p-4">
-                                <p className="text-sm font-bold text-mplp-text">GF-05</p>
-                                <p className="text-xs text-mplp-text-muted">Runtime Integration</p>
+                                <p className="text-sm font-bold text-mplp-text">FLOW-05</p>
+                                <p className="text-xs text-mplp-text-muted">Single Agent with Confirm Required</p>
                             </div>
                         </div>
                     </div>
@@ -177,7 +180,7 @@ export default function ProtocolEvaluationPage() {
                     <div className="mt-8 grid gap-4 md:grid-cols-2">
                         <Link href="/golden-flows" className="mplp-card p-6 hover:border-mplp-blue-soft/30 transition-all group">
                             <h3 className="text-lg font-bold text-mplp-text mb-2 group-hover:text-mplp-blue-soft">Golden Flows</h3>
-                            <p className="text-sm text-mplp-text-muted">Normative verification scenarios (GF-01 → GF-05)</p>
+                            <p className="text-sm text-mplp-text-muted">Normative verification scenarios (FLOW-01 → FLOW-05)</p>
                         </Link>
                         <Link href="/conformance" className="mplp-card p-6 hover:border-mplp-blue-soft/30 transition-all group">
                             <h3 className="text-lg font-bold text-mplp-text mb-2 group-hover:text-mplp-blue-soft">Conformance Checklist</h3>

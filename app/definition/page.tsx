@@ -160,8 +160,11 @@ export default function DefinitionPage() {
                             protocol-level verification scenarios that produce structured, replayable evidence.
                         </p>
                         <p className="text-sm text-mplp-text-muted/80">
-                            The specification describes 5 core Golden Flows (GF-01 through GF-05) that validate lifecycle behavior across
+                            The specification describes 5 core Golden Flows (FLOW-01 through FLOW-05) that validate lifecycle behavior across
                             agent deployment, coordination, and governance scenarios.
+                        </p>
+                        <p className="text-xs text-mplp-text-muted/70 mt-3 p-2 rounded bg-slate-800/30 border border-slate-700/30">
+                            <strong>Terminology:</strong> FLOW-01–05 are test scenarios (main repo). LG-01–05 are Lifecycle Guarantees (Validation Lab). FLOW ≠ LG.
                         </p>
                         <p className="text-xs text-mplp-text-muted/70 mt-4 italic">
                             For verification requirements and evidence formats, see{" "}

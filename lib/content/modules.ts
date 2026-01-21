@@ -47,9 +47,9 @@ Context does **not** define execution logic; it provides the **normative boundar
 
 ### Usage in Golden Flows
 The Context module is the **entry point** for all normative execution patterns:
-* **Golden Flow 01** — Single-Agent Task Execution
-* **Golden Flow 02** — Multi-Step Planning
-* **Golden Flow 03** — Multi-Agent Task Coordination`,
+* **FLOW-01** — Single Agent – Happy Path
+* **FLOW-02** — Single Agent – Large Plan
+* **FLOW-03** — Single Agent – With Tools`,
         normativeConstraints: `The following constraints are **normative** and MUST be enforced by any MPLP-conformant implementation:
 
 1. Every MPLP execution **MUST** begin with a valid Context.
@@ -112,9 +112,9 @@ Plan does **not** execute actions; it provides the **normative execution bluepri
 
 ### Usage in Golden Flows
 The Plan module is central to:
-* **Golden Flow 01** — Single-Agent Task Execution
-* **Golden Flow 02** — Multi-Step Planning
-* **Golden Flow 04** — Approval-Gated Execution`,
+* **FLOW-01** — Single Agent – Happy Path
+* **FLOW-02** — Single Agent – Large Plan
+* **FLOW-05** — Single Agent with Confirm Required`,
         normativeConstraints: `The following constraints are **normative** and MUST be enforced by any MPLP-conformant implementation:
 
 1. A Plan **MUST** reference a valid \`context_id\`.
@@ -208,9 +208,8 @@ Trace does **not** control execution; it provides the **normative record** that 
 
 ### Usage in Golden Flows
 The Trace module provides the audit trail for:
-* **Golden Flow 01** — Single-Agent Task Execution
-* **Golden Flow 03** — Multi-Agent Task Coordination
-* **Golden Flow 06** — Post-Execution Audit & Review`,
+* **FLOW-01** — Single Agent – Happy Path
+* **FLOW-05** — Single Agent with Confirm Required`,
         normativeConstraints: `The following constraints are **normative** and MUST be enforced by any MPLP-conformant implementation:
 
 1. A Trace **MUST** reference a valid \`context_id\`.
@@ -264,9 +263,8 @@ Role does **not** perform actions; it provides the **normative identity contract
 
 ### Usage in Golden Flows
 The Role module enables authorization in:
-* **Golden Flow 03** — Multi-Agent Task Coordination
-* **Golden Flow 05** — Human-in-the-Loop Collaborative Review
-* **Golden Flow 07** — Role-Based Access Control Enforcement`,
+* **MAP-FLOW-01** — MAP Turn-Taking Session
+* **MAP-FLOW-02** — MAP Broadcast Fan-out`,
         normativeConstraints: `The following constraints are **normative** and MUST be enforced by any MPLP-conformant implementation:
 
 1. A Role **MUST** have a unique \`role_id\` and \`name\`.
@@ -360,8 +358,8 @@ Collab does **not** perform orchestration itself; it provides the **normative co
 
 ### Usage in Golden Flows
 The Collab module is referenced in the following normative execution patterns:
-* **Golden Flow 03** — Multi-Agent Task Coordination
-* **Golden Flow 05** — Human-in-the-Loop Collaborative Review`,
+* **MAP-FLOW-01** — MAP Turn-Taking Session
+* **MAP-FLOW-02** — MAP Broadcast Fan-out`,
         normativeConstraints: `The following constraints are **normative** and MUST be enforced by any MPLP-conformant implementation:
 
 1. A Collab instance **MUST** reference a valid \`context_id\`.

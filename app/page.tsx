@@ -8,7 +8,8 @@ import Link from "next/link";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import type { Metadata } from "next";
 import { siteConfig, DOCS_URLS, REPO_URLS, LAB_URLS } from "@/lib/site-config";
-import { JsonLd, generateProtocolSchema } from "@/components/seo/json-ld";
+// Note: Site-level JSON-LD is handled by SiteJsonLd in layout.tsx (SSOT)
+// Page-level schemas (e.g., BreadcrumbList) can be added here as needed
 import { PositioningNotice } from "@/components/notices";
 
 
@@ -21,11 +22,8 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-    const protocolSchema = generateProtocolSchema();
-
     return (
         <Shell>
-            <JsonLd data={protocolSchema} />
             <HeroSection />
             <ProtocolStatusSection />
 

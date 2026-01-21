@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { siteConfig, DOCS_URLS } from '@/lib/site-config';
 
 export const metadata = {
     title: 'What is MPLP? | Multi-Agent Lifecycle Protocol',
@@ -31,14 +32,14 @@ export default function WhatIsMPLP() {
                     </p>
                 </section>
 
-                {/* Three-Entry Model */}
+                {/* Four-Entry Model */}
                 <section className="mb-10">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-6">Three-Entry Model</h2>
+                    <h2 className="text-3xl font-bold text-gray-900 mb-6">Four-Entry Model</h2>
                     <p className="text-gray-700 mb-6">
-                        MPLP information is organized across three authoritative sources:
+                        MPLP information is organized across four authoritative sources:
                     </p>
 
-                    <div className="grid md:grid-cols-3 gap-6 mb-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                         <div className="bg-white border-2 border-gray-200 rounded-lg p-6">
                             <h3 className="text-xl font-bold text-blue-600 mb-2">Website</h3>
                             <p className="text-sm font-semibold text-gray-600 mb-2">Discovery & Positioning</p>
@@ -49,6 +50,12 @@ export default function WhatIsMPLP() {
                             <h3 className="text-xl font-bold text-green-600 mb-2">Docs</h3>
                             <p className="text-sm font-semibold text-gray-600 mb-2">Specification & Reference</p>
                             <p className="text-sm text-gray-700">Normative requirements and implementation guidance.</p>
+                        </div>
+
+                        <div className="bg-white border-2 border-gray-200 rounded-lg p-6">
+                            <h3 className="text-xl font-bold text-orange-600 mb-2">Lab</h3>
+                            <p className="text-sm font-semibold text-gray-600 mb-2">Evidence & Adjudication</p>
+                            <p className="text-sm text-gray-700">Evidence-based verdict generation for lifecycle guarantees.</p>
                         </div>
 
                         <div className="bg-white border-2 border-gray-200 rounded-lg p-6">
@@ -65,13 +72,13 @@ export default function WhatIsMPLP() {
                     <ul className="space-y-3">
                         <li>
                             <strong>Specification:</strong>{' '}
-                            <Link href="https://docs.mplp.io/docs/reference/entrypoints" className="text-blue-600 hover:underline">
+                            <Link href={`${DOCS_URLS.home}/docs/reference/entrypoints`} className="text-blue-600 hover:underline">
                                 docs.mplp.io/docs/reference/entrypoints
                             </Link>
                         </li>
                         <li>
                             <strong>Source of Truth:</strong>{' '}
-                            <Link href="https://github.com/Coregentis/MPLP-Protocol" className="text-blue-600 hover:underline">
+                            <Link href={siteConfig.links.github} className="text-blue-600 hover:underline">
                                 github.com/Coregentis/MPLP-Protocol
                             </Link>
                         </li>

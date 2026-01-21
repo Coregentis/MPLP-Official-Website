@@ -47,3 +47,6 @@ jobs:
             exit 1
           fi
           echo "✅ Pagefind index verified"
+
+      - name: Terminology Gate
+        run: node scripts/gates/terminology-gate.mjs

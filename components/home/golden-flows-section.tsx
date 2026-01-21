@@ -4,51 +4,50 @@ import { SectionTitle } from "@/components/common/section-title";
 import { Button } from "@/components/common/button";
 
 /**
- * Golden Flows — Aligned with Flow detail pages
- * displayName = Narrative (homepage)
- * canonicalName = Official Flow title (must match detail page)
- * phases = Simplified version of actual execution steps
- * href = Links to site Flow detail pages (not external docs)
+ * Golden Flows Section — SSOT Aligned
+ * 
+ * TRUTH SOURCE: tests/golden/flows/registry.ts
+ * Names MUST match the registry exactly. Any deviation is a bug.
+ * 
+ * DO NOT use conceptual names (Intent → Plan, Multi-Agent Coordination, etc.)
+ * Those belong in the Protocol Capabilities section, not here.
  */
-const flows = [
+
+// Core v1.0 Conformance Boundary Flows (from registry.ts)
+const goldenFlows = [
     {
         id: "01",
-        displayName: "Intent → Plan",
-        canonicalName: "Intent to Plan Transition",
-        description: "Transform user intent into structured context and generate an executable plan.",
-        phases: ["Context Retrieval", "Plan Generation", "Verification"],
+        title: "Single Agent – Happy Path",
+        description: "Baseline single-agent workflow: context creation, 2-step plan generation, execution with trace recording.",
+        modules: ["Context", "Plan"],
         href: "/golden-flows/flow-01",
     },
     {
         id: "02",
-        displayName: "Governed Execution",
-        canonicalName: "Governed Execution",
-        description: "Execute plans while respecting constraints and emitting trace events.",
-        phases: ["Policy Check", "Execution", "Trace Recording"],
+        title: "Single Agent – Large Plan",
+        description: "Volumetric validation with 25 steps. Tests protocol handling of large execution plans.",
+        modules: ["Context", "Plan"],
         href: "/golden-flows/flow-02",
     },
     {
         id: "03",
-        displayName: "Multi-Agent Coordination",
-        canonicalName: "Multi-Agent Coordination Loop",
-        description: "Coordinate multiple agents with role assignment and atomic task handoffs.",
-        phases: ["Role Assignment", "Task Handoff", "Result Aggregation"],
+        title: "Single Agent – With Tools",
+        description: "Tool integration via agent_role field. Validates curl_executor, jq_processor semantics.",
+        modules: ["Context", "Plan", "Extension"],
         href: "/golden-flows/flow-03",
     },
     {
         id: "04",
-        displayName: "Drift Detection",
-        canonicalName: "Drift Detection & Recovery",
-        description: "Detect state divergence and trigger recovery or replanning sequences.",
-        phases: ["Drift Analysis", "Alert Generation", "Recovery Plan"],
+        title: "Single Agent with LLM Enrichment",
+        description: "AEL integration. Validates LLM-enriched plan generation with llm_claude, llm_gpt roles.",
+        modules: ["Context", "Plan", "Core"],
         href: "/golden-flows/flow-04",
     },
     {
         id: "05",
-        displayName: "External Integration",
-        canonicalName: "Runtime Integration & External I/O",
-        description: "Connect to external systems via the L4 Integration Layer with tracked side-effects.",
-        phases: ["L4 Adapter", "Protocol Event Handling", "Response"],
+        title: "Single Agent with Confirm Required",
+        description: "Multi-round approval workflow. Validates Confirm module with decisions[] array.",
+        modules: ["Context", "Plan", "Confirm", "Trace"],
         href: "/golden-flows/flow-05",
     },
 ];
@@ -60,39 +59,45 @@ export function GoldenFlowsSection() {
                 <SectionTitle
                     badge="Normative Validation"
                     title="Golden Flows"
-                    subtitle="Golden Flows define the normative integration scenarios that every MPLP-conformant runtime is expected to pass."
+                    subtitle="Golden Flows are evaluation scenarios from tests/golden/flows/. Each flow validates specific L2 protocol modules."
                 />
+
+                {/* Truth Source Notice */}
+                <div className="text-center mb-8">
+                    <p className="text-xs text-mplp-text-muted/60 font-mono">
+                        Truth Source: <code className="bg-slate-900 px-1 py-0.5 rounded">tests/golden/flows/*</code>
+                    </p>
+                </div>
 
                 {/* Flows Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-                    {flows.map((flow) => (
+                    {goldenFlows.map((flow) => (
                         <Link
                             key={flow.id}
                             href={flow.href}
                             className="bg-glass border border-blue-500/20 rounded-xl p-6 hover:border-blue-500/50 hover:bg-blue-900/10 transition-all group block"
                         >
-                            {/* Flow Number */}
-                            <div className="flex items-center gap-3 mb-2">
+                            {/* Flow Number + Title */}
+                            <div className="flex items-center gap-3 mb-3">
                                 <span className="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold shadow-lg shadow-blue-900/50 group-hover:scale-110 transition-transform">
                                     {flow.id}
                                 </span>
-                                <h3 className="font-semibold text-white group-hover:text-blue-400 transition-colors">{flow.displayName}</h3>
+                                <h3 className="font-semibold text-white group-hover:text-blue-400 transition-colors text-sm">
+                                    {flow.title}
+                                </h3>
                             </div>
-
-                            {/* Canonical Name */}
-                            <p className="text-xs text-blue-400/70 font-mono mb-3">{flow.canonicalName}</p>
 
                             {/* Description */}
                             <p className="text-sm text-slate-400 mb-4">{flow.description}</p>
 
-                            {/* Phases */}
+                            {/* Modules Tested */}
                             <div className="flex flex-wrap gap-2">
-                                {flow.phases.map((phase, i) => (
+                                {flow.modules.map((module) => (
                                     <span
-                                        key={phase}
+                                        key={module}
                                         className="text-xs px-2 py-1 bg-blue-900/30 border border-blue-500/20 text-blue-300 rounded-full"
                                     >
-                                        {i + 1}. {phase}
+                                        {module}
                                     </span>
                                 ))}
                             </div>

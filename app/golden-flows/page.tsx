@@ -6,9 +6,10 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { Button } from "@/components/ui/button";
 import { flows } from "@/lib/content/flows";
 import type { Metadata } from "next";
-import { siteConfig, DOCS_URLS, REPO_URLS } from "@/lib/site-config";
+import { siteConfig, DOCS_URLS, REPO_URLS, LAB_URLS } from "@/lib/site-config";
 import { CanonicalReferences } from "@/components/ui/canonical-references";
 import { NextSteps } from "@/components/ui/next-steps";
+import { Info } from "lucide-react";
 
 function flowSlug(id: string) {
     // Keep routing consistent across site (Flow-01 -> flow-01)
@@ -43,31 +44,31 @@ export default function GoldenFlowsPage() {
         "hasPart": [
             {
                 "@type": "ListItem",
-                "name": "Flow-01: Intent to Plan Transition",
+                "name": "FLOW-01: Single Agent – Happy Path",
                 "url": `${siteConfig.url}/golden-flows/flow-01`,
                 "@id": `${siteConfig.url}/golden-flows/flow-01`
             },
             {
                 "@type": "ListItem",
-                "name": "Flow-02: Governed Execution",
+                "name": "FLOW-02: Single Agent – Large Plan",
                 "url": `${siteConfig.url}/golden-flows/flow-02`,
                 "@id": `${siteConfig.url}/golden-flows/flow-02`
             },
             {
                 "@type": "ListItem",
-                "name": "Flow-03: Multi-Agent Coordination Loop",
+                "name": "FLOW-03: Single Agent – With Tools",
                 "url": `${siteConfig.url}/golden-flows/flow-03`,
                 "@id": `${siteConfig.url}/golden-flows/flow-03`
             },
             {
                 "@type": "ListItem",
-                "name": "Flow-04: Drift Detection & Recovery",
+                "name": "FLOW-04: Single Agent with LLM Enrichment",
                 "url": `${siteConfig.url}/golden-flows/flow-04`,
                 "@id": `${siteConfig.url}/golden-flows/flow-04`
             },
             {
                 "@type": "ListItem",
-                "name": "Flow-05: Runtime Integration & External I/O",
+                "name": "FLOW-05: Single Agent with Confirm Required",
                 "url": `${siteConfig.url}/golden-flows/flow-05`,
                 "@id": `${siteConfig.url}/golden-flows/flow-05`
             }
@@ -82,8 +83,28 @@ export default function GoldenFlowsPage() {
             breadcrumbs={[{ label: "Golden Flows", href: "/golden-flows" }]}
             jsonLd={collectionSchema}
         >
+            {/* Terminology Note - Flow vs LG Distinction */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-6">
+                <div className="flex items-start gap-3 border border-amber-500/30 bg-amber-500/5 rounded-xl py-4 px-6">
+                    <Info className="h-5 w-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                    <div className="text-sm">
+                        <p className="font-semibold text-amber-400 mb-1">Terminology Note</p>
+                        <ul className="text-mplp-text-muted space-y-1 text-xs">
+                            <li><strong className="text-mplp-text">Flow-01~05</strong> = Protocol Test Scenarios (defined in main repository)</li>
+                            <li><strong className="text-mplp-text">LG-01~05</strong> = Lifecycle Guarantees (Lab adjudication targets)</li>
+                        </ul>
+                        <p className="text-xs text-mplp-text-muted/80 mt-2">
+                            These are distinct naming spaces and should not be conflated.{" "}
+                            <a href={LAB_URLS.guarantees} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                See Lifecycle Guarantees (LG-01~05) in Validation Lab →
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             {/* Normative Assertion */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 mb-12">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
                 <div className="text-center text-mplp-text-muted font-medium text-sm border border-mplp-border bg-slate-950/50 rounded-xl py-4 px-6">
                     <p className="mb-2">
                         Golden Flows are formally defined in the <strong>MPLP Protocol Specification</strong>.
@@ -93,6 +114,7 @@ export default function GoldenFlowsPage() {
                     </p>
                 </div>
             </div>
+
 
             <ContentSection>
                 <div className="space-y-8">

@@ -81,9 +81,36 @@ export default async function ModuleDetailPage({ params }: { params: Promise<{ s
         "author": { "@id": `${siteConfig.url}#mpgc` }
     } : null;
 
+    // BreadcrumbList JSON-LD for all modules (search navigation signal)
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": siteConfig.url
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Modules",
+                "item": `${siteConfig.url}/modules`
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": moduleData.name,
+                "item": `${siteConfig.url}/modules/${moduleData.id}`
+            }
+        ]
+    };
+
     return (
         <Shell>
             {techArticleSchema && <JsonLd data={techArticleSchema} />}
+            <JsonLd data={breadcrumbSchema} />
             <ScrollReveal animation="fade-in">
                 <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                     <Breadcrumb items={[

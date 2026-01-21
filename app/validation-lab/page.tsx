@@ -351,7 +351,7 @@ export default function ValidationLabPage() {
                         </div>
                     </div>
                     <p className="text-xs text-mplp-text-muted text-center mt-4">
-                        Reference documentation: <a href="https://docs.mplp.io/docs/evaluation/validation-lab" className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">Validation Lab Reference (Docs) →</a>
+                        Reference documentation: <a href={`${DOCS_URLS.home}/docs/evaluation/validation-lab`} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">Validation Lab Reference (Docs) →</a>
                     </p>
                 </div>
             </ContentSection>
@@ -376,7 +376,7 @@ export default function ValidationLabPage() {
                         <div className="mplp-card p-4">
                             <p className="font-semibold text-mplp-text mb-2">Contracts & Reference</p>
                             <p className="text-xs text-mplp-text-muted mb-2">Pack formats, rulesets, schemas</p>
-                            <a href="https://docs.mplp.io/docs/evaluation/validation-lab" className="text-xs text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">Documentation →</a>
+                            <a href={`${DOCS_URLS.home}/docs/evaluation/validation-lab`} className="text-xs text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">Documentation →</a>
                         </div>
                     </div>
                 </div>

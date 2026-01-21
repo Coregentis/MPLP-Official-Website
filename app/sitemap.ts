@@ -33,11 +33,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/governance/iso-iec-42001",
         "/governance/nist-ai-rmf",
         "/conformance",
-        // Removed: /adoption, /enterprise (redirect-only, avoid SEO confusion)
-        "/standards/positioning",
-        "/standards/regulatory-positioning",
-        "/standards/protocol-evaluation",
-        "/standards/what-mplp-is-not",
+        // Removed redirect-source URLs (P1-1 GSC fix):
+        // /standards/positioning, /standards/regulatory-positioning,
+        // /standards/protocol-evaluation, /standards/what-mplp-is-not
+        // These redirect to /references or /faq and should NOT be in sitemap
         "/governance/positioning/agentic-state-sovereignty",
         "/governance/positioning/semantic-drift-control",
         "/search",

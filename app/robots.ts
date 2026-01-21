@@ -8,6 +8,11 @@ export default function robots(): MetadataRoute.Robots {
             allow: "/",
             disallow: ["/api/"],
         },
-        sitemap: `${siteConfig.url}/sitemap.xml`,
+        sitemap: [
+            `${siteConfig.url}/sitemap.xml`,
+            `${siteConfig.url}/sitemapindex.xml`,
+            "https://docs.mplp.io/sitemap.xml",
+            "https://lab.mplp.io/sitemap.xml",
+        ],
     };
 }
