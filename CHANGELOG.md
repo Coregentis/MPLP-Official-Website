@@ -4,7 +4,30 @@ All notable changes to the MPLP Website (mplp.io).
 
 ---
 
+## [gsc-perf-v1.2] — 2026-01-21
+
+### 🚀 GSC Coverage Fixes & Performance Optimization
+
+#### GSC Coverage
+- Removed 4 redirect-source URLs from `sitemap.ts` (/standards/*)
+- Added BreadcrumbList JSON-LD to module detail pages
+- Removed `generateProtocolSchema` from homepage (SiteJsonLd SSOT)
+- Updated `mplp-entity.json` with four-entry model
+
+#### Performance
+- Added Cache-Control headers for static assets (1yr immutable)
+- Added `deviceSizes`/`imageSizes` for responsive images
+- Enabled `compiler.removeConsole` in production
+- Added `experimental.optimizePackageImports` for lucide-react, framer-motion
+
+#### Build
+- First Load JS: ~102kB
+- 59 pages indexed
+
+---
+
 ## [authority-alignment-v1] — 2025-12-25
+
 
 ### 🎯 Authority & Semantic Alignment
 
