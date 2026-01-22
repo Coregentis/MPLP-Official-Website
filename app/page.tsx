@@ -52,6 +52,10 @@ export default function Home() {
             </ContentSection>
 
             <ContentSection>
+                <StandardsAlignmentSection />
+            </ContentSection>
+
+            <ContentSection>
                 <FinalCtaSection />
             </ContentSection>
 
@@ -640,7 +644,7 @@ function EcosystemSection() {
                             Evidence Chain
                         </h3>
                         <p className="text-xs sm:text-sm text-mplp-text-muted/90 leading-relaxed mb-8">
-                            Plan → Confirm → Trace: audit-ready evidence for agent systems, aligned with ISO/IEC 42001 and NIST AI RMF.
+                            Plan → Confirm → Trace: audit-ready evidence for agent systems through replayable lifecycle artifacts.
                         </p>
                         <div className="text-[11px] font-bold text-mplp-blue-soft uppercase tracking-widest flex items-center gap-2 group/link">
                             Explore Governance <IconArrowRight className="h-3.5 w-3.5 group-hover/link:translate-x-1 transition-transform" />
@@ -719,6 +723,83 @@ function EcosystemSection() {
     );
 }
 
+// 8. Standards Alignment Section (Informative)
+function StandardsAlignmentSection() {
+    return (
+        <div className="text-center">
+            <SectionHeader
+                eyebrow="Standards Alignment (Informative)"
+                title="Enterprise Evaluation Signals"
+                description="Reference mappings to external governance frameworks. MPLP lifecycle evidence artifacts may support documentation and auditability practices."
+                align="center"
+                className="mx-auto mb-12"
+            />
+
+            <div className="grid gap-6 grid-cols-1 md:grid-cols-3 max-w-5xl mx-auto text-left">
+                <Link
+                    href="/governance/iso-iec-42001"
+                    className="mplp-card mplp-card-hover group block p-8 bg-mplp-dark-soft/40"
+                >
+                    <Badge variant="outline" className="text-[10px] font-bold uppercase tracking-widest text-mplp-text-muted border-mplp-border/40">
+                        AI Management
+                    </Badge>
+                    <h3 className="mt-5 text-sm font-bold text-mplp-text uppercase tracking-widest group-hover:text-mplp-blue-soft transition-colors">
+                        ISO/IEC 42001
+                    </h3>
+                    <p className="mt-4 text-xs sm:text-sm text-mplp-text-muted/90 leading-relaxed">
+                        Reference mapping to lifecycle governance objectives and auditability expectations.
+                    </p>
+                    <div className="mt-6 text-[11px] font-bold text-mplp-blue-soft uppercase tracking-widest flex items-center gap-2">
+                        View Alignment <IconArrowRight className="h-3.5 w-3.5" />
+                    </div>
+                </Link>
+
+                <Link
+                    href="/governance/nist-ai-rmf"
+                    className="mplp-card mplp-card-hover group block p-8 bg-mplp-dark-soft/40"
+                >
+                    <Badge variant="outline" className="text-[10px] font-bold uppercase tracking-widest text-mplp-text-muted border-mplp-border/40">
+                        Risk Management
+                    </Badge>
+                    <h3 className="mt-5 text-sm font-bold text-mplp-text uppercase tracking-widest group-hover:text-mplp-blue-soft transition-colors">
+                        NIST AI RMF
+                    </h3>
+                    <p className="mt-4 text-xs sm:text-sm text-mplp-text-muted/90 leading-relaxed">
+                        Reference mapping to GOVERN / MAP / MEASURE / MANAGE functions.
+                    </p>
+                    <div className="mt-6 text-[11px] font-bold text-mplp-blue-soft uppercase tracking-widest flex items-center gap-2">
+                        View Alignment <IconArrowRight className="h-3.5 w-3.5" />
+                    </div>
+                </Link>
+
+                <Link
+                    href="/governance/eu-ai-act"
+                    className="mplp-card mplp-card-hover group block p-8 bg-mplp-dark-soft/40"
+                >
+                    <Badge variant="outline" className="text-[10px] font-bold uppercase tracking-widest text-mplp-text-muted border-mplp-border/40">
+                        High-Risk AI
+                    </Badge>
+                    <h3 className="mt-5 text-sm font-bold text-mplp-text uppercase tracking-widest group-hover:text-amber-400 transition-colors">
+                        EU AI Act
+                    </h3>
+                    <p className="mt-4 text-xs sm:text-sm text-mplp-text-muted/90 leading-relaxed">
+                        Reference mapping to Articles 9–15 documentation-oriented requirements.
+                    </p>
+                    <div className="mt-6 text-[11px] font-bold text-amber-400 uppercase tracking-widest flex items-center gap-2">
+                        View Alignment <IconArrowRight className="h-3.5 w-3.5" />
+                    </div>
+                </Link>
+            </div>
+
+            <div className="mt-10 max-w-3xl mx-auto text-center">
+                <p className="text-[11px] text-mplp-text-muted/60 italic">
+                    {/* TERM-WAIVER: Negation context - not a compliance claim */}
+                    Informative mapping only. No certification, endorsement, or legal advice. All regulatory determinations remain the responsibility of the adopting organization.
+                </p>
+            </div>
+        </div>
+    );
+}
 
 
 // 9. Final CTA Section
