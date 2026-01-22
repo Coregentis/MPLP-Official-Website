@@ -70,7 +70,7 @@ export default function NistAiRmfPage() {
                             the adopting organization.
                         </p>
                         <p className="mt-3 text-sm text-mplp-text-muted leading-relaxed">
-                            This reference follows the <Link href="/standards/positioning" className="text-mplp-blue-soft hover:text-mplp-blue-light transition-colors">MPLP Standards Compatibility & Mapping Policy</Link>.
+                            This reference follows the <Link href="/references" className="text-mplp-blue-soft hover:text-mplp-blue-light transition-colors">MPLP Standards Compatibility & Mapping Policy</Link>.
                         </p>
                     </div>
                 </div>

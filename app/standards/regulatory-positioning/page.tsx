@@ -41,7 +41,7 @@ export default function RegulatoryPositioningPage() {
             <JsonLd data={techArticleSchema} />
             <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                 <Breadcrumb items={[
-                    { label: "Standards", href: "/standards/positioning" },
+                    { label: "References", href: "/references" },
                     { label: "Regulatory Positioning", href: "/standards/regulatory-positioning" }
                 ]} />
             </div>
@@ -130,12 +130,12 @@ export default function RegulatoryPositioningPage() {
                         </Link>
                     </div>
 
-                    <div className="mt-8 rounded-xl border border-mplp-border bg-slate-950/30 p-6">
-                        <h4 className="text-sm font-bold text-mplp-text mb-3">EU AI Act (High-Level)</h4>
-                        <p className="text-sm text-mplp-text-muted leading-relaxed">
-                            {/* TERM-WAIVER: Negation context - not a compliance claim */}
-                            The EU AI Act establishes risk-based requirements for AI systems. MPLP&apos;s Evidence Chain (Plan → Confirm → Trace) provides structured lifecycle artifacts that may support documentation and auditability expectations. <strong className="text-mplp-text">This is a high-level observation, not a compliance claim.</strong>
-                        </p>
+                    <div className="mt-8">
+                        <Link href="/governance/eu-ai-act" className="mplp-card p-6 hover:border-mplp-blue-soft/30 transition-all group block">
+                            <h3 className="text-lg font-bold text-mplp-text mb-2 group-hover:text-mplp-blue-soft">EU AI Act</h3>
+                            <p className="text-sm text-mplp-text-muted mb-4">High-risk AI system requirements (Articles 9–15) may map to MPLP Evidence Chain artifacts.</p>
+                            <span className="text-xs font-bold text-mplp-blue-soft uppercase tracking-wider">View Mapping →</span>
+                        </Link>
                     </div>
                 </div>
             </ContentSection>
@@ -149,16 +149,16 @@ export default function RegulatoryPositioningPage() {
                         align="center"
                     />
                     <div className="mt-8 grid gap-4 md:grid-cols-2">
-                        <Link href="/standards/positioning" className="mplp-card p-4 hover:border-mplp-blue-soft/30 transition-all">
-                            <p className="text-sm font-bold text-mplp-text">Standards Positioning Policy</p>
+                        <Link href="/references" className="mplp-card p-4 hover:border-mplp-blue-soft/30 transition-all">
+                            <p className="text-sm font-bold text-mplp-text">References</p>
                             <p className="text-xs text-mplp-text-muted">How MPLP relates to external standards</p>
                         </Link>
                         <Link href="/enterprise" className="mplp-card p-4 hover:border-mplp-blue-soft/30 transition-all">
                             <p className="text-sm font-bold text-mplp-text">Enterprise Evaluation Guide</p>
                             <p className="text-xs text-mplp-text-muted">Practical adoption guidance for organizations (T2)</p>
                         </Link>
-                        <Link href="/standards/protocol-evaluation" className="mplp-card p-4 hover:border-mplp-blue-soft/30 transition-all">
-                            <p className="text-sm font-bold text-mplp-text">Protocol Evaluation</p>
+                        <Link href="/golden-flows" className="mplp-card p-4 hover:border-mplp-blue-soft/30 transition-all">
+                            <p className="text-sm font-bold text-mplp-text">Golden Flows</p>
                             <p className="text-xs text-mplp-text-muted">How MPLP is evaluated via Golden Flows</p>
                         </Link>
                         <Link href="/governance/overview" className="mplp-card p-4 hover:border-mplp-blue-soft/30 transition-all">

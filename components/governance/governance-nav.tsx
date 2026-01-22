@@ -13,6 +13,7 @@ const siblings = [
     { href: "/governance/governed-stack", label: "Governed Stack" },
     { href: "/governance/iso-iec-42001", label: "ISO/IEC 42001" },
     { href: "/governance/nist-ai-rmf", label: "NIST AI RMF" },
+    { href: "/governance/eu-ai-act", label: "EU AI Act" },
 ];
 
 const downstream = [

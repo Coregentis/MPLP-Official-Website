@@ -32,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/governance/governed-stack",
         "/governance/iso-iec-42001",
         "/governance/nist-ai-rmf",
+        "/governance/eu-ai-act",
         "/conformance",
         // Removed redirect-source URLs (P1-1 GSC fix):
         // /standards/positioning, /standards/regulatory-positioning,
