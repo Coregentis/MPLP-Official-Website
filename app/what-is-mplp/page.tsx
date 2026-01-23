@@ -32,11 +32,11 @@ export default function WhatIsMPLP() {
                     </p>
                 </section>
 
-                {/* Four-Entry Model */}
+                {/* 3+1 Entry Model */}
                 <section className="mb-10">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-6">Four-Entry Model</h2>
+                    <h2 className="text-3xl font-bold text-gray-900 mb-6">3+1 Entry Model</h2>
                     <p className="text-gray-700 mb-6">
-                        MPLP information is organized across four authoritative sources:
+                        MPLP information is organized across four entry surfaces (3 Primary + 1 Auxiliary). <strong>The Repository is the sole source of truth.</strong>
                     </p>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -108,7 +108,7 @@ export default function WhatIsMPLP() {
                             <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
                                 <li>Not a software license</li>
                                 <li>Not a certification program</li>
-                                <li>Not POSIX (uses POSIX as conceptual lens only)</li>
+                                <li>POSIX is the canonical analogy (vendor-neutral interface standard), not an operating system</li>
                             </ul>
                         </div>
                     </div>

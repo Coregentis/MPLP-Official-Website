@@ -165,7 +165,7 @@ export default function GovernanceOverviewPage() {
                         <div className="pt-10 border-t border-mplp-border/50">
                             <h4 className="text-sm font-bold text-mplp-text-muted uppercase tracking-wider mb-6">Versioning Rules</h4>
                             <InvariantHighlight title="Stability Invariant">
-                                Breaking changes are strictly forbidden within the <code>v1.x</code> series. Any normative change that breaks backward compatibility with v1.0.0 implementations MUST be released as <code>v2.0.0</code>.
+                                Breaking changes are strictly forbidden within the <code>v1.x</code> series. Any normative change that breaks backward compatibility with v1.0.0 implementations is released as <code>v2.0.0</code>.
                             </InvariantHighlight>
                         </div>
                     </div>

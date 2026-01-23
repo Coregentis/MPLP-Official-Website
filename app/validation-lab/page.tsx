@@ -250,7 +250,7 @@ export default function ValidationLabPage() {
                     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                         <div className="mplp-card p-4 text-center">
                             <code className="text-mplp-blue-soft font-mono text-sm">site-v*</code>
-                            <p className="text-xs text-mplp-text-muted mt-2">Site Freeze</p>
+                            <p className="text-xs text-mplp-text-muted mt-2">Site Seal</p>
                             <p className="text-xs text-mplp-text-muted/70">Website IA & commitment</p>
                         </div>
                         <div className="mplp-card p-4 text-center">
@@ -266,11 +266,11 @@ export default function ValidationLabPage() {
                         <div className="mplp-card p-4 text-center">
                             <code className="text-purple-400 font-mono text-sm">rel-lab-*</code>
                             <p className="text-xs text-mplp-text-muted mt-2">Release Seal</p>
-                            <p className="text-xs text-mplp-text-muted/70">Governance freeze tag</p>
+                            <p className="text-xs text-mplp-text-muted/70">Governance seal tag</p>
                         </div>
                     </div>
                     <p className="text-xs text-mplp-text-muted text-center mt-4">
-                        Authoritative definitions: <a href={LAB_URLS.home} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">Validation Lab →</a>
+                        Authoritative source: Repository (schemas/tests/governance). Lab provides adjudication only. <a href={LAB_URLS.home} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">View Lab →</a>
                     </p>
                 </div>
             </ContentSection>
@@ -279,10 +279,10 @@ export default function ValidationLabPage() {
             <ContentSection>
                 <div className="max-w-4xl mx-auto">
                     <h3 className="text-lg font-bold text-mplp-text mb-6 text-center">
-                        Four Entry Points
+                        3+1 Entry Model
                     </h3>
                     <p className="text-sm text-mplp-text-muted text-center mb-6">
-                        MPLP uses a four-entry model. Each surface has a strict, non-overlapping role.
+                        MPLP uses a 3+1 entry model: 3 Primary (Website, Documentation, Repository) + 1 Auxiliary (Validation Lab). Each surface has a strict, non-overlapping role. <strong>The Repository is the sole source of truth.</strong>
                     </p>
                     <div className="grid gap-4 md:grid-cols-2">
                         <div className="mplp-card p-6 flex items-start gap-4">
