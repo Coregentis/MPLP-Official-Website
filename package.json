@@ -18,7 +18,8 @@
     "render:jump-map": "node scripts/governance/render-jump-map.mjs",
     "generate:seo-manifest": "node scripts/governance/generate-seo-manifest.mjs",
     "verify:semantic-tier": "WG05_STRICT=1 node scripts/governance/semantic-tiering.mjs",
-    "verify:semantic-tier:warn": "node scripts/governance/semantic-tiering.mjs"
+    "verify:semantic-tier:warn": "node scripts/governance/semantic-tiering.mjs",
+    "gate:website-pointer-only": "node scripts/gates/website-pointer-only.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",

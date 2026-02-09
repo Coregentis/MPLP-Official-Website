@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/posix-analogy",
         "/specification",
         "/validation-lab",
+        "/rulesets/evolution",
 
         "/kernel-duties",  // PR-04: Added for sitelinks
         "/golden-flows",
@@ -41,7 +42,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/governance/positioning/agentic-state-sovereignty",
         "/governance/positioning/semantic-drift-control",
         "/search",
-        "/blog",
+        // "/blog", -> NOINDEX
+        // "/blog/[slug]", -> NOINDEX
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date("2026-01-08"),  // Freeze date for consistent crawling
@@ -76,13 +78,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.9, // Higher priority for normative flows
     }));
 
-    // Blog posts
-    const blogPosts = getAllPostSlugs().map((slug) => ({
-        url: `${baseUrl}/blog/${slug}`,
-        lastModified: new Date("2026-01-08"),
-        changeFrequency: "monthly" as const,
-        priority: 0.6,
-    }));
-
-    return [...staticPages, ...modulePages, ...flowPages, ...blogPosts];
+    // Blog posts and dynamic routes are excluded from sitemap per P0-3 (Conflict resolution)
+    return [...staticPages, ...modulePages, ...flowPages];
 }

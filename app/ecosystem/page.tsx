@@ -26,31 +26,12 @@ const sdks = [
         desc: "Reference SDK for building MPLP-conformant agents in Python. Provides canonical data models and utilities enabling protocol-level validation and structured execution scaffolding.",
         link: "https://pypi.org/project/mplp-sdk/",
         docsLink: DOCS_URLS.sdkDocs,
-        packages: [
-            { name: "mplp-sdk", desc: "Canonical Python entry (PyPI)" },
-        ],
     },
     {
         name: "MPLP TypeScript SDK",
         desc: "Reference SDK for implementing MPLP protocol semantics in TypeScript. Provides strongly-typed definitions and execution scaffolding aligned with the MPLP specification.",
         link: "https://www.npmjs.com/package/@mplp/sdk-ts",
         docsLink: DOCS_URLS.sdkDocs,
-        primaryPackages: [
-            { name: "@mplp/sdk-ts", desc: "Main developer entry" },
-            { name: "@mplp/core", desc: "Protocol primitives & types" },
-            { name: "@mplp/schema", desc: "Schema validators" },
-            { name: "@mplp/coordination", desc: "Coordination & state-machine helpers" },
-            { name: "@mplp/modules", desc: "L2 governance module helpers" },
-            { name: "@mplp/conformance", desc: "Conformance kit & validation tooling" },
-            { name: "@mplp/runtime-minimal", desc: "Minimal reference runtime" },
-            { name: "@mplp/devtools", desc: "CLI & debugging tools" },
-        ],
-        integrationPackages: [
-            { name: "@mplp/integration-llm-http", desc: "HTTP LLM Client Adapter" },
-            { name: "@mplp/integration-storage-fs", desc: "File System Storage Adapter" },
-            { name: "@mplp/integration-storage-kv", desc: "Key-Value Storage Adapter" },
-            { name: "@mplp/integration-tools-generic", desc: "Generic Tool Executor" },
-        ],
     },
 ];
 
@@ -155,36 +136,9 @@ export default function EcosystemPage() {
                             <p className="text-mplp-text-muted mb-6">{sdk.desc}</p>
 
                             <div className="mb-6">
-                                <p className="text-xs font-semibold text-mplp-text-muted uppercase tracking-wider mb-3">
-                                    Primary Packages ({sdk.primaryPackages?.length || sdk.packages?.length || 0})
+                                <p className="text-sm text-mplp-text-muted mb-4">
+                                    Includes core protocol primitives, schema validators, coordination helpers, and conformance tooling.
                                 </p>
-                                <div className="grid gap-2">
-                                    {(sdk.primaryPackages || sdk.packages || []).map((pkg) => (
-                                        <div key={pkg.name} className="flex items-center px-3 py-2 rounded bg-slate-900 border border-mplp-border">
-                                            <div className="flex items-center gap-2">
-                                                <code className="text-xs text-mplp-blue-soft font-mono">{pkg.name}</code>
-                                                <span className="text-xs text-mplp-text-muted hidden sm:inline">— {pkg.desc}</span>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                                {sdk.integrationPackages && sdk.integrationPackages.length > 0 && (
-                                    <>
-                                        <p className="text-xs font-semibold text-mplp-text-muted uppercase tracking-wider mt-4 mb-3">
-                                            Integration Packages ({sdk.integrationPackages.length})
-                                        </p>
-                                        <div className="grid gap-2">
-                                            {sdk.integrationPackages.map((pkg) => (
-                                                <div key={pkg.name} className="flex items-center px-3 py-2 rounded bg-slate-900/50 border border-mplp-border/50">
-                                                    <div className="flex items-center gap-2">
-                                                        <code className="text-xs text-mplp-cyan font-mono">{pkg.name}</code>
-                                                        <span className="text-xs text-mplp-text-muted hidden sm:inline">— {pkg.desc}</span>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </>
-                                )}
                             </div>
 
                             <div className="flex gap-4">

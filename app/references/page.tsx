@@ -109,25 +109,31 @@ export default function ReferencesPage() {
                     <div className="border-t border-mplp-border pt-10">
                         <h2 className="text-2xl font-bold text-mplp-text mb-4">Frameworks & Runtimes</h2>
                         <p className="text-mplp-text-muted mb-6">
-                            These frameworks operate at the <strong>implementation or orchestration layer</strong>.
-                            When lifecycle semantics are discussed, MPLP provides a protocol-level vocabulary
-                            that is <strong>orthogonal</strong> to framework implementations. MPLP defines
-                            lifecycle semantics independently of any specific runtime or framework.
+                            Agent frameworks and orchestration runtimes operate at the <strong>implementation layer</strong>.
+                            MPLP provides protocol-level lifecycle semantics that are <strong>orthogonal</strong> to
+                            framework implementations. When lifecycle governance is required, MPLP defines the
+                            canonical vocabulary independent of any specific runtime.
                         </p>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {[
-                                { name: "LangChain / LangGraph", desc: "Agent orchestration framework" },
-                                { name: "AutoGen", desc: "Multi-agent conversation framework" },
-                                { name: "Semantic Kernel", desc: "AI orchestration SDK" },
-                                { name: "CrewAI", desc: "Multi-agent collaboration framework" },
-                                { name: "OpenAI Agents SDK", desc: "Agent development toolkit" },
-                                { name: "Claude Code / Cursor", desc: "AI coding assistants" },
-                            ].map((fw) => (
-                                <div key={fw.name} className="p-5 border border-mplp-border rounded-xl hover:bg-white/5 transition-colors">
-                                    <h3 className="font-bold text-mplp-text mb-1 line-clamp-1">{fw.name}</h3>
-                                    <p className="text-xs text-mplp-text-muted line-clamp-2">{fw.desc}</p>
-                                </div>
-                            ))}
+                        <div className="p-6 border border-mplp-border rounded-xl bg-mplp-dark-soft/20">
+                            <h3 className="font-bold text-mplp-text mb-3">Framework Categories</h3>
+                            <ul className="space-y-2 text-sm text-mplp-text-muted">
+                                <li>• <strong>Agent orchestration frameworks</strong> — Multi-agent coordination and workflow execution</li>
+                                <li>• <strong>Conversation frameworks</strong> — Multi-agent dialogue and collaboration patterns</li>
+                                <li>• <strong>AI orchestration SDKs</strong> — Model integration and task orchestration</li>
+                                <li>• <strong>AI coding assistants</strong> — Development-focused agent tooling</li>
+                            </ul>
+                            <p className="text-xs text-mplp-text-muted mt-4 pt-4 border-t border-mplp-border/30">
+                                <strong>For substrate-specific examples</strong>, see the{' '}
+                                <a
+                                    href="https://lab.mplp.io"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-mplp-blue-soft hover:underline"
+                                >
+                                    Validation Lab
+                                </a>
+                                {' '}where evidence packs demonstrate lifecycle adjudication across multiple substrates.
+                            </p>
                         </div>
                     </div>
 

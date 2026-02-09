@@ -41,7 +41,7 @@ const governancePages = [
     {
         title: "Governed Stack",
         href: "/governance/governed-stack",
-        description: "How MPLP governs and relates to LangGraph, MCP, Operator, and agent specifications.",
+        description: "How MPLP governs and relates to agent runtimes, tool protocols, and agent specifications.",
         color: "bg-mplp-cyan/10 text-mplp-cyan border-mplp-cyan/30",
     },
     {
@@ -55,6 +55,12 @@ const governancePages = [
         href: "/governance/nist-ai-rmf",
         description: "Mapping to NIST AI Risk Management Framework functions.",
         color: "bg-mplp-error/10 text-mplp-error border-mplp-error/30",
+    },
+    {
+        title: "EU AI Act",
+        href: "/governance/eu-ai-act",
+        description: "Alignment reference for high-risk AI system requirements (Articles 9–15).",
+        color: "bg-mplp-blue-soft/10 text-mplp-blue-soft border-mplp-blue-soft/30",
     },
 ];
 

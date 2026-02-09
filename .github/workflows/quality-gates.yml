@@ -50,3 +50,7 @@ jobs:
 
       - name: Terminology Gate
         run: node scripts/gates/terminology-gate.mjs
+
+      # P0 Projection Gates (v0.7.2)
+      - name: Website Pointer-Only Gate (P0-4.1)
+        run: npm run gate:website-pointer-only

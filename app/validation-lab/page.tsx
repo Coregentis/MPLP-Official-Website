@@ -12,7 +12,7 @@ import { FlaskConical, ArrowRight, ExternalLink, GitBranch, Book, Globe } from "
 
 export const metadata: Metadata = {
     title: "Validation Lab — MPLP",
-    description: "MPLP Validation Lab: Evidence-based conformance evaluation. Non-certifying, non-normative, no execution hosting, deterministic. Your evidence + versioned ruleset = reproducible verdict.",
+    description: "MPLP Validation Lab: Evidence-based evaluation. Non-certifying, non-normative, no execution hosting, deterministic. Your evidence + versioned ruleset = reproducible verdict.",
     alternates: {
         canonical: `${siteConfig.url}/validation-lab`,
     },
@@ -39,7 +39,7 @@ export default function ValidationLabPage() {
 
             <PageHeader
                 title="Validation Lab"
-                subtitle="Evidence Verdict Gateway for MPLP Lifecycle Guarantees"
+                subtitle="Evidence Verdict Gateway for Institutional Integrity"
                 kicker="Evidence-Based Evaluation"
             />
 
@@ -335,6 +335,9 @@ export default function ValidationLabPage() {
                             <h4 className="font-semibold text-mplp-text mb-2">Versioned Rulesets</h4>
                             <p className="text-xs text-mplp-text-muted mb-4">
                                 Deterministic evaluation rules (<code className="text-mplp-blue-soft">ruleset-*</code>). Same evidence + same ruleset = same verdict.
+                            </p>
+                            <p className="text-xs text-mplp-text-muted mb-2">
+                                <strong>v0.9 Capability:</strong> Ruleset diff reports now include deterministic explanations and reproducible command packs. This does not rank or endorse any implementation.
                             </p>
                             <a href={LAB_URLS.rulesets} className="text-xs text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
                                 View Rulesets in Lab →

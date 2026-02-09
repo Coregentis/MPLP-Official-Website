@@ -11,7 +11,7 @@ import { CanonicalReferences } from "@/components/ui/canonical-references";
 import { NextSteps } from "@/components/ui/next-steps";
 
 export const metadata: Metadata = {
-    title: "Conformance Model (Informative) | MPLP Standard",
+    title: "Conformance Model (Informative) | MPLP Specification",
     description: "The MPLP specification describes a three-level conformance model for interoperability. See docs for formal definitions.",
     alternates: {
         canonical: `${siteConfig.url}/conformance`,
@@ -23,7 +23,7 @@ export default function ConformancePage() {
     const techArticleSchema = {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "Conformance Model (Informative) | MPLP Standard",
+        "headline": "Conformance Model (Informative) | MPLP Specification",
         "about": "MPLP conformance model overview (informational)",
         "url": `${siteConfig.url}/conformance`,
         "mainEntityOfPage": {
@@ -37,8 +37,8 @@ export default function ConformancePage() {
 
     return (
         <StandardPage
-            title="Conformance Model"
-            subtitle="The MPLP specification describes a three-level conformance model covering Schema (L1), Governance (L2), and Behavioral (L3) interoperability. See docs for formal requirements."
+            title="Conformance Model (Informative)"
+            subtitle="The MPLP specification describes a three-level model for Institutional Integrity covering Schema (L1), Governance (L2), and Behavioral (L3) alignment. See docs for formal requirements."
             kicker="Standards"
             breadcrumbs={[{ label: "Conformance", href: "/conformance" }]}
             jsonLd={techArticleSchema}

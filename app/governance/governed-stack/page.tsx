@@ -328,7 +328,7 @@ export default function GovernedStackPage() {
                             </tr>
 
                             <tr className="hover:bg-slate-900/30 transition-colors">
-                                <td className="p-4 font-semibold text-mplp-text">LangGraph / orchestration graphs</td>
+                                <td className="p-4 font-semibold text-mplp-text">Orchestration graphs / agent runtimes</td>
                                 <td className="p-4 text-mplp-text-muted">Workflow execution & state transitions</td>
                                 <td className="p-4 text-mplp-text-muted">
                                     Great execution control, but &ldquo;audit-grade intent + approvals&rdquo; is not guaranteed by default

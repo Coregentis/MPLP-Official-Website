@@ -60,42 +60,15 @@ export default function IsoIec42001Page() {
                         <p className="text-sm text-mplp-text-muted leading-relaxed">
                             This page provides an <strong>informative reference mapping</strong> between selected
                             ISO/IEC 42001 objectives and MPLP protocol mechanisms.
-                            {/* TERM-WAIVER: External standard context - ISO/IEC 42001 compliance */}
-                            It does <strong>not</strong> constitute certification, endorsement, or a claim of compliance.
+                            It does <strong>not</strong> constitute an official attestation or normative conformity statement.
                         </p>
                         <p className="mt-3 text-sm text-mplp-text-muted leading-relaxed">
                             MPLP defines <strong>governance and lifecycle semantics</strong> that organizations
                             <em>may reference</em> when designing or documenting their own AI management systems.
-                            {/* TERM-WAIVER: External standard context - ISO/IEC 42001 is adopter's responsibility */}
-                            Responsibility for ISO/IEC 42001 compliance remains solely with the adopting organization
-                            and its appointed assessors.
+                            Responsibility for ISO/IEC 42001 alignment remains solely with the adopting organization.
                         </p>
                         <p className="mt-3 text-sm text-mplp-text-muted leading-relaxed">
                             This reference follows the <Link href="/references" className="text-mplp-blue-soft hover:text-mplp-blue-light transition-colors">MPLP Standards Compatibility & Mapping Policy</Link>.
-                        </p>
-                    </div>
-                </div>
-            </ContentSection>
-
-            {/* Usage Boundary (Informative) - C4-1 */}
-            <ContentSection>
-                <div className="max-w-4xl mx-auto">
-                    <div className="rounded-2xl border border-mplp-border bg-slate-950/50 p-6">
-                        <h3 className="text-sm font-bold uppercase tracking-wider text-mplp-text-muted mb-3">
-                            Usage Boundary
-                        </h3>
-                        <p className="text-sm text-mplp-text-muted leading-relaxed">
-                            This page provides an <strong>informative reference mapping</strong> between selected
-                            ISO/IEC 42001 objectives and MPLP protocol mechanisms.
-                            {/* TERM-WAIVER: External standard context - ISO/IEC 42001 compliance */}
-                            It does <strong>not</strong> constitute certification, endorsement, or a claim of compliance.
-                        </p>
-                        <p className="mt-3 text-sm text-mplp-text-muted leading-relaxed">
-                            MPLP defines <strong>governance and lifecycle semantics</strong> that organizations
-                            <em>may reference</em> when designing or documenting their own AI management systems.
-                            {/* TERM-WAIVER: External standard context - ISO/IEC 42001 is adopter's responsibility */}
-                            Responsibility for ISO/IEC 42001 compliance remains solely with the adopting organization
-                            and its appointed assessors.
                         </p>
                     </div>
                 </div>
@@ -108,10 +81,10 @@ export default function IsoIec42001Page() {
                         <h2 className="text-xl font-bold text-mplp-warning mb-4">Important Disclaimer</h2>
                         <div className="space-y-4 text-mplp-text-muted">
                             <p>
-                                <strong className="text-mplp-text">This document is NOT a certification, endorsement, or conformance statement.</strong>
+                                <strong className="text-mplp-text">This document is NOT an official attestation or normative conformity statement.</strong>
                             </p>
                             <ul className="list-disc pl-6 space-y-2">
-                                <li>MPLP is not certified by ISO, IEC, or any accredited certification body.</li>
+                                <li>MPLP is not an accredited certification body.</li>
                                 <li>This alignment mapping is provided for <strong>informational purposes only</strong>.</li>
                                 <li>Organizations seeking ISO/IEC 42001 certification must undergo independent third-party assessment.</li>
                                 <li>Use of MPLP does not guarantee or imply conformance with ISO/IEC 42001.</li>
@@ -154,56 +127,20 @@ export default function IsoIec42001Page() {
                 </div>
             </ContentSection>
 
-            {/* Alignment Matrix */}
+            {/* Pointer to Lab Registry */}
             <ContentSection>
-                <SectionHeader
-                    eyebrow="Reference Mapping"
-                    title="ISO/IEC 42001 → MPLP Alignment"
-                    description="Illustrative mapping between standard objectives and protocol mechanisms."
-                    align="center"
-                />
-                <div className="mt-12 overflow-x-auto">
-                    <table className="w-full border-collapse">
-                        <thead>
-                            <tr className="border-b border-mplp-border bg-slate-900/50">
-                                <th className="text-left p-4 text-sm font-semibold text-mplp-text">ISO/IEC 42001 Theme (Informative)</th>
-                                <th className="text-left p-4 text-sm font-semibold text-mplp-text">Objective Summary</th>
-                                <th className="text-left p-4 text-sm font-semibold text-mplp-text">MPLP Mechanism</th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y divide-mplp-border text-sm">
-                            <tr className="hover:bg-slate-900/30 transition-colors">
-                                <td className="p-4 font-medium text-mplp-text">Leadership & Commitment</td>
-                                <td className="p-4 text-mplp-text-muted">Establish AI governance policies</td>
-                                <td className="p-4 text-mplp-text-muted">Context Module (governance constraints), Role Module (authority boundaries)</td>
-                            </tr>
-                            <tr className="hover:bg-slate-900/30 transition-colors">
-                                <td className="p-4 font-medium text-mplp-text">Risk Assessment</td>
-                                <td className="p-4 text-mplp-text-muted">Identify and evaluate AI-related risks</td>
-                                <td className="p-4 text-mplp-text-muted">Confirm Module (authorization gates), Plan Module (intent validation)</td>
-                            </tr>
-                            <tr className="hover:bg-slate-900/30 transition-colors">
-                                <td className="p-4 font-medium text-mplp-text">Operational Control</td>
-                                <td className="p-4 text-mplp-text-muted">Implement controls for AI system operation</td>
-                                <td className="p-4 text-mplp-text-muted">Evidence Chain (Plan → Confirm → Trace), Role + Confirm (gates)</td>
-                            </tr>
-                            <tr className="hover:bg-slate-900/30 transition-colors">
-                                <td className="p-4 font-medium text-mplp-text">Monitoring & Measurement</td>
-                                <td className="p-4 text-mplp-text-muted">Monitor AI system performance and governance requirements</td>
-                                <td className="p-4 text-mplp-text-muted">Trace Module (structured audit trail), Observable lifecycle events</td>
-                            </tr>
-                            <tr className="hover:bg-slate-900/30 transition-colors">
-                                <td className="p-4 font-medium text-mplp-text">Documentation</td>
-                                <td className="p-4 text-mplp-text-muted">Maintain documented information</td>
-                                <td className="p-4 text-mplp-text-muted">Structured trace records, Schema-defined artifacts</td>
-                            </tr>
-                            <tr className="hover:bg-slate-900/30 transition-colors">
-                                <td className="p-4 font-medium text-mplp-text">Continual Improvement</td>
-                                <td className="p-4 text-mplp-text-muted">Improve AI management system effectiveness</td>
-                                <td className="p-4 text-mplp-text-muted">RFC process for protocol evolution, Versioned specifications</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div className="max-w-4xl mx-auto text-center">
+                    <SectionHeader
+                        eyebrow="Adjudication Evidence"
+                        title="Mapping & Evidence Pointers"
+                        description="Authoritative mapping between ISO/IEC 42001 objectives and verifiable protocol evidence is maintained in the Validation Lab."
+                        align="center"
+                    />
+                    <div className="mt-8">
+                        <Button href="https://lab.mplp.io/rulesets" variant="primary" size="lg" external>
+                            View Evidence Registry (Lab) ↗
+                        </Button>
+                    </div>
                 </div>
             </ContentSection>
 
@@ -227,7 +164,7 @@ export default function IsoIec42001Page() {
                     <h2 className="text-2xl font-bold text-mplp-text mb-3">Enterprise Evaluation Path</h2>
                     <p className="text-mplp-text-muted mb-8">
                         Use this standards mapping as an input to your internal review. MPLP provides reference mappings and
-                        verifiable governance semantics—without certifications or endorsements.
+                        verifiable governance semantics—without official attestations or rankings.
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-4">

@@ -61,7 +61,7 @@ export default function NistAiRmfPage() {
                             This page presents an <strong>informative reference mapping</strong> between MPLP protocol
                             modules and the NIST AI Risk Management Framework (AI RMF).
                             {/* TERM-WAIVER: External standard context - regulatory compliance */}
-                            It does <strong>not</strong> assert conformity, certification, or regulatory compliance.
+                            It does <strong>not</strong> assert conformity or official regulatory attestation.
                         </p>
                         <p className="mt-3 text-sm text-mplp-text-muted leading-relaxed">
                             MPLP provides <strong>structural governance primitives</strong> that organizations
@@ -83,10 +83,10 @@ export default function NistAiRmfPage() {
                         <h2 className="text-xl font-bold text-mplp-warning mb-4">Important Disclaimer</h2>
                         <div className="space-y-4 text-mplp-text-muted">
                             <p>
-                                <strong className="text-mplp-text">This document is NOT an endorsement, certification, or validation by NIST.</strong>
+                                <strong className="text-mplp-text">This document is NOT an official attestation or validation by NIST.</strong>
                             </p>
                             <ul className="list-disc pl-6 space-y-2">
-                                <li>MPLP is not reviewed, endorsed, or validated by the National Institute of Standards and Technology (NIST).</li>
+                                <li>MPLP is not reviewed or validated by the National Institute of Standards and Technology (NIST).</li>
                                 <li>This alignment mapping is provided for <strong>informational purposes only</strong>.</li>
                                 <li>Organizations implementing the AI RMF should conduct their own assessment of applicable controls.</li>
                                 <li>Use of MPLP does not guarantee or imply alignment with NIST AI RMF.</li>
@@ -227,7 +227,7 @@ export default function NistAiRmfPage() {
                     <h2 className="text-2xl font-bold text-mplp-text mb-3">Enterprise Evaluation Path</h2>
                     <p className="text-mplp-text-muted mb-8">
                         Use this standards mapping as an input to your internal review. MPLP provides reference mappings and
-                        verifiable governance semantics—without certifications or endorsements.
+                        verifiable governance semantics—without official attestations or rankings.
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-4">

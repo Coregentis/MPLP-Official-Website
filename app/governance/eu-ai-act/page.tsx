@@ -61,7 +61,7 @@ export default function EuAiActPage() {
                             This page presents an <strong>informative reference mapping</strong> between MPLP protocol
                             modules and the EU AI Act requirements for high-risk AI systems (Chapter III, Section 2).
                             {/* TERM-WAIVER: External regulation context - regulatory compliance */}
-                            It does <strong>not</strong> assert conformity, certification, or regulatory compliance.
+                            It does <strong>not</strong> assert conformity or official regulatory attestation.
                         </p>
                         <p className="mt-3 text-sm text-mplp-text-muted leading-relaxed">
                             MPLP provides <strong>lifecycle evidence artifacts</strong> (Plan, Confirm, Trace) that organizations
@@ -85,11 +85,11 @@ export default function EuAiActPage() {
                         <div className="space-y-4 text-mplp-text-muted">
                             <p>
                                 {/* TERM-WAIVER: Negation context - explicitly stating what this is NOT */}
-                                <strong className="text-mplp-text">This document is NOT a certification, endorsement, or conformity statement.</strong>
+                                <strong className="text-mplp-text">This document is NOT an official attestation or normative conformity statement.</strong>
                             </p>
                             <ul className="list-disc pl-6 space-y-2">
                                 {/* TERM-WAIVER: Negation context - explicitly stating non-regulatory status */}
-                                <li>MPLP is not reviewed, endorsed, or validated by any EU regulatory authority.</li>
+                                <li>MPLP is not reviewed or validated by any EU regulatory authority.</li>
                                 <li>This alignment mapping is provided for <strong>informational purposes only</strong>.</li>
                                 {/* TERM-WAIVER: External regulation context - conformity assessment */}
                                 <li>Organizations seeking EU AI Act conformity must conduct their own assessment with qualified professionals.</li>
@@ -234,7 +234,7 @@ export default function EuAiActPage() {
                     <h2 className="text-2xl font-bold text-mplp-text mb-3">Enterprise Evaluation Path</h2>
                     <p className="text-mplp-text-muted mb-8">
                         Use this standards mapping as an input to your internal review. MPLP provides reference mappings and
-                        verifiable governance semantics—without certifications or endorsements.
+                        verifiable governance semantics—without official attestations or rankings.
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-4">

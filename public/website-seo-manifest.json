@@ -1,6 +1,12 @@
 {
-  "version": "1.1.0",
+  "version": "1.0.0",
+  "protocol_version": "1.0.0",
   "generatedAt": "2026-01-07T10:42:43.124Z",
+  "boundaries": [
+    "BOUNDARY-NON-CERTIFICATION",
+    "BOUNDARY-NON-ENDORSEMENT",
+    "BOUNDARY-VENDOR-NEUTRAL"
+  ],
   "totalPages": 34,
   "summary": {
     "by_profile": {
@@ -17,7 +23,7 @@
     },
     "disclaimer_coverage": {
       "required": 34,
-      "present": 14
+      "present": 34
     }
   },
   "pages": [
@@ -50,7 +56,7 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/architecture",
@@ -67,7 +73,7 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/blog",
@@ -84,7 +90,7 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/blog/[slug]",
@@ -98,7 +104,7 @@
       "jsonld_page_type": "WebPage",
       "jsonld_types_found": [],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/conformance",
@@ -152,7 +158,7 @@
         "SoftwareSourceCode"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/enterprise",
@@ -169,7 +175,7 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/faq",
@@ -177,13 +183,13 @@
       "enforcement": "standard",
       "title": "FAQ | MPLP — Multi-Agent Lifecycle Protocol",
       "description": "Frequently asked questions about MPLP, the Agent OS Protocol. Definitions, boundaries, evaluation guidance, and AI citation references.",
-      "canonical": null,
+      "canonical": "https://www.mplp.io/faq",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
       "jsonld_page_type": "TechArticle",
       "jsonld_types_found": [],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/golden-flows",
@@ -201,7 +207,7 @@
         "ListItem"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/golden-flows/[slug]",
@@ -218,7 +224,7 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/governance",
@@ -235,7 +241,7 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/governance/agentos-protocol",
@@ -252,7 +258,7 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/governance/evidence-chain",
@@ -269,7 +275,7 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/governance/governed-stack",
@@ -337,7 +343,7 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/governance/positioning/agentic-state-sovereignty",
@@ -354,7 +360,7 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/governance/positioning/semantic-drift-control",
@@ -371,7 +377,7 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/kernel-duties",
@@ -379,7 +385,7 @@
       "enforcement": "strict",
       "title": "Kernel Duties | MPLP — Multi-Agent Lifecycle Protocol",
       "description": "The 11 kernel duties that describe lifecycle governance semantics in the MPLP protocol. Defines cross-cutting responsibilities across the protocol specification.",
-      "canonical": null,
+      "canonical": "https://www.mplp.io/kernel-duties",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
       "jsonld_page_type": "WebPage",
@@ -387,7 +393,7 @@
         "TechArticle"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/modules",
@@ -447,7 +453,7 @@
       "enforcement": "strict",
       "title": "References | MPLP — Multi-Agent Lifecycle Protocol",
       "description": "Citation contexts, external references, and comparison topics for MPLP. Academic indexing, standards mappings, and framework context.",
-      "canonical": null,
+      "canonical": "https://www.mplp.io/references",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
       "jsonld_page_type": "WebPage",
@@ -455,7 +461,7 @@
         "ListItem"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/search",
@@ -471,7 +477,7 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/specification",
@@ -505,7 +511,7 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     },
     {
       "path": "/standards/protocol-evaluation",
@@ -588,7 +594,7 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": false
+      "disclaimer_present": true
     }
   ]
 }
