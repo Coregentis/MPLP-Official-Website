@@ -10,21 +10,45 @@ import { siteConfig, LAB_URLS, DOCS_URLS, REPO_URLS } from "@/lib/site-config";
 import { NonCertificationNotice } from "@/components/notices";
 import { FlaskConical, ArrowRight, ExternalLink, GitBranch, Book, Globe } from "lucide-react";
 
+/**
+ * Website Validation Lab page source model:
+ * - actual source: this Website page implementation plus stable outbound link constants
+ * - upstream provenance: constitutional entry-model sources, verified Docs references,
+ *   and verified Validation Lab public surfaces
+ * - role: discovery / pointer-oriented aggregate page only
+ *
+ * This page must not present itself as protocol truth, Docs reference truth,
+ * or Validation Lab adjudication authority.
+ */
+
 export const metadata: Metadata = {
     title: "Validation Lab — MPLP",
-    description: "MPLP Validation Lab: Evidence-based evaluation. Non-certifying, non-normative, no execution hosting, deterministic. Your evidence + versioned ruleset = reproducible verdict.",
+    description: "Website discovery guide to MPLP Validation Lab surfaces, Docs references, and repository truth boundaries. Non-certifying, non-normative, and pointer-oriented.",
     alternates: {
         canonical: `${siteConfig.url}/validation-lab`,
     },
     keywords: ["MPLP", "Validation Lab", "Evidence", "Lifecycle Guarantees", "Non-certifying", "Conformance", "Deterministic"],
 };
 
+const CONSTITUTIONAL_URLS = {
+    entryModel: `${REPO_URLS.root}/blob/main/governance/01-constitutional/CONST-001_ENTRY_MODEL_SPEC.md`,
+    documentFormat: `${REPO_URLS.root}/blob/main/governance/01-constitutional/CONST-002_DOCUMENT_FORMAT_SPEC.md`,
+} as const;
+
+const DOC_REFERENCE_URLS = {
+    validationLabOverview: `${DOCS_URLS.home}/docs/evaluation/validation-lab`,
+    validationLabRulesets: `${DOCS_URLS.home}/docs/evaluation/validation-lab/rulesets`,
+    validationLabContract: `${DOCS_URLS.home}/docs/evaluation/validation-lab/evidence-pack-contract`,
+    entrypoints: `${DOCS_URLS.home}/docs/reference/entrypoints`,
+    evaluationGuide: `${DOCS_URLS.home}/docs/guides/evaluation-guide`,
+} as const;
+
 export default function ValidationLabPage() {
     const webPageSchema = {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "MPLP Validation Lab",
-        "description": "Evidence-based conformance evaluation tools for MPLP protocol. Non-certifying, non-normative, deterministic.",
+        "description": "Website discovery guide to MPLP Validation Lab entry points, Docs references, and repository truth boundaries.",
         "url": `${siteConfig.url}/validation-lab`,
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -39,14 +63,154 @@ export default function ValidationLabPage() {
 
             <PageHeader
                 title="Validation Lab"
-                subtitle="Evidence Verdict Gateway for Institutional Integrity"
-                kicker="Evidence-Based Evaluation"
+                subtitle="Website discovery guide to MPLP's evidence adjudication surface"
+                kicker="Discovery / Pointer Surface"
             />
 
             {/* Non-Certification Notice */}
             <ContentSection>
                 <div className="max-w-4xl mx-auto">
                     <NonCertificationNotice />
+                </div>
+            </ContentSection>
+
+            {/* Website Source Model */}
+            <ContentSection>
+                <div className="max-w-5xl mx-auto">
+                    <div className="rounded-2xl border border-mplp-border bg-mplp-dark-soft/30 p-8">
+                        <h2 className="text-2xl font-bold text-mplp-text mb-4 text-center">
+                            How to Read This Page
+                        </h2>
+                        <p className="text-sm text-mplp-text-muted text-center max-w-3xl mx-auto mb-8">
+                            This Website route is a discovery and pointer page. Its actual runtime source is this page implementation plus stable outbound links.
+                            It helps you navigate the right MPLP surface; it does not replace repository protocol truth, Documentation references, or Validation Lab adjudication outputs.
+                        </p>
+
+                        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4 mb-8">
+                            <div className="mplp-card p-5">
+                                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-mplp-blue-soft mb-2">Actual Source</p>
+                                <h3 className="font-semibold text-mplp-text mb-2">Website Page Implementation</h3>
+                                <p className="text-xs text-mplp-text-muted mb-3">
+                                    The content you see here is maintained in this Website page and linked through stable Website config pointers.
+                                </p>
+                                <p className="text-[11px] text-mplp-text-muted/80">
+                                    Role: discovery, orientation, and outbound navigation only.
+                                </p>
+                            </div>
+                            <div className="mplp-card p-5">
+                                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-purple-400 mb-2">Protocol Truth</p>
+                                <h3 className="font-semibold text-mplp-text mb-2">Repository</h3>
+                                <p className="text-xs text-mplp-text-muted mb-3">
+                                    Repository-backed schemas, invariants, tests, and governance records remain authoritative for protocol truth.
+                                </p>
+                                <a href={REPO_URLS.root} className="text-xs text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                    Open Repository Sources →
+                                </a>
+                            </div>
+                            <div className="mplp-card p-5">
+                                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-mplp-emerald mb-2">Reference Layer</p>
+                                <h3 className="font-semibold text-mplp-text mb-2">Documentation</h3>
+                                <p className="text-xs text-mplp-text-muted mb-3">
+                                    Documentation carries specification and reference projections, including constitutional entry-model guidance and Validation Lab reference pages.
+                                </p>
+                                <a href={DOC_REFERENCE_URLS.validationLabOverview} className="text-xs text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                    Open Docs References →
+                                </a>
+                            </div>
+                            <div className="mplp-card p-5 border-amber-400/30">
+                                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-amber-400 mb-2">Adjudication Surface</p>
+                                <h3 className="font-semibold text-amber-400 mb-2">Validation Lab</h3>
+                                <p className="text-xs text-mplp-text-muted mb-3">
+                                    The Lab public surface hosts evidence adjudication views, ruleset-governed outputs, runs, guarantees, and public contract surfaces.
+                                </p>
+                                <a href={LAB_URLS.home} className="text-xs text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                    Open Validation Lab →
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="grid gap-4 md:grid-cols-3">
+                            <div className="rounded-xl border border-mplp-border/40 bg-black/20 p-5">
+                                <p className="text-xs font-semibold text-mplp-text mb-3">Constitutional / Governance Anchors</p>
+                                <ul className="space-y-2 text-xs text-mplp-text-muted">
+                                    <li>
+                                        <a href={CONSTITUTIONAL_URLS.entryModel} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                            CONST-001 Entry Model Spec
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href={CONSTITUTIONAL_URLS.documentFormat} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                            CONST-002 Document Format Spec
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="rounded-xl border border-mplp-border/40 bg-black/20 p-5">
+                                <p className="text-xs font-semibold text-mplp-text mb-3">Verified Docs References</p>
+                                <ul className="space-y-2 text-xs text-mplp-text-muted">
+                                    <li>
+                                        <a href={DOC_REFERENCE_URLS.entrypoints} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                            Entry Points
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href={DOC_REFERENCE_URLS.evaluationGuide} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                            Evaluation Guide
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href={DOC_REFERENCE_URLS.validationLabOverview} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                            Validation Lab Overview
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="rounded-xl border border-mplp-border/40 bg-black/20 p-5">
+                                <p className="text-xs font-semibold text-mplp-text mb-3">Verified Lab Public Surfaces</p>
+                                <ul className="space-y-2 text-xs text-mplp-text-muted">
+                                    <li>
+                                        <a href={LAB_URLS.home} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                            Lab Home
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href={LAB_URLS.runs} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                            Runs
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href={LAB_URLS.adjudication} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                            Adjudication
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href={LAB_URLS.guarantees} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                            Guarantees
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href={LAB_URLS.rulesets} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                            Rulesets
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href={LAB_URLS.contract} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                            Export Contract
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href={LAB_URLS.strength} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                            Strength Policy
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p className="text-[11px] text-mplp-text-muted text-center mt-6">
+                            If this discovery page and an upstream surface disagree, follow the upstream surface within its valid authority scope.
+                        </p>
+                    </div>
                 </div>
             </ContentSection>
 
@@ -251,7 +415,7 @@ export default function ValidationLabPage() {
                         <div className="mplp-card p-4 text-center">
                             <code className="text-mplp-blue-soft font-mono text-sm">site-v*</code>
                             <p className="text-xs text-mplp-text-muted mt-2">Site Seal</p>
-                            <p className="text-xs text-mplp-text-muted/70">Website IA & commitment</p>
+                            <p className="text-xs text-mplp-text-muted/70">Validation Lab website release line</p>
                         </div>
                         <div className="mplp-card p-4 text-center">
                             <code className="text-mplp-emerald font-mono text-sm">pack-v*</code>
@@ -270,7 +434,7 @@ export default function ValidationLabPage() {
                         </div>
                     </div>
                     <p className="text-xs text-mplp-text-muted text-center mt-4">
-                        Authoritative source: Repository (schemas/tests/governance). Lab provides adjudication only. <a href={LAB_URLS.home} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">View Lab →</a>
+                        This Website section is a summary only: repository-backed assets govern protocol truth, Docs explain the model, and the Lab surfaces the adjudication-facing versions and outputs. <a href={LAB_URLS.home} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">View Lab →</a>
                     </p>
                 </div>
             </ContentSection>
@@ -282,14 +446,14 @@ export default function ValidationLabPage() {
                         3+1 Entry Model
                     </h3>
                     <p className="text-sm text-mplp-text-muted text-center mb-6">
-                        MPLP uses a 3+1 entry model: 3 Primary (Website, Documentation, Repository) + 1 Auxiliary (Validation Lab). Each surface has a strict, non-overlapping role. <strong>The Repository is the sole source of truth.</strong>
+                        MPLP uses a 3+1 constitutional entry model: Repository, Documentation, and Website are primary surfaces; Validation Lab is the auxiliary public adjudication surface. Repository is the source of protocol truth, Documentation is the reference layer, the Lab is the evidence adjudication layer, and this Website remains discovery and public framing.
                     </p>
                     <div className="grid gap-4 md:grid-cols-2">
                         <div className="mplp-card p-6 flex items-start gap-4">
                             <Globe className="h-6 w-6 text-mplp-blue-soft flex-shrink-0 mt-1" />
                             <div>
                                 <p className="font-semibold text-mplp-text">Website</p>
-                                <p className="text-xs text-mplp-text-muted">Discovery & Positioning — what MPLP is and why</p>
+                                <p className="text-xs text-mplp-text-muted">Discovery & Positioning - what MPLP is, where to start, and which surface to open next</p>
                                 <Link href="/" className="text-xs text-mplp-blue-soft hover:underline">mplp.io →</Link>
                             </div>
                         </div>
@@ -297,7 +461,7 @@ export default function ValidationLabPage() {
                             <Book className="h-6 w-6 text-mplp-emerald flex-shrink-0 mt-1" />
                             <div>
                                 <p className="font-semibold text-mplp-text">Documentation</p>
-                                <p className="text-xs text-mplp-text-muted">Specification & Reference — how it works</p>
+                                <p className="text-xs text-mplp-text-muted">Specification & Reference - constitutional entry model, evaluation guidance, and reference projections</p>
                                 <a href={DOCS_URLS.home} className="text-xs text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">docs.mplp.io →</a>
                             </div>
                         </div>
@@ -305,7 +469,7 @@ export default function ValidationLabPage() {
                             <GitBranch className="h-6 w-6 text-purple-400 flex-shrink-0 mt-1" />
                             <div>
                                 <p className="font-semibold text-mplp-text">Repository</p>
-                                <p className="text-xs text-mplp-text-muted">Source of Truth — schemas, tests, code, governance</p>
+                                <p className="text-xs text-mplp-text-muted">Protocol Truth - schemas, tests, code, and governance records</p>
                                 <a href={REPO_URLS.root} className="text-xs text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">GitHub →</a>
                             </div>
                         </div>
@@ -313,7 +477,7 @@ export default function ValidationLabPage() {
                             <FlaskConical className="h-6 w-6 text-amber-400 flex-shrink-0 mt-1" />
                             <div>
                                 <p className="font-semibold text-amber-400">Validation Lab</p>
-                                <p className="text-xs text-mplp-text-muted">Evidence Adjudication — verdicts & reviewable proofs</p>
+                                <p className="text-xs text-mplp-text-muted">Evidence Adjudication - ruleset-governed runs, reviewable proofs, guarantees, and public contract surfaces</p>
                                 <a href={LAB_URLS.home} className="text-xs text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">lab.mplp.io →</a>
                             </div>
                         </div>
@@ -328,33 +492,43 @@ export default function ValidationLabPage() {
                         Rulesets & Contracts
                     </h3>
                     <p className="text-sm text-mplp-text-muted text-center mb-6">
-                        The Lab uses versioned rulesets and evidence pack contracts. Authoritative definitions are governed in the Validation Lab repository.
+                        This Website page does not define rulesets or pack contracts. It points you to the Lab public surfaces where those objects are exposed and to Docs reference pages that explain their roles.
                     </p>
                     <div className="grid gap-4 md:grid-cols-2">
                         <div className="mplp-card p-6">
                             <h4 className="font-semibold text-mplp-text mb-2">Versioned Rulesets</h4>
                             <p className="text-xs text-mplp-text-muted mb-4">
-                                Deterministic evaluation rules (<code className="text-mplp-blue-soft">ruleset-*</code>). Same evidence + same ruleset = same verdict.
+                                Deterministic evaluation rules (<code className="text-mplp-blue-soft">ruleset-*</code>) live on the Lab surface. Reference explanations live in Docs.
                             </p>
                             <p className="text-xs text-mplp-text-muted mb-2">
-                                <strong>v0.9 Capability:</strong> Ruleset diff reports now include deterministic explanations and reproducible command packs. This does not rank or endorse any implementation.
+                                Same evidence plus the same ruleset version should produce the same verdict hash. Website only summarizes that model.
                             </p>
-                            <a href={LAB_URLS.rulesets} className="text-xs text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
-                                View Rulesets in Lab →
-                            </a>
+                            <div className="flex flex-col gap-2 text-xs">
+                                <a href={LAB_URLS.rulesets} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                    View Rulesets in Lab →
+                                </a>
+                                <a href={DOC_REFERENCE_URLS.validationLabRulesets} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                    View Ruleset Reference in Docs →
+                                </a>
+                            </div>
                         </div>
                         <div className="mplp-card p-6">
                             <h4 className="font-semibold text-mplp-text mb-2">Evidence Pack Contract</h4>
                             <p className="text-xs text-mplp-text-muted mb-4">
-                                Pack structure and format versioning (<code className="text-mplp-blue-soft">pack-v*</code>). Portable, recheckable, auditable.
+                                Pack structure and format versioning (<code className="text-mplp-blue-soft">pack-v*</code>) are surfaced through the Lab contract page, with supporting reference explanation in Docs.
                             </p>
-                            <a href={LAB_URLS.contract} className="text-xs text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
-                                View Contract Policy →
-                            </a>
+                            <div className="flex flex-col gap-2 text-xs">
+                                <a href={LAB_URLS.contract} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                    View Contract Policy in Lab →
+                                </a>
+                                <a href={DOC_REFERENCE_URLS.validationLabContract} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
+                                    View Contract Reference in Docs →
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <p className="text-xs text-mplp-text-muted text-center mt-4">
-                        Reference documentation: <a href={`${DOCS_URLS.home}/docs/evaluation/validation-lab`} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">Validation Lab Reference (Docs) →</a>
+                        Reference documentation: <a href={DOC_REFERENCE_URLS.validationLabOverview} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">Validation Lab Reference (Docs) →</a>
                     </p>
                 </div>
             </ContentSection>
@@ -408,4 +582,3 @@ export default function ValidationLabPage() {
         </Shell>
     );
 }
-
