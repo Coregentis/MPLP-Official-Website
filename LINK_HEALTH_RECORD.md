@@ -124,7 +124,7 @@ Website linked to Docusaurus directories lacking `index.md` files:
 - ❌ Website does NOT embed spec content
 - ❌ Docs does NOT host marketing/positioning
 
-This link health governance **strengthens** the three-entry model.
+This link health governance **strengthens** the four public-facing surfaces model under MPLP's 3+1 constitutional entry model.
 
 ---
 
