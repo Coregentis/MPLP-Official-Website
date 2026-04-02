@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { StandardPage } from "@/components/layout/standard-page";
 import { ContentSection } from "@/components/ui/content-section";
-import { siteConfig, DOCS_URLS, REPO_URLS } from "@/lib/site-config";
+import { siteConfig, DOCS_URLS } from "@/lib/site-config";
 import { CanonicalReferences } from "@/components/ui/canonical-references";
 import { NextSteps } from "@/components/ui/next-steps";
 
@@ -69,47 +69,47 @@ export default function KernelDutiesPage() {
                     <ul className="grid md:grid-cols-2 gap-4 text-mplp-text-muted">
                         <li className="flex items-start gap-3">
                             <span className="text-mplp-blue">01</span>
-                            <span>Error Handling & Recovery</span>
+                            <span>Coordination</span>
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="text-mplp-blue">02</span>
-                            <span>Observability & Tracing</span>
+                            <span>Error Handling</span>
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="text-mplp-blue">03</span>
-                            <span>Coordination & Orchestration</span>
+                            <span>Event Bus</span>
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="text-mplp-blue">04</span>
-                            <span>State Synchronization</span>
+                            <span>Learning Feedback</span>
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="text-mplp-blue">05</span>
-                            <span>Security & Access Control</span>
+                            <span>Observability</span>
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="text-mplp-blue">06</span>
-                            <span>Transaction Management</span>
+                            <span>Orchestration</span>
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="text-mplp-blue">07</span>
-                            <span>Event Bus Integration</span>
+                            <span>Performance</span>
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="text-mplp-blue">08</span>
-                            <span>Performance Optimization</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <span className="text-mplp-blue">09</span>
                             <span>Protocol Versioning</span>
                         </li>
                         <li className="flex items-start gap-3">
+                            <span className="text-mplp-blue">09</span>
+                            <span>Security</span>
+                        </li>
+                        <li className="flex items-start gap-3">
                             <span className="text-mplp-blue">10</span>
-                            <span>Learning & Feedback</span>
+                            <span>State Sync</span>
                         </li>
                         <li className="flex items-start gap-3">
                             <span className="text-mplp-blue">11</span>
-                            <span>Lifecycle Orchestration</span>
+                            <span>Transaction</span>
                         </li>
                     </ul>
                 </div>
@@ -134,4 +134,3 @@ export default function KernelDutiesPage() {
         </StandardPage>
     );
 }
-

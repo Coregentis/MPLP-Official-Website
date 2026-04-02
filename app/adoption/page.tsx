@@ -13,7 +13,7 @@ import { IconArrowRight } from "@/components/ui/icons";
 
 export const metadata: Metadata = {
     title: "Adoption Signals | MPLP Protocol",
-    description: "MPLP protocol adoption status: frozen specification, published SDKs, normative conformance flows, and governance mappings.",
+    description: "MPLP protocol adoption status: frozen specification, published package surfaces, normative conformance flows, and governance mappings.",
     alternates: {
         canonical: `${siteConfig.url}/adoption`,
     },
@@ -100,20 +100,23 @@ export default function AdoptionPage() {
             <ContentSection>
                 <SectionHeader
                     eyebrow="Signal 2"
-                    title="Reference Implementations"
-                    description="Official SDKs are published to standard package registries."
+                    title="Published Package Surfaces"
+                    description="Official MPLP package surfaces are published to standard package registries."
                     align="center"
                 />
                 <div className="mt-8 grid gap-6 md:grid-cols-2">
                     <div className="mplp-card p-6">
                         <div className="flex items-center justify-between mb-4">
-                            <h3 className="text-lg font-bold text-mplp-text">Python SDK</h3>
+                            <h3 className="text-lg font-bold text-mplp-text">Python Protocol Helper</h3>
                             <span className="px-3 py-1 rounded-full text-xs font-semibold bg-mplp-emerald/10 text-mplp-emerald border border-mplp-emerald/30">Published</span>
                         </div>
                         <p className="text-sm text-mplp-text-muted mb-4">Available on PyPI as <code className="text-mplp-blue-soft">mplp-sdk</code></p>
                         <div className="bg-slate-900/50 rounded-lg p-3 font-mono text-sm text-mplp-text-muted">
                             pip install mplp-sdk
                         </div>
+                        <p className="mt-4 text-sm text-mplp-text-muted">
+                            Current published surface: protocol version helpers plus the 11 Kernel Duties. This package is not yet a full Python runtime or model SDK.
+                        </p>
                         <div className="mt-4">
                             <Link href="https://pypi.org/project/mplp-sdk/" target="_blank" rel="noopener noreferrer" className="text-sm text-mplp-text-muted hover:text-mplp-blue-soft transition-colors">
                                 View on PyPI →
@@ -129,6 +132,9 @@ export default function AdoptionPage() {
                         <div className="bg-slate-900/50 rounded-lg p-3 font-mono text-sm text-mplp-text-muted">
                             npm install @mplp/sdk-ts
                         </div>
+                        <p className="mt-4 text-sm text-mplp-text-muted">
+                            Public TypeScript facade package. Kernel Duty exports are available here and in <code className="text-mplp-blue-soft">@mplp/schema</code>; low-level runtime artifacts live in <code className="text-mplp-blue-soft">@mplp/runtime-minimal</code>.
+                        </p>
                         <div className="mt-4">
                             <Link href="https://www.npmjs.com/package/@mplp/sdk-ts" target="_blank" rel="noopener noreferrer" className="text-sm text-mplp-text-muted hover:text-mplp-blue-soft transition-colors">
                                 View on npm →

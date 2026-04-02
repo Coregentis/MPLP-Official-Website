@@ -14,7 +14,7 @@ import { EcosystemNotice } from "@/components/notices";
 
 export const metadata: Metadata = {
     title: "Ecosystem | MPLP Protocol",
-    description: "SDKs, developer tools, and reference runtimes that support adoption of the MPLP protocol standard.",
+    description: "Published package surfaces, developer tools, and reference runtimes that support adoption of the MPLP protocol standard.",
     alternates: {
         canonical: `${siteConfig.url}/ecosystem`,
     },
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
 
 const sdks = [
     {
-        name: "MPLP Python SDK",
-        desc: "Reference SDK for building MPLP-conformant agents in Python. Provides canonical data models and utilities enabling protocol-level validation and structured execution scaffolding.",
+        name: "MPLP Python Protocol Helper",
+        desc: "Published Python helper package for MPLP protocol identity, protocol-version binding, and the canonical 11 Kernel Duties. It is intentionally narrower than the TypeScript facade and runtime packages.",
         link: "https://pypi.org/project/mplp-sdk/",
         docsLink: DOCS_URLS.sdkDocs,
     },
     {
         name: "MPLP TypeScript SDK",
-        desc: "Reference SDK for implementing MPLP protocol semantics in TypeScript. Provides strongly-typed definitions and execution scaffolding aligned with the MPLP specification.",
+        desc: "Public TypeScript facade package for MPLP. Provides builder helpers, a runtime client, and re-exported Kernel Duty baseline access aligned to the MPLP specification.",
         link: "https://www.npmjs.com/package/@mplp/sdk-ts",
         docsLink: DOCS_URLS.sdkDocs,
     },
@@ -80,12 +80,12 @@ const runtimes = [
 ];
 
 export default function EcosystemPage() {
-    // CollectionPage with SoftwareSourceCode for SDKs (Breadcrumb auto-injected by component)
+    // CollectionPage with SoftwareSourceCode for published package surfaces (Breadcrumb auto-injected by component)
     const collectionSchema = {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
         "name": "MPLP Ecosystem",
-        "about": "SDKs, tools, and runtimes supporting adoption of the MPLP protocol",
+        "about": "Published package surfaces, tools, and runtimes supporting adoption of the MPLP protocol",
         "url": `${siteConfig.url}/ecosystem`,
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -95,7 +95,7 @@ export default function EcosystemPage() {
         "publisher": { "@id": `${siteConfig.url}#mpgc` },
         "author": { "@id": `${siteConfig.url}#mpgc` },
         "hasPart": [
-            { "@type": "SoftwareSourceCode", "name": "MPLP Python SDK", "url": "https://pypi.org/project/mplp-sdk/" },
+            { "@type": "SoftwareSourceCode", "name": "MPLP Python Protocol Helper", "url": "https://pypi.org/project/mplp-sdk/" },
             { "@type": "SoftwareSourceCode", "name": "MPLP TypeScript SDK", "url": "https://www.npmjs.com/package/@mplp/sdk-ts" }
         ]
     };
@@ -109,7 +109,7 @@ export default function EcosystemPage() {
             </div>
             <PageHeader
                 title="Ecosystem"
-                subtitle="SDKs, developer tools, and reference runtimes that support adoption of the MPLP protocol standard."
+                subtitle="Published package surfaces, developer tools, and reference runtimes that support adoption of the MPLP protocol standard."
                 kicker="Adoption"
             />
 
@@ -121,9 +121,9 @@ export default function EcosystemPage() {
             {/* Official SDKs Section */}
             <ContentSection>
                 <SectionHeader
-                    eyebrow="Reference SDKs"
+                    eyebrow="Published Package Surfaces"
                     title="Official Libraries"
-                    description="Reference implementations for building protocol-conformant agents."
+                    description="Public package surfaces for adopting MPLP in TypeScript and Python."
                     align="center"
                     className="mb-12"
                 />
@@ -137,7 +137,7 @@ export default function EcosystemPage() {
 
                             <div className="mb-6">
                                 <p className="text-sm text-mplp-text-muted mb-4">
-                                    Includes core protocol primitives, schema validators, coordination helpers, and conformance tooling.
+                                    Package roles differ by ecosystem. See the SDK docs for the exact public surface of each published package.
                                 </p>
                             </div>
 
