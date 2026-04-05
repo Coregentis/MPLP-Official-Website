@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { siteConfig, DOCS_URLS, LAB_URLS } from '@/lib/site-config';
 
 /**
  * Sitemapindex Route Handler
@@ -6,13 +7,13 @@ import { NextResponse } from 'next/server';
  * Provides cross-entry discovery by aggregating sitemaps from all four MPLP surfaces.
  * This is an SEO enhancement only; it does not imply canonical authority over other domains.
  * 
- * @see governance/entity/ECOSYSTEM_ANCHORS.json for SSOT
+ * @see governance/05-specialized/ECOSYSTEM_ANCHORS.json for SSOT
  */
 export async function GET() {
     const sitemaps = [
-        'https://www.mplp.io/sitemap.xml',
-        'https://docs.mplp.io/sitemap.xml',
-        'https://lab.mplp.io/sitemap.xml',
+        `${siteConfig.url}/sitemap.xml`,
+        `${DOCS_URLS.home}/sitemap.xml`,
+        `${LAB_URLS.home}/sitemap.xml`,
     ];
 
     const xml = `<?xml version="1.0" encoding="UTF-8"?>

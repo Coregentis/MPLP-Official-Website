@@ -1,12 +1,10 @@
 /**
- * PR-03: JSON-LD Structure Tree
- * Authority & Semantic Alignment - Definitional Authority Surface
+ * JSON-LD Structure Tree
+ * Discovery-oriented structured data only.
  * 
- * This file generates the JSON-LD structure that positions mplp.io as the
- * definitional authority for "Agent OS Protocol", enabling:
- * - AI recognition as definitional source
- * - Sitelinks generation for brand searches
- * - DefinedTermSet for semantic attribution
+ * This file generates website-side structured data for discovery and routing.
+ * Repository truth and documentation reference remain the authoritative
+ * documentation chain for MPLP.
  * 
  * Governance Constraints (DGP-00 aligned):
  * - NO Product/Service/Certification schema types
@@ -14,17 +12,22 @@
  * - T0 SSOT as single source
  */
 
-import { siteConfig } from "@/lib/site-config";
+import {
+    DOCS_URLS,
+    LAB_URLS,
+    MPLP_IDENTITY,
+    REPO_URLS,
+    siteConfig,
+    WEBSITE_CANONICAL_PATHS,
+    WEBSITE_CANONICAL_URLS,
+    WEBSITE_MACHINE_READABLE_DESCRIPTION,
+} from "@/lib/site-config";
 
 type JsonLdData = Record<string, unknown>;
 
-// T0 SSOT - Canonical semantic anchors (frozen)
-export const T0 = {
-    fullName: "MPLP — Multi-Agent Lifecycle Protocol",
-    definition: "The Canonical Lifecycle Protocol Specification for AI Agent Systems",
-    slogan: "The Agent OS Protocol",
-    oneLiner: "MPLP defines the canonical lifecycle semantics for AI agent systems — the Agent OS Protocol.",
-} as const;
+const DEFINITION_TERM_ID = `${WEBSITE_CANONICAL_URLS.definition}#term`;
+const DEFINITION_PAGE_ID = `${WEBSITE_CANONICAL_URLS.definition}#page`;
+const DEFINED_TERM_SET_ID = `${siteConfig.url}#defined-terms`;
 
 // 7 Sitelinks Anchor Pages (stable URLs)
 export const ANCHOR_PAGES = [
@@ -32,7 +35,7 @@ export const ANCHOR_PAGES = [
     { path: "/modules", name: "Modules", description: "Core modules of MPLP as a lifecycle protocol." },
     { path: "/kernel-duties", name: "Kernel Duties", description: "The 11 kernel duties describing lifecycle governance semantics." },
     { path: "/golden-flows", name: "Golden Flows", description: "Verification scenarios illustrating lifecycle semantics (non-adjudicative)." },
-    { path: "/governance", name: "Governance", description: "Governance principles and interpretive boundaries (no certification)." },
+    { path: WEBSITE_CANONICAL_PATHS.governance, name: "Governance Overview", description: "Governance principles, boundaries, and RFC process overview (no certification)." },
     { path: "/faq", name: "FAQ", description: "FAQ including AI citation guidance and definitional boundaries." },
     { path: "/references", name: "References", description: "Citation contexts and external references (non-endorsement)." },
 ] as const;
@@ -42,59 +45,61 @@ function absUrl(path: string): string {
 }
 
 /**
- * DefinedTermSet - Establishes MPLP as definitional authority for key terms
+ * DefinedTermSet - website-side discovery vocabulary only
  */
 export function jsonLdDefinedTermSet(): JsonLdData {
     return {
         "@context": "https://schema.org",
         "@type": "DefinedTermSet",
-        "@id": `${siteConfig.url}#defined-terms`,
-        name: "Agent OS Protocol — Defined Terms",
-        description: "Definitional terms used by MPLP to describe Agent OS-class systems.",
+        "@id": DEFINED_TERM_SET_ID,
+        name: "MPLP Defined Terms",
+        url: WEBSITE_CANONICAL_URLS.definition,
+        description: "Discovery-oriented terminology for MPLP. Repository and Documentation remain the authoritative documentation chain.",
         hasDefinedTerm: [
             {
                 "@type": "DefinedTerm",
-                "@id": `${siteConfig.url}#term-agent-os-protocol`,
-                name: "Agent OS Protocol",
-                description: T0.oneLiner,
-                inDefinedTermSet: { "@id": `${siteConfig.url}#defined-terms` },
-            },
-            {
-                "@type": "DefinedTerm",
-                "@id": `${siteConfig.url}#term-mplp`,
-                name: "Multi-Agent Lifecycle Protocol (MPLP)",
-                description: `${T0.definition}. ${T0.slogan}`,
-                inDefinedTermSet: { "@id": `${siteConfig.url}#defined-terms` },
+                "@id": DEFINITION_TERM_ID,
+                name: MPLP_IDENTITY.formalName,
+                alternateName: MPLP_IDENTITY.shortName,
+                description: MPLP_IDENTITY.formalDefinition,
+                url: WEBSITE_CANONICAL_URLS.definition,
+                subjectOf: [
+                    WEBSITE_CANONICAL_URLS.definition,
+                    DOCS_URLS.entrypoints,
+                    REPO_URLS.root,
+                ],
+                isDefinedBy: { "@id": DEFINITION_PAGE_ID },
+                inDefinedTermSet: { "@id": DEFINED_TERM_SET_ID },
             },
             {
                 "@type": "DefinedTerm",
                 "@id": `${siteConfig.url}#term-lifecycle-protocol`,
                 name: "Lifecycle Protocol",
                 description: "A protocol specification defining how AI agents are created, operated, audited, and decommissioned.",
-                inDefinedTermSet: { "@id": `${siteConfig.url}#defined-terms` },
+                inDefinedTermSet: { "@id": DEFINED_TERM_SET_ID },
             },
         ],
     };
 }
 
 /**
- * WebSite with hasPart → 7 anchor pages
- * Establishes the structure tree for sitelinks
+ * WebSite with hasPart → stable anchor pages
  */
 export function jsonLdWebSiteWithAnchors(): JsonLdData {
     return {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "@id": `${siteConfig.url}#website`,
-        name: T0.fullName,
+        name: MPLP_IDENTITY.fullName,
         url: siteConfig.url,
-        description: `${T0.oneLiner} ${T0.definition}. ${T0.slogan}`,
+        description: WEBSITE_MACHINE_READABLE_DESCRIPTION,
         inLanguage: "en",
         publisher: { "@id": `${siteConfig.url}#mpgc` },
+        about: { "@id": DEFINITION_TERM_ID },
         hasPart: ANCHOR_PAGES.map((anchor) => ({
             "@type": "WebPage",
             "@id": `${siteConfig.url}${anchor.path}#page`,
-            name: `${anchor.name} | ${T0.fullName}`,
+            name: `${anchor.name} | ${MPLP_IDENTITY.fullName}`,
             url: absUrl(anchor.path),
             description: anchor.description,
             isPartOf: { "@id": `${siteConfig.url}#website` },
@@ -103,8 +108,7 @@ export function jsonLdWebSiteWithAnchors(): JsonLdData {
 }
 
 /**
- * Home WebPage - Binds isPartOf/about/hasPart
- * This is what positions mplp.io as "definitional authority surface"
+ * Home WebPage - discovery surface only
  */
 export function jsonLdHomeWebPage(): JsonLdData {
     return {
@@ -112,17 +116,23 @@ export function jsonLdHomeWebPage(): JsonLdData {
         "@type": "WebPage",
         "@id": `${siteConfig.url}#home`,
         url: siteConfig.url,
-        name: T0.fullName,
-        description: `${T0.oneLiner} Explore Architecture, Modules, Kernel Duties, Golden Flows, Governance, FAQ, and References.`,
+        name: MPLP_IDENTITY.fullName,
+        description: WEBSITE_MACHINE_READABLE_DESCRIPTION,
         isPartOf: { "@id": `${siteConfig.url}#website` },
-        about: { "@id": `${siteConfig.url}#defined-terms` },
+        about: { "@id": DEFINITION_TERM_ID },
         hasPart: ANCHOR_PAGES.map((anchor) => ({
             "@type": "WebPage",
             "@id": `${siteConfig.url}${anchor.path}#page`,
             name: anchor.name,
             url: absUrl(anchor.path),
         })),
-        mainEntity: { "@id": `${siteConfig.url}#defined-terms` },
+        mainEntity: { "@id": DEFINITION_TERM_ID },
+        significantLink: [
+            WEBSITE_CANONICAL_URLS.definition,
+            DOCS_URLS.entrypoints,
+            REPO_URLS.root,
+            LAB_URLS.home,
+        ],
     };
 }
 
@@ -135,10 +145,10 @@ export function jsonLdFAQPage(mainEntity: JsonLdData[] = []): JsonLdData {
         "@type": "FAQPage",
         "@id": `${siteConfig.url}/faq#faqpage`,
         url: absUrl("/faq"),
-        name: `FAQ | ${T0.fullName}`,
-        description: "Frequently asked questions about MPLP, including definitions, boundaries, and AI citation guidance.",
+        name: `FAQ | ${MPLP_IDENTITY.fullName}`,
+        description: "Frequently asked questions about MPLP, including boundaries and routing guidance.",
         isPartOf: { "@id": `${siteConfig.url}#website` },
-        about: { "@id": `${siteConfig.url}#defined-terms` },
+        about: { "@id": DEFINITION_TERM_ID },
         mainEntity,
     };
 }
@@ -152,9 +162,10 @@ export function jsonLdReferencesPage(itemListElements: JsonLdData[] = []): JsonL
         "@type": "CollectionPage",
         "@id": `${siteConfig.url}/references#collection`,
         url: absUrl("/references"),
-        name: `References | ${T0.fullName}`,
+        name: `References | ${MPLP_IDENTITY.fullName}`,
         description: "Citation contexts and external references for MPLP (non-endorsement).",
         isPartOf: { "@id": `${siteConfig.url}#website` },
+        about: { "@id": DEFINITION_TERM_ID },
         mainEntity: {
             "@type": "ItemList",
             itemListElement: itemListElements,

@@ -17,19 +17,21 @@ const siblings = [
 ];
 
 const downstream = [
-    { href: "/conformance", label: "Conformance Levels" },
+    { href: "/conformance", label: "Conformance Guide" },
     { href: "/golden-flows", label: "Golden Flows" },
     { href: DOCS_URLS.home, label: "Documentation", external: true },
 ];
 
 export function GovernanceNav({ current }: GovernanceNavProps) {
+    const currentRoute = current === "/governance" ? "/governance/overview" : current;
+
     return (
         <div className="border-t border-mplp-border mt-12 pt-12">
             {/* Back to Governance */}
-            {current !== "/governance" && (
+            {currentRoute !== "/governance/overview" && (
                 <div className="mb-8">
                     <Link
-                        href="/governance"
+                        href="/governance/overview"
                         className="inline-flex items-center gap-2 text-sm text-mplp-text-muted hover:text-mplp-blue-soft transition-colors"
                     >
                         ← Back to Governance
@@ -44,7 +46,7 @@ export function GovernanceNav({ current }: GovernanceNavProps) {
                 </h4>
                 <div className="flex flex-wrap gap-3">
                     {siblings
-                        .filter((s) => s.href !== current)
+                        .filter((s) => s.href !== currentRoute)
                         .map((s) => (
                             <Link
                                 key={s.href}

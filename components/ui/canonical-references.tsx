@@ -2,7 +2,7 @@ import Link from "next/link";
 import { DOCS_URLS, REPO_URLS, type DocsKey, type RepoKey } from "@/lib/site-config";
 
 export interface CanonicalReferencesProps {
-    /** Show link to /definition (default: true) */
+    /** Show link to the canonical website definition anchor (default: true) */
     showDefinition?: boolean;
     /** Key into DOCS_URLS for normative spec link (default: "home") */
     docsKey?: DocsKey;
@@ -16,7 +16,7 @@ export interface CanonicalReferencesProps {
  * Canonical References Component (Key-Driven SSoT)
  * 
  * Provides standardized links back to authority chain:
- * - /definition (site anchor)
+ * - /what-is-mplp (canonical website definition anchor)
  * - docs.mplp.io (normative spec)
  * - GitHub repo (source of truth)
  * 
@@ -37,7 +37,7 @@ export function CanonicalReferences({
 
     const items = [
         showDefinition
-            ? { label: "Definition", href: "/definition", external: false }
+            ? { label: "Website Definition Anchor", href: "/what-is-mplp", external: false }
             : null,
         docsUrl
             ? { label: "Normative Spec (Docs)", href: docsUrl, external: true }
@@ -82,7 +82,8 @@ export function CanonicalReferences({
                 {variant === "full" && (
                     <p className="mt-2 text-xs text-mplp-text-muted/70">
                         This website provides discovery and positioning content only.
-                        Normative requirements live in Docs; the ultimate source of truth is the Repository.
+                        The canonical website definition anchor is <code>/what-is-mplp</code>.
+                        Documentation and Repository provide the authoritative documentation chain.
                     </p>
                 )}
             </div>

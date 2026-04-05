@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
-import { sortByTierAndRelevance } from "@/lib/search/page-tier";
+import { pagefindUrlToRoute, sortByTierAndRelevance } from "@/lib/search/page-tier";
 
 interface SearchResult {
     url: string;
@@ -17,34 +17,6 @@ interface SearchResult {
 interface SearchModalProps {
     isOpen: boolean;
     onClose: () => void;
-}
-
-/**
- * Convert Pagefind build path to actual route.
- * Pagefind indexes .next/server/app/*.html files, but we need the actual route.
- * Examples:
- * - /server/app/governance.html -> /governance
- * - /server/app/modules/context.html -> /modules/context
- * - /server/app/index.html -> /
- */
-function pagefindUrlToRoute(url: string): string {
-    // Extract pathname from URL
-    let pathname = url;
-    try {
-        pathname = new URL(url, "http://localhost").pathname;
-    } catch {
-        // URL parsing failed, use as-is
-    }
-
-    // Remove .next build path prefixes and .html suffix
-    pathname = pathname
-        .replace(/^\/server\/app/, "")
-        .replace(/^\/static\/app/, "")
-        .replace(/\.html$/, "")
-        .replace(/\/index$/, "/")
-        .replace(/\/$/, "") || "/";
-
-    return pathname;
 }
 
 export function SearchModal({ isOpen, onClose }: SearchModalProps) {
@@ -103,10 +75,30 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
             try {
                 const search = await pagefind.search(searchQuery);
                 const data = await Promise.all(
-                    search.results.slice(0, 10).map((r: { data: () => Promise<SearchResult> }) => r.data())
+                    search.results.slice(0, 20).map((r: { data: () => Promise<SearchResult> }) => r.data())
                 );
                 const sorted = sortByTierAndRelevance(data);
-                setResults(sorted);
+                const deduped: SearchResult[] = [];
+                const seenRoutes = new Set<string>();
+
+                for (const result of sorted) {
+                    const normalizedRoute = pagefindUrlToRoute(result.url);
+                    if (seenRoutes.has(normalizedRoute)) {
+                        continue;
+                    }
+
+                    seenRoutes.add(normalizedRoute);
+                    deduped.push({
+                        ...result,
+                        url: normalizedRoute,
+                    });
+
+                    if (deduped.length >= 10) {
+                        break;
+                    }
+                }
+
+                setResults(deduped);
             } catch (e) {
                 console.error("Search error:", e);
                 setResults([]);
@@ -197,7 +189,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                             {results.map((result, index) => (
                                 <li key={index}>
                                     <Link
-                                        href={pagefindUrlToRoute(result.url)}
+                                        href={result.url}
                                         onClick={onClose}
                                         className="block px-4 py-3 hover:bg-mplp-blue-soft/10 transition-colors"
                                     >

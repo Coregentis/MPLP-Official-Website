@@ -1,37 +1,43 @@
-# Website Governance — Pointer
-
-> **Status**: This directory is a **POINTER ONLY**.
-> **Authoritative Source**: `project-governance/`
-
+---
+entry_surface: none
+entry_model_class: none
+doc_type: attestation
+status: draft
+authority: none
+protocol_version: "1.0.0"
+doc_id: "WEB-GOV-RESIDUE-README"
+surface_role: archive
 ---
 
-## Notice
+# Website Governance Residue
 
-All MPLP governance specifications have been consolidated into the unified `project-governance/` directory.
+> [!WARNING]
+> **Unknown-Quarantine / Non-Canonical Pointer**
+>
+> This directory is not an active governance surface.
+> The older `project-governance/` target referenced here does not exist in the
+> current repository and must not be treated as an authority chain.
 
-**This directory no longer contains active governance files.**
+## Current Handling Rule
 
----
+- Classification: `unknown-quarantine`
+- Active role: none
+- Allowed use: historical reference only
+- Forbidden use: active governance law, authority split, routing law, or source
+  of truth for website semantics
 
-## Relevant Documents
+## Active Sources Instead
 
-| Topic | Authoritative File |
-|:---|:---|
-| Public Surface Governance | [DGP-27](../project-governance/DGP-27_PUBLIC_SURFACE_GOVERNANCE.md) |
-| SEO & JSON-LD Contract | [DGP-28](../project-governance/DGP-28_SEO_JSONLD_CONTRACT.md) |
-| Semantic Positioning Anchors | [DGP-29](../project-governance/DGP-29_SEMANTIC_ANCHORS.yaml) |
-| Normative Docs Governance | [DGP-08](../project-governance/DGP-08_NORMATIVE_DOCS_GOVERNANCE.md) |
-| Cross-Link SSOT | [PSG-CROSSLINK-SSOT](../project-governance/public-surface/PSG-CROSSLINK-SSOT.yaml) |
+- Repository governance index:
+  [`../../governance/README.md`](../../governance/README.md)
+- Constitutional boundary:
+  [`../../governance/01-constitutional/CONST-001_ENTRY_MODEL_SPEC.md`](../../governance/01-constitutional/CONST-001_ENTRY_MODEL_SPEC.md)
+- Version taxonomy:
+  [`../../governance/05-versioning/VERSION-TAXONOMY-MANIFEST.md`](../../governance/05-versioning/VERSION-TAXONOMY-MANIFEST.md)
+- Active website source:
+  [`../README.md`](../README.md)
 
----
+## Note
 
-## Change Control
-
-Any governance changes MUST be made in `project-governance/` and follow the DGP change control process.
-
-**Do NOT create new governance files in this directory.**
-
----
-
-**MPLP Protocol Governance Committee (MPGC)**
-**2025-12-27**
+Leave this directory in place for now.
+Do not add new active governance files here.

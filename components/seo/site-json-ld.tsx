@@ -1,5 +1,12 @@
 import { JsonLd } from "@/components/seo/json-ld";
-import { siteConfig, DOCS_URLS, REPO_URLS } from "@/lib/site-config";
+import {
+    DOCS_URLS,
+    MPLP_IDENTITY,
+    REPO_URLS,
+    siteConfig,
+    WEBSITE_CANONICAL_URLS,
+    WEBSITE_MACHINE_READABLE_DESCRIPTION,
+} from "@/lib/site-config";
 
 /**
  * Site-Level JSON-LD
@@ -14,13 +21,14 @@ export function SiteJsonLd() {
     const website = {
         "@type": "WebSite",
         "@id": `${siteConfig.url}#website`,
-        name: siteConfig.name,
+        name: MPLP_IDENTITY.fullName,
         url: siteConfig.url,
-        description: "Official discovery and positioning site for the MPLP protocol. Normative definitions live at docs.mplp.io.",
+        description: WEBSITE_MACHINE_READABLE_DESCRIPTION,
         publisher: { "@id": `${siteConfig.url}#mpgc` },
+        about: { "@id": `${WEBSITE_CANONICAL_URLS.definition}#term` },
         potentialAction: {
             "@type": "SearchAction",
-            target: `${siteConfig.url}/search?q={search_term_string}`,
+            target: `${WEBSITE_CANONICAL_URLS.search}?q={search_term_string}`,
             "query-input": "required name=search_term_string",
         },
     };
@@ -29,28 +37,22 @@ export function SiteJsonLd() {
         "@type": "Organization",
         "@id": `${siteConfig.url}#mpgc`,
         name: "MPLP Protocol Governance Committee (MPGC)",
-        url: `${siteConfig.url}/governance/overview`,
+        url: WEBSITE_CANONICAL_URLS.governance,
         description: "Governance body for the MPLP protocol specification. Does not certify, endorse, or audit implementations. Not a certification authority.",
-        sameAs: [
-            DOCS_URLS.home,
-            REPO_URLS.root,
-            "https://lab.mplp.io",
-        ],
+        sameAs: [siteConfig.links.twitter],
     };
 
     const specSeries = {
         "@type": "CreativeWorkSeries",
         "@id": `${siteConfig.url}#specification`,
         name: "MPLP Protocol Specification",
-        description: "The Multi-Agent Lifecycle Protocol specification series, defining lifecycle governance for AI agent systems.",
+        description: "Authoritative documentation surface for MPLP. Documentation and repository provide the authoritative documentation chain.",
         version: "1.0.0",
         publisher: { "@id": `${siteConfig.url}#mpgc` },
-        url: DOCS_URLS.home,
-        mainEntityOfPage: DOCS_URLS.home,
-        sameAs: REPO_URLS.root,
-        citation: [
-            { "@id": `${siteConfig.url}#website` }
-        ]
+        url: DOCS_URLS.entrypoints,
+        mainEntityOfPage: DOCS_URLS.entrypoints,
+        isBasedOn: REPO_URLS.root,
+        citation: [{ "@id": `${siteConfig.url}#website` }]
     };
 
     const sourceCode = {
@@ -67,11 +69,17 @@ export function SiteJsonLd() {
 
     const definedTerm = {
         "@type": "DefinedTerm",
-        "@id": `${siteConfig.url}#mplp-term`,
-        name: "Multi-Agent Lifecycle Protocol",
-        alternateName: "MPLP",
-        description: "The lifecycle governance interface for AI agents.",
-        disambiguatingDescription: "MPLP is not a software license and does not define licensing terms. It is a protocol specification for agent lifecycle management.",
+        "@id": `${WEBSITE_CANONICAL_URLS.definition}#term`,
+        name: MPLP_IDENTITY.formalName,
+        alternateName: MPLP_IDENTITY.shortName,
+        description: MPLP_IDENTITY.formalDefinition,
+        disambiguatingDescription: "MPLP is not a software license and does not define licensing terms.",
+        url: WEBSITE_CANONICAL_URLS.definition,
+        subjectOf: [
+            WEBSITE_CANONICAL_URLS.definition,
+            DOCS_URLS.entrypoints,
+            REPO_URLS.root,
+        ],
         inDefinedTermSet: {
             "@type": "DefinedTermSet",
             name: "MPLP Glossary",

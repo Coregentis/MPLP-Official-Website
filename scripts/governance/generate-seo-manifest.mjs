@@ -15,29 +15,99 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import yaml from 'js-yaml';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const PROJECT_ROOT = path.resolve(__dirname, '../..');
-const GOV_ROOT = path.resolve(PROJECT_ROOT, '../governance/05-website-governance');
-const PROFILE_PATH = path.join(GOV_ROOT, 'WEBSITE_PAGE_PROFILE.yaml');
 const APP_DIR = path.join(PROJECT_ROOT, 'app');
 const OUTPUT_PATH = path.join(PROJECT_ROOT, 'public', 'website-seo-manifest.json');
+const MODULE_SOURCE_PATH = path.join(PROJECT_ROOT, 'lib', 'content', 'modules.ts');
+const FLOW_SOURCE_PATH = path.join(PROJECT_ROOT, 'lib', 'content', 'flows.ts');
 
 console.log('\n[SEO-MANIFEST] Generating website SEO manifest...\n');
 
-// Load profile policy
-let policy;
-try {
-    const profileContent = fs.readFileSync(PROFILE_PATH, 'utf-8');
-    policy = yaml.load(profileContent);
-    console.log(`Loaded ${Object.keys(policy.profiles).length} profiles from WEBSITE_PAGE_PROFILE.yaml`);
-} catch (err) {
-    console.error(`❌ Failed to load profile policy: ${err.message}`);
-    process.exit(1);
-}
+// This manifest is grounded in the current website route inventory and
+// website-owned content projections only. It intentionally does not depend on
+// WEBSITE_PAGE_PROFILE.yaml, which is not a current supported generation input
+// for this repo surface.
+const POLICY = {
+    version: "1.0.0",
+    profiles: {
+        positioning: { enforcement: "strict", robots: "index,follow", title_suffix: "— MPLP", requires_disclaimer: true, jsonld_page_type: "WebPage" },
+        evaluation_entry: { enforcement: "standard", robots: "index,follow", title_suffix: "— MPLP", requires_disclaimer: true, jsonld_page_type: "CollectionPage" },
+        explainer_non_normative: { enforcement: "standard", robots: "index,follow", title_suffix: "— MPLP", requires_disclaimer: true, jsonld_page_type: "TechArticle" },
+        governance: { enforcement: "standard", robots: "index,follow", title_suffix: "— MPLP", requires_disclaimer: true, jsonld_page_type: "AboutPage" },
+        formative: { enforcement: "relaxed", robots: "noindex,nofollow", title_suffix: "— MPLP", requires_disclaimer: true, jsonld_page_type: "WebPage" },
+    },
+};
+
+const EXCLUDED_ROUTES = new Set([
+    "/definition",
+    "/adoption",
+    "/enterprise",
+    "/governance",
+    "/search",
+    "/blog/[slug]",
+]);
+
+const ROUTE_OVERRIDES = {
+    "/": {
+        profileName: "positioning",
+        title: "MPLP — Multi-Agent Lifecycle Protocol",
+        description: "MPLP is a vendor-neutral lifecycle protocol for AI agent systems. This website provides discovery and positioning only. Repository and documentation provide the authoritative documentation chain. Validation Lab provides the adjudication surface.",
+        canonical: "https://www.mplp.io",
+    },
+    "/what-is-mplp": {
+        profileName: "explainer_non_normative",
+        title: "What is MPLP? | Multi-Agent Lifecycle Protocol",
+        description: "MPLP is a vendor-neutral lifecycle protocol for AI agent systems. This is the canonical website definition anchor.",
+        canonical: "https://www.mplp.io/what-is-mplp",
+    },
+    "/architecture": {
+        profileName: "positioning",
+        description: "High-level architecture overview for MPLP. Formal protocol requirements live in the documentation and repository.",
+    },
+    "/conformance": {
+        profileName: "evaluation_entry",
+        description: "Discovery page for MPLP conformance-related materials. Formal conformance references live in documentation and Validation Lab surfaces.",
+    },
+    "/golden-flows": {
+        profileName: "evaluation_entry",
+        description: "Discovery page for protocol-side Golden Flow scenarios. Formal definitions live in the documentation and repository tests.",
+    },
+    "/validation-lab": {
+        profileName: "evaluation_entry",
+        description: "Discovery guide to MPLP Validation Lab. This website page is pointer-oriented; current Lab references and adjudication outputs live in the documentation and Lab surfaces.",
+    },
+    "/governance/overview": {
+        profileName: "governance",
+        description: "Discovery overview of MPLP governance. Repository governance records and documentation references provide current authoritative detail.",
+    },
+    "/references": {
+        profileName: "explainer_non_normative",
+        description: "Citation contexts and external references for MPLP. Repository and documentation remain the authoritative documentation chain.",
+    },
+};
+
+const DYNAMIC_ROUTE_RESOLVERS = {
+    "/modules/[slug]": () => extractModules().map((module) => ({
+        path: `/modules/${module.id}`,
+        title: module.seoTier === "C"
+            ? `${module.name} | MPLP Protocol`
+            : `${module.name} | MPLP Protocol Specification`,
+        description: module.metaDescription || module.desc,
+        canonical: `https://www.mplp.io/modules/${module.id}`,
+    })),
+    "/golden-flows/[slug]": () => extractFlows().map((flow) => ({
+        path: `/golden-flows/${flow.id.toLowerCase()}`,
+        title: `${flow.title} | MPLP Golden Flows`,
+        description: flow.coreBoundary
+            ? `Website summary of MPLP core published-boundary scenario: ${flow.desc}`
+            : `Website summary of MPLP profile-level flow scenario: ${flow.desc}`,
+        canonical: `https://www.mplp.io/golden-flows/${flow.id.toLowerCase()}`,
+    })),
+};
 
 // Find page files
 function findPageFiles(dir, files = []) {
@@ -63,32 +133,61 @@ function deriveRoute(filePath) {
     return route;
 }
 
+function extractModules() {
+    const source = fs.readFileSync(MODULE_SOURCE_PATH, 'utf-8');
+    const modules = [];
+    const modulePattern = /{\s*id:\s*"([^"]+)",\s*name:\s*"([^"]+)",\s*desc:\s*"([^"]+)",[\s\S]*?seoTier:\s*"([^"]+)",[\s\S]*?metaDescription:\s*"([^"]+)"/g;
+
+    for (const match of source.matchAll(modulePattern)) {
+        modules.push({
+            id: match[1],
+            name: match[2],
+            desc: match[3],
+            seoTier: match[4],
+            metaDescription: match[5],
+        });
+    }
+
+    return modules;
+}
+
+function extractFlows() {
+    const source = fs.readFileSync(FLOW_SOURCE_PATH, 'utf-8');
+    const flows = [];
+    const flowPattern = /defineFlow\(\{\s*id:\s*"([^"]+)",\s*title:\s*"([^"]+)",[\s\S]*?coreBoundary:\s*(true|false),\s*desc:\s*"([^"]+)"/g;
+
+    for (const match of source.matchAll(flowPattern)) {
+        flows.push({
+            id: match[1],
+            title: match[2],
+            coreBoundary: match[3] === 'true',
+            desc: match[4],
+        });
+    }
+
+    return flows;
+}
+
 // Get page config
 function getPageConfig(route) {
-    for (const pageConfig of policy.pages || []) {
-        const pattern = pageConfig.path;
-        const matchType = pageConfig.match || 'exact';
+    if (route === "/blog" || route.startsWith("/blog/")) {
+        return { ...POLICY.profiles.formative, profileName: "formative" };
+    }
 
-        let matches = false;
-        if (matchType === 'exact') {
-            matches = route === pattern;
-        } else if (matchType === 'prefix') {
-            const prefix = pattern.replace(/\*$/, '').replace(/\/$/, '');
-            matches = route === prefix || route.startsWith(prefix + '/');
-        }
+    if (route.startsWith("/governance")) {
+        return { ...POLICY.profiles.governance, profileName: "governance" };
+    }
 
-        if (matches) {
-            const baseProfile = policy.profiles[pageConfig.profile] || {};
-            return {
-                ...baseProfile,
-                profileName: pageConfig.profile,
-                ...pageConfig.overrides
-            };
-        }
+    if (route === "/conformance" || route === "/validation-lab" || route === "/golden-flows" || route.startsWith("/golden-flows/") || route === "/enterprise" || route === "/adoption") {
+        return { ...POLICY.profiles.evaluation_entry, profileName: "evaluation_entry" };
+    }
+
+    if (route === "/what-is-mplp" || route === "/faq" || route === "/references" || route === "/posix-analogy") {
+        return { ...POLICY.profiles.explainer_non_normative, profileName: "explainer_non_normative" };
     }
 
     return {
-        ...policy.profiles.positioning,
+        ...POLICY.profiles.positioning,
         profileName: 'positioning'
     };
 }
@@ -145,35 +244,48 @@ const pageFiles = findPageFiles(APP_DIR);
 console.log(`Scanning ${pageFiles.length} page.tsx files...\n`);
 
 const pages = [];
+const seenPaths = new Set();
 
 for (const filePath of pageFiles) {
     const route = deriveRoute(filePath);
-    const config = getPageConfig(route);
+    if (EXCLUDED_ROUTES.has(route)) continue;
     const content = fs.readFileSync(filePath, 'utf-8');
     const metadata = extractMetadata(content);
+    const routeEntries = DYNAMIC_ROUTE_RESOLVERS[route]?.() || [{ path: route }];
 
-    pages.push({
-        path: route,
-        profile: config.profileName,
-        enforcement: config.enforcement || 'standard',
-        title: metadata.title,
-        description: metadata.description,
-        canonical: metadata.canonical,
-        robots: config.robots || 'index,follow',
-        title_suffix: config.title_suffix || '— MPLP',
-        jsonld_page_type: config.jsonld_page_type || 'WebPage',
-        jsonld_types_found: metadata.jsonld_types,
-        requires_disclaimer: config.requires_disclaimer || false,
-        disclaimer_present: metadata.disclaimer_present
-    });
+    for (const routeEntry of routeEntries) {
+        if (seenPaths.has(routeEntry.path)) continue;
+
+        const config = getPageConfig(routeEntry.path);
+        const override = ROUTE_OVERRIDES[routeEntry.path];
+        const profileName = override?.profileName || config.profileName;
+
+        pages.push({
+            path: routeEntry.path,
+            profile: profileName,
+            enforcement: config.enforcement || 'standard',
+            title: routeEntry.title || override?.title || metadata.title,
+            description: routeEntry.description || override?.description || metadata.description,
+            canonical: routeEntry.canonical || override?.canonical || metadata.canonical || `https://www.mplp.io${routeEntry.path === "/" ? "" : routeEntry.path}`,
+            robots: config.robots || 'index,follow',
+            title_suffix: config.title_suffix || '— MPLP',
+            jsonld_page_type: config.jsonld_page_type || 'WebPage',
+            jsonld_types_found: metadata.jsonld_types,
+            requires_disclaimer: config.requires_disclaimer || false,
+            disclaimer_present: metadata.disclaimer_present
+        });
+
+        seenPaths.add(routeEntry.path);
+    }
 }
 
 // Sort by path
 pages.sort((a, b) => a.path.localeCompare(b.path));
 
 const manifest = {
-    version: policy.version,
+    version: POLICY.version,
     generatedAt: new Date().toISOString(),
+    website_release_version: "1.0.0",
     totalPages: pages.length,
     summary: {
         by_profile: {},

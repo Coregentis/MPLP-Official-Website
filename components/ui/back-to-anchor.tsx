@@ -16,12 +16,14 @@ interface BackToAnchorProps {
  * Governance requirement: All non-anchor pages MUST include this component
  * to ensure ≤3 clicks back to one of the 7 semantic anchors.
  * 
- * Anchor mapping:
+ * Current anchor mapping examples:
  * - /why-mplp → /faq
- * - /compliance (legacy) → /governance/overview [TERM-WAIVER: Historical reference]
  * - /ecosystem → /references
  * - /blog/* → /faq
  * - /governance/* (subpages) → /governance/overview
+ *
+ * Legacy redirects such as /compliance are normalized before users should
+ * encounter them.
  */
 
 export function BackToAnchor({ href, label, className = "" }: BackToAnchorProps) {

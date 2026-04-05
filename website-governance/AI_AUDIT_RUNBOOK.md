@@ -1,17 +1,25 @@
 # AI Website Consistency Audit Runbook
 
+> [!WARNING]
+> **Historical Website Governance Residue**
+>
+> This runbook is retained as historical audit material only.
+> It is not active governance law and must not override the current
+> repository-level constitutional model or governance index.
+
 **Version:** v1.0  
-**Target:** mplp.io (Official Website)  
+**Status:** Historical Archive Only  
+**Target:** Historical mplp.io website-governance line  
 **Executor:** AI Assistant (Antigravity / Claude / GPT)  
 
 ---
 
-## 🔒 P0 — Semantic Authority Rule (IMMUTABLE)
+## 🔒 P0 — Historical Anchor Rule
 
-> **The 7 Semantic Anchors constitute the ONLY public semantic surface of MPLP.**  
+> **This archived runbook treated the 7 Semantic Anchors as the primary website semantic surface.**  
 > All other pages are subordinate, contextual, or auxiliary.
 
-Any audit, fix, or generation MUST NOT violate this rule.
+Within this archived runbook, audits and fixes were expected not to violate this rule.
 
 ---
 
@@ -48,7 +56,7 @@ Ensure every URL has a defined semantic role.
 | `/references` | Anchor | #6 | CollectionPage |
 | `/faq` | Anchor | #7 | FAQPage |
 | `/why-mplp` | NonAnchor | → FAQ | TechArticle |
-| `/compliance` | NonAnchor | → Governance | TechArticle |
+| `/conformance` | NonAnchor | → Governance | TechArticle |
 | `/ecosystem` | NonAnchor | → References | CollectionPage |
 | `/blog` | Utility | — | Blog |
 | `/search` | Utility | — | SearchResultsPage |

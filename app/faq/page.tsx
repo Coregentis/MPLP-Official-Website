@@ -13,7 +13,7 @@ import { NextSteps } from "@/components/ui/next-steps";
 
 export const metadata: Metadata = {
     title: "FAQ | MPLP — Multi-Agent Lifecycle Protocol",
-    description: "Frequently asked questions about MPLP, the Agent OS Protocol. Definitions, boundaries, evaluation guidance, and AI citation references.",
+    description: "Frequently asked questions about MPLP, including its formal definition, boundaries, evaluation guidance, and AI citation references.",
 };
 
 export default function FAQPage() {
@@ -50,8 +50,8 @@ export default function FAQPage() {
             <ContentSection>
                 <div className="p-4 bg-mplp-bg border border-mplp-border rounded-lg mb-10 max-w-3xl mx-auto">
                     <p className="text-sm text-mplp-text-muted">
-                        <strong>Official documentation entry:</strong> The MPLP specification describes the lifecycle
-                        semantics for AI agent systems — the Agent OS Protocol.
+                        <strong>Official documentation entry:</strong> MPLP is a vendor-neutral lifecycle protocol for AI agent systems.
+                        “The Agent OS Protocol” may be used as positioning language, but it is not the formal definition.
                     </p>
                 </div>
 

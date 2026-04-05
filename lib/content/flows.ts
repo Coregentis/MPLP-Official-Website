@@ -9,7 +9,7 @@ import { DOCS_URLS, REPO_URLS } from "@/lib/site-config";
  * Source model:
  * - Actual page source: `MPLP_website/lib/content/flows.ts`
  * - Upstream provenance: `tests/golden/flows/registry.ts` for IDs, titles, and
- *   compliance-boundary classification
+ *   core-boundary classification
  * - Upstream provenance: per-flow `tests/golden/flows/<flow>/README.md` assets for
  *   scenario detail summarized by Website
  * - Docs flow pages remain secondary reference projections, not primary truth
@@ -44,7 +44,7 @@ export interface GoldenFlow {
     id: string;
     title: string;
     category: FlowCategory;
-    complianceBoundary: boolean;
+    coreBoundary: boolean;
     desc: string;
     goal: string;
     keyModules: string[];
@@ -91,7 +91,7 @@ export const flows: GoldenFlow[] = [
         id: "flow-01",
         title: "Single Agent – Happy Path",
         category: "core",
-        complianceBoundary: true,
+        coreBoundary: true,
         desc: "The baseline single-agent workflow. Agent receives context, generates a minimal 2-step plan, executes, and produces trace.",
         goal: "Validate that the runtime can accept a Context with an Intent and produce a valid Plan.",
         keyModules: ["Context", "Plan", "Trace"],
@@ -121,7 +121,7 @@ export const flows: GoldenFlow[] = [
         id: "flow-02",
         title: "Single Agent – Large Plan",
         category: "core",
-        complianceBoundary: true,
+        coreBoundary: true,
         desc: "Volumetric validation with 20+ steps. Tests protocol handling of large execution plans.",
         goal: "Validate that the runtime can execute a Plan with 20+ steps while maintaining invariants.",
         keyModules: ["Context", "Plan", "Trace"],
@@ -150,7 +150,7 @@ export const flows: GoldenFlow[] = [
         id: "flow-03",
         title: "Single Agent – With Tools",
         category: "core",
-        complianceBoundary: true,
+        coreBoundary: true,
         desc: "Tool integration via agent_role field. Validates protocol semantics for tool-enabled workflows.",
         goal: "Validate that the runtime can handle tool-based steps with proper agent_role semantics.",
         keyModules: ["Context", "Plan", "Trace", "Extension"],
@@ -179,7 +179,7 @@ export const flows: GoldenFlow[] = [
         id: "flow-04",
         title: "Single Agent with LLM Enrichment",
         category: "core",
-        complianceBoundary: true,
+        coreBoundary: true,
         desc: "AEL (Action Execution Loop) integration. Validates LLM-enriched plan generation.",
         goal: "Validate that the runtime can integrate LLM reasoning in plan generation.",
         keyModules: ["Context", "Plan", "Trace", "Core"],
@@ -208,7 +208,7 @@ export const flows: GoldenFlow[] = [
         id: "flow-05",
         title: "Single Agent with Confirm Required",
         category: "core",
-        complianceBoundary: true,
+        coreBoundary: true,
         desc: "Multi-round approval workflow. Validates Confirm module integration.",
         goal: "Validate that the runtime handles multi-round confirmation correctly.",
         keyModules: ["Context", "Plan", "Confirm", "Trace"],
@@ -237,7 +237,7 @@ export const flows: GoldenFlow[] = [
         id: "sa-flow-01",
         title: "SA Basic Execution",
         category: "sa-profile",
-        complianceBoundary: false,
+        coreBoundary: false,
         desc: "Single-Agent (SA) profile baseline. Single-step execution with full lifecycle.",
         goal: "Validate SA profile initialization through completion.",
         keyModules: ["Context", "Plan"],
@@ -264,7 +264,7 @@ export const flows: GoldenFlow[] = [
         id: "sa-flow-02",
         title: "SA Multi-Step Evaluation",
         category: "sa-profile",
-        complianceBoundary: false,
+        coreBoundary: false,
         desc: "SA profile with multi-step plan. Validates step sequencing in SA mode.",
         goal: "Validate SA can execute multiple steps in order.",
         keyModules: ["Context", "Plan"],
@@ -290,7 +290,7 @@ export const flows: GoldenFlow[] = [
         id: "map-flow-01",
         title: "MAP Turn-Taking Session",
         category: "map-profile",
-        complianceBoundary: false,
+        coreBoundary: false,
         desc: "Multi-Agent Protocol with turn-taking. Two agents collaborate with role rotation.",
         goal: "Validate MAP round_robin mode with sequential turn execution.",
         keyModules: ["Context", "Plan", "Collab", "Role"],
@@ -320,7 +320,7 @@ export const flows: GoldenFlow[] = [
         id: "map-flow-02",
         title: "MAP Broadcast Fan-out",
         category: "map-profile",
-        complianceBoundary: false,
+        coreBoundary: false,
         desc: "Multi-Agent Protocol with broadcast. Parallel dispatch to multiple agents.",
         goal: "Validate MAP broadcast mode with parallel agent execution.",
         keyModules: ["Context", "Plan", "Collab", "Role"],
@@ -365,7 +365,7 @@ export function getMAPFlows(): GoldenFlow[] {
 }
 
 export function getProfileFlows(): GoldenFlow[] {
-    return flows.filter((flow) => !flow.complianceBoundary);
+    return flows.filter((flow) => !flow.coreBoundary);
 }
 
 export function getFlowById(id: string): GoldenFlow | undefined {

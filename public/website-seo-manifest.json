@@ -1,29 +1,24 @@
 {
   "version": "1.0.0",
-  "protocol_version": "1.0.0",
-  "generatedAt": "2026-01-07T10:42:43.124Z",
-  "boundaries": [
-    "BOUNDARY-NON-CERTIFICATION",
-    "BOUNDARY-NON-ENDORSEMENT",
-    "BOUNDARY-VENDOR-NEUTRAL"
-  ],
-  "totalPages": 34,
+  "generatedAt": "2026-04-05T03:48:20.593Z",
+  "website_release_version": "1.0.0",
+  "totalPages": 43,
   "summary": {
     "by_profile": {
-      "positioning": 10,
-      "formative": 2,
-      "evaluation_entry": 5,
-      "explainer_non_normative": 8,
+      "positioning": 17,
+      "formative": 1,
+      "evaluation_entry": 12,
+      "explainer_non_normative": 4,
       "governance": 9
     },
     "by_enforcement": {
-      "strict": 10,
-      "relaxed": 2,
-      "standard": 22
+      "strict": 17,
+      "relaxed": 1,
+      "standard": 25
     },
     "disclaimer_coverage": {
-      "required": 34,
-      "present": 34
+      "required": 43,
+      "present": 21
     }
   },
   "pages": [
@@ -31,8 +26,8 @@
       "path": "/",
       "profile": "positioning",
       "enforcement": "strict",
-      "title": "MPLP — Multi-Agent Lifecycle Protocol | The Agent OS Protocol",
-      "description": "MPLP is a vendor-neutral lifecycle protocol for AI agent systems — The Agent OS Protocol. This website provides discovery and positioning only. Normative specifications live in the documentation; the repository is the source of truth. Not a framework, not a runtime, not a platform.",
+      "title": "MPLP — Multi-Agent Lifecycle Protocol",
+      "description": "MPLP is a vendor-neutral lifecycle protocol for AI agent systems. This website provides discovery and positioning only. Repository and documentation provide the authoritative documentation chain. Validation Lab provides the adjudication surface.",
       "canonical": "https://www.mplp.io",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
@@ -42,28 +37,11 @@
       "disclaimer_present": true
     },
     {
-      "path": "/adoption",
-      "profile": "positioning",
-      "enforcement": "strict",
-      "title": "Adoption Signals | MPLP Protocol",
-      "description": "MPLP protocol adoption status: frozen specification, published SDKs, normative conformance flows, and governance mappings.",
-      "canonical": "https://www.mplp.io/adoption",
-      "robots": "index,follow",
-      "title_suffix": "— MPLP",
-      "jsonld_page_type": "WebPage",
-      "jsonld_types_found": [
-        "TechArticle",
-        "WebPage"
-      ],
-      "requires_disclaimer": true,
-      "disclaimer_present": true
-    },
-    {
       "path": "/architecture",
       "profile": "positioning",
       "enforcement": "strict",
       "title": "Architecture | MPLP — Multi-Agent Lifecycle Protocol",
-      "description": "Describes the layered architecture model of MPLP, including core semantics, coordination, execution, and integration boundaries. See docs for normative definitions.",
+      "description": "High-level architecture overview for MPLP. Formal protocol requirements live in the documentation and repository.",
       "canonical": "https://www.mplp.io/architecture",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
@@ -73,7 +51,7 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": true
+      "disclaimer_present": false
     },
     {
       "path": "/blog",
@@ -90,28 +68,14 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": true
-    },
-    {
-      "path": "/blog/[slug]",
-      "profile": "formative",
-      "enforcement": "relaxed",
-      "title": null,
-      "description": null,
-      "canonical": null,
-      "robots": "noindex,nofollow",
-      "title_suffix": "— MPLP",
-      "jsonld_page_type": "WebPage",
-      "jsonld_types_found": [],
-      "requires_disclaimer": true,
-      "disclaimer_present": true
+      "disclaimer_present": false
     },
     {
       "path": "/conformance",
       "profile": "evaluation_entry",
       "enforcement": "standard",
-      "title": "Conformance Model (Informative) | MPLP Standard",
-      "description": "The MPLP specification describes a three-level conformance model for interoperability. See docs for normative definitions.",
+      "title": "Conformance Model (Informative) | MPLP Specification",
+      "description": "Discovery page for MPLP conformance-related materials. Formal conformance references live in documentation and Validation Lab surfaces.",
       "canonical": "https://www.mplp.io/conformance",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
@@ -124,30 +88,11 @@
       "disclaimer_present": true
     },
     {
-      "path": "/definition",
-      "profile": "explainer_non_normative",
-      "enforcement": "standard",
-      "title": "MPLP Definition — Canonical Positioning (Informative) | MPLP",
-      "description": "The MPLP specification describes a POSIX-like lifecycle governance model for AI agent systems. This page provides the canonical positioning anchor. For normative definitions, see docs.mplp.io.",
-      "canonical": "https://www.mplp.io/definition",
-      "robots": "index,follow",
-      "title_suffix": "— MPLP",
-      "jsonld_page_type": "TechArticle",
-      "jsonld_types_found": [
-        "WebPage",
-        "DefinedTerm",
-        "DefinedTermSet",
-        "Organization"
-      ],
-      "requires_disclaimer": true,
-      "disclaimer_present": true
-    },
-    {
       "path": "/ecosystem",
       "profile": "positioning",
       "enforcement": "strict",
       "title": "Ecosystem | MPLP Protocol",
-      "description": "SDKs, developer tools, and reference runtimes that support adoption of the MPLP protocol standard.",
+      "description": "Published package surfaces, developer tools, and reference runtimes that support adoption of the MPLP protocol standard.",
       "canonical": "https://www.mplp.io/ecosystem",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
@@ -158,45 +103,28 @@
         "SoftwareSourceCode"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": true
-    },
-    {
-      "path": "/enterprise",
-      "profile": "evaluation_entry",
-      "enforcement": "standard",
-      "title": "Enterprise Evaluation Guide | MPLP Protocol",
-      "description": "Enterprise-grade governance evaluation for AI agent systems. MPLP protocol overview for architecture review, risk assessment, and due diligence.",
-      "canonical": "https://www.mplp.io/enterprise",
-      "robots": "index,follow",
-      "title_suffix": "— MPLP",
-      "jsonld_page_type": "CollectionPage",
-      "jsonld_types_found": [
-        "TechArticle",
-        "WebPage"
-      ],
-      "requires_disclaimer": true,
-      "disclaimer_present": true
+      "disclaimer_present": false
     },
     {
       "path": "/faq",
       "profile": "explainer_non_normative",
       "enforcement": "standard",
       "title": "FAQ | MPLP — Multi-Agent Lifecycle Protocol",
-      "description": "Frequently asked questions about MPLP, the Agent OS Protocol. Definitions, boundaries, evaluation guidance, and AI citation references.",
+      "description": "Frequently asked questions about MPLP, including its formal definition, boundaries, evaluation guidance, and AI citation references.",
       "canonical": "https://www.mplp.io/faq",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
       "jsonld_page_type": "TechArticle",
       "jsonld_types_found": [],
       "requires_disclaimer": true,
-      "disclaimer_present": true
+      "disclaimer_present": false
     },
     {
       "path": "/golden-flows",
       "profile": "evaluation_entry",
       "enforcement": "standard",
       "title": "Golden Flows | MPLP Protocol",
-      "description": "The five normative integration flows that define protocol conformance for MPLP implementations.",
+      "description": "Discovery page for protocol-side Golden Flow scenarios. Formal definitions live in the documentation and repository tests.",
       "canonical": "https://www.mplp.io/golden-flows",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
@@ -207,15 +135,15 @@
         "ListItem"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": true
+      "disclaimer_present": false
     },
     {
-      "path": "/golden-flows/[slug]",
+      "path": "/golden-flows/flow-01",
       "profile": "evaluation_entry",
       "enforcement": "standard",
-      "title": "${flow.title} | MPLP Golden Flows",
-      "description": "Normative execution flow: ${flow.desc}",
-      "canonical": "https://www.mplp.io/golden-flows/${slug}",
+      "title": "Single Agent – Happy Path | MPLP Golden Flows",
+      "description": "Website summary of MPLP core published-boundary scenario: The baseline single-agent workflow. Agent receives context, generates a minimal 2-step plan, executes, and produces trace.",
+      "canonical": "https://www.mplp.io/golden-flows/flow-01",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
       "jsonld_page_type": "CollectionPage",
@@ -224,15 +152,151 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": true
+      "disclaimer_present": false
     },
     {
-      "path": "/governance",
+      "path": "/golden-flows/flow-02",
+      "profile": "evaluation_entry",
+      "enforcement": "standard",
+      "title": "Single Agent – Large Plan | MPLP Golden Flows",
+      "description": "Website summary of MPLP core published-boundary scenario: Volumetric validation with 20+ steps. Tests protocol handling of large execution plans.",
+      "canonical": "https://www.mplp.io/golden-flows/flow-02",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "CollectionPage",
+      "jsonld_types_found": [
+        "TechArticle",
+        "WebPage"
+      ],
+      "requires_disclaimer": true,
+      "disclaimer_present": false
+    },
+    {
+      "path": "/golden-flows/flow-03",
+      "profile": "evaluation_entry",
+      "enforcement": "standard",
+      "title": "Single Agent – With Tools | MPLP Golden Flows",
+      "description": "Website summary of MPLP core published-boundary scenario: Tool integration via agent_role field. Validates protocol semantics for tool-enabled workflows.",
+      "canonical": "https://www.mplp.io/golden-flows/flow-03",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "CollectionPage",
+      "jsonld_types_found": [
+        "TechArticle",
+        "WebPage"
+      ],
+      "requires_disclaimer": true,
+      "disclaimer_present": false
+    },
+    {
+      "path": "/golden-flows/flow-04",
+      "profile": "evaluation_entry",
+      "enforcement": "standard",
+      "title": "Single Agent with LLM Enrichment | MPLP Golden Flows",
+      "description": "Website summary of MPLP core published-boundary scenario: AEL (Action Execution Loop) integration. Validates LLM-enriched plan generation.",
+      "canonical": "https://www.mplp.io/golden-flows/flow-04",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "CollectionPage",
+      "jsonld_types_found": [
+        "TechArticle",
+        "WebPage"
+      ],
+      "requires_disclaimer": true,
+      "disclaimer_present": false
+    },
+    {
+      "path": "/golden-flows/flow-05",
+      "profile": "evaluation_entry",
+      "enforcement": "standard",
+      "title": "Single Agent with Confirm Required | MPLP Golden Flows",
+      "description": "Website summary of MPLP core published-boundary scenario: Multi-round approval workflow. Validates Confirm module integration.",
+      "canonical": "https://www.mplp.io/golden-flows/flow-05",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "CollectionPage",
+      "jsonld_types_found": [
+        "TechArticle",
+        "WebPage"
+      ],
+      "requires_disclaimer": true,
+      "disclaimer_present": false
+    },
+    {
+      "path": "/golden-flows/map-flow-01",
+      "profile": "evaluation_entry",
+      "enforcement": "standard",
+      "title": "MAP Turn-Taking Session | MPLP Golden Flows",
+      "description": "Website summary of MPLP profile-level flow scenario: Multi-Agent Protocol with turn-taking. Two agents collaborate with role rotation.",
+      "canonical": "https://www.mplp.io/golden-flows/map-flow-01",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "CollectionPage",
+      "jsonld_types_found": [
+        "TechArticle",
+        "WebPage"
+      ],
+      "requires_disclaimer": true,
+      "disclaimer_present": false
+    },
+    {
+      "path": "/golden-flows/map-flow-02",
+      "profile": "evaluation_entry",
+      "enforcement": "standard",
+      "title": "MAP Broadcast Fan-out | MPLP Golden Flows",
+      "description": "Website summary of MPLP profile-level flow scenario: Multi-Agent Protocol with broadcast. Parallel dispatch to multiple agents.",
+      "canonical": "https://www.mplp.io/golden-flows/map-flow-02",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "CollectionPage",
+      "jsonld_types_found": [
+        "TechArticle",
+        "WebPage"
+      ],
+      "requires_disclaimer": true,
+      "disclaimer_present": false
+    },
+    {
+      "path": "/golden-flows/sa-flow-01",
+      "profile": "evaluation_entry",
+      "enforcement": "standard",
+      "title": "SA Basic Execution | MPLP Golden Flows",
+      "description": "Website summary of MPLP profile-level flow scenario: Single-Agent (SA) profile baseline. Single-step execution with full lifecycle.",
+      "canonical": "https://www.mplp.io/golden-flows/sa-flow-01",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "CollectionPage",
+      "jsonld_types_found": [
+        "TechArticle",
+        "WebPage"
+      ],
+      "requires_disclaimer": true,
+      "disclaimer_present": false
+    },
+    {
+      "path": "/golden-flows/sa-flow-02",
+      "profile": "evaluation_entry",
+      "enforcement": "standard",
+      "title": "SA Multi-Step Evaluation | MPLP Golden Flows",
+      "description": "Website summary of MPLP profile-level flow scenario: SA profile with multi-step plan. Validates step sequencing in SA mode.",
+      "canonical": "https://www.mplp.io/golden-flows/sa-flow-02",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "CollectionPage",
+      "jsonld_types_found": [
+        "TechArticle",
+        "WebPage"
+      ],
+      "requires_disclaimer": true,
+      "disclaimer_present": false
+    },
+    {
+      "path": "/governance/agentos-protocol",
       "profile": "governance",
       "enforcement": "standard",
-      "title": "Governance | MPLP Protocol Specification",
-      "description": "The normative governance model for MPLP protocol evolution, including RFC process, versioning rules, and stability policy.",
-      "canonical": "https://www.mplp.io/governance",
+      "title": "Agent OS Protocol — Positioning Lens",
+      "description": "\\",
+      "canonical": "https://www.mplp.io/governance/agentos-protocol",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
       "jsonld_page_type": "AboutPage",
@@ -241,15 +305,15 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": true
+      "disclaimer_present": false
     },
     {
-      "path": "/governance/agentos-protocol",
+      "path": "/governance/eu-ai-act",
       "profile": "governance",
       "enforcement": "standard",
-      "title": "Agent OS Protocol | MPLP Protocol",
-      "description": "MPLP as Agent OS Protocol: a protocol-level operating system for agent lifecycle governance, not a runtime OS.",
-      "canonical": "https://www.mplp.io/governance/agentos-protocol",
+      "title": "EU AI Act Alignment | MPLP Protocol",
+      "description": "Reference mapping between EU AI Act high-risk AI system requirements (Articles 9–15) and MPLP protocol mechanisms. MPLP is not an auditing authority and does not issue attestations.",
+      "canonical": "https://www.mplp.io/governance/eu-ai-act",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
       "jsonld_page_type": "AboutPage",
@@ -275,7 +339,7 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": true
+      "disclaimer_present": false
     },
     {
       "path": "/governance/governed-stack",
@@ -333,7 +397,7 @@
       "profile": "governance",
       "enforcement": "standard",
       "title": "Governance Overview | MPLP Protocol",
-      "description": "MPLP governance stance: what we govern, what we don&apos;t govern, and how the protocol evolves through the RFC process.",
+      "description": "Discovery overview of MPLP governance. Repository governance records and documentation references provide current authoritative detail.",
       "canonical": "https://www.mplp.io/governance/overview",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
@@ -343,7 +407,7 @@
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": true
+      "disclaimer_present": false
     },
     {
       "path": "/governance/positioning/agentic-state-sovereignty",
@@ -383,7 +447,7 @@
       "path": "/kernel-duties",
       "profile": "positioning",
       "enforcement": "strict",
-      "title": "Kernel Duties | MPLP — Multi-Agent Lifecycle Protocol",
+      "title": "Kernel Duties",
       "description": "The 11 kernel duties that describe lifecycle governance semantics in the MPLP protocol. Defines cross-cutting responsibilities across the protocol specification.",
       "canonical": "https://www.mplp.io/kernel-duties",
       "robots": "index,follow",
@@ -393,7 +457,7 @@
         "TechArticle"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": true
+      "disclaimer_present": false
     },
     {
       "path": "/modules",
@@ -413,19 +477,201 @@
       "disclaimer_present": true
     },
     {
-      "path": "/modules/[slug]",
+      "path": "/modules/collab",
       "profile": "positioning",
       "enforcement": "strict",
-      "title": null,
-      "description": null,
-      "canonical": "https://www.mplp.io/modules/${slug}",
+      "title": "Collab Module | MPLP Protocol Specification",
+      "description": "Defines the normative coordination contract and multi-agent execution semantics of the Collab module in the MPLP protocol.",
+      "canonical": "https://www.mplp.io/modules/collab",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
       "jsonld_page_type": "WebPage",
       "jsonld_types_found": [
         "TechArticle",
         "WebPage",
-        "CollectionPage"
+        "CollectionPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "requires_disclaimer": true,
+      "disclaimer_present": true
+    },
+    {
+      "path": "/modules/confirm",
+      "profile": "positioning",
+      "enforcement": "strict",
+      "title": "Confirm Module | MPLP Protocol Specification",
+      "description": "Defines supporting protocol semantics for confirmation and governance triggers within the MPLP standard.",
+      "canonical": "https://www.mplp.io/modules/confirm",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "WebPage",
+      "jsonld_types_found": [
+        "TechArticle",
+        "WebPage",
+        "CollectionPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "requires_disclaimer": true,
+      "disclaimer_present": true
+    },
+    {
+      "path": "/modules/context",
+      "profile": "positioning",
+      "enforcement": "strict",
+      "title": "Context Module | MPLP Protocol Specification",
+      "description": "Defines the normative semantics, constraints, and interaction model of the Context module in the MPLP protocol.",
+      "canonical": "https://www.mplp.io/modules/context",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "WebPage",
+      "jsonld_types_found": [
+        "TechArticle",
+        "WebPage",
+        "CollectionPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "requires_disclaimer": true,
+      "disclaimer_present": true
+    },
+    {
+      "path": "/modules/core",
+      "profile": "positioning",
+      "enforcement": "strict",
+      "title": "Core Module | MPLP Protocol",
+      "description": "Defines protocol metadata, invariants, and structural boundaries within the MPLP standard.",
+      "canonical": "https://www.mplp.io/modules/core",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "WebPage",
+      "jsonld_types_found": [
+        "TechArticle",
+        "WebPage",
+        "CollectionPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "requires_disclaimer": true,
+      "disclaimer_present": true
+    },
+    {
+      "path": "/modules/dialog",
+      "profile": "positioning",
+      "enforcement": "strict",
+      "title": "Dialog Module | MPLP Protocol Specification",
+      "description": "Defines supporting protocol semantics for structured interaction within the MPLP standard.",
+      "canonical": "https://www.mplp.io/modules/dialog",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "WebPage",
+      "jsonld_types_found": [
+        "TechArticle",
+        "WebPage",
+        "CollectionPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "requires_disclaimer": true,
+      "disclaimer_present": true
+    },
+    {
+      "path": "/modules/extension",
+      "profile": "positioning",
+      "enforcement": "strict",
+      "title": "Extension Module | MPLP Protocol Specification",
+      "description": "Defines supporting protocol semantics for safe extensibility boundaries within the MPLP standard.",
+      "canonical": "https://www.mplp.io/modules/extension",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "WebPage",
+      "jsonld_types_found": [
+        "TechArticle",
+        "WebPage",
+        "CollectionPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "requires_disclaimer": true,
+      "disclaimer_present": true
+    },
+    {
+      "path": "/modules/network",
+      "profile": "positioning",
+      "enforcement": "strict",
+      "title": "Network Module | MPLP Protocol",
+      "description": "Defines the semantic boundary between MPLP protocol semantics and external communication layers.",
+      "canonical": "https://www.mplp.io/modules/network",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "WebPage",
+      "jsonld_types_found": [
+        "TechArticle",
+        "WebPage",
+        "CollectionPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "requires_disclaimer": true,
+      "disclaimer_present": true
+    },
+    {
+      "path": "/modules/plan",
+      "profile": "positioning",
+      "enforcement": "strict",
+      "title": "Plan Module | MPLP Protocol Specification",
+      "description": "Defines the normative execution structure, reasoning semantics, and constraints of the Plan module in the MPLP protocol.",
+      "canonical": "https://www.mplp.io/modules/plan",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "WebPage",
+      "jsonld_types_found": [
+        "TechArticle",
+        "WebPage",
+        "CollectionPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "requires_disclaimer": true,
+      "disclaimer_present": true
+    },
+    {
+      "path": "/modules/role",
+      "profile": "positioning",
+      "enforcement": "strict",
+      "title": "Role Module | MPLP Protocol Specification",
+      "description": "Defines the normative identity contract, authorization boundaries, and capability semantics of the Role module in the MPLP protocol.",
+      "canonical": "https://www.mplp.io/modules/role",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "WebPage",
+      "jsonld_types_found": [
+        "TechArticle",
+        "WebPage",
+        "CollectionPage",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "requires_disclaimer": true,
+      "disclaimer_present": true
+    },
+    {
+      "path": "/modules/trace",
+      "profile": "positioning",
+      "enforcement": "strict",
+      "title": "Trace Module | MPLP Protocol Specification",
+      "description": "Defines the evidence-grade audit layer, execution history, and observability semantics of the Trace module in the MPLP protocol.",
+      "canonical": "https://www.mplp.io/modules/trace",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "WebPage",
+      "jsonld_types_found": [
+        "TechArticle",
+        "WebPage",
+        "CollectionPage",
+        "BreadcrumbList",
+        "ListItem"
       ],
       "requires_disclaimer": true,
       "disclaimer_present": true
@@ -434,142 +680,52 @@
       "path": "/posix-analogy",
       "profile": "explainer_non_normative",
       "enforcement": "standard",
-      "title": "POSIX Analogy — MPLP",
-      "description": "An informative analogy comparing MPLP",
+      "title": "POSIX Analogy",
+      "description": "Understanding the Multi-Agent Lifecycle Protocol through the POSIX analogy. A non-normative conceptual explainer.",
       "canonical": "https://www.mplp.io/posix-analogy",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
       "jsonld_page_type": "TechArticle",
-      "jsonld_types_found": [
-        "TechArticle",
-        "WebPage"
-      ],
+      "jsonld_types_found": [],
       "requires_disclaimer": true,
       "disclaimer_present": true
     },
     {
       "path": "/references",
-      "profile": "positioning",
-      "enforcement": "strict",
+      "profile": "explainer_non_normative",
+      "enforcement": "standard",
       "title": "References | MPLP — Multi-Agent Lifecycle Protocol",
-      "description": "Citation contexts, external references, and comparison topics for MPLP. Academic indexing, standards mappings, and framework context.",
+      "description": "Citation contexts and external references for MPLP. Repository and documentation remain the authoritative documentation chain.",
       "canonical": "https://www.mplp.io/references",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
-      "jsonld_page_type": "WebPage",
+      "jsonld_page_type": "TechArticle",
       "jsonld_types_found": [
         "ListItem"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": true
-    },
-    {
-      "path": "/search",
-      "profile": "positioning",
-      "enforcement": "strict",
-      "title": "Search | MPLP Protocol",
-      "description": "Search the MPLP Protocol documentation and specifications.",
-      "canonical": "https://www.mplp.io/search",
-      "robots": "index,follow",
-      "title_suffix": "— MPLP",
-      "jsonld_page_type": "WebPage",
-      "jsonld_types_found": [
-        "WebPage"
-      ],
-      "requires_disclaimer": true,
-      "disclaimer_present": true
+      "disclaimer_present": false
     },
     {
       "path": "/specification",
       "profile": "positioning",
       "enforcement": "strict",
-      "title": "Specification Entry — MPLP",
-      "description": "MPLP specification entry point. This website provides discovery and positioning only. Normative specification lives in the documentation; the repository is the source of truth.",
+      "title": "Specification Entry",
+      "description": "Official entry point for the Multi-Agent Lifecycle Protocol (MPLP) specification. Access normative documentation and source schemas.",
       "canonical": "https://www.mplp.io/specification",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
       "jsonld_page_type": "WebPage",
-      "jsonld_types_found": [
-        "WebPage",
-        "CreativeWork"
-      ],
+      "jsonld_types_found": [],
       "requires_disclaimer": true,
-      "disclaimer_present": true
-    },
-    {
-      "path": "/standards/positioning",
-      "profile": "explainer_non_normative",
-      "enforcement": "standard",
-      "title": "Standards Compatibility & Mapping Policy | MPLP Protocol",
-      "description": "Defines how MPLP relates to external standards through mapping, compatibility, and protocol-level enablement. Informative only.",
-      "canonical": "https://www.mplp.io/standards/positioning",
-      "robots": "index,follow",
-      "title_suffix": "— MPLP",
-      "jsonld_page_type": "TechArticle",
-      "jsonld_types_found": [
-        "TechArticle",
-        "WebPage"
-      ],
-      "requires_disclaimer": true,
-      "disclaimer_present": true
-    },
-    {
-      "path": "/standards/protocol-evaluation",
-      "profile": "explainer_non_normative",
-      "enforcement": "standard",
-      "title": "Protocol Evaluation | MPLP Protocol",
-      "description": "How MPLP is evaluated through Golden Flows as verification scenarios. MPGC does not certify or endorse — evaluation is performed by implementers or third parties.",
-      "canonical": "https://www.mplp.io/standards/protocol-evaluation",
-      "robots": "index,follow",
-      "title_suffix": "— MPLP",
-      "jsonld_page_type": "TechArticle",
-      "jsonld_types_found": [
-        "TechArticle",
-        "WebPage"
-      ],
-      "requires_disclaimer": true,
-      "disclaimer_present": true
-    },
-    {
-      "path": "/standards/regulatory-positioning",
-      "profile": "explainer_non_normative",
-      "enforcement": "standard",
-      "title": "Regulatory Positioning | MPLP Protocol",
-      "description": "High-level mapping of MPLP protocol capabilities to regulatory frameworks (EU AI Act, NIST AI RMF, ISO/IEC 42001). Informative only — not legal advice.",
-      "canonical": "https://www.mplp.io/standards/regulatory-positioning",
-      "robots": "index,follow",
-      "title_suffix": "— MPLP",
-      "jsonld_page_type": "TechArticle",
-      "jsonld_types_found": [
-        "TechArticle",
-        "WebPage"
-      ],
-      "requires_disclaimer": true,
-      "disclaimer_present": true
-    },
-    {
-      "path": "/standards/what-mplp-is-not",
-      "profile": "explainer_non_normative",
-      "enforcement": "standard",
-      "title": "What MPLP Is NOT | MPLP Protocol",
-      "description": "MPLP is not a framework, not a runtime, and not a platform. Clear boundary definitions to prevent adoption misconceptions.",
-      "canonical": "https://www.mplp.io/standards/what-mplp-is-not",
-      "robots": "index,follow",
-      "title_suffix": "— MPLP",
-      "jsonld_page_type": "TechArticle",
-      "jsonld_types_found": [
-        "TechArticle",
-        "WebPage"
-      ],
-      "requires_disclaimer": true,
-      "disclaimer_present": true
+      "disclaimer_present": false
     },
     {
       "path": "/validation-lab",
       "profile": "evaluation_entry",
       "enforcement": "standard",
       "title": "Validation Lab — MPLP",
-      "description": "MPLP Validation Lab provides evidence-based conformance evaluation tools. This is not an auditing service. All validation is self-declared and evidence-based.",
+      "description": "Discovery guide to MPLP Validation Lab. This website page is pointer-oriented; current Lab references and adjudication outputs live in the documentation and Lab surfaces.",
       "canonical": "https://www.mplp.io/validation-lab",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
@@ -581,20 +737,34 @@
       "disclaimer_present": true
     },
     {
-      "path": "/why-mplp",
+      "path": "/what-is-mplp",
       "profile": "explainer_non_normative",
       "enforcement": "standard",
+      "title": "What is MPLP? | Multi-Agent Lifecycle Protocol",
+      "description": "MPLP is a vendor-neutral lifecycle protocol for AI agent systems. This is the canonical website definition anchor.",
+      "canonical": "https://www.mplp.io/what-is-mplp",
+      "robots": "index,follow",
+      "title_suffix": "— MPLP",
+      "jsonld_page_type": "TechArticle",
+      "jsonld_types_found": [],
+      "requires_disclaimer": true,
+      "disclaimer_present": false
+    },
+    {
+      "path": "/why-mplp",
+      "profile": "positioning",
+      "enforcement": "strict",
       "title": "Why MPLP? | The Multi-Agent Lifecycle Protocol",
       "description": "The MPLP specification describes a lifecycle model for multi-agent systems. Learn about the coordination challenges MPLP addresses.",
       "canonical": "https://www.mplp.io/why-mplp",
       "robots": "index,follow",
       "title_suffix": "— MPLP",
-      "jsonld_page_type": "TechArticle",
+      "jsonld_page_type": "WebPage",
       "jsonld_types_found": [
         "WebPage"
       ],
       "requires_disclaimer": true,
-      "disclaimer_present": true
+      "disclaimer_present": false
     }
   ]
 }

@@ -42,7 +42,7 @@ export default function GovernedStackPage() {
             <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                 <Breadcrumb
                     items={[
-                        { label: "Governance", href: "/governance" },
+                        { label: "Governance", href: "/governance/overview" },
                         { label: "Governed Stack", href: "/governance/governed-stack" },
                     ]}
                 />

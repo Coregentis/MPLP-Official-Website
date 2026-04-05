@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { JsonLd } from "@/components/seo/json-ld";
-import { siteConfig, DOCS_URLS, REPO_URLS } from "@/lib/site-config";
+import { siteConfig, REPO_URLS } from "@/lib/site-config";
 import { GovernanceNav } from "@/components/governance/governance-nav";
 import Link from "next/link";
 import { CanonicalReferences } from "@/components/ui/canonical-references";
@@ -43,7 +43,7 @@ export default function GovernanceOverviewPage() {
             <JsonLd data={techArticleSchema} />
             <div className="pt-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                 <Breadcrumb items={[
-                    { label: "Governance", href: "/governance" },
+                    { label: "Governance", href: "/governance/overview" },
                     { label: "Overview", href: "/governance/overview" }
                 ]} />
             </div>

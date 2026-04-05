@@ -7,15 +7,14 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import type { Metadata } from "next";
-import { siteConfig, DOCS_URLS, REPO_URLS, LAB_URLS } from "@/lib/site-config";
+import { siteConfig, DOCS_URLS, REPO_URLS } from "@/lib/site-config";
 // Note: Site-level JSON-LD is handled by SiteJsonLd in layout.tsx (SSOT)
 // Page-level schemas (e.g., BreadcrumbList) can be added here as needed
-import { PositioningNotice } from "@/components/notices";
 
 
 export const metadata: Metadata = {
     title: "MPLP — Multi-Agent Lifecycle Protocol | The Agent OS Protocol",
-    description: "MPLP is a vendor-neutral lifecycle protocol for AI agent systems — The Agent OS Protocol. This website provides discovery and positioning only. Normative specifications live in the documentation; the repository is the source of truth. Not a framework, not a runtime, not a platform.",
+    description: "MPLP is a vendor-neutral lifecycle protocol for AI agent systems. \"The Agent OS Protocol\" is positioning language only. This website provides discovery and positioning; Documentation and Repository provide the authoritative documentation chain, and Validation Lab is the adjudication surface.",
     alternates: {
         canonical: `${siteConfig.url}`,
     },
@@ -58,8 +57,6 @@ export default function Home() {
             <ContentSection>
                 <FinalCtaSection />
             </ContentSection>
-
-            <PositioningNotice />
         </Shell>
     );
 }
@@ -96,12 +93,20 @@ function HeroSection() {
                                     The Agent OS Protocol
                                 </span>
                             </h1>
-                            <p className="text-sm sm:text-base font-bold uppercase tracking-[0.35em] text-mplp-blue-soft/90">The Lifecycle Standard for AI Systems</p>
+                            <p className="text-sm sm:text-base font-bold uppercase tracking-[0.35em] text-mplp-blue-soft/90">Positioning Line · Not The Formal Definition</p>
                         </div>
 
                         <p className="max-w-xl text-base sm:text-lg leading-relaxed text-mplp-text-muted mb-8">
                             MPLP is a vendor-neutral lifecycle protocol for AI agent systems.
                             It makes plans, confirmations, and traces observable and comparable across implementations—without tying you to any framework or vendor.
+                        </p>
+
+                        <p className="max-w-xl text-sm text-mplp-text-muted/90 mb-6">
+                            New here? Start with the{" "}
+                            <Link href="/what-is-mplp" className="font-semibold text-mplp-blue-soft hover:underline">
+                                canonical website definition
+                            </Link>
+                            {" "}before moving into the specification and governance surfaces.
                         </p>
 
                         <p className="text-sm font-semibold text-mplp-blue-soft/80 tracking-wide mb-10 flex items-center gap-2">
@@ -110,12 +115,15 @@ function HeroSection() {
                         </p>
 
                         <div className="flex flex-wrap items-center gap-4 mb-10">
-                            <Button href={DOCS_URLS.home} external variant="primary" size="lg" className="px-10 h-14 text-base shadow-glow-hover">
+                            <Button href="/what-is-mplp" variant="primary" size="lg" className="px-10 h-14 text-base shadow-glow-hover">
+                                What is MPLP?
+                            </Button>
+                            <Button href={DOCS_URLS.home} external variant="secondary" size="lg" className="px-10 h-14 text-base border-mplp-border/60 hover:bg-mplp-dark-soft transition-all">
                                 Read Specification
                             </Button>
-                            <Button href="/governance/overview" variant="secondary" size="lg" className="px-10 h-14 text-base border-mplp-border/60 hover:bg-mplp-dark-soft transition-all">
-                                Governance Entry
-                            </Button>
+                            <Link href="/governance/overview" className="text-sm font-semibold text-mplp-text-muted hover:text-mplp-blue-soft transition-colors">
+                                Governance Entry →
+                            </Link>
                         </div>
 
                         <div className="grid grid-cols-3 gap-8 pt-8 border-t border-mplp-border/30 max-w-lg">
@@ -154,7 +162,7 @@ function HeroSection() {
                                 <div className="space-y-4">
                                     <LayerRow label="L1 · Core Protocol" desc="Lifecycle primitives and semantic invariants." />
                                     <LayerRow label="L2 · Coordination" desc="Governance: Context, Plan, Confirm." />
-                                    <LayerRow label="L3 · Runtime" desc="AEL loops and VSL state/value logic." />
+                                    <LayerRow label="L3 · Runtime" desc="Implementation-layer runtime realization and evidence-producing behavior." />
                                     <LayerRow label="L4 · Integration" desc="Models, tools, and adapters." isLast />
                                 </div>
 
@@ -242,8 +250,8 @@ function ProblemSection() {
                         <Button href="/why-mplp" variant="secondary" className="border-mplp-border/50">
                             Read the Analysis →
                         </Button>
-                        <Link href="/definition" className="text-sm text-mplp-blue-soft hover:underline">
-                            View definition (positioning anchor) →
+                        <Link href="/what-is-mplp" className="text-sm text-mplp-blue-soft hover:underline">
+                            View canonical website definition →
                         </Link>
                     </div>
                 </div>
@@ -275,12 +283,12 @@ function ProblemCard({ title, desc }: { title: string; desc: string }) {
 function ArchitectureSection() {
     return (
         <div>
-            <SectionHeader
-                eyebrow="Protocol Topology"
-                title="A Protocol Stack, Not a Framework Stack"
-                description="MPLP sits above agent frameworks and below applications, defining lifecycle semantics that conformant systems are expected to respect. Formal definitions live in the documentation."
-                className="mx-auto mb-12"
-            />
+                <SectionHeader
+                    eyebrow="Protocol Topology"
+                    title="A Protocol Stack, Not a Framework Stack"
+                    description="This homepage presents a discovery-level map of how MPLP is structured. Start with /what-is-mplp for the canonical website definition anchor, then defer to Documentation and Repository for the authoritative documentation chain."
+                    className="mx-auto mb-12"
+                />
             <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                 <ArchCard
                     layer="L1"
@@ -299,7 +307,7 @@ function ArchitectureSection() {
                 <ArchCard
                     layer="L3"
                     title="Execution"
-                    desc="AEL loops, VSL logic, and Project Semantic Graph."
+                    desc="Implementation-layer execution patterns and evidence-producing behavior."
                     color="text-mplp-emerald"
                     bg="bg-mplp-emerald/5"
                 />
@@ -605,16 +613,6 @@ function FlowRow({ id, title }: { id: string; title: string }) {
             <span className="text-[10px] font-bold text-mplp-blue-soft uppercase tracking-widest min-w-[70px]">{id}</span>
             <div className="h-4 w-px bg-mplp-border/50" />
             <span className="text-sm font-bold text-mplp-text group-hover:text-mplp-blue-soft transition-colors">{title}</span>
-        </Link>
-    );
-}
-
-function ProfileFlowRow({ id, title }: { id: string; title: string }) {
-    const slug = id.toLowerCase();
-    return (
-        <Link href={`/golden-flows/${slug}`} className="block py-2 px-3 rounded-lg border border-mplp-border/20 bg-slate-950/30 hover:border-mplp-blue-soft/30 transition-all group">
-            <span className="text-[9px] font-bold text-mplp-indigo uppercase tracking-widest block">{id}</span>
-            <span className="text-[11px] text-mplp-text-muted group-hover:text-mplp-text transition-colors">{title}</span>
         </Link>
     );
 }

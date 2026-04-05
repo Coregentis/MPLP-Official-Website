@@ -45,7 +45,7 @@ function FlowGroup({
                                     <span className="text-sm font-bold text-mplp-blue-soft uppercase tracking-wider">{flow.id}</span>
                                     <div className="h-px flex-1 bg-mplp-border" />
                                     <span className="rounded-full border border-mplp-border px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-mplp-text-muted">
-                                        {flow.complianceBoundary ? "Core Boundary" : "Profile Reference"}
+                                        {flow.coreBoundary ? "Core Boundary" : "Profile Reference"}
                                     </span>
                                 </div>
                                 <h3 className="text-2xl font-bold text-mplp-text mb-4 group-hover:text-mplp-blue-soft transition-colors">
@@ -76,7 +76,7 @@ function FlowGroup({
 export const metadata: Metadata = {
     title: "Golden Flows | MPLP Protocol",
     description:
-        "Website summary of 9 MPLP flow scenarios: 5 core conformance-boundary flows plus 4 profile-level reference flows.",
+        "Website summary of 9 MPLP flow scenarios: 5 core published-boundary flows plus 4 profile-level reference flows.",
     alternates: {
         canonical: `${siteConfig.url}/golden-flows`,
     },
@@ -93,9 +93,9 @@ export default function GoldenFlowsPage() {
         "@type": "CollectionPage",
         name: "MPLP Golden Flows",
         description:
-            "Website summary of 9 MPLP flow scenarios: 5 core conformance-boundary flows plus 4 profile-level reference flows.",
+            "Website summary of 9 MPLP flow scenarios: 5 core published-boundary flows plus 4 profile-level reference flows.",
         about:
-            "Published MPLP flow scenarios spanning the core conformance boundary and profile-level reference flows.",
+            "Published MPLP flow scenarios spanning the core published boundary and profile-level reference flows.",
         url: `${siteConfig.url}/golden-flows`,
         mainEntityOfPage: {
             "@type": "WebPage",
@@ -117,7 +117,7 @@ export default function GoldenFlowsPage() {
     return (
         <StandardPage
             title="Golden Flows"
-            subtitle="Website summary of 9 published MPLP flow scenarios. FLOW-01~05 form the core v1.0 compliance boundary; SA-FLOW-01~02 and MAP-FLOW-01~02 are profile-level reference scenarios."
+            subtitle="Website summary of 9 published MPLP flow scenarios. FLOW-01~05 form the core v1.0 published boundary; SA-FLOW-01~02 and MAP-FLOW-01~02 are profile-level reference scenarios."
             kicker="Validation"
             breadcrumbs={[{ label: "Golden Flows", href: "/golden-flows" }]}
             jsonLd={collectionSchema}
@@ -128,7 +128,7 @@ export default function GoldenFlowsPage() {
                     <div className="text-sm">
                         <p className="font-semibold text-amber-400 mb-1">Terminology Note</p>
                         <ul className="text-mplp-text-muted space-y-1 text-xs">
-                            <li><strong className="text-mplp-text">FLOW-01~05</strong> = Core conformance-boundary scenarios</li>
+                            <li><strong className="text-mplp-text">FLOW-01~05</strong> = Core published-boundary scenarios</li>
                             <li><strong className="text-mplp-text">SA-FLOW / MAP-FLOW</strong> = profile-level reference scenarios</li>
                             <li><strong className="text-mplp-text">LG-01~05</strong> = Validation Lab lifecycle guarantees</li>
                         </ul>
@@ -149,7 +149,7 @@ export default function GoldenFlowsPage() {
                         This page renders the Website aggregate projection layer for Golden Flows. It is not a protocol-truth registry.
                     </p>
                     <p className="text-xs text-mplp-text-muted/80 leading-relaxed">
-                        Upstream provenance: IDs, titles, and compliance-boundary classification are governed in{" "}
+                        Upstream provenance: IDs, titles, and core-boundary classification are governed in{" "}
                         <a href={flowRegistryUrl} className="text-mplp-blue-soft hover:underline" target="_blank" rel="noopener noreferrer">
                             tests/golden/flows/registry.ts
                         </a>
@@ -167,13 +167,13 @@ export default function GoldenFlowsPage() {
                 <div className="space-y-12">
                     <FlowGroup
                         title="Core Conformance Boundary"
-                        description="FLOW-01~05 define the published v1.0 core conformance boundary. These are the primary protocol-side scenarios implementations are expected to satisfy."
+                        description="FLOW-01~05 define the published v1.0 core boundary. These are the primary protocol-side scenarios implementations are expected to satisfy."
                         items={coreFlows}
                     />
 
                     <FlowGroup
                         title="SA Profile Reference Flows"
-                        description="SA-FLOW-01~02 are profile-level reference scenarios. They inform Single-Agent profile evaluation, but they do not expand the core v1.0 compliance boundary."
+                        description="SA-FLOW-01~02 are profile-level reference scenarios. They inform Single-Agent profile evaluation, but they do not expand the core v1.0 published boundary."
                         items={saFlows}
                     />
 
@@ -195,7 +195,7 @@ export default function GoldenFlowsPage() {
                 />
                 <div className="max-w-3xl mx-auto text-center space-y-4">
                     <p className="text-mplp-text font-medium">
-                        Read FLOW-01~05 as the core conformance boundary. Read SA/MAP flows as profile-level reference scenarios that remain upstream-governed by the same verified asset chain.
+                        Read FLOW-01~05 as the core published boundary. Read SA/MAP flows as profile-level reference scenarios that remain upstream-governed by the same verified asset chain.
                     </p>
                     <div className="pt-4 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
                         <a

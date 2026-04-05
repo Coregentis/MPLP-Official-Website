@@ -1,23 +1,34 @@
 # MPLP Website ↔ Documentation Routing Table
 
+> [!WARNING]
+> **Historical Website Routing Residue**
+>
+> This table is retained for provenance only.
+> It must not be treated as current authority law for the website/docs/repo
+> split.
+> Current authority boundaries are defined by the repository governance index
+> and constitutional records.
+
 **Version**: 2.0  
-**Status**: ACTIVE  
+**Status**: Historical Archive  
 **Date**: 2025-12-27  
-**Authority**: MPLP Website Governance  
+**Authority**: Historical website-governance line only  
 **Phase**: Post Semantic Anchor Alignment  
 
 ---
 
-## 1. Authority Split (Immutable)
+## 1. Current Boundary Note (Superseding This Historical Table)
 
 | Surface | Role | Content Type |
 |:--------|:-----|:-------------|
-| **mplp.io** | Definitional Authority | Public definitions, interpretive anchors, semantic boundaries |
-| **docs.mplp.io** | Normative Specification | Schemas, obligations, technical references, verification |
-| **lab.mplp.io** | Evidence Verdict Gateway | Lifecycle invariant adjudication, evidence exports, proof generation |
+| **mplp.io** | Discovery / Positioning | Public discovery pages and the canonical website definition anchor at `/what-is-mplp` |
+| **docs.mplp.io** | Documentation / Reference | Specification and reference projections |
+| **repository** | Source Truth | Schemas, tests, governance records, source artifacts |
+| **lab.mplp.io** | Adjudication Surface | Public adjudication views, rulesets, guarantees, and related contract surfaces |
 
-> **Rule**: docs.mplp.io pages MUST NOT present themselves as the definitional source for Agent OS Protocol.
-> **Rule**: lab.mplp.io pages MUST NOT define protocol semantics; Lab only evaluates evidence under versioned rulesets.
+> **Current rule**: the website is discovery-only; `/what-is-mplp` is the canonical website definition anchor.
+> **Current rule**: Documentation and Repository provide the authoritative documentation chain.
+> **Current rule**: Validation Lab does not define protocol semantics; it is the adjudication surface.
 
 ---
 
@@ -58,7 +69,7 @@ These legacy URLs now redirect to semantic anchors:
 | Source | Target | Link Text |
 |:-------|:-------|:----------|
 | Hero CTA | `https://docs.mplp.io` | "Read Documentation" |
-| Quickstart | `https://docs.mplp.io/docs/guides/quickstart-5min` | "5-Minute Quickstart" |
+| Quickstart | `https://docs.mplp.io/docs/guides/examples/single-agent-flow` | "Single-Agent Flow Example" |
 
 ### 4.2 Anchor Pages
 
@@ -70,17 +81,18 @@ These legacy URLs now redirect to semantic anchors:
 | `/golden-flows` | `/docs/golden-flows/*` | "Verification Guide" |
 | `/governance/overview` | `/docs/governance/*` | "Governance Policy" |
 | `/references` | `/docs/standards/*` | "Standards Mappings (Docs)" |
-| `/faq` | `/docs/intro` | "Read Documentation →" |
+| `/faq` | `/docs/reference/entrypoints` | "Read Documentation →" |
 
 ---
 
-## 5. Docs → Website Deferral Links (CRITICAL)
+## 5. Historical Deferral Links (Superseded)
 
-Docs MUST defer to website for definitional authority:
+This section is retained as provenance only. It no longer defines the current website/docs/repo split.
+Current boundary: website is discovery-only, `/what-is-mplp` is the canonical website definition anchor, Documentation and Repository provide the authoritative documentation chain, and Validation Lab is the adjudication surface.
 
 | Docs Page | Website Target | Purpose |
 |:----------|:---------------|:--------|
-| `intro.mdx` | `https://www.mplp.io` | Definitional authority |
+| `intro.mdx` | `https://www.mplp.io/what-is-mplp` | Historical website definition anchor |
 | `/docs/standards/*` | `https://www.mplp.io/references` | Interpretation deferral |
 | `/docs/governance/*` | `https://www.mplp.io/governance/overview` | Authority deferral |
 | `/docs/enterprise/*` | `https://www.mplp.io/references` | Evaluation context |

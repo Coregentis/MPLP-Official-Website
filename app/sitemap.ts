@@ -1,6 +1,5 @@
 ﻿import { MetadataRoute } from "next";
-import { siteConfig } from "@/lib/site-config";
-import { getAllPostSlugs } from "@/lib/blog";
+import { siteConfig, WEBSITE_CANONICAL_PATHS } from "@/lib/site-config";
 import { modules } from "@/lib/content/modules";
 import { flows } from "@/lib/content/flows";
 
@@ -10,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Static pages
     const staticPages = [
         "",
-        "/definition",  // WG-05: Canonical anchor page for SEO/AI discoverability
+        WEBSITE_CANONICAL_PATHS.definition,
         "/why-mplp",
         "/architecture",
         "/modules",
@@ -19,15 +18,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/posix-analogy",
         "/specification",
         "/validation-lab",
-        "/rulesets/evolution",
 
         "/kernel-duties",  // PR-04: Added for sitelinks
         "/golden-flows",
         "/faq",            // PR-04: Added for sitelinks
         "/references",     // PR-04: Added for sitelinks
         "/ecosystem",
-        "/governance",
-        "/governance/overview",
+        WEBSITE_CANONICAL_PATHS.governance,
         "/governance/agentos-protocol",
         "/governance/evidence-chain",
         "/governance/governed-stack",
@@ -41,7 +38,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // These redirect to /references or /faq and should NOT be in sitemap
         "/governance/positioning/agentic-state-sovereignty",
         "/governance/positioning/semantic-drift-control",
-        "/search",
         // "/blog", -> NOINDEX
         // "/blog/[slug]", -> NOINDEX
     ].map((route) => ({
@@ -51,7 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority:
             route === ""
                 ? 1
-                : route === "/definition"
+                : route === WEBSITE_CANONICAL_PATHS.definition
                     ? 0.95
                     : route === "/specification"
                         ? 0.92

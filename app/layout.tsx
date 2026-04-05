@@ -19,31 +19,31 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.title.replace(" | ", " — "),
+    default: "MPLP — Multi-Agent Lifecycle Protocol",
     template: `%s — ${siteConfig.name}`,
   },
-  description: siteConfig.description,
+  description: "MPLP is a vendor-neutral lifecycle protocol for AI agent systems. This website provides discovery and positioning only.",
   metadataBase: new URL(siteConfig.url),
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: siteConfig.title,
-    description: siteConfig.description,
+    title: "MPLP — Multi-Agent Lifecycle Protocol",
+    description: "MPLP is a vendor-neutral lifecycle protocol for AI agent systems. This website provides discovery and positioning only.",
     images: [
       {
         url: "/brand/mplp-og-image-1200x630.png",
         width: 1200,
         height: 630,
-        alt: "MPLP — Multi-Agent Lifecycle Protocol | The Agent OS Protocol",
+        alt: "MPLP — Multi-Agent Lifecycle Protocol",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.title,
-    description: siteConfig.description,
+    title: "MPLP — Multi-Agent Lifecycle Protocol",
+    description: "MPLP is a vendor-neutral lifecycle protocol for AI agent systems. This website provides discovery and positioning only.",
     images: ["/brand/mplp-og-image-1200x630.png"],
   },
   robots: {

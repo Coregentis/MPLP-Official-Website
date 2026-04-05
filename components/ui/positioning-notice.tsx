@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { DOCS_URLS, REPO_URLS } from "@/lib/site-config";
 
 interface PositioningNoticeProps {
@@ -38,10 +39,11 @@ export function PositioningNotice({
                 {displayMessage}
                 {shouldShowLinks && (
                     <span className="block mt-2">
-                        For formal definitions, see{" "}
-                        <a href={DOCS_URLS.home} target="_blank" rel="noopener noreferrer" className="text-mplp-blue-soft hover:underline">
-                            docs.mplp.io
-                        </a>.
+                        Canonical website definition anchor:{" "}
+                        <Link href="/what-is-mplp" className="text-mplp-blue-soft hover:underline">
+                            /what-is-mplp
+                        </Link>
+                        . Documentation and Repository provide the authoritative documentation chain.
                     </span>
                 )}
             </div>
@@ -55,11 +57,15 @@ export function PositioningNotice({
                 <strong>Positioning Notice:</strong> {displayMessage}
                 {shouldShowLinks && (
                     <>
-                        {" "}For formal protocol definitions, see{" "}
-                        <a href={DOCS_URLS.home} target="_blank" rel="noopener noreferrer" className="text-mplp-blue-soft hover:underline">
+                        {" "}Canonical website definition anchor:{" "}
+                        <Link href="/what-is-mplp" className="text-mplp-blue-soft hover:underline">
+                            /what-is-mplp
+                        </Link>
+                        . Documentation:{" "}
+                        <a href={DOCS_URLS.entrypoints} target="_blank" rel="noopener noreferrer" className="text-mplp-blue-soft hover:underline">
                             docs.mplp.io
                         </a>.
-                        {" "}Source of truth:{" "}
+                        {" "}Repository:{" "}
                         <a href={REPO_URLS.root} target="_blank" rel="noopener noreferrer" className="text-mplp-blue-soft hover:underline">
                             GitHub Repository
                         </a>.

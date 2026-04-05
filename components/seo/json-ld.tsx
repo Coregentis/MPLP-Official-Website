@@ -1,4 +1,11 @@
-import { siteConfig, DOCS_URLS, REPO_URLS } from "@/lib/site-config";
+import {
+    DOCS_URLS,
+    MPLP_IDENTITY,
+    REPO_URLS,
+    siteConfig,
+    WEBSITE_CANONICAL_URLS,
+    WEBSITE_MACHINE_READABLE_DESCRIPTION,
+} from "@/lib/site-config";
 
 type JsonLdProps = {
     data: Record<string, unknown>;
@@ -16,6 +23,9 @@ export function JsonLd({ data, id }: JsonLdProps) {
 }
 
 export function generateProtocolSchema() {
+    const definitionTermId = `${WEBSITE_CANONICAL_URLS.definition}#term`;
+    const definitionPageId = `${WEBSITE_CANONICAL_URLS.definition}#page`;
+
     return {
         "@context": "https://schema.org",
         "@graph": [
@@ -23,44 +33,50 @@ export function generateProtocolSchema() {
                 "@type": "WebSite",
                 "@id": `${siteConfig.url}#website`,
                 "url": siteConfig.url,
-                "name": "MPLP Protocol",
-                "description": "Discovery and positioning for the MPLP protocol. Normative definitions live at docs.mplp.io.",
-                "publisher": { "@id": `${siteConfig.url}#mpgc` }
+                "name": MPLP_IDENTITY.fullName,
+                "description": WEBSITE_MACHINE_READABLE_DESCRIPTION,
+                "publisher": { "@id": `${siteConfig.url}#mpgc` },
+                "about": { "@id": definitionTermId },
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": `${WEBSITE_CANONICAL_URLS.search}?q={search_term_string}`,
+                    "query-input": "required name=search_term_string"
+                }
             },
             {
                 "@type": "Organization",
                 "@id": `${siteConfig.url}#mpgc`,
                 "name": "MPLP Protocol Governance Committee (MPGC)",
-                "url": `${siteConfig.url}/governance/overview`,
+                "url": WEBSITE_CANONICAL_URLS.governance,
                 "logo": {
                     "@type": "ImageObject",
                     "url": `${siteConfig.url}/brand/mplp-icon-only-transparent.png`
                 },
-                "sameAs": [
-                    DOCS_URLS.home,
-                    REPO_URLS.root
-                ]
+                "sameAs": [siteConfig.links.twitter]
             },
             {
-                "@type": ["TechArticle"],
-                "@id": `${siteConfig.url}#protocol`,
-                "name": "Multi-Agent Lifecycle Protocol",
-                "alternateName": "MPLP",
-                "headline": "MPLP — The Agent OS Protocol",
-                "description": "A lifecycle governance protocol for AI agent systems. The specification describes how agents are created, operated, audited, and decommissioned.",
-                "about": [
-                    { "@type": "DefinedTerm", "name": "Lifecycle Protocol" },
-                    { "@type": "DefinedTerm", "name": "Agent OS Protocol" }
-                ],
-                "version": "1.0.0",
-                "url": siteConfig.url,
-                "mainEntityOfPage": { "@type": "WebPage", "@id": siteConfig.url },
-                "license": "https://www.apache.org/licenses/LICENSE-2.0",
+                "@type": "WebPage",
+                "@id": definitionPageId,
+                "name": `What is MPLP? | ${MPLP_IDENTITY.formalName}`,
+                "description": `${MPLP_IDENTITY.formalDefinition} ${MPLP_IDENTITY.websiteRole}`,
+                "url": WEBSITE_CANONICAL_URLS.definition,
+                "mainEntity": { "@id": definitionTermId },
                 "isPartOf": { "@id": `${siteConfig.url}#website` },
                 "publisher": { "@id": `${siteConfig.url}#mpgc` },
-                "author": { "@id": `${siteConfig.url}#mpgc` },
                 "inLanguage": "en",
-                "isAccessibleForFree": true
+            },
+            {
+                "@type": "DefinedTerm",
+                "@id": definitionTermId,
+                "name": MPLP_IDENTITY.formalName,
+                "alternateName": MPLP_IDENTITY.shortName,
+                "description": MPLP_IDENTITY.formalDefinition,
+                "url": WEBSITE_CANONICAL_URLS.definition,
+                "subjectOf": [
+                    WEBSITE_CANONICAL_URLS.definition,
+                    DOCS_URLS.entrypoints,
+                    REPO_URLS.root
+                ],
             }
         ]
     };

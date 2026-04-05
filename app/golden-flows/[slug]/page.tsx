@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     return {
         title: `${flow.title} | MPLP Golden Flows`,
-        description: flow.complianceBoundary
-            ? `Website summary of MPLP core conformance scenario: ${flow.desc}`
+        description: flow.coreBoundary
+            ? `Website summary of MPLP core published-boundary scenario: ${flow.desc}`
             : `Website summary of MPLP profile-level flow scenario: ${flow.desc}`,
         alternates: {
             canonical: `${siteConfig.url}/golden-flows/${slug}`,
@@ -45,12 +45,12 @@ export default async function FlowDetailPage({ params }: { params: Promise<{ slu
         notFound();
     }
 
-    const scopeTitle = flow.complianceBoundary ? "Normative Scope" : "Profile Scope";
-    const scopeDescription = flow.complianceBoundary
-        ? "This core flow aggregates and enforces existing constraints from the following MPLP modules."
-        : "This Website summary reflects the evaluated scope of a profile-level reference scenario. It is not part of the v1.0 core compliance boundary.";
-    const failureDescription = flow.complianceBoundary
-        ? "Execution of this core flow MUST be considered non-conformant if any of the following conditions occur."
+    const scopeTitle = flow.coreBoundary ? "Core Flow Scope" : "Profile Flow Scope";
+    const scopeDescription = flow.coreBoundary
+        ? "This core flow aggregates the published boundary expectations from the following MPLP modules."
+        : "This Website summary reflects the evaluated scope of a profile-level reference scenario. It is not part of the v1.0 core published boundary.";
+    const failureDescription = flow.coreBoundary
+        ? "Execution of this core flow should be treated as outside the published boundary expectations if any of the following conditions occur."
         : "This profile-level reference flow should be treated as failed if any of the following conditions occur during evaluation.";
 
     const flowArticleSchema = {
@@ -58,8 +58,8 @@ export default async function FlowDetailPage({ params }: { params: Promise<{ slu
         "@type": "TechArticle",
         name: `${flow.id.toUpperCase()}: ${flow.title}`,
         headline: `MPLP Golden Flow: ${flow.title}`,
-        description: flow.complianceBoundary
-            ? `Website summary of the ${flow.title.toLowerCase()} core conformance flow in MPLP.`
+        description: flow.coreBoundary
+            ? `Website summary of the ${flow.title.toLowerCase()} core published-boundary flow in MPLP.`
             : `Website summary of the ${flow.title.toLowerCase()} profile-level flow in MPLP.`,
         url: `${siteConfig.url}/golden-flows/${flow.id}`,
         isBasedOn: [
@@ -90,7 +90,7 @@ export default async function FlowDetailPage({ params }: { params: Promise<{ slu
                 <PageHeader
                     title={flow.title}
                     subtitle={flow.desc}
-                    kicker={flow.complianceBoundary ? `Core Flow: ${flow.id.toUpperCase()}` : `Profile Flow: ${flow.id.toUpperCase()}`}
+                    kicker={flow.coreBoundary ? `Core Boundary Flow: ${flow.id.toUpperCase()}` : `Profile Flow: ${flow.id.toUpperCase()}`}
                 />
             </ScrollReveal>
 
@@ -147,7 +147,7 @@ export default async function FlowDetailPage({ params }: { params: Promise<{ slu
 
                         <ScrollReveal delay={300}>
                             <SectionHeader
-                                eyebrow={flow.complianceBoundary ? "Normative" : "Profile"}
+                                eyebrow={flow.coreBoundary ? "Core Boundary" : "Profile Reference"}
                                 title={scopeTitle}
                                 description={scopeDescription}
                             />
@@ -178,21 +178,21 @@ export default async function FlowDetailPage({ params }: { params: Promise<{ slu
                         </ScrollReveal>
 
                         <ScrollReveal delay={500}>
-                            {flow.complianceBoundary ? (
+                            {flow.coreBoundary ? (
                                 <div className="p-6 rounded-xl border border-mplp-warning/30 bg-mplp-warning/5">
-                                    <h3 className="font-semibold text-mplp-warning mb-3">Core Conformance Boundary</h3>
+                                    <h3 className="font-semibold text-mplp-warning mb-3">Core Published Boundary</h3>
                                     <p className="text-sm text-mplp-text-muted mb-2">
-                                        FLOW-01~05 form the published v1.0 core conformance boundary. Implementations are expected to satisfy this flow without violating the upstream constraints summarized above.
+                                        FLOW-01~05 form the published v1.0 core boundary. Implementations are expected to satisfy this flow without violating the upstream constraints summarized above.
                                     </p>
                                     <p className="text-sm text-mplp-text font-medium">
-                                        Failure to satisfy this core flow indicates a non-conformant result against the published core boundary.
+                                        Failure to satisfy this core flow indicates that the published core-boundary expectations were not met.
                                     </p>
                                 </div>
                             ) : (
                                 <div className="p-6 rounded-xl border border-mplp-border bg-slate-950/50">
                                     <h3 className="font-semibold text-mplp-text mb-3">Profile-Level Reference Boundary</h3>
                                     <p className="text-sm text-mplp-text-muted mb-2">
-                                        This scenario is published as a profile-level reference flow. It informs SA or MAP profile evaluation, but it does not expand the core v1.0 compliance boundary.
+                                        This scenario is published as a profile-level reference flow. It informs SA or MAP profile evaluation, but it does not expand the core v1.0 published boundary.
                                     </p>
                                     <p className="text-sm text-mplp-text font-medium">
                                         Read this page as a Website summary of a profile reference scenario, then defer to the upstream repo asset and Docs reference for the governed detail.

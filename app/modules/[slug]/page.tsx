@@ -140,7 +140,7 @@ export default async function ModuleDetailPage({ params }: { params: Promise<{ s
                     <div className="rounded-2xl border border-mplp-border bg-slate-950/50 p-6">
                         <p className="text-sm text-mplp-text-muted">
                             <strong className="text-mplp-text">Usage Boundary:</strong> This page provides an evaluative summary and a canonical schema excerpt for convenience.
-                            The authoritative, versioned specification remains on docs.mplp.io. MPGC does not issue certifications, badges, or endorsements;
+                            Documentation and Repository provide the authoritative documentation chain. MPGC does not issue certifications, badges, or endorsements;
                             adoption and conformance are self-assessed by the adopting organization.
                         </p>
                     </div>
@@ -321,25 +321,25 @@ export default async function ModuleDetailPage({ params }: { params: Promise<{ s
                 </div>
             </ContentSection>
 
-            {/* Enterprise Evaluation Path (Close the loop) */}
+            {/* Current Reference Path */}
             <ContentSection background="surface">
                 <div className="max-w-4xl mx-auto">
                     <div className="mplp-card p-6">
                         <div className="flex items-center justify-between gap-6 flex-wrap">
                             <div>
                                 <p className="text-xs font-bold uppercase tracking-widest text-mplp-text-muted mb-2">
-                                    Evaluation Path
+                                    Current Reference Path
                                 </p>
                                 <p className="text-sm text-mplp-text-muted">
-                                    Governance → Conformance → Golden Flows → Adoption Signals
+                                    Governance → Conformance → Golden Flows → References
                                 </p>
                             </div>
                             <div className="flex flex-wrap gap-3">
                                 <Link
-                                    href="/enterprise"
+                                    href="/references"
                                     className="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold bg-mplp-blue-soft/15 text-mplp-blue-soft border border-mplp-blue-soft/30 hover:bg-mplp-blue-soft/20 transition-colors"
                                 >
-                                    Enterprise Guide <IconArrowRight className="h-4 w-4" />
+                                    References <IconArrowRight className="h-4 w-4" />
                                 </Link>
                                 <Link
                                     href="/governance/overview"
@@ -356,8 +356,8 @@ export default async function ModuleDetailPage({ params }: { params: Promise<{ s
                                 <Link href="/golden-flows" className="text-sm text-mplp-text-muted hover:text-mplp-blue-soft transition-colors inline-flex items-center gap-2">
                                     Golden Flows <IconArrowRight className="h-4 w-4" />
                                 </Link>
-                                <Link href="/adoption" className="text-sm text-mplp-text-muted hover:text-mplp-blue-soft transition-colors inline-flex items-center gap-2">
-                                    Adoption <IconArrowRight className="h-4 w-4" />
+                                <Link href="/validation-lab" className="text-sm text-mplp-text-muted hover:text-mplp-blue-soft transition-colors inline-flex items-center gap-2">
+                                    Validation Lab <IconArrowRight className="h-4 w-4" />
                                 </Link>
                             </div>
                         </div>

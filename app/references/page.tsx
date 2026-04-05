@@ -6,14 +6,14 @@ import { ContentSection } from "@/components/ui/content-section";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { JsonLd } from "@/components/seo/json-ld";
 import { jsonLdReferencesPage } from "@/lib/seo/jsonld-structure";
-import { DOCS_URLS, REPO_URLS } from "@/lib/site-config";
+import { DOCS_URLS } from "@/lib/site-config";
 import { CanonicalReferences } from "@/components/ui/canonical-references";
 import { NextSteps } from "@/components/ui/next-steps";
-import { Callout, InvariantHighlight } from "@/components/ui/callout";
+import { Callout } from "@/components/ui/callout";
 
 export const metadata: Metadata = {
     title: "References | MPLP — Multi-Agent Lifecycle Protocol",
-    description: "Citation contexts, external references, and comparison topics for MPLP. Academic indexing, standards mappings, and framework context.",
+    description: "Discovery-only citation contexts and external references for MPLP. Detailed mappings and governed references live in Documentation and Repository surfaces.",
 };
 
 export default function ReferencesPage() {
@@ -38,7 +38,7 @@ export default function ReferencesPage() {
             {/* PageHeader - Consistent with other anchor pages */}
             <PageHeader
                 title="References"
-                subtitle="Citation contexts and external references for MPLP — the lifecycle protocol for AI agent systems. This page provides descriptive mappings to standards, academic contexts, and framework comparison topics."
+                subtitle="Discovery-only citation contexts and external references for MPLP. Use this page for orientation, then defer to Documentation and Repository surfaces for governed detail."
                 kicker="Citation Context"
             />
 
@@ -72,7 +72,7 @@ export default function ReferencesPage() {
                     </Link>
                 </div>
                 <p className="text-xs text-mplp-text-muted mb-12">
-                    Detailed mappings are provided in documentation. Authoritative definitions remain on mplp.io.
+                    Canonical website definition anchor: <Link href="/what-is-mplp" className="text-mplp-blue-soft hover:underline">/what-is-mplp</Link>. Detailed mappings live in Documentation; Repository and Documentation provide the authoritative documentation chain.
                 </p>
 
                 {/* Reference Categories */}
@@ -110,9 +110,8 @@ export default function ReferencesPage() {
                         <h2 className="text-2xl font-bold text-mplp-text mb-4">Frameworks & Runtimes</h2>
                         <p className="text-mplp-text-muted mb-6">
                             Agent frameworks and orchestration runtimes operate at the <strong>implementation layer</strong>.
-                            MPLP provides protocol-level lifecycle semantics that are <strong>orthogonal</strong> to
-                            framework implementations. When lifecycle governance is required, MPLP defines the
-                            canonical vocabulary independent of any specific runtime.
+                            MPLP provides protocol-level lifecycle semantics that can be compared against those implementation-layer systems.
+                            Use Documentation and Repository references for authoritative MPLP semantics rather than this summary page.
                         </p>
                         <div className="p-6 border border-mplp-border rounded-xl bg-mplp-dark-soft/20">
                             <h3 className="font-bold text-mplp-text mb-3">Framework Categories</h3>
@@ -123,7 +122,7 @@ export default function ReferencesPage() {
                                 <li>• <strong>AI coding assistants</strong> — Development-focused agent tooling</li>
                             </ul>
                             <p className="text-xs text-mplp-text-muted mt-4 pt-4 border-t border-mplp-border/30">
-                                <strong>For substrate-specific examples</strong>, see the{' '}
+                                <strong>For published adjudication views</strong>, see the{' '}
                                 <a
                                     href="https://lab.mplp.io"
                                     target="_blank"
@@ -132,7 +131,7 @@ export default function ReferencesPage() {
                                 >
                                     Validation Lab
                                 </a>
-                                {' '}where evidence packs demonstrate lifecycle adjudication across multiple substrates.
+                                {' '}for current public runs, guarantees, and related adjudication-facing views.
                             </p>
                         </div>
                     </div>
@@ -142,22 +141,19 @@ export default function ReferencesPage() {
                         <h2 className="text-2xl font-bold text-mplp-text mb-4">Protocol-Level Initiatives</h2>
                         <p className="text-mplp-text-muted mb-6">
                             Protocol-level initiatives such as MCP or A2A address <strong>adjacent coordination
-                                or interaction concerns</strong>. When lifecycle semantics are involved, MPLP provides
-                            the canonical reference vocabulary.
+                                or interaction concerns</strong>. MPLP contributes a protocol-specific lifecycle vocabulary when lifecycle governance and evidence structure are the topic.
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="p-5 border border-mplp-border rounded-xl hover:bg-white/5 transition-colors">
                                 <h3 className="font-bold text-mplp-text mb-2 line-clamp-1">Model Context Protocol (MCP)</h3>
                                 <p className="text-xs text-mplp-text-muted line-clamp-3">
-                                    Addresses context and tool integration. MPLP defines lifecycle semantics
-                                    that may complement MCP&apos;s interaction model.
+                                    Addresses context and tool integration. MPLP is adjacent when lifecycle semantics and governance boundaries are the focus.
                                 </p>
                             </div>
                             <div className="p-5 border border-mplp-border rounded-xl hover:bg-white/5 transition-colors">
                                 <h3 className="font-bold text-mplp-text mb-2 line-clamp-1">Agent-to-Agent (A2A)</h3>
                                 <p className="text-xs text-mplp-text-muted line-clamp-3">
-                                    Addresses inter-agent communication. MPLP defines lifecycle semantics
-                                    for how agents evolve and are governed.
+                                    Addresses inter-agent communication. MPLP is adjacent when lifecycle evidence, governance, and traceability are the focus.
                                 </p>
                             </div>
                         </div>
@@ -168,8 +164,8 @@ export default function ReferencesPage() {
                         <h2 className="text-2xl font-bold text-mplp-text mb-4">Academic & Industry Discourse</h2>
                         <p className="text-mplp-text-muted mb-6">
                             In academic and industry discourse, the term &ldquo;Agent OS&rdquo; is used with varying meanings.
-                            MPLP defines the canonical lifecycle semantics associated with this term.
-                            This definition is protocol-specific and does not claim exclusivity over the term.
+                            On this website, &ldquo;The Agent OS Protocol&rdquo; is positioning language for MPLP, not its formal definition.
+                            The canonical website definition anchor for MPLP is <Link href="/what-is-mplp" className="text-mplp-blue-soft hover:underline">/what-is-mplp</Link>, and external uses of the term may differ.
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                             {[
@@ -191,29 +187,6 @@ export default function ReferencesPage() {
                         </div>
                     </div>
 
-                    {/* E. Consolidated Pages (WG-04 Transparency) */}
-                    <div className="border-t border-mplp-border pt-10">
-                        <h2 className="text-2xl font-bold text-mplp-text mb-4">Consolidated Pages</h2>
-                        <p className="text-mplp-text-muted mb-6">
-                            The following pages have been consolidated or redirected to maintain governance clarity.
-                            This list is provided for transparency per WG-04 requirements.
-                        </p>
-                        <div className="grid md:grid-cols-2 gap-4">
-                            <div className="p-4 border border-mplp-border rounded-lg">
-                                <h3 className="font-semibold text-mplp-text mb-1">/adoption</h3>
-                                <p className="text-sm text-mplp-text-muted">
-                                    Adoption guidance → <a href={DOCS_URLS.quickstart} target="_blank" rel="noopener noreferrer" className="text-mplp-blue-soft hover:underline">docs: Quickstart Guide</a>
-                                </p>
-                            </div>
-                            <div className="p-4 border border-mplp-border rounded-lg">
-                                {/* TERM-WAIVER: Historical reference - documenting deprecated route name */}
-                                <h3 className="font-semibold text-mplp-text mb-1">/compliance (route)</h3>
-                                <p className="text-sm text-mplp-text-muted">
-                                    Renamed to <Link href="/conformance" className="text-mplp-blue-soft hover:underline">/conformance</Link> for terminology standardization
-                                </p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </ContentSection>
 

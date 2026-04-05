@@ -1,16 +1,26 @@
 ---
-entry_surface: website
-doc_type: governance
-status: active
-authority: protocol_governance
+entry_surface: none
+entry_model_class: none
+doc_type: attestation
+status: draft
+authority: none
 protocol_version: "1.0.0"
-doc_id: "WEB-GOV-001"
+doc_id: "WEB-GOV-001-RESIDUE"
+surface_role: archive
 ---
 
 # Website Pointer-Only Policy
 
-> **Authority**: MPLP Protocol Governance  
-> **Effective Date**: 2026-01-23
+> [!WARNING]
+> **Historical Website Governance Residue**
+>
+> This file is retained for provenance only.
+> It is **not** active governance law for the current repository state.
+> Where this file conflicts with the current repository governance baseline, use:
+>
+> - [`../../governance/README.md`](../../governance/README.md)
+> - [`../../governance/01-constitutional/CONST-001_ENTRY_MODEL_SPEC.md`](../../governance/01-constitutional/CONST-001_ENTRY_MODEL_SPEC.md)
+> - [`../../README.md`](../../README.md)
 
 ---
 
@@ -38,6 +48,8 @@ The official website (`mplp.io`) is a **projection pointer**, NOT a truth source
 
 ---
 
-## 3. Enforcement
+## 3. Status
 
-This policy is enforced via `gate:website-pointer-only` in the CI pipeline. Any PR containing forbidden data or terms will be blocked.
+- Classification: `unknown-quarantine`
+- Active role: none
+- Historical value: records an older website-only policy line

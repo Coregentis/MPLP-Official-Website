@@ -9,7 +9,7 @@
         {
             "id": "BOUNDARY-01",
             "requirement": "CreativeWorkSeries (Spec) mainEntityOfPage must point to docs sub-domain",
-            "observed": "https://docs.mplp.io",
+            "observed": "https://docs.mplp.io/docs/reference/entrypoints",
             "status": "PASS"
         },
         {
@@ -20,23 +20,24 @@
         },
         {
             "id": "AUTH-CHAIN-01",
-            "requirement": "Website description must explicitly mention normative source",
-            "observed": "...Normative definitions live at docs.mplp.io.",
+            "requirement": "Website description must explicitly state discovery-only role and documentation-chain boundary",
+            "observed": "Website provides discovery and positioning only. Repository and documentation provide the authoritative documentation chain. Validation Lab provides the adjudication surface.",
             "status": "PASS"
         }
     ],
     "graphExtraction": {
-        "entities": 4,
+        "entities": 5,
         "rootNodes": [
             "WebSite",
             "Organization",
             "CreativeWorkSeries",
-            "SoftwareSourceCode"
+            "SoftwareSourceCode",
+            "DefinedTerm"
         ],
         "authorityCrossLinks": {
-            "discovery -> normative": true,
+            "discovery -> documentation": true,
             "discovery -> repo": true,
-            "normative -> repo": true
+            "discovery -> lab": true
         }
     }
 }

@@ -1,9 +1,30 @@
 ﻿// Site-wide configuration
+export const MPLP_IDENTITY = {
+    shortName: "MPLP",
+    formalName: "Multi-Agent Lifecycle Protocol",
+    fullName: "MPLP — Multi-Agent Lifecycle Protocol",
+    formalDefinition: "MPLP is a vendor-neutral lifecycle protocol for AI agent systems.",
+    websiteRole: "This website provides discovery and positioning only.",
+} as const;
+
+export const WEBSITE_CANONICAL_PATHS = {
+    home: "/",
+    definition: "/what-is-mplp",
+    governance: "/governance/overview",
+    search: "/search",
+} as const;
+
+export const WEBSITE_MACHINE_READABLE_DESCRIPTION = [
+    MPLP_IDENTITY.formalDefinition,
+    MPLP_IDENTITY.websiteRole,
+    "Repository and documentation provide the authoritative documentation chain.",
+    "Validation Lab provides the adjudication surface.",
+].join(" ");
+
 export const siteConfig = {
-    name: "MPLP",
-    title: "MPLP — The Agent OS Protocol",
-    description:
-        "Multi-Agent Lifecycle Protocol: The vendor-neutral, observable, governed lifecycle protocol for AI agents.",
+    name: MPLP_IDENTITY.shortName,
+    title: MPLP_IDENTITY.fullName,
+    description: `${MPLP_IDENTITY.formalDefinition} ${MPLP_IDENTITY.websiteRole}`,
     url: "https://www.mplp.io",
     ogImage: "/images/og-image.png",
     links: {
@@ -12,25 +33,28 @@ export const siteConfig = {
         twitter: "https://x.com/mplpprotocol",
     },
     keywords: [
-        "Agent OS Protocol",
-        "Multi-Agent",
+        "Multi-Agent Lifecycle Protocol",
         "MPLP",
-        "Observable",
-        "Governed",
-        "Vendor-neutral",
-        "Artificial Intelligence",
-        "Machine Learning",
-        "AI Agent",
-        "AI protocol",
-        "AI framework",
+        "vendor-neutral",
+        "lifecycle protocol",
+        "AI agents",
+        "protocol",
     ],
 };
+
+export const WEBSITE_CANONICAL_URLS = {
+    home: siteConfig.url,
+    definition: `${siteConfig.url}${WEBSITE_CANONICAL_PATHS.definition}`,
+    governance: `${siteConfig.url}${WEBSITE_CANONICAL_PATHS.governance}`,
+    search: `${siteConfig.url}${WEBSITE_CANONICAL_PATHS.search}`,
+} as const;
 
 // Centralized documentation URLs - single source of truth
 // MUST match actual docs.mplp.io navigation structure (verified against /docs/docs/*)
 export const DOCS_URLS = {
     // Entry points
     home: "https://docs.mplp.io",
+    entrypoints: "https://docs.mplp.io/docs/reference/entrypoints",
     overview: "https://docs.mplp.io/docs/introduction/mplp-v1.0-protocol-overview",
 
     // Architecture - /docs/docs/specification/architecture/*
@@ -159,7 +183,7 @@ export const navItems = [
     { label: "Modules", href: "/modules" },                 // Anchor #2
     { label: "Kernel Duties", href: "/kernel-duties" },     // Anchor #3
     { label: "Golden Flows", href: "/golden-flows" },       // Anchor #4
-    { label: "Governance", href: "/governance/overview" },  // Anchor #5
+    { label: "Governance", href: WEBSITE_CANONICAL_PATHS.governance },  // Anchor #5
     { label: "References", href: "/references" },           // Anchor #6
     { label: "FAQ", href: "/faq" },                         // Anchor #7
 ];
@@ -167,7 +191,7 @@ export const navItems = [
 export const footerLinks = {
     // Column 1: SPECIFICATION (Anchors #1-4)
     specification: [
-        { label: "Definition", href: "/definition" },  // Canonical anchor
+        { label: "Definition", href: WEBSITE_CANONICAL_PATHS.definition },  // Canonical anchor
         { label: "Specification Entry", href: "/specification" },  // Three-entry navigation
         { label: "Architecture", href: "/architecture" },
         { label: "Modules", href: "/modules" },
@@ -176,12 +200,12 @@ export const footerLinks = {
     ],
     // Column 2: GOVERNANCE & BOUNDARIES (Anchors #5-7)
     governance: [
-        { label: "Governance", href: "/governance/overview" },
+        { label: "Governance", href: WEBSITE_CANONICAL_PATHS.governance },
         { label: "POSIX Analogy", href: "/posix-analogy" },  // Non-normative explainer
         { label: "Validation Lab", href: "/validation-lab" },  // Evaluation entry
         { label: "References", href: "/references" },
         { label: "FAQ", href: "/faq" },
-        { label: "Documentation", href: DOCS_URLS.home },
+        { label: "Documentation", href: DOCS_URLS.entrypoints },
     ],
     // Column 3: EXTERNAL RESOURCES
     external: [
@@ -189,4 +213,3 @@ export const footerLinks = {
         { label: "X (Twitter)", href: siteConfig.links.twitter },
     ],
 };
-

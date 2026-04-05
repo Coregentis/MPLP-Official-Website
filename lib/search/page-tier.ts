@@ -9,6 +9,8 @@ export const PAGE_TIERS: Record<string, number> = {
     '/': 0,
 
     // T1 - Core Protocol
+    '/what-is-mplp': 1,
+    '/architecture': 1,
     '/modules': 1,
     '/modules/context': 1,
     '/modules/plan': 1,
@@ -20,48 +22,64 @@ export const PAGE_TIERS: Record<string, number> = {
     '/modules/extension': 1,
     '/modules/core': 1,
     '/modules/network': 1,
-    '/governance': 1,
     '/governance/overview': 1,
     '/governance/evidence-chain': 1,
     '/governance/governed-stack': 1,
     '/governance/agentos-protocol': 1,
+    '/kernel-duties': 1,
     '/golden-flows': 1,
     '/golden-flows/flow-01': 1,
     '/golden-flows/flow-02': 1,
     '/golden-flows/flow-03': 1,
     '/golden-flows/flow-04': 1,
     '/golden-flows/flow-05': 1,
-    '/compliance': 1,
-    '/architecture': 1,
+    '/references': 1,
+    '/faq': 1,
+    '/conformance': 1,
     '/why-mplp': 1,
 
     // T2 - Ecosystem & Blog
     '/ecosystem': 2,
+    '/validation-lab': 2,
     '/blog': 2,
 
-    // T3 - Enterprise
-    '/enterprise': 3,
-    '/adoption': 3,
-
     // T4 - Standards Mappings
-    '/standards/positioning': 4,
     '/governance/iso-iec-42001': 4,
     '/governance/nist-ai-rmf': 4,
+    '/governance/eu-ai-act': 4,
 };
+
+const LEGACY_ROUTE_REDIRECTS: Record<string, string> = {
+    '/definition': '/what-is-mplp',
+    '/governance': '/governance/overview',
+    '/compliance': '/conformance',
+    '/enterprise': '/references',
+    '/adoption': '/references',
+    '/standards/positioning': '/references',
+    '/standards/protocol-evaluation': '/references',
+    '/standards/regulatory-positioning': '/references',
+    '/standards/what-mplp-is-not': '/faq',
+};
+
+export function normalizeWebsiteRoute(path: string): string {
+    return LEGACY_ROUTE_REDIRECTS[path] ?? path;
+}
 
 /**
  * Get the tier for a given path.
  * Defaults to T2 (Medium) if not explicitly mapped.
  */
 export function getPageTier(path: string): number {
+    const normalizedPath = normalizeWebsiteRoute(path);
+
     // Exact match
-    if (PAGE_TIERS[path] !== undefined) {
-        return PAGE_TIERS[path];
+    if (PAGE_TIERS[normalizedPath] !== undefined) {
+        return PAGE_TIERS[normalizedPath];
     }
 
     // Prefix match for dynamic routes
     for (const [prefix, tier] of Object.entries(PAGE_TIERS)) {
-        if (path.startsWith(prefix + '/')) {
+        if (normalizedPath.startsWith(prefix + '/')) {
             return tier;
         }
     }
@@ -71,9 +89,9 @@ export function getPageTier(path: string): number {
 }
 
 /**
- * Convert Pagefind build path to actual route.
+ * Convert Pagefind build path to the normalized public route.
  */
-function pagefindUrlToRoute(url: string): string {
+export function pagefindUrlToRoute(url: string): string {
     let pathname = url;
     try {
         pathname = new URL(url, "http://localhost").pathname;
@@ -88,7 +106,7 @@ function pagefindUrlToRoute(url: string): string {
         .replace(/\/index$/, "/")
         .replace(/\/$/, "") || "/";
 
-    return pathname;
+    return normalizeWebsiteRoute(pathname);
 }
 
 /**

@@ -1,6 +1,7 @@
-# MPLP Protocol �?Official Reference Website
+# MPLP Website
 
-This repository contains the source code for **mplp.io**, the official reference website of the **Multi-Agent Lifecycle Protocol (MPLP)**.
+This repository contains the source code for **mplp.io**, MPLP's official
+**discovery and positioning** surface.
 
 🌐 **Live**: [https://www.mplp.io](https://www.mplp.io)
 
@@ -8,16 +9,16 @@ This repository contains the source code for **mplp.io**, the official reference
 
 ## Purpose
 
-The MPLP website serves as a **protocol reference and evaluation surface**, not as:
+The MPLP website serves as a **discovery and positioning surface**, not as:
 - a product website
 - a marketing site
 - a certification authority
 
 It provides:
-- Canonical protocol specifications
-- Governance and lifecycle definitions
-- Normative module descriptions
-- Standards mapping and compatibility positioning
+- discovery-oriented definition and positioning
+- entry paths to the repository truth source and documentation reference surface
+- public-facing explanation of MPLP boundaries and ecosystem context
+- standards mapping and compatibility positioning
 
 ---
 
@@ -25,7 +26,8 @@ It provides:
 
 | Property | Value |
 |----------|-------|
-| Protocol Version | MPLP v1.0.0 |
+| `protocol_version` | `1.0.0` |
+| `website_release_version` | `1.0.0` |
 | Status | FROZEN (no breaking changes permitted) |
 | Governance | MPLP Protocol Governance Committee (MPGC) |
 | License | Apache-2.0 |
@@ -47,40 +49,27 @@ For details, see [Standards Compatibility & Mapping Policy](https://www.mplp.io/
 
 ## Website Governance
 
-This repository includes a comprehensive governance documentation system:
+This website follows the repository-wide MPLP governance baseline.
 
-```
-/website-governance/
-├── README.md                      # Entry point
-├── FREEZE_RECORD.md               # Frozen elements, prohibited actions
-├── SEMANTIC_REGISTRY.md           # Canonical terms, page contracts
-├── SEMANTIC_DRIFT_CONTROL.md      # Drift detection, AI workflow
-├── SEMANTIC_DIFFLOG.md            # History of semantic changes
-├── ARCHITECTURE_GUARDRAILS.md     # Page tiers, navigation rules
-├── NAVIGATION_POLICY.md           # Link integrity, semantic paths
-├── SEO_AND_JSONLD_POLICY.md       # SEO structure rules
-├── CONTENT_CHANGE_RULES.md        # Allowed vs prohibited changes
-├── VISUAL_IDENTITY_POLICY.md      # Design consistency
-├── CHANGE_EVALUATION_CHECKLIST.md # Pre-change validation
-├── PERFORMANCE_A11Y_POLICY.md     # Lighthouse thresholds, Core Web Vitals
-├── SEARCH_POLICY.md               # Pagefind index, tier ranking
-├── BUILD_PERFORMANCE_BASELINE.md  # Build time targets
-├── AI_MAINTENANCE_GUIDE.md        # Rules for AI/new maintainers
-├── COMPONENT_GUIDE.md             # Component semantic constraints
-└── archive/                       # Legacy documents
-```
+Before making semantic changes, align with:
 
-**Before making any changes**, read `/website-governance/README.md`.
+- `../governance/README.md`
+- `../governance/01-constitutional/`
+- `../governance/05-versioning/VERSION-TAXONOMY-MANIFEST.md`
+
+Legacy `website-governance/` materials remain historical residue and must not be
+treated as active authority.
 
 ---
 
-## Relationship to Other Repositories
+## Relationship to Other Public Surfaces
 
-| Repository | Purpose |
-|------------|---------|
-| [Coregentis/MPLP-Protocol](https://github.com/Coregentis/MPLP-Protocol) | Protocol Specification |
-| [docs.mplp.io](https://docs.mplp.io) | Technical Documentation |
-| mplp.io (this repo) | Reference Website |
+| Surface | Purpose |
+|---------|---------|
+| [Coregentis/MPLP-Protocol](https://github.com/Coregentis/MPLP-Protocol) | Repository truth source |
+| [docs.mplp.io](https://docs.mplp.io/docs/reference/entrypoints) | Specification/reference projection |
+| [lab.mplp.io](https://lab.mplp.io) | Evidence adjudication surface |
+| mplp.io (this repo) | Discovery & positioning surface |
 
 ---
 
@@ -116,7 +105,8 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 The site auto-deploys to Vercel on push to `main`.
 
 > ⚠️ Deployment does not imply feature iteration.
-> All content changes must follow `/website-governance/` policies.
+> All content changes must follow the repository governance baseline and the
+> active `MPLP_website/governance/` policy surfaces.
 
 ---
 
@@ -124,10 +114,15 @@ The site auto-deploys to Vercel on push to `main`.
 
 > This README exists to define the **semantic identity** of this repository for platforms, crawlers, and AI systems.
 
-This is a **Protocol Reference Website**, not a product or marketing site. All content, semantics, and structured data are deterministically aligned with the MPLP v1.0 frozen specification.
+This is a **discovery and positioning website** for MPLP, not a product or marketing site.
+The formal definition of MPLP remains:
+
+> **MPLP is a vendor-neutral lifecycle protocol for AI agent systems.**
+
+This website may use supporting explanatory language and the slogan **"The Agent OS Protocol"** for positioning, but protocol authority remains with the repository and documentation surfaces.
 
 ---
 
 ## License
 
-Apache 2.0 �?See the [MPLP Protocol](https://github.com/Coregentis/MPLP-Protocol) for details.
+Apache 2.0. See the [MPLP Protocol](https://github.com/Coregentis/MPLP-Protocol) for details.

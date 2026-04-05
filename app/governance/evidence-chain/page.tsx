@@ -38,7 +38,7 @@ export default function EvidenceChainPage() {
             <JsonLd data={techArticleSchema} />
             <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                 <Breadcrumb items={[
-                    { label: "Governance", href: "/governance" },
+                    { label: "Governance", href: "/governance/overview" },
                     { label: "Evidence Chain", href: "/governance/evidence-chain" }
                 ]} />
             </div>

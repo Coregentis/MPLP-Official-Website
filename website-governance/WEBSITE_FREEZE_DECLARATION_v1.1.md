@@ -1,5 +1,11 @@
 # MPLP Website Consistency Freeze Declaration
 
+> [!WARNING]
+> **Historical Website Freeze Evidence**
+>
+> This file is retained as freeze evidence for an older website-governance line.
+> It is not active law for current repository governance interpretation.
+
 **Version**: v1.1  
 **Date**: 2025-12-27  
 **Status**: FROZEN  

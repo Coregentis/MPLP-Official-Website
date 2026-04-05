@@ -6,7 +6,7 @@
     "schema_bundle_version": "2.0.0",
     "last_verified_at": "2026-01-08T14:00:00Z",
     "source_commit": "6e11ea70",
-    "one_liner": "The lifecycle governance interface for AI agents.",
+    "one_liner": "A vendor-neutral lifecycle protocol for AI agent systems.",
     "not_a_license": "MPLP is not a software license and does not define licensing terms.",
     "disambiguation": {
         "correct": "Multi-Agent Lifecycle Protocol",
@@ -80,6 +80,10 @@
         "docs": {
             "primary": "https://docs.mplp.io",
             "anchor": "https://docs.mplp.io/docs/reference/entrypoints"
+        },
+        "lab": {
+            "primary": "https://lab.mplp.io",
+            "anchor": "https://lab.mplp.io"
         },
         "repo": "https://github.com/Coregentis/MPLP-Protocol"
     }

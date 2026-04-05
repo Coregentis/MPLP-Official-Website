@@ -1,14 +1,12 @@
-import React from "react";
 import { Shell } from "@/components/layout/shell";
 import { PageHeader } from "@/components/layout/page-header";
 import { ContentSection } from "@/components/ui/content-section";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import type { Metadata } from "next";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { JsonLd } from "@/components/seo/json-ld";
-import { siteConfig, DOCS_URLS } from "@/lib/site-config";
+import { siteConfig, DOCS_URLS, LAB_URLS } from "@/lib/site-config";
 import { GovernanceNav } from "@/components/governance/governance-nav";
 
 export const metadata: Metadata = {
@@ -40,14 +38,14 @@ export default function EuAiActPage() {
             <JsonLd data={techArticleSchema} />
             <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                 <Breadcrumb items={[
-                    { label: "Governance", href: "/governance" },
+                    { label: "Governance", href: "/governance/overview" },
                     { label: "EU AI Act", href: "/governance/eu-ai-act" }
                 ]} />
             </div>
             <PageHeader
                 title="EU AI Act Alignment"
-                subtitle="A reference mapping between EU AI Act high-risk AI system requirements (Articles 9–15) and MPLP protocol mechanisms."
-                kicker="Standards Alignment"
+                subtitle="Discovery-only reference page for EU AI Act context around MPLP. Detailed clause-level mapping, where published, lives in Documentation and related authority surfaces."
+                kicker="Discovery Reference"
             />
 
             {/* Usage Boundary (Informative) */}
@@ -71,7 +69,7 @@ export default function EuAiActPage() {
                             and qualified legal/regulatory professionals.
                         </p>
                         <p className="mt-3 text-sm text-mplp-text-muted leading-relaxed">
-                            This reference follows the <Link href="/references" className="text-mplp-blue-soft hover:text-mplp-blue-light transition-colors">MPLP Standards Compatibility & Mapping Policy</Link>.
+                            Use this page for orientation only. Documentation and Repository surfaces carry the authoritative documentation chain; Validation Lab carries adjudication-facing public views.
                         </p>
                     </div>
                 </div>
@@ -141,9 +139,9 @@ export default function EuAiActPage() {
             {/* Coverage Snapshot */}
             <ContentSection>
                 <SectionHeader
-                    eyebrow="Coverage Snapshot"
-                    title="EU AI Act → MPLP Alignment"
-                    description="High-level mapping between Article requirements and protocol mechanisms. This is not an exhaustive mapping."
+                    eyebrow="Illustrative Mapping"
+                    title="EU AI Act → MPLP Materials"
+                    description="High-level routing between Article requirements and MPLP materials. This is descriptive only and not an exhaustive mapping."
                     align="center"
                 />
                 <div className="mt-12 overflow-x-auto">
@@ -151,44 +149,44 @@ export default function EuAiActPage() {
                         <thead>
                             <tr className="border-b border-mplp-border bg-slate-900/50">
                                 <th className="text-left p-4 text-sm font-semibold text-mplp-text">EU AI Act Article</th>
-                                <th className="text-left p-4 text-sm font-semibold text-mplp-text">Coverage</th>
-                                <th className="text-left p-4 text-sm font-semibold text-mplp-text">Primary MPLP Artifacts</th>
+                                <th className="text-left p-4 text-sm font-semibold text-mplp-text">High-Level Theme</th>
+                                <th className="text-left p-4 text-sm font-semibold text-mplp-text">Illustrative MPLP Materials</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-mplp-border text-sm">
                             <tr className="hover:bg-slate-900/30 transition-colors">
                                 <td className="p-4 font-medium text-mplp-text">Art. 9 Risk Management</td>
-                                <td className="p-4"><span className="text-mplp-emerald font-semibold">Strong</span></td>
+                                <td className="p-4 text-mplp-text-muted">Risk management system</td>
                                 <td className="p-4 text-mplp-text-muted">Context, Plan, Confirm, Trace</td>
                             </tr>
                             <tr className="hover:bg-slate-900/30 transition-colors">
                                 <td className="p-4 font-medium text-mplp-text">Art. 10 Data Governance</td>
-                                <td className="p-4"><span className="text-mplp-warning font-semibold">Partial</span></td>
+                                <td className="p-4 text-mplp-text-muted">Data governance</td>
                                 <td className="p-4 text-mplp-text-muted">Trace events, Context constraints</td>
                             </tr>
                             <tr className="hover:bg-slate-900/30 transition-colors">
                                 <td className="p-4 font-medium text-mplp-text">Art. 11 Technical Documentation</td>
-                                <td className="p-4"><span className="text-mplp-emerald font-semibold">Strong</span></td>
+                                <td className="p-4 text-mplp-text-muted">Technical documentation</td>
                                 <td className="p-4 text-mplp-text-muted">Plan, Context, Trace, Confirm</td>
                             </tr>
                             <tr className="hover:bg-slate-900/30 transition-colors">
                                 <td className="p-4 font-medium text-mplp-text">Art. 12 Record-keeping</td>
-                                <td className="p-4"><span className="text-mplp-blue-soft font-semibold">Very Strong</span></td>
+                                <td className="p-4 text-mplp-text-muted">Record-keeping</td>
                                 <td className="p-4 text-mplp-text-muted">Trace (events + segments)</td>
                             </tr>
                             <tr className="hover:bg-slate-900/30 transition-colors">
                                 <td className="p-4 font-medium text-mplp-text">Art. 13 Transparency</td>
-                                <td className="p-4"><span className="text-mplp-emerald font-semibold">Strong</span></td>
+                                <td className="p-4 text-mplp-text-muted">Transparency</td>
                                 <td className="p-4 text-mplp-text-muted">Role, Context/Plan, Trace</td>
                             </tr>
                             <tr className="hover:bg-slate-900/30 transition-colors">
                                 <td className="p-4 font-medium text-mplp-text">Art. 14 Human Oversight</td>
-                                <td className="p-4"><span className="text-mplp-blue-soft font-semibold">Very Strong</span></td>
+                                <td className="p-4 text-mplp-text-muted">Human oversight</td>
                                 <td className="p-4 text-mplp-text-muted">Confirm, Plan status, Trace</td>
                             </tr>
                             <tr className="hover:bg-slate-900/30 transition-colors">
                                 <td className="p-4 font-medium text-mplp-text">Art. 15 Accuracy/Robustness</td>
-                                <td className="p-4"><span className="text-mplp-warning font-semibold">Partial</span></td>
+                                <td className="p-4 text-mplp-text-muted">Accuracy, robustness, cybersecurity</td>
                                 <td className="p-4 text-mplp-text-muted">Trace, Confirm, Role</td>
                             </tr>
                         </tbody>
@@ -203,14 +201,22 @@ export default function EuAiActPage() {
                     <p className="text-mplp-text-muted mb-6">
                         For article-by-article mapping with evidence pointers to MPLP schemas, see the full mapping document in the Documentation.
                     </p>
-                    <Button
-                        href={`${DOCS_URLS.home}/docs/evaluation/standards/eu-ai-act-mapping`}
-                        variant="primary"
-                        size="lg"
-                        external
-                    >
-                        View Full Mapping (Docs) ↗
-                    </Button>
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <Button
+                            href={`${DOCS_URLS.home}/docs/evaluation/standards/eu-ai-act-mapping`}
+                            variant="primary"
+                            size="lg"
+                            external
+                        >
+                            View Full Mapping (Docs) ↗
+                        </Button>
+                        <Button href="/governance/overview" variant="secondary" size="lg">
+                            Governance Overview
+                        </Button>
+                        <Button href={LAB_URLS.home} variant="secondary" size="lg" external>
+                            Validation Lab ↗
+                        </Button>
+                    </div>
                 </div>
             </ContentSection>
 
@@ -226,38 +232,6 @@ export default function EuAiActPage() {
             {/* Navigation */}
             <ContentSection>
                 <GovernanceNav current="/governance/eu-ai-act" />
-            </ContentSection>
-
-            {/* Enterprise Evaluation Path */}
-            <ContentSection background="surface">
-                <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-2xl font-bold text-mplp-text mb-3">Enterprise Evaluation Path</h2>
-                    <p className="text-mplp-text-muted mb-8">
-                        Use this standards mapping as an input to your internal review. MPLP provides reference mappings and
-                        verifiable governance semantics—without official attestations or rankings.
-                    </p>
-
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <Button href="/enterprise" variant="primary" size="lg">
-                            Enterprise Evaluation Guide
-                        </Button>
-                        <Button href="/governance/overview" variant="secondary" size="lg">
-                            Governance Overview
-                        </Button>
-                        <Button href="/conformance" variant="secondary" size="lg">
-                            Conformance Framework
-                        </Button>
-                    </div>
-
-                    <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
-                        <Link href="/golden-flows" className="text-mplp-text-muted hover:text-mplp-blue-soft transition-colors">
-                            Golden Flows →
-                        </Link>
-                        <Link href="/adoption" className="text-mplp-text-muted hover:text-mplp-blue-soft transition-colors">
-                            Adoption Signals →
-                        </Link>
-                    </div>
-                </div>
             </ContentSection>
         </Shell>
     );
