@@ -83,17 +83,17 @@ function HeroSection() {
                     <ScrollReveal animation="fade-in-up">
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-mplp-blue-soft/30 bg-mplp-blue-soft/10 text-[10px] font-bold uppercase tracking-[0.2em] text-mplp-blue-soft mb-6 shadow-glow">
                             <span className="h-1.5 w-1.5 rounded-full bg-mplp-blue-soft animate-pulse" />
-                            Protocol Specification v1.0.0
+                            Website Surface · Discovery & Positioning
                         </div>
 
                         <div className="mb-6">
-                            <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3">Multi-Agent Lifecycle Protocol</p>
+                            <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.4em] text-mplp-text-muted/80 mb-3">Canonical Homepage Variant</p>
                             <h1 className="font-bold text-mplp-text mb-4 leading-[1.1] tracking-tight">
-                                <span className="block text-4xl sm:text-6xl lg:text-7xl text-gradient pb-4 whitespace-nowrap">
-                                    The Agent OS Protocol
+                                <span className="block text-4xl sm:text-6xl lg:text-7xl text-gradient pb-4">
+                                    Multi-Agent Lifecycle Protocol
                                 </span>
                             </h1>
-                            <p className="text-sm sm:text-base font-bold uppercase tracking-[0.35em] text-mplp-blue-soft/90">Positioning Line · Not The Formal Definition</p>
+                            <p className="text-sm sm:text-base font-bold uppercase tracking-[0.35em] text-mplp-blue-soft/90">MPLP · The Agent OS Protocol · Positioning Line Only</p>
                         </div>
 
                         <p className="max-w-xl text-base sm:text-lg leading-relaxed text-mplp-text-muted mb-8">
@@ -194,10 +194,10 @@ function ProtocolStatusSection() {
                     <div className="flex items-center gap-4 sm:gap-6">
                         <Link href="/governance/overview" className="flex items-center gap-2 hover:text-mplp-blue-soft transition-colors">
                             <span className="status-dot status-dot-frozen" />
-                            Protocol Status: Frozen
+                            Website Role: Discovery & Positioning
                         </Link>
                         <div className="h-3 w-px bg-mplp-border/50" />
-                        <span className="text-mplp-text">v1.0.0-stable</span>
+                        <span className="text-mplp-text">Protocol v1.0.0</span>
                     </div>
 
                     <div className="flex flex-wrap justify-center md:justify-end items-center gap-x-6 gap-y-2">
@@ -211,7 +211,7 @@ function ProtocolStatusSection() {
                             Validation Lab
                         </Link>
                         <div className="hidden md:block h-3 w-px bg-mplp-border/50" />
-                        <span className="text-mplp-text/60">Auditable Specification</span>
+                        <span className="text-mplp-text/60">Supplemental Surface Status</span>
                     </div>
                 </div>
             </div>

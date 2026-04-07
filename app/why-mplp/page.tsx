@@ -1,13 +1,10 @@
 import React from "react";
-import { Shell } from "@/components/layout/shell";
-import { PageHeader } from "@/components/layout/page-header";
+import { StandardPage } from "@/components/layout/standard-page";
 import { ContentSection } from "@/components/ui/content-section";
 import { SectionHeader } from "@/components/ui/section-header";
 import { InfoCard } from "@/components/ui/info-card";
-import { BackToAnchor } from "@/components/ui/back-to-anchor";
-import { Breadcrumb } from "@/components/ui/breadcrumb";
+import { PositioningNotice } from "@/components/ui/positioning-notice";
 import type { Metadata } from "next";
-import { JsonLd } from "@/components/seo/json-ld";
 import { siteConfig } from "@/lib/site-config";
 import Link from "next/link";
 
@@ -32,27 +29,25 @@ export default function WhyMplpPage() {
     };
 
     return (
-        <Shell>
-            <JsonLd data={pageSchema} />
-
-            {/* Breadcrumb */}
-            <div className="pt-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-                <Breadcrumb items={[
-                    { label: "FAQ", href: "/faq" },
-                    { label: "Why MPLP?", href: "/why-mplp" }
-                ]} />
-            </div>
-
-            <PageHeader
-                title="Why MPLP?"
-                subtitle="AI agents don&apos;t just need prompts. They need a lifecycle protocol to ensure consistency, observability, and governance."
-                kicker="The Problem"
-            />
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                <BackToAnchor href="/faq" label="FAQ" />
-            </div>
-
+        <StandardPage
+            title="Why MPLP?"
+            subtitle="AI agents do not just need prompts. They need a lifecycle protocol to ensure consistency, observability, and governance."
+            kicker="Positioning Rationale"
+            breadcrumbs={[
+                { label: "FAQ", href: "/faq" },
+                { label: "Why MPLP?", href: "/why-mplp" }
+            ]}
+            jsonLd={pageSchema}
+            backTo={{ href: "/faq", label: "FAQ" }}
+            beforeHeader={
+                <PositioningNotice
+                    variant="callout"
+                    label="Positioning Notice"
+                    message="This route explains the problem framing and positioning rationale behind MPLP. It is not a normative protocol specification and does not define adjudication doctrine."
+                    showLinks={true}
+                />
+            }
+        >
             <ContentSection>
                 <SectionHeader
                     eyebrow="The Crisis"
@@ -235,7 +230,7 @@ export default function WhyMplpPage() {
                     </Link>
                 </div>
             </ContentSection>
-        </Shell>
+        </StandardPage>
     );
 }
 

@@ -40,7 +40,10 @@ export function StandardPage({
                 <Breadcrumb items={breadcrumbs} />
             </div>
             {beforeHeader && (
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+                <div
+                    className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8"
+                    data-page-notice="supplemental"
+                >
                     {beforeHeader}
                 </div>
             )}
@@ -53,4 +56,3 @@ export function StandardPage({
         </Shell>
     );
 }
-
