@@ -1,8 +1,10 @@
-﻿// Site-wide configuration
+﻿import { protocolIdentity, protocolUrls } from "@/lib/protocol-manifest";
+
+// Site-wide configuration
 export const MPLP_IDENTITY = {
-    shortName: "MPLP",
-    formalName: "Multi-Agent Lifecycle Protocol",
-    fullName: "MPLP — Multi-Agent Lifecycle Protocol",
+    shortName: protocolIdentity.name,
+    formalName: protocolIdentity.fullName,
+    fullName: `${protocolIdentity.name} — ${protocolIdentity.fullName}`,
     formalDefinition: "MPLP is a vendor-neutral lifecycle protocol for AI agent systems.",
     websiteRole: "This website provides discovery and positioning only.",
 } as const;
@@ -25,11 +27,11 @@ export const siteConfig = {
     name: MPLP_IDENTITY.shortName,
     title: MPLP_IDENTITY.fullName,
     description: `${MPLP_IDENTITY.formalDefinition} ${MPLP_IDENTITY.websiteRole}`,
-    url: "https://www.mplp.io",
+    url: protocolUrls.website,
     ogImage: "/images/og-image.png",
     links: {
-        github: "https://github.com/Coregentis/MPLP-Protocol",
-        docs: "https://docs.mplp.io",
+        github: protocolUrls.canonicalRepository,
+        docs: protocolUrls.docs,
         twitter: "https://x.com/mplpprotocol",
     },
     keywords: [
@@ -53,82 +55,82 @@ export const WEBSITE_CANONICAL_URLS = {
 // MUST match actual docs.mplp.io navigation structure (verified against /docs/docs/*)
 export const DOCS_URLS = {
     // Entry points
-    home: "https://docs.mplp.io",
-    entrypoints: "https://docs.mplp.io/docs/reference/entrypoints",
-    overview: "https://docs.mplp.io/docs/introduction/mplp-v1.0-protocol-overview",
+    home: protocolUrls.docs,
+    entrypoints: `${protocolUrls.docs}/docs/reference/entrypoints`,
+    overview: `${protocolUrls.docs}/docs/introduction/mplp-v1.0-protocol-overview`,
 
     // Architecture - /docs/docs/specification/architecture/*
-    architecture: "https://docs.mplp.io/docs/specification/architecture",
-    l1ToL4: "https://docs.mplp.io/docs/specification/architecture/l1-l4-architecture-deep-dive",
-    l1CoreProtocol: "https://docs.mplp.io/docs/specification/architecture/l1-core-protocol",
-    l4IntegrationInfra: "https://docs.mplp.io/docs/specification/architecture/l4-integration-infra",
-    kernelDuties: "https://docs.mplp.io/docs/specification/architecture/cross-cutting-kernel-duties",
+    architecture: `${protocolUrls.docs}/docs/specification/architecture`,
+    l1ToL4: `${protocolUrls.docs}/docs/specification/architecture/l1-l4-architecture-deep-dive`,
+    l1CoreProtocol: `${protocolUrls.docs}/docs/specification/architecture/l1-core-protocol`,
+    l4IntegrationInfra: `${protocolUrls.docs}/docs/specification/architecture/l4-integration-infra`,
+    kernelDuties: `${protocolUrls.docs}/docs/specification/architecture/cross-cutting-kernel-duties`,
 
     // Modules - /docs/docs/specification/modules/*
     // Entry point
-    modules: "https://docs.mplp.io/docs/specification/modules/module-interactions",
-    moduleInteractions: "https://docs.mplp.io/docs/specification/modules/module-interactions",
+    modules: `${protocolUrls.docs}/docs/specification/modules/module-interactions`,
+    moduleInteractions: `${protocolUrls.docs}/docs/specification/modules/module-interactions`,
     // Individual module pages (explicit - no path concatenation)
-    contextModulePage: "https://docs.mplp.io/docs/specification/modules/context-module",
-    confirmModulePage: "https://docs.mplp.io/docs/specification/modules/confirm-module",
-    collabModulePage: "https://docs.mplp.io/docs/specification/modules/collab-module",
-    planModulePage: "https://docs.mplp.io/docs/specification/modules/plan-module",
-    dialogModulePage: "https://docs.mplp.io/docs/specification/modules/dialog-module",
-    traceModulePage: "https://docs.mplp.io/docs/specification/modules/trace-module",
-    roleModulePage: "https://docs.mplp.io/docs/specification/modules/role-module",
-    networkModulePage: "https://docs.mplp.io/docs/specification/modules/network-module",
-    extensionModulePage: "https://docs.mplp.io/docs/specification/modules/extension-module",
-    coreModulePage: "https://docs.mplp.io/docs/specification/modules/core-module",
+    contextModulePage: `${protocolUrls.docs}/docs/specification/modules/context-module`,
+    confirmModulePage: `${protocolUrls.docs}/docs/specification/modules/confirm-module`,
+    collabModulePage: `${protocolUrls.docs}/docs/specification/modules/collab-module`,
+    planModulePage: `${protocolUrls.docs}/docs/specification/modules/plan-module`,
+    dialogModulePage: `${protocolUrls.docs}/docs/specification/modules/dialog-module`,
+    traceModulePage: `${protocolUrls.docs}/docs/specification/modules/trace-module`,
+    roleModulePage: `${protocolUrls.docs}/docs/specification/modules/role-module`,
+    networkModulePage: `${protocolUrls.docs}/docs/specification/modules/network-module`,
+    extensionModulePage: `${protocolUrls.docs}/docs/specification/modules/extension-module`,
+    coreModulePage: `${protocolUrls.docs}/docs/specification/modules/core-module`,
 
     // Runtime - /docs/docs/guides/runtime/*
-    runtimeOverview: "https://docs.mplp.io/docs/guides/runtime/runtime-glue-overview",
-    ael: "https://docs.mplp.io/docs/guides/runtime/ael",
-    vsl: "https://docs.mplp.io/docs/guides/runtime/vsl",
-    psg: "https://docs.mplp.io/docs/guides/runtime/psg",
+    runtimeOverview: `${protocolUrls.docs}/docs/guides/runtime/runtime-glue-overview`,
+    ael: `${protocolUrls.docs}/docs/guides/runtime/ael`,
+    vsl: `${protocolUrls.docs}/docs/guides/runtime/vsl`,
+    psg: `${protocolUrls.docs}/docs/guides/runtime/psg`,
 
     // Golden Flows - /docs/docs/evaluation/golden-flows/*
-    goldenFlows: "https://docs.mplp.io/docs/evaluation/golden-flows",
-    goldenFlowRegistry: "https://docs.mplp.io/docs/evaluation/tests/golden-flow-registry",
+    goldenFlows: `${protocolUrls.docs}/docs/evaluation/golden-flows`,
+    goldenFlowRegistry: `${protocolUrls.docs}/docs/evaluation/tests/golden-flow-registry`,
 
     // Profiles - /docs/docs/specification/profiles/*
-    saProfile: "https://docs.mplp.io/docs/specification/profiles/sa-profile",
-    mapProfile: "https://docs.mplp.io/docs/specification/profiles/map-profile",
+    saProfile: `${protocolUrls.docs}/docs/specification/profiles/sa-profile`,
+    mapProfile: `${protocolUrls.docs}/docs/specification/profiles/map-profile`,
 
     // Conformance & Tests - /docs/docs/evaluation/tests/*
-    conformance: "https://docs.mplp.io/docs/evaluation/conformance",
-    testsOverview: "https://docs.mplp.io/docs/evaluation/tests/test-architecture-overview",
+    conformance: `${protocolUrls.docs}/docs/evaluation/conformance`,
+    testsOverview: `${protocolUrls.docs}/docs/evaluation/tests/test-architecture-overview`,
 
     // Standards - /docs/docs/evaluation/standards/*
-    standardsPositioning: "https://docs.mplp.io/docs/evaluation/standards/positioning",
-    standardsIsoMapping: "https://docs.mplp.io/docs/evaluation/standards/iso-mapping",
-    standardsNistMapping: "https://docs.mplp.io/docs/evaluation/standards/nist-mapping",
+    standardsPositioning: `${protocolUrls.docs}/docs/evaluation/standards/positioning`,
+    standardsIsoMapping: `${protocolUrls.docs}/docs/evaluation/standards/iso-mapping`,
+    standardsNistMapping: `${protocolUrls.docs}/docs/evaluation/standards/nist-mapping`,
 
     // Guides - /docs/docs/guides/*
-    guides: "https://docs.mplp.io/docs/guides",
-    quickstart: "https://docs.mplp.io/docs/guides/examples/single-agent-flow",
+    guides: `${protocolUrls.docs}/docs/guides`,
+    quickstart: `${protocolUrls.docs}/docs/guides/examples/single-agent-flow`,
 
     // SDK - /docs/docs/guides/sdk/*
-    sdkDocs: "https://docs.mplp.io/docs/guides/sdk/ts-sdk-guide",
+    sdkDocs: `${protocolUrls.docs}/docs/guides/sdk/ts-sdk-guide`,
 
     // Governance - /docs/docs/evaluation/governance/*
-    governance: "https://docs.mplp.io/docs/evaluation/governance",
-    releasePolicy: "https://docs.mplp.io/docs/evaluation/governance/versioning-policy",
-    contribution: "https://docs.mplp.io/docs/evaluation/governance/contributing",
+    governance: `${protocolUrls.docs}/docs/evaluation/governance`,
+    releasePolicy: `${protocolUrls.docs}/docs/evaluation/governance/versioning-policy`,
+    contribution: `${protocolUrls.docs}/docs/evaluation/governance/contributing`,
 
     // External
-    github: "https://github.com/Coregentis/MPLP-Protocol",
-    community: "https://github.com/Coregentis/MPLP-Protocol/issues",
+    github: protocolUrls.canonicalRepository,
+    community: `${protocolUrls.canonicalRepository}/issues`,
 } as const;
 
 // Repository URLs - source of truth links
 // MUST point to actual repo directories
 export const REPO_URLS = {
-    root: "https://github.com/Coregentis/MPLP-Protocol",
-    schemas: "https://github.com/Coregentis/MPLP-Protocol/tree/main/schemas",
-    governance: "https://github.com/Coregentis/MPLP-Protocol/tree/main/governance",
-    tests: "https://github.com/Coregentis/MPLP-Protocol/tree/main/tests",
-    packages: "https://github.com/Coregentis/MPLP-Protocol/tree/main/packages",
-    docs: "https://github.com/Coregentis/MPLP-Protocol/tree/main/docs",
+    root: protocolUrls.canonicalRepository,
+    schemas: `${protocolUrls.canonicalRepository}/tree/main/schemas`,
+    governance: `${protocolUrls.canonicalRepository}/tree/main/governance`,
+    tests: `${protocolUrls.canonicalRepository}/tree/main/tests`,
+    packages: `${protocolUrls.canonicalRepository}/tree/main/packages`,
+    docs: `${protocolUrls.canonicalRepository}/tree/main/docs`,
 } as const;
 
 // Lab URLs - Evidence Verdict Gateway (4th entry point)
@@ -136,15 +138,15 @@ export const REPO_URLS = {
 // SSOT: routes verified against Validation_Lab/components/Nav.tsx
 // Website must only link stable first-level entries (no sub-routes unless frozen)
 export const LAB_URLS = {
-    home: "https://lab.mplp.io",
-    contract: "https://lab.mplp.io/policies/contract",
-    strength: "https://lab.mplp.io/policies/strength",
-    guarantees: "https://lab.mplp.io/guarantees",
-    runs: "https://lab.mplp.io/runs",
-    rulesets: "https://lab.mplp.io/rulesets",
+    home: protocolUrls.validationLab,
+    contract: `${protocolUrls.validationLab}/policies/contract`,
+    strength: `${protocolUrls.validationLab}/policies/strength`,
+    guarantees: `${protocolUrls.validationLab}/guarantees`,
+    runs: `${protocolUrls.validationLab}/runs`,
+    rulesets: `${protocolUrls.validationLab}/rulesets`,
     // Verified stable first-level entry points for Website preview cards
-    coverage: "https://lab.mplp.io/coverage",
-    adjudication: "https://lab.mplp.io/adjudication",
+    coverage: `${protocolUrls.validationLab}/coverage`,
+    adjudication: `${protocolUrls.validationLab}/adjudication`,
 } as const;
 
 // Type-safe key references for components
