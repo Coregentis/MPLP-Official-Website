@@ -12,7 +12,7 @@
 | **协议版本** | MPLP v1.0.0（已冻结） |
 | **文章版本** | v1.1 (Deep Dive) |
 | **署名** | MPLP Protocol Governance Committee (MPGC) |
-| **版权声明** | © 2026 Bangshi Beijing Network Technology Limited Company |
+| **版权声明** | © 2026 Jearon Wong |
 | **许可** | Apache-2.0 |
 | **关键引用** | [Module Interactions Specification](https://docs.mplp.io/docs/specification/modules/module-interactions) |
 

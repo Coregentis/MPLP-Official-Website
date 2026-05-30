@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { footerLinks, siteConfig } from "@/lib/site-config";
+import { protocolLegal } from "@/lib/protocol-manifest";
 import { Logo } from "@/components/ui/logo";
 
 export function Footer() {
@@ -85,9 +86,9 @@ export function Footer() {
                             <strong>MPLP</strong> = Multi-Agent Lifecycle Protocol (not a license).
                         </p>
                         <p className="text-mplp-text-muted text-xs">
-                            © {currentYear} Bangshi Beijing Network Technology Co., Ltd. Licensed under the{' '}
+                            Copyright © {currentYear} {protocolLegal.copyrightHolder}. Licensed under{' '}
                             <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener noreferrer" className="hover:text-mplp-blue-light underline">
-                                Apache License, Version 2.0
+                                {protocolLegal.license}
                             </a>. Governed by{' '}
                             <Link href="/governance/overview" className="hover:text-mplp-blue-light underline">MPGC</Link>.
                         </p>

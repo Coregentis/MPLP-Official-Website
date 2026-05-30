@@ -12,7 +12,7 @@
 | 协议版本   | MPLP v1.0.0（已冻结）                                          |
 | 文章版本   | v1.0                                                      |
 | 署名     | MPLP Protocol Governance Committee（MPGC）                  |
-| 版权声明   | © 2026 Bangshi Beijing Network Technology Limited Company |
+| 版权声明   | © 2026 Jearon Wong |
 | 许可     | Apache-2.0                                                |
 | 关键引用   | [GraphUpdateEvent Schema](https://github.com/Coregentis/MPLP-Protocol/blob/main/schemas/v2/events/mplp-graph-update-event.schema.json) |
 | 对应文档源  | [PSG Guide](https://docs.mplp.io/docs/guides/runtime/psg)  |

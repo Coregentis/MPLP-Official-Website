@@ -13,6 +13,7 @@
     "verify:web-gov:warn": "node scripts/governance/no-hardcoded-urls.mjs",
     "verify:web-term": "WEB_TERM_STRICT=1 node scripts/governance/no-compliance-term.mjs",
     "verify:web-term:warn": "node scripts/governance/no-compliance-term.mjs",
+    "verify:protocol-manifest": "node scripts/governance/validate-protocol-manifest.mjs",
     "verify:jump-map": "JUMP_MAP_STRICT=1 node scripts/governance/verify-jump-map.mjs",
     "verify:jump-map:warn": "node scripts/governance/verify-jump-map.mjs",
     "render:jump-map": "node scripts/governance/render-jump-map.mjs",
