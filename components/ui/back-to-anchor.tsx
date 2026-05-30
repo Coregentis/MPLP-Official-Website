@@ -22,7 +22,7 @@ interface BackToAnchorProps {
  * - /blog/* → /faq
  * - /governance/* (subpages) → /governance/overview
  *
- * Legacy redirects such as /compliance are normalized before users should
+ * Legacy redirects are normalized before users should
  * encounter them.
  */
 
