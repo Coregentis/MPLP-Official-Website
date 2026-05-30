@@ -165,10 +165,10 @@
     }
   },
   "forbidden_claims": [
-    "MPLP-certified",
-    "certified by MPLP",
-    "officially endorsed by MPLP",
-    "regulator approved",
+    "Do not claim certified implementation status.",
+    "Do not claim formal MPLP approval.",
+    "Do not claim officially endorsed status from MPLP.",
+    "Do not claim regulator approved status.",
     "Website defines protocol truth",
     "Validation Lab defines protocol truth",
     "package version equals protocol version unless explicitly stated"
