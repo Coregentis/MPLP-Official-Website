@@ -4,7 +4,7 @@ This repository is part of the Coregentis MPLP / Cognitive OS / SoloCrew / Valid
 
 ## Repository Layer
 
-The MPLP official website owns public protocol-facing documentation, metadata, canonical URLs, and publication surfaces for MPLP. It must describe the protocol accurately without claiming certification, regulator approval, official-standard status, or legal compliance proof.
+The MPLP official website owns public protocol-facing documentation, metadata, canonical URLs, JSON-LD, and publication surfaces for MPLP. It is a protocol reference and evaluation entry surface that must stay protocol-first, governance-first, and vendor-neutral. It is not a product marketing, SaaS sales, certification, official-standard, regulator-approval, legal-compliance proof, or vendor-ranking surface. Visible copy, metadata, and JSON-LD must stay consistent.
 
 ## Repo Truth First
 
@@ -18,12 +18,19 @@ Before implementation, inspect repository truth:
 
 Reuse existing assets before creating new files. Prefer updating an existing rule, skill, script, audit, or governance record over creating a duplicate document.
 
+## Codex Skill Discovery
+
+- `.agents/skills/*/SKILL.md` is the repository-scoped Codex skill discovery path.
+- `.codex/skills/*/SKILL.md` is retained as the project-internal ops source and compatibility copy.
+- Keep mirrored skills same-named and content-equivalent; do not create divergent SOPs.
+
 ## Hard Boundaries
 
 - Preserve protocol, runtime, product, validation, and publication boundaries.
-- Do not modify release tags, release seals, package versions, publish plans, public website copy, schemas/v2 protocol objects, core package implementation logic, product source code, Validation Lab runtime/evidence logic, or public legal/compliance claims unless the owner explicitly approves that scope.
-- Do not run `npm publish`, `npm deprecate`, PyPI upload, PyPI yank/delete, `git tag`, release seal creation, package version bump, or protocol schema primitive intake without owner approval.
-- Do not make public legal, compliance, certification, regulator-approval, vendor-ranking, or official-standard claims without owner approval.
+- Normal task-authorized changes may modify files within the explicitly scoped repository layer, including low-risk code or docs that the current task asks for.
+- Owner approval is required for high-risk or irreversible changes, including release mutation, registry mutation, public legal/compliance claims, package version changes, schema primitive intake, provider-send behavior, auth/payment/data-deletion flows, runtime authority changes, and merge/tag/seal actions.
+- Do not run `npm publish`, `npm deprecate`, npm dist-tag mutation, PyPI upload, PyPI yank/delete, `git tag`, release seal creation, package version bump, or protocol schema primitive intake without an explicit owner-approved wave.
+- Do not make public certification, regulator-approval, vendor-ranking, official-standard, or legal-compliance proof claims without owner approval.
 
 ## MPLP Schema v2 Discipline
 
@@ -44,6 +51,14 @@ v1.0 module references to v2 objects must be pointer-only. Do not inline v2 obje
 - Cognitive OS may bind to MPLP semantics but must not redefine MPLP protocol authority.
 - Validation Lab may present deterministic evidence and adjudication but must not become a certification authority.
 - SoloCrew UI must not expose internal protocol/runtime jargon as primary user-facing copy.
+
+## Standard Subagent Lanes
+
+Use `.codex/agents/*.toml` reviewers only when the parent task explicitly requests them. Relevant lanes include `package_surface_auditor`, `release_governance_reviewer`, `protocol_schema_reviewer`, `product_boundary_reviewer`, `runtime_binding_reviewer`, and `publication_claim_reviewer`.
+
+Default lane policy: use no subagent for trivial docs typos, one subagent for isolated repo-specific review, and multiple subagents for release, schema, runtime, publication, or cross-repo tasks. MPLP-Official-Website defaults to `publication_claim_reviewer`, with `protocol_schema_reviewer` as the secondary lane when the task touches protocol references, metadata, JSON-LD, or evaluation entry copy.
+
+Subagents run review lanes only unless edits are explicitly authorized. They inherit sandbox and approval boundaries, must not publish, upload, tag, seal, bump versions, mutate registries, intake schema primitives, merge PRs, or change public claims, and must return P0/P1/P2 findings to the parent with files inspected and commands run.
 
 ## Completion Discipline
 
