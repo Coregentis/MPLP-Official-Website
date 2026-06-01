@@ -4,7 +4,7 @@ This repository is part of the Coregentis MPLP / Cognitive OS / SoloCrew / Valid
 
 ## Repository Layer
 
-The MPLP official website owns public protocol-facing documentation, metadata, canonical URLs, and publication surfaces for MPLP. It must describe the protocol accurately without claiming certification, regulator approval, official-standard status, or legal compliance proof.
+The MPLP official website owns public protocol-facing documentation, metadata, canonical URLs, and publication surfaces for MPLP. It is a protocol reference and evaluation entry surface, not a product, marketing, certification, official-standard, regulator-approval, or legal-compliance proof surface.
 
 ## Repo Truth First
 
@@ -17,6 +17,12 @@ Before implementation, inspect repository truth:
 - `git log --oneline -5`
 
 Reuse existing assets before creating new files. Prefer updating an existing rule, skill, script, audit, or governance record over creating a duplicate document.
+
+## Codex Skill Discovery
+
+- `.agents/skills/*/SKILL.md` is the repository-scoped Codex skill discovery path.
+- `.codex/skills/*/SKILL.md` is retained as the project-internal ops source and compatibility copy.
+- Keep mirrored skills same-named and content-equivalent; do not create divergent SOPs.
 
 ## Hard Boundaries
 
@@ -44,6 +50,12 @@ v1.0 module references to v2 objects must be pointer-only. Do not inline v2 obje
 - Cognitive OS may bind to MPLP semantics but must not redefine MPLP protocol authority.
 - Validation Lab may present deterministic evidence and adjudication but must not become a certification authority.
 - SoloCrew UI must not expose internal protocol/runtime jargon as primary user-facing copy.
+
+## Standard Subagent Lanes
+
+Use `.codex/agents/*.toml` reviewers only when the parent task explicitly requests them. Relevant lanes include `package_surface_auditor`, `release_governance_reviewer`, `protocol_schema_reviewer`, `product_boundary_reviewer`, `runtime_binding_reviewer`, and `publication_claim_reviewer`.
+
+Subagents run review lanes only unless edits are explicitly authorized. They inherit sandbox and approval boundaries, must not publish, upload, tag, seal, bump versions, mutate registries, intake schema primitives, merge PRs, or change public claims, and must return P0/P1/P2 findings to the parent with files inspected and commands run.
 
 ## Completion Discipline
 
